@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/wash"
+
+cargo build
+if [ ! -f "target/debug/wash" ]; then
+    echo "Failed to build wash"
+    exit 1
+fi
+cd ../bin
+if [[ "$(readlink -f wash)" != "../wash/target/debug/wash" ]]; then
+    rm -f wash
+fi
+ln -s ../wash/target/debug/wash wash

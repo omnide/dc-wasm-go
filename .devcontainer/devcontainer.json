@@ -1,0 +1,224 @@
+{
+    "build": {
+        "args": {
+            "VARIANT": "bookworm"
+        },
+        "context": "./",
+        "dockerfile": "Dockerfile"
+    },
+    "containerEnv": {
+        "EDITOR": "code --wait",
+        "SD_ROOT": "${containerWorkspaceFolder}/scripts",
+        "SD_EDITOR": "code --wait",
+        "SD_CAT": "bat"
+    },
+    "remoteEnv": {
+        "PATH": "${containerWorkspaceFolder}/bin:${containerEnv:PATH}"
+    },
+    "capAdd": [
+        // Required for debugging C++ 😱
+        "SYS_PTRACE"
+    ],
+    "securityOpt": [
+        // We're going to need to see and everything...
+        "seccomp=unconfined"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.markdownlint": true
+                },
+                "editor.rulers": [
+                    80,
+                    100,
+                    120
+                ],
+                "editor.tabSize": 4,
+                "editor.wordWrapColumn": 100,
+                "editor.wrappingColumn": 100,
+                "editor.formatOnSave": true,
+                "files.eol": "\n",
+                "go.buildTags": "",
+                "go.coverOnSingleTest": true,
+                "go.coverOnSingleTestFile": true,
+                "go.coverOnTestPackage": true,
+                "go.lintTool": "golangci-lint",
+                "go.lintOnSave": "package",
+                "go.testEnvVars": {
+                    "CGO_ENABLED": "1"
+                },
+                "go.testFlags": [
+                    "-v",
+                    "-race"
+                ],
+                "go.testTimeout": "10s",
+                "go.toolsEnvVars": {
+                    "CGO_ENABLED": "0"
+                },
+                "go.useLanguageServer": true,
+                "[go]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                },
+                "gopls": {
+                    "usePlaceholders": false,
+                    "staticcheck": true,
+                    "vulncheck": "Imports"
+                },
+                "[markdown]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode",
+                    "editor.unicodeHighlight.ambiguousCharacters": true,
+                    "editor.unicodeHighlight.invisibleCharacters": true,
+                    "diffEditor.ignoreTrimWhitespace": false,
+                    "editor.wordWrap": "on",
+                    "editor.quickSuggestions": {
+                        "comments": "off",
+                        "strings": "off",
+                        "other": "off"
+                    },
+                    "editor.formatOnSave": true,
+                    "editor.formatOnPaste": true
+                },
+                "markdownlint.config": {
+                    "default": true,
+                    "MD007": {
+                        "indent": 4
+                    },
+                    "MD0013": {
+                        "line_length": 100,
+                        "tables": false
+                    },
+                    "MD025": {
+                        "front_matter_title": "ignored"
+                    },
+                    "MD046": false
+                },
+                "prettier.proseWrap": "always",
+                "prettier.printWidth": 100,
+                "taskExplorer.pathToPrograms": {
+                    "make": "make"
+                },
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "icon": "terminal-bash"
+                    },
+                    "zsh": {
+                        "path": "/usr/bin/zsh"
+                    }
+                },
+                "yaml.schemas": {
+                    "https://github.com/DavidAnson/markdownlint/blob/main/schema/markdownlint-config-schema.json": ".markdownlint.yaml"
+                }
+            },
+            "extensions": [
+                "bierner.markdown-mermaid",
+                "brody715.vscode-cuelang",
+                "chrischinchilla.vale-vscode",
+                "christian-kohler.path-intellisense",
+                "DavidAnson.vscode-markdownlint",
+                "eamodio.gitlens",
+                "esbenp.prettier-vscode",
+                "github.copilot",
+                "github.copilot-chat",
+                "golang.go",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.cmake-tools",
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.makefile-tools",
+                "ms-vscode.wordcount",
+                "oderwat.indent-rainbow",
+                "pharndt.vscode-markdown-table",
+                "redhat.vscode-xml",
+                "redhat.vscode-yaml",
+                "spmeesseman.vscode-taskexplorer",
+                "stkb.rewrap",
+                "streetsidesoftware.code-spell-checker",
+                "tamasfe.even-better-toml",
+                "timkmecl.chatgpt",
+                "timonwong.shellcheck",
+                "tinygo.vscode-tinygo",
+                "xc-vscode.xc-vscode"
+            ]
+        }
+    },
+    "postCreateCommand": "/tmp/install/post-create.sh",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "configureZshAsDefaultShell": true,
+            "upgradePackages": true,
+            "username": "vscode",
+            "userUid": 1000,
+            "userGid": 1000
+        },
+        "ghcr.io/devcontainers/features/git-lfs:1": {
+            "autoPull": false
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        },
+        "ghcr.io/devcontainers/features/nix:1": {
+            "multiUser": false,
+            "packages": [
+                "atuin",
+                "bat",
+                "cue",
+                "delta",
+                "direnv",
+                "eza",
+                "fd",
+                "fzf",
+                "gh",
+                "jq",
+                "lsd",
+                "ninja",
+                "ripgrep",
+                "starship",
+                "script-directory",
+                "thefuck",
+                "xc",
+                "yq"
+            ],
+            "extraNixConfig": [
+                "experimental-features = nix-command flakes",
+                "trusted-users = root vscode"
+            ]
+        },
+        // More base language support
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "1.21"
+        },
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        },
+        // Additional tools
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {},
+        // Language quality tools
+        "ghcr.io/guiyomh/features/gotestsum:0": {},
+        // Wrriting
+        "ghcr.io/shinepukur/devcontainer-features/vale:1": {},
+        "./features/src/final-layers": {}
+    },
+    "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/git-lfs",
+        "ghcr.io/devcontainers/features/node",
+        "ghcr.io/devcontainers/features/nix",
+        "ghcr.io/devcontainers/features/go",
+        "ghcr.io/devcontainers/features/rust",
+        "ghcr.io/devcontainers/features/python",
+        "ghcr.io/devcontainers/features/github-cli",
+        "ghcr.io/guiyomh/features/gotestsum",
+        "ghcr.io/shinepukur/devcontainer-features/vale",
+        "./features/src/final-layers"
+    ]
+}

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/wabt"
+make
+
+if [ ! -f "bin/wasm2wat" ]; then
+    echo "Failed to build wabt tools"
+    exit 1
+fi
+
+cd ../bin
+for f in ../wabt/bin/*; do
+    if [[ "${f}" == *".wasm" || ! -x "${f}" ]]; then
+        continue
+    fi
+    relpath="../wabt/bin/$(basename "${f}")"
+    name="$(basename "${f}")"
+    if [[ "$(readlink -f "${name}")" != "${relpath}" ]]; then
+        rm -f "${name}"
+    fi
+    ln -s "${relpath}" "${name}"
+done

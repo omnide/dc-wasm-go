@@ -1,0 +1,12 @@
+
+format = '🐹 $all'
+
+# Don't need this reminder if you're always in a container!
+[container]
+disabled = true
+
+[directory]
+read_only = ""
+
+[username]
+show_always = true

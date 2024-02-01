@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Apply stashed content after rebuild
+echo "Applying stash from .work/stash/"
+test -d .work/stash || { echo "exec only from workspace root"; exit 1; }
+
+rsync -avzq --delete .work/stash/atuin/ ~/.local/share/atuin/

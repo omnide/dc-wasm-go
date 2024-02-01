@@ -1,0 +1,20 @@
+[submodule "wasmtime"]
+	path = wasmtime
+	url = https://github.com/omnide/wasmtime
+	branch = main
+[submodule "wasmcloud"]
+	path = wasmcloud
+	url = https://github.com/omnide/wasmcloud
+	branch = main
+[submodule "tinygo"]
+	path = tinygo
+	url = https://github.com/omnide/tinygo
+	branch = dev
+[submodule "wash"]
+	path = wash
+	url = https://github.com/omnide/wash
+	branch = main
+[submodule "wabt"]
+	path = wabt
+	url = https://github.com/omnide/wabt
+	branch = main

@@ -1,0 +1,20 @@
+{
+    "name": "final-layers",
+    "id": "final-layers",
+    "version": "0.0.1",
+    "description": "Workaround vscode base vs. feature installs. Some things need to be installed after the base image is installed.",
+    "options": {
+        "does-nothing": {
+            "type": "string",
+            "enum": [
+                "nothing",
+                "more-nothing"
+            ],
+            "default": "nothing",
+            "description": "Provide a string that does nothing"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node"
+    ]
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+go install github.com/tetratelabs/wazero/cmd/wazero@latest

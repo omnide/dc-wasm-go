@@ -1,0 +1,382 @@
+#!/usr/bin/env bash
+
+# Borrowed and modified from wasmer's front page curl-bash, 2024-01-31
+# curl https://get.wasmer.io -sSfL > scripts/install/wasmer
+
+WASMER_DIR=./bin/pkg/wasmer
+
+
+# This install script is intended to download and install the latest available
+# release of Wasmer.
+# It attempts to identify the current platform and an error will be thrown if
+# the platform is not supported.
+#
+# Environment variables:
+# - WASMER_DIR (optional): defaults to $HOME/.wasmer
+#
+# You can install using this script:
+# $ curl https://raw.githubusercontent.com/wasmerio/wasmer-install/master/install.sh | sh
+
+# Installer script inspired by:
+#  1) https://raw.githubusercontent.com/golang/dep/master/install.sh
+#  2) https://sh.rustup.rs
+#  3) https://yarnpkg.com/install.sh
+#  4) https://raw.githubusercontent.com/brainsik/virtualenv-burrito/master/virtualenv-burrito.sh
+
+reset="\033[0m"
+red="\033[31m"
+green="\033[32m"
+yellow="\033[33m"
+white="\033[37m"
+bold="\e[1m"
+dim="\e[2m"
+
+RELEASES_URL="https://github.com/wasmerio/wasmer/releases"
+
+WASMER_VERBOSE="verbose"
+if [ -z "$WASMER_INSTALL_LOG" ]; then
+  WASMER_INSTALL_LOG="$WASMER_VERBOSE"
+fi
+
+wasmer_download_json() {
+  url="$2"
+
+  # echo "Fetching $url.."
+  if test -x "$(command -v curl)"; then
+    response=$(curl -s -L -w 'HTTPSTATUS:%{http_code}' -H 'Accept: application/json' "$url")
+    body=$(echo "$response" | sed -e 's/HTTPSTATUS\:.*//g')
+    code=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTPSTATUS://')
+  elif test -x "$(command -v wget)"; then
+    temp=$(mktemp)
+    body=$(wget -q --header='Accept: application/json' -O - --server-response "$url" 2>"$temp")
+    code=$(awk '/^  HTTP/{print $2}' <"$temp" | tail -1)
+    rm "$temp"
+  else
+    wasmer_error "Neither curl nor wget was available to perform http requests"
+    return 1
+  fi
+  if [ "$code" != 200 ]; then
+    wasmer_error "File download failed with code $code"
+    return 1
+  fi
+
+  eval "$1='$body'"
+  return 0
+}
+
+wasmer_download_file() {
+  url="$1"
+  destination="$2"
+
+  # echo "Fetching $url.."
+  if test -x "$(command -v curl)"; then
+    if [ "$WASMER_INSTALL_LOG" = "$WASMER_VERBOSE" ]; then
+      code=$(curl --progress-bar -w '%{http_code}' -L "$url" -o "$destination")
+      printf "\033[K\n\033[1A"
+    else
+      code=$(curl -s -w '%{http_code}' -L "$url" -o "$destination")
+    fi
+  elif test -x "$(command -v wget)"; then
+    if [ "$WASMER_INSTALL_LOG" = "$WASMER_VERBOSE" ]; then
+      code=$(wget --show-progress --progress=bar:force:noscroll -q -O "$destination" --server-response "$url" 2>&1 | awk '/^  HTTP/{print $2}' | tail -1)
+      printf "\033[K\n\033[1A"
+    else
+      code=$(wget --quiet -O "$destination" --server-response "$url" 2>&1 | awk '/^  HTTP/{print $2}' | tail -1)
+    fi
+  else
+    wasmer_error "Neither curl nor wget was available to perform http requests."
+    return 1
+  fi
+
+  if [ "$code" = 404 ]; then
+    wasmer_error "Your platform is not yet supported ($OS-$ARCH).$reset\nPlease open an issue on the project if you would like to use wasmer in your project: https://github.com/wasmerio/wasmer"
+    return 1
+  elif [ "$code" != 200 ]; then
+    wasmer_error "File download failed with code $code"
+    return 1
+  fi
+  return 0
+}
+
+wasmer_link() {
+
+  if [[ "$(readlink -f bin/wasmer)" != "pkg/wasmer/bin/wasmer" ]]; then
+    rm -f bin/wasmer
+  fi
+  ln -s pkg/wasmer/bin/wasmer bin/wasmer
+
+  if [[ "$(readlink -f bin/wasmer-headless)" != "pkg/wasmer/bin/wasmer-headless" ]]; then
+    rm -f bin/wasmer-headless
+  fi
+  ln -s pkg/wasmer/bin/wasmer-headless bin/wasmer-headless
+}
+
+initArch() {
+  ARCH=$(uname -m)
+  case $ARCH in
+  amd64) ARCH="amd64" ;;
+  x86_64) ARCH="amd64" ;;
+  aarch64) ARCH="aarch64" ;;
+  riscv64) ARCH="riscv64" ;;
+  arm64) ARCH="arm64" ;; # This is for the macOS M1 ARM chips
+  *)
+    wasmer_error "The system architecture (${ARCH}) is not yet supported by this installation script."
+    exit 1
+    ;;
+  esac
+  # echo "ARCH = $ARCH"
+}
+
+initOS() {
+  OS=$(uname | tr '[:upper:]' '[:lower:]')
+  case "$OS" in
+  darwin) OS='darwin' ;;
+  linux) OS='linux' ;;
+  freebsd) OS='freebsd' ;;
+  # mingw*) OS='windows';;
+  # msys*) OS='windows';;
+  *)
+    printf "$red> The OS (${OS}) is not supported by this installation script.$reset\n"
+    exit 1
+    ;;
+  esac
+}
+
+wasmer_install() {
+  magenta1="${reset}\033[34;1m"
+  magenta2=""
+  magenta3=""
+
+  if which wasmer >/dev/null; then
+    printf "${reset}Welcome to the Wasmer bash installer!$reset\n"
+  else
+    printf "${reset}Welcome to the Wasmer bash installer!$reset\n"
+    if [ "$WASMER_INSTALL_LOG" = "$WASMER_VERBOSE" ]; then
+      printf "
+${magenta1}               ww
+${magenta1}               wwwww
+${magenta1}        ww     wwwwww  w
+${magenta1}        wwwww      wwwwwwwww
+${magenta1}ww      wwwwww  w     wwwwwww
+${magenta1}wwwww      wwwwwwwwww   wwwww
+${magenta1}wwwwww  w      wwwwwww  wwwww
+${magenta1}wwwwwwwwwwwwww   wwwww  wwwww
+${magenta1}wwwwwwwwwwwwwww  wwwww  wwwww
+${magenta1}wwwwwwwwwwwwwww  wwwww  wwwww
+${magenta1}wwwwwwwwwwwwwww  wwwww  wwwww
+${magenta1}wwwwwwwwwwwwwww  wwwww   wwww
+${magenta1}wwwwwwwwwwwwwww  wwwww
+${magenta1}   wwwwwwwwwwww   wwww
+${magenta1}       wwwwwwww
+${magenta1}           wwww
+${reset}
+"
+    fi
+  fi
+
+  wasmer_download $1 && wasmer_link
+  wasmer_reset
+}
+
+wasmer_reset() {
+  unset -f wasmer_install semver_compare wasmer_reset wasmer_download_json wasmer_link wasmer_download_file wasmer_download wasmer_verify_or_quit
+}
+
+version() {
+  echo "$@" | awk -F. '{ printf("%d%03d%03d%03d\n", $1,$2,$3,$4); }'
+}
+
+semverParseInto() {
+  local RE='v?([0-9]+)[.]([0-9]+)[.]([0-9]+)([.0-9A-Za-z-]*)'
+
+  # # strip word "v" if exists
+  # version=$(echo "${1//v/}")
+
+  #MAJOR
+  eval $2=$(echo $1 | sed -E "s#$RE#\1#")
+  #MINOR
+  eval $3=$(echo $1 | sed -E "s#$RE#\2#")
+  #MINOR
+  eval $4=$(echo $1 | sed -E "s#$RE#\3#")
+  #SPECIAL
+  eval $5=$(echo $1 | sed -E "s#$RE#\4#")
+}
+
+###
+# Code inspired (copied partially and improved) with attributions from:
+# https://github.com/cloudflare/semver_bash/blob/master/semver.sh
+# https://gist.github.com/Ariel-Rodriguez/9e3c2163f4644d7a389759b224bfe7f3
+###
+semver_compare() {
+  local version_a version_b
+
+  local MAJOR_A=0
+  local MINOR_A=0
+  local PATCH_A=0
+  local SPECIAL_A=0
+
+  local MAJOR_B=0
+  local MINOR_B=0
+  local PATCH_B=0
+  local SPECIAL_B=0
+
+  semverParseInto $1 MAJOR_A MINOR_A PATCH_A SPECIAL_A
+  semverParseInto $2 MAJOR_B MINOR_B PATCH_B SPECIAL_B
+
+  # Check if our version is higher
+  if [ $MAJOR_A -gt $MAJOR_B ]; then
+    echo 1 && return 0
+  fi
+  if [ $MAJOR_A -eq $MAJOR_B ]; then
+    if [ $MINOR_A -gt $MINOR_B ]; then
+      echo 1 && return 0
+    elif [ $MINOR_A -eq $MINOR_B ]; then
+      if [ $PATCH_A -gt $PATCH_B ]; then
+        echo 1 && return 0
+      elif [ $PATCH_A -eq $PATCH_B ]; then
+        if [ -n "$SPECIAL_A" ] && [ -z "$SPECIAL_B" ]; then
+          # if the version we're targeting does not have a tag and our current
+          # version does, we should upgrade because no tag > tag
+          echo -1 && return 0
+        elif [ "$SPECIAL_A" \> "$SPECIAL_B" ]; then
+          echo 1 && return 0
+        elif [ "$SPECIAL_A" = "$SPECIAL_B" ]; then
+          # complete match
+          echo 0 && return 0
+        fi
+      fi
+    fi
+  fi
+
+  # if we're here we know that the target verison cannot be less than or equal to
+  # our current version, therefore we upgrade
+
+  echo -1 && return 0
+}
+
+wasmer_download() {
+  # identify platform based on uname output
+  initArch || return 1
+  initOS || return 1
+
+  # assemble expected release artifact name
+  BINARY="wasmer-${OS}-${ARCH}.tar.gz"
+
+  # add .exe if on windows
+  # if [ "$OS" = "windows" ]; then
+  #     BINARY="$BINARY.exe"
+  # fi
+
+  wasmer_install_status "downloading" "wasmer-$OS-$ARCH"
+  if [ $# -eq 0 ]; then
+    # The version was not provided, assume latest
+    wasmer_download_json LATEST_RELEASE "$RELEASES_URL/latest" || return 1
+    WASMER_RELEASE_TAG=$(echo "${LATEST_RELEASE}" | tr -s '\n' ' ' | sed 's/.*"tag_name":"//' | sed 's/".*//')
+    printf "Latest release: ${WASMER_RELEASE_TAG}\n"
+  else
+    WASMER_RELEASE_TAG="${1}"
+    printf "Installing provided version: ${WASMER_RELEASE_TAG}\n"
+  fi
+
+  if which $INSTALL_DIRECTORY/bin/wasmer >/dev/null; then
+    WASMER_VERSION=$($INSTALL_DIRECTORY/bin/wasmer --version | sed 's/wasmer //g')
+    printf "Wasmer already installed in ${INSTALL_DIRECTORY} with version: ${WASMER_VERSION}\n"
+
+    WASMER_COMPARE=$(semver_compare $WASMER_VERSION $WASMER_RELEASE_TAG)
+    case $WASMER_COMPARE in
+    # WASMER_VERSION = WASMER_RELEASE_TAG
+    0)
+      if [ $# -eq 0 ]; then
+        wasmer_warning "wasmer is already installed in the latest version: ${WASMER_RELEASE_TAG}"
+      else
+        wasmer_warning "wasmer is already installed with the same version: ${WASMER_RELEASE_TAG}"
+      fi
+      printf "Do you want to force the installation?"
+      wasmer_verify_or_quit || return 1
+      ;;
+      # WASMER_VERSION > WASMER_RELEASE_TAG
+    1)
+      wasmer_warning "the selected version (${WASMER_RELEASE_TAG}) is lower than current installed version ($WASMER_VERSION)"
+      printf "Do you want to continue installing Wasmer $WASMER_RELEASE_TAG?"
+      wasmer_verify_or_quit || return 1
+      ;;
+      # WASMER_VERSION < WASMER_RELEASE_TAG (we continue)
+    -1) ;;
+    esac
+  fi
+
+  # fetch the real release data to make sure it exists before we attempt a download
+  wasmer_download_json RELEASE_DATA "$RELEASES_URL/tag/$WASMER_RELEASE_TAG" || return 1
+
+  BINARY_URL="$RELEASES_URL/download/$WASMER_RELEASE_TAG/$BINARY"
+  DOWNLOAD_FILE=$(mktemp -t wasmer.XXXXXXXXXX)
+
+  printf "Downloading archive from ${BINARY_URL}\n"
+
+  wasmer_download_file "$BINARY_URL" "$DOWNLOAD_FILE" || return 1
+  # echo -en "\b\b"
+  printf "\033[K\n\033[1A"
+
+  # windows not supported yet
+  # if [ "$OS" = "windows" ]; then
+  #     INSTALL_NAME="$INSTALL_NAME.exe"
+  # fi
+
+  # echo "Moving executable to $INSTALL_DIRECTORY/$INSTALL_NAME"
+
+  wasmer_install_status "installing" "${INSTALL_DIRECTORY}"
+
+  mkdir -p $INSTALL_DIRECTORY
+
+  # Untar the wasmer contents in the install directory
+  tar -C $INSTALL_DIRECTORY -zxf $DOWNLOAD_FILE
+  return 0
+}
+
+wasmer_error() {
+  printf "$bold${red}error${white}: $1${reset}\n"
+}
+
+wasmer_install_status() {
+  printf "$bold${green}${1}${white}: $2${reset}\n"
+}
+
+wasmer_warning() {
+  printf "$bold${yellow}warning${white}: $1${reset}\n"
+}
+
+wasmer_verify_or_quit() {
+  if [ -n "$BASH_VERSION" ]; then
+    # If we are in bash, we can use read -n
+    read -p "$1 [y/N] " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+      wasmer_error "installation aborted"
+      return 1
+    fi
+    return 0
+  fi
+
+  read -p "$1 [y/N]" yn
+  case $yn in
+  [Yy]*) break ;;
+  [Nn]*)
+    wasmer_error "installation aborted"
+    return 1
+    ;;
+  *) echo "Please answer yes or no." ;;
+  esac
+
+  return 0
+}
+
+# determine install directory if required
+if [ -z "$WASMER_DIR" ]; then
+  # If WASMER_DIR is not present
+  INSTALL_DIRECTORY="$HOME/.wasmer"
+else
+  # If WASMER_DIR is present
+  INSTALL_DIRECTORY="${WASMER_DIR}"
+fi
+
+wasmer_install $1 # $2

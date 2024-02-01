@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/tinygo"
+make llvm-source
+make llvm-build
+make wasi-libc
+make binaryen
+make
+if [ ! -f "build/tinygo" ]; then
+    echo "Failed to build tinygo"
+    exit 1
+fi
+cd ../bin
+if [[ "$(readlink -f tinygo)" != "../tinygo/build/tinygo" ]]; then
+    rm -f tinygo
+fi
+ln -s ../tinygo/build/tinygo tinygo

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Stash some home directory content before rebuild
+test -d .work/stash || { echo "exec only from workspace root"; exit 1; }
+
+echo "Stashing home content to .work/stash/atuin/"
+rsync -avzq --delete ~/.local/share/atuin/ .work/stash/atuin/

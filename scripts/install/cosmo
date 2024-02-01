@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+# Borrowed from the curl-bash install script pattern
+# Modified to just use ./bin instead of ~/.cosmo/bin
+
+set -euo pipefail
+
+COSMO_BIN_DIR="./bin"
+
+os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+arch="$(uname -m)"
+
+# arm64 and aarch64 are the same binary
+if [[ "$arch" == "arm64" ]]; then
+  arch="aarch64"
+fi
+
+version="${COSMO_VERSION:-latest}"
+
+url="https://cosmonic.sh/cosmo-${arch}-${os}-${version}"
+
+# Test that the binary exists for the os/arch combo
+status="$(curl -I -L -s -o /dev/null -w '%{http_code}' "$url")"
+
+if [[ "$status" != 200 ]]; then
+    echo "Operating system or architecture not supported: OS: ${os}, ARCH: ${arch}. Please let us know if your system is not supported"
+    exit 1
+fi
+
+echo "⬇️ Downloading latest cosmo from ${url}"
+
+tmpdir=$(mktemp -d)
+trap 'rm -rf ${tmpdir}' EXIT
+cosmo_binary="${tmpdir}/cosmo"
+
+curl -s -o "$cosmo_binary" -L "$url"
+
+chmod +x "$cosmo_binary"
+
+# Check for currently existing binary, print versions, and ask if the user wants to updatew
+# CURRENT_COSMO=$(which cosmo || echo "${COSMO_BIN_DIR}/cosmo")
+
+# if [ -x "$CURRENT_COSMO" ]; then
+#     read -r -p "⚠️ Detected a current install of cosmo with version $($CURRENT_COSMO --version). The new version is $($cosmo_binary --version). Would you like to install the new version? [y/n] " answer
+#     if [ "$answer" != "y" ]; then
+#         echo "❌ Answer was not 'y'. Aborting install";
+#         exit 1;
+#     fi
+# fi
+
+echo "🏗 Installing cosmo binary in ${COSMO_BIN_DIR}"
+
+mkdir -p "$COSMO_BIN_DIR"
+
+mv -f "$cosmo_binary" "$COSMO_BIN_DIR"

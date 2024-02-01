@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+devcontainer build --workspace-folder . --image-name localhost/dc-wasm-go:latest

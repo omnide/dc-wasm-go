@@ -1,0 +1,105 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+declare -a tools=(
+    # group, tool, version option, transform
+    "cpp cmake --version h1c3"
+    "cpp g++ --version h1c4"
+    "cpp gcc --version h1c4"
+    "cpp make --version h1c3"
+    "cpp ninja --version h1c3"
+    "git gh --version h1c3"
+    "git git --version h1c3"
+    "git git-lfs --version c1"
+    "go go version c3"
+    "go gotestsum --version c3"
+    "go golangci-lint --version c4"
+    "js node --version c2"
+    "js npm --version c2"
+    "js yarn --version c1"
+    "py pip --version c2"
+    "py pip3 --version c2"
+    "py python --version c2"
+    "py python3 --version c2"
+    "rust cargo --version c2"
+    "rust clang --version h1c4"
+    "rust rustc --version c2"
+    "rust rustup --version c2"
+    "wasm wash --version c2"
+    "wasm wazero version c1"
+    "wasm wasmer --version c2"
+    "wasm wasmtime --version c2"
+    "util jq --version c1"
+    "util yq --version c2"
+)
+
+function h1 {
+    head -n 1
+}
+function c1 {
+    cut -d ' ' -f 1
+}
+function c2 {
+    cut -d ' ' -f 2
+}
+function c3 {
+    cut -d ' ' -f 3
+}
+function c4 {
+    cut -d ' ' -f 4
+}
+function h1c2 {
+    head -n 1 | cut -d ' ' -f 2
+}
+function h1c3 {
+    head -n 1 | cut -d ' ' -f 3
+}
+function h1c4 {
+    head -n 1 | cut -d ' ' -f 4
+}
+function ___ {
+    set +u
+    if [[ -z "${TERM}" ]]; then
+        cols=88
+    else
+        cols="${COLUMNS:-$(tput cols)}"
+    fi
+    set -u
+    printf '%*s\n' "$((cols < 88 ? cols : 88))" '' | tr ' ' -
+}
+
+last_group=""
+function emit {
+    local group
+    local tool
+    local version_opt
+    local transform
+    local version
+    local location
+
+    group=$(echo "$1" | c1)
+    tool=$(echo "$1" | c2)
+    version_opt=$(echo "$1" | c3)
+    transform=$(echo "$1" | c4)
+
+    version=$($tool $version_opt 2>/dev/null | $transform | sed -E 's/[^0-9]*([0-9.]+).*/\1/' || echo -e "\033[31m-x-\033[0m")
+    location=$(which $tool || echo)
+
+    if [[ "$group" != "$last_group" ]]; then
+        ___
+        echo "${group}"
+        last_group="$group"
+    fi
+    printf " %-13s %-10s %s\n" "$tool" "$version" "$location"
+}
+
+function dump {
+    local -a sorted
+    # shellcheck disable=SC2207
+    IFS=$'\n' sorted=($(sort <<<"${tools[*]}")); unset IFS
+    for tool in "${sorted[@]}"; do
+        emit "${tool}"
+    done
+}
+
+dump

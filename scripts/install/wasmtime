@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/wasmtime"
+cargo build
+if [ ! -f "target/debug/wasmtime" ]; then
+    echo "Failed to build wasmtime"
+    exit 1
+fi
+cd ../bin
+if [[ "$(readlink -f wasmtime)" != "../wasmtime/target/debug/wasmtime" ]]; then
+    rm -f wasmtime
+fi
+ln -s ../wasmtime/target/debug/wasmtime wasmtime

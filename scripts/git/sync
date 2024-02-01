@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+
+function get-subs {
+    git config --file .gitmodules --get-regexp branch | sed -E 's/submodule.(.*).branch (.*)/\1,\2/'
+}
+
+function sync-repo {
+    repo="$1"
+    branch="$2"
+    echo "Syncing ${repo} on ${branch}"
+    pushd $repo >/dev/null 2>&1
+    nameWithOwner=$(gh repo view --json nameWithOwner --jq '.nameWithOwner')
+    echo "  with fork ${nameWithOwner}"
+    gh repo sync --branch "${branch}" "${nameWithOwner}"
+    git switch "${branch}"
+    git pull
+    popd >/dev/null 2>&1
+}
+
+function sync-all {
+    for entry in $(get-subs); do
+        repo="${entry%%,*}"
+        branch="${entry##*,}"
+        sync-repo "${repo}" "${branch}"
+    done
+}
+
+cd "${workspace}"
+sync-all

@@ -23,5 +23,7 @@
 # Build output
 /bin/
 
-.work
-!.work/stash/.gitkeep
+/.work/
+!/.work/stash/.gitkeep
+
+/build/

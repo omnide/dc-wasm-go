@@ -13,6 +13,8 @@ sd
 │   └── sync
 ├── install
 │   ├── cosmo
+│   ├── tinygo
+│   ├── wabt
 │   ├── wash
 │   ├── wasmer
 │   ├── wasmtime

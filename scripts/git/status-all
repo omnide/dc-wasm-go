@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-set -eEuo pipefail
-
-
-function get-subs {
-    git config --file .gitmodules --get-regexp branch | sed -E 's/submodule.(.*).branch (.*)/\1,\2/'
-}
-
-get-subs

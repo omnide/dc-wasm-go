@@ -7,4 +7,6 @@ func add(x, y uint32) uint32 {
 }
 
 // main is required for the `wasi` target, even if it isn't used.
-func main() {}
+func main() {
+	println("Hello TinyGo from WasmEdge!")
+}

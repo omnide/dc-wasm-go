@@ -27,8 +27,10 @@ declare -a tools=(
     "rust rustup --version c2"
     "wasm wash --version c2"
     "wasm wazero version c1"
+    "wasm wasm-tools --version c2"
     "wasm wasmer --version c2"
     "wasm wasmtime --version c2"
+    "wasm wit-bindgen --version c2"
     "util jq --version c1"
     "util yq --version c2"
 )

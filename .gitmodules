@@ -18,3 +18,15 @@
 	path = wabt
 	url = https://github.com/omnide/wabt
 	branch = main
+[submodule "wit-bindgen"]
+	path = wit-bindgen
+	url = https://github.com/omnide/wit-bindgen
+	branch = main
+[submodule "WASI"]
+	path = WASI
+	url = https://github.com/omnide/WASI
+	branch = main
+[submodule "wasi-testsuite"]
+	path = wasi-testsuite
+	url = https://github.com/omnide/wasi-testsuite
+	branch = main

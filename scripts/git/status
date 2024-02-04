@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+function sub-branch-list {
+    git config --file .gitmodules --get-regexp branch | sed -E 's/submodule.(.*).branch (.*)/\1,\2/'
+}
+
+function sub-status-recurse {
+    local indent
+    if [[ ! -f .gitmodules ]]; then
+        return 0
+    fi
+    rel="${1}"
+    indent="${2:-}"
+    pushd "${rel}" > /dev/null
+    git submodule status | while IFS=$'\n' read line; do
+        read -r -a parts <<< "${line}"
+        sha="${parts[0]}"
+        path="${parts[1]}"
+        ref="${parts[2]}"
+        printf '%-35s' "${indent}${path}"
+        printf '%10s' "${sha:0:8}"
+        printf ' %-30s' "${ref:1:-1}"
+        echo
+        sub-status-recurse "${path}" "  ${indent}"
+    done
+    popd > /dev/null
+}
+
+sub-status-recurse . ""

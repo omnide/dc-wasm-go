@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/wit-bindgen"
+cargo build
+if [ ! -f "target/debug/wit-bindgen" ]; then
+    echo "Failed to build wit-bindgen"
+    exit 1
+fi
+cd ../bin
+if [[ "$(readlink -f wit-bindgen)" != "../wit-bindgen/target/debug/wit-bindgen" ]]; then
+    rm -f wit-bindgen
+fi
+ln -s ../wit-bindgen/target/debug/wit-bindgen wit-bindgen

@@ -25,12 +25,15 @@ declare -a tools=(
     "rust clang --version h1c4"
     "rust rustc --version c2"
     "rust rustup --version c2"
+    "wasm cargo-component --version c2"
     "wasm wash --version c2"
     "wasm wazero version c1"
     "wasm wasm-tools --version c2"
     "wasm wasmer --version c2"
     "wasm wasmtime --version c2"
     "wasm wit-bindgen --version c2"
+    "wasm wit-bindgen-go version unk"
+    "wasm wit-deps --version c2"
     "util jq --version c1"
     "util yq --version c2"
 )
@@ -59,6 +62,9 @@ function h1c3 {
 function h1c4 {
     head -n 1 | cut -d ' ' -f 4
 }
+function unk {
+    sed -E 's/.*/???/'
+}
 function ___ {
     set +u
     if [[ -z "${TERM}" ]]; then
@@ -84,7 +90,14 @@ function emit {
     version_opt=$(echo "$1" | c3)
     transform=$(echo "$1" | c4)
 
-    version=$($tool $version_opt 2>/dev/null | $transform | sed -E 's/[^0-9]*([0-9.]+).*/\1/' || echo -e "\033[31m-x-\033[0m")
+    if [[ "${transform}" == "unk" ]]; then
+        version=$(echo -e "\033[36m?.?.?\033[0m     ")
+    else
+        version=$($tool $version_opt 2>/dev/null |
+                    $transform |
+                    sed -E 's/[^0-9]*([0-9.]+).*/\1/' ||
+                    echo -e "\033[31m-x-\033[0m       ")
+    fi
     location=$(which $tool || echo)
 
     if [[ "$group" != "$last_group" ]]; then
@@ -92,7 +105,7 @@ function emit {
         echo "${group}"
         last_group="$group"
     fi
-    printf " %-13s %-10s %s\n" "$tool" "$version" "$location"
+    printf " %-15s %-10s %s\n" "$tool" "$version" "$location"
 }
 
 function dump {

@@ -30,3 +30,7 @@
 	path = wasi-testsuite
 	url = https://github.com/omnide/wasi-testsuite
 	branch = main
+[submodule "wasm-tools-go"]
+	path = wasm-tools-go
+	url = https://github.com/omnide/wasm-tools-go
+	branch = main

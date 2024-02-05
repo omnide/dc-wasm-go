@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -eEuo pipefail
 
+# Install wazero from github sources
+
 go install github.com/tetratelabs/wazero/cmd/wazero@latest

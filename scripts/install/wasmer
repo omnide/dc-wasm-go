@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
+# Install wasmer cli from github release
+
 # Borrowed and modified from wasmer's front page curl-bash, 2024-01-31
 # curl https://get.wasmer.io -sSfL > scripts/install/wasmer
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}"
 
 WASMER_DIR=./bin/pkg/wasmer
 
@@ -291,8 +297,9 @@ wasmer_download() {
       else
         wasmer_warning "wasmer is already installed with the same version: ${WASMER_RELEASE_TAG}"
       fi
-      printf "Do you want to force the installation?"
-      wasmer_verify_or_quit || return 1
+      return 0
+      # printf "Do you want to force the installation?"
+      # wasmer_verify_or_quit || return 1
       ;;
       # WASMER_VERSION > WASMER_RELEASE_TAG
     1)

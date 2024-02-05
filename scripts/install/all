@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Install all tools defined in this directory
+
+this_file="$(realpath "$0")"
+this_dir="$(dirname "${this_file}")"
+
+for script in ${this_dir}/*; do
+    target="$(basename "${script}")"
+    if [[ "${target}" != "all" ]]; then
+        echo "Installing ${target}..."
+        sd install "${target}"
+    fi
+done

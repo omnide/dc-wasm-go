@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install wit-bindgen-go from sources
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}/wasm-tools-go"
+mkdir -p target
+go build -o target/wit-bindgen-go ./cmd/wit-bindgen-go
+if [ ! -f "target/wit-bindgen-go" ]; then
+    echo "Failed to build wit-bindgen-go"
+    exit 1
+fi
+cd ../bin
+if [[ "$(readlink -f wit-bindgen-go)" != "../wasm-tools-go/target/wit-bindgen-go" ]]; then
+    rm -f wit-bindgen-go
+fi
+ln -s ../wasm-tools-go/target/wit-bindgen-go wit-bindgen-go

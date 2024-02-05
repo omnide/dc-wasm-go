@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
+# Install cosmo cli from dist release
+
 # Borrowed from the curl-bash install script pattern
 # Modified to just use ./bin instead of ~/.cosmo/bin
 
 set -euo pipefail
+
+this_file=$(realpath "$0")
+workspace=$(dirname "$(dirname "$(dirname $this_file)")")
+cd "${workspace}"
 
 COSMO_BIN_DIR="./bin"
 

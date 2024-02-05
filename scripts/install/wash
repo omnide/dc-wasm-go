@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eEuo pipefail
 
+# Install wash CLI from source
+
 this_file=$(realpath "$0")
 workspace=$(dirname "$(dirname "$(dirname $this_file)")")
 cd "${workspace}/wash"

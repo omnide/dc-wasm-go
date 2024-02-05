@@ -1,0 +1,16 @@
+package omnide:p2all;
+
+world p2all {
+    include wasi:cli/command@0.2.0;
+    include wasi:clocks/imports@0.2.0;
+    include wasi:filesystem/imports@0.2.0;
+    include wasi:filesystem/preopens@0.2.0;
+    include wasi:http/proxy@0.2.0;
+    include wasi:io/streams@0.2.0;
+    include wasi:io/poll@0.2.0;
+    include wasi:io/error@0.2.0;
+    include wasi:random/random@0.2.0;
+    include wasi:random/insecure@0.2.0;
+    include wasi:random/insecure-seed@0.2.0;
+    /// include wasi:sockets;
+}

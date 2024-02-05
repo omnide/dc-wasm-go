@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install wit-deps-cli from github source
+
+cargo install --git https://github.com/bytecodealliance/wit-deps --tag v0.3.5 wit-deps-cli

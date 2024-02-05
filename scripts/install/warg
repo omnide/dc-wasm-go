@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install warg CLI from github sources
+
+cargo install --git https://github.com/bytecodealliance/registry warg-cli
+cargo install --git https://github.com/bytecodealliance/registry warg-server

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -eEuo pipefail
 
+# Install wasm-tools from crates.io
+
 cargo install wasm-tools

@@ -16,11 +16,10 @@
         "PATH": "${containerWorkspaceFolder}/bin:${containerEnv:PATH}"
     },
     "capAdd": [
-        // Required for debugging C++ 😱
+        // Needed for debugging
         "SYS_PTRACE"
     ],
     "securityOpt": [
-        // We're going to need to see and everything...
         "seccomp=unconfined"
     ],
     "customizations": {

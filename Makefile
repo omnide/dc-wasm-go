@@ -27,18 +27,11 @@ define wp2_template
 $$(SAMP_DIR)/tinygo-wasi/$(1):
 	cd $$(SAMP_DIR)/tinygo-wasi/$(1) && wit-deps
 	wit-bindgen tiny-go $$(SAMP_DIR)/tinygo-wasi/$(1)/wit --out-dir $$(SAMP_DIR)/tinygo-wasi/$(1)/pkg
-	tinygo build -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm $$(SAMP_DIR)/tinygo-wasi/$(1)/main.go
-	wasm-tools component embed $$(SAMP_DIR)/tinygo-wasi/$(1)/wit $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm > $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm
-	# wasm-tools component new $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.component.wasm --adapt=wasi
-	wasmtime run $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm 2>/dev/null
+	mkdir -p $$(SAMP_OUT)/tinygo-wasi/$(1)
+	tinygo build -target=wasi -tags purego -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm $$(SAMP_DIR)/tinygo-wasi/$(1)/main.go
+	wasm-tools component embed $$(SAMP_DIR)/tinygo-wasi/$(1)/wit/ -w $(1) $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm
+	wasm-tools component new $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.component.wasm --adapt=$(SAMP_DIR)/lib/wasi_snapshot_preview1.command.wasm
+	wasmtime run -Spreview2=y $$(SAMP_OUT)/tinygo-wasi/$(1)/main.component.wasm 2>/dev/null
 endef
 
 $(foreach samp,$(WASI_SAMPLES),$(eval $(call wp2_template,$(samp))))
-
-# .PHONY: $(P2ALL_DIR)
-# $(P2ALL_DIR): $(P2ALL_OUT)
-# 	cd $(P2ALL_DIR) && wit-deps
-# 	wit-bindgen tiny-go $(P2ALL_DIR)/wit --out-dir $(P2ALL_OUT)
-# 	tinygo build -o $(P2ALL_OUT)/main.wasm $(P2ALL_DIR)/main.go
-# 	wasm2wat $(P2ALL_OUT)/main.wasm -o $(P2ALL_OUT)/main.wat
-# 	wasmtime run $(P2ALL_OUT)/main.wasm 2>/dev/null

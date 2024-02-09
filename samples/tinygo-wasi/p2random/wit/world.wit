@@ -1,0 +1,5 @@
+package omnide:p2random;
+
+world p2random {
+    import wasi:random/random@0.2.0;
+}

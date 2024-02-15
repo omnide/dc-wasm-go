@@ -4,6 +4,7 @@ set -eEuo pipefail
 # Stash some home directory content before rebuild
 test -d .work/stash || { echo "exec only from workspace root"; exit 1; }
 
-echo "Stashing home content to .work/stash/atuin/"
+echo "Stashing home content to .work/stash"
 rsync -avzq --delete ~/.local/share/atuin/ .work/stash/atuin/
-rsync -avzq --delete ~/.gitconfig .work/stash/.gitconfig
+cp -f ~/.gitconfig .work/stash/.gitconfig || true
+rsync -avzq --delete ~/.config/gh/ .work/stash/.config-gh/ || true

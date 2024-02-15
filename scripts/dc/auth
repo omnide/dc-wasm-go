@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+function has_gh_auth {
+    [[ "$(gh auth status)" == *"Logged in to github.com account"*  ]]
+}
+function gh_auth {
+    if ! has_gh_auth; then
+        gh auth login
+    fi
+}

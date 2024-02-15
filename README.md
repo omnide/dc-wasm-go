@@ -108,4 +108,5 @@ Update submodule content and install all project tools.
 ```bash
 git submodule update --init --recursive
 sd install all
+python3 -m pip install -r wasm-testsuite/test-runner/requirements.txt
 ```

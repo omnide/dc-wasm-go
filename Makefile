@@ -6,6 +6,10 @@ MAKEFLAGS += --no-builtin-rules
 BUILD_DIR := build
 SAMP_DIR := samples
 SAMP_OUT := $(BUILD_DIR)/samples
+W2SMP_DIR := $(SAMP_DIR)/tinygo-wasi
+W2_OUT := $(SAMP_OUT)/tinygo-wasi
+WBGSMP_DIR := $(SAMP_DIR)/tinygo-wasi-wbg
+WBG_OUT := $(SAMP_OUT)/tinygo-wasi-wbg
 WASI_SAMPLES := p2fs p2random p2all
 
 
@@ -23,15 +27,44 @@ samples/tinygo-wasi/add: $(SAMP_OUT)
 	wasmtime run --invoke add build/samples/tgwasi-add/main.wasm 20 22 2>/dev/null
 
 define wp2_template
-.PHONY: $$(SAMP_DIR)/tinygo-wasi/$(1)
-$$(SAMP_DIR)/tinygo-wasi/$(1):
-	cd $$(SAMP_DIR)/tinygo-wasi/$(1) && wit-deps
-	wit-bindgen tiny-go $$(SAMP_DIR)/tinygo-wasi/$(1)/wit --out-dir $$(SAMP_DIR)/tinygo-wasi/$(1)/pkg
-	mkdir -p $$(SAMP_OUT)/tinygo-wasi/$(1)
-	tinygo build -target=wasi -tags purego -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm $$(SAMP_DIR)/tinygo-wasi/$(1)/main.go
-	wasm-tools component embed $$(SAMP_DIR)/tinygo-wasi/$(1)/wit/ -w $(1) $$(SAMP_OUT)/tinygo-wasi/$(1)/main.wasm -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm
-	wasm-tools component new $$(SAMP_OUT)/tinygo-wasi/$(1)/main.embed.wasm -o $$(SAMP_OUT)/tinygo-wasi/$(1)/main.component.wasm --adapt=$(SAMP_DIR)/lib/wasi_snapshot_preview1.command.wasm
-	wasmtime run -Spreview2=y $$(SAMP_OUT)/tinygo-wasi/$(1)/main.component.wasm 2>/dev/null
+.PHONY: $$(W2SMP_DIR)/$(1)
+$$(W2SMP_DIR)/$(1):
+	cd $$(W2SMP_DIR)/$(1) && wit-deps
+	wit-bindgen tiny-go $$(W2SMP_DIR)/$(1)/wit --out-dir $$(W2SMP_DIR)/$(1)/pkg
+	mkdir -p $$(W2_OUT)/$(1)
+	tinygo build -target=wasi -tags purego \
+		-no-debug \
+		-o $$(W2_OUT)/$(1)/main.wasm \
+		$$(W2SMP_DIR)/$(1)/main.go
+	wasm-tools component embed $$(W2SMP_DIR)/$(1)/wit/ -w $(1) $$(W2_OUT)/$(1)/main.wasm -o $$(W2_OUT)/$(1)/main.embed.wasm
+	wasm-tools component new $$(W2_OUT)/$(1)/main.embed.wasm -o $$(W2_OUT)/$(1)/main.component.wasm --adapt=$(SAMP_DIR)/lib/wasi_snapshot_preview1.command.wasm
+	wasmtime run $$(W2_OUT)/$(1)/main.component.wasm -Spreview2=y 2>/dev/null
 endef
-
 $(foreach samp,$(WASI_SAMPLES),$(eval $(call wp2_template,$(samp))))
+
+define wbg_template
+.PHONY: $$(WBGSMP_DIR)/$(1)
+$$(WBGSMP_DIR)/$(1):
+	mkdir -p $$(WBGSMP_DIR)/$(1)/gopkg
+	cd $$(WBGSMP_DIR)/$(1) && wit-deps
+	wasm-tools component wit -j $$(WBGSMP_DIR)/$(1)/wit > $$(WBGSMP_DIR)/$(1)/wit/world.json
+
+	# wit-bindgen-go currently runs from the directory of the go.mod file
+	# so we need to change to that directory and ensure there is a go.mod file
+	cd $$(WBGSMP_DIR)/$(1) && \
+		cat wit/world.json | \
+		wit-bindgen-go generate
+
+	mkdir -p $$(WBG_OUT)/$(1)
+	cd $$(WBGSMP_DIR)/$(1) && \
+	tinygo build -target=wasi -tags purego \
+		-no-debug \
+		-o ../../../$$(WBG_OUT)/$(1)/main.wasm \
+		main.go
+
+	wasm-tools component embed $$(WBGSMP_DIR)/$(1)/wit/ -w $(1) $$(WBG_OUT)/$(1)/main.wasm -o $$(WBG_OUT)/$(1)/main.embed.wasm
+	wasm-tools component new $$(WBG_OUT)/$(1)/main.embed.wasm -o $$(WBG_OUT)/$(1)/main.component.wasm --adapt=$(SAMP_DIR)/lib/wasi_snapshot_preview1.command.wasm
+
+	wasmtime run $$(WBG_OUT)/$(1)/main.component.wasm -Spreview2=y 2>/dev/null
+endef
+$(foreach samp,$(WASI_SAMPLES),$(eval $(call wbg_template,$(samp))))

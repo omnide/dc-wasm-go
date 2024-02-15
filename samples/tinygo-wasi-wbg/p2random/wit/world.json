@@ -1,0 +1,178 @@
+{
+  "worlds": [
+    {
+      "name": "imports",
+      "imports": {
+        "interface-2": {
+          "interface": 2
+        },
+        "interface-1": {
+          "interface": 1
+        },
+        "interface-0": {
+          "interface": 0
+        }
+      },
+      "exports": {},
+      "package": 0
+    },
+    {
+      "name": "p2random",
+      "imports": {
+        "interface-2": {
+          "interface": 2
+        }
+      },
+      "exports": {},
+      "package": 1
+    }
+  ],
+  "interfaces": [
+    {
+      "name": "insecure-seed",
+      "types": {},
+      "functions": {
+        "insecure-seed": {
+          "name": "insecure-seed",
+          "kind": "freestanding",
+          "params": [],
+          "results": [
+            {
+              "type": 0
+            }
+          ],
+          "docs": {
+            "contents": "Return a 128-bit value that may contain a pseudo-random value.\n\nThe returned value is not required to be computed from a CSPRNG, and may\neven be entirely deterministic. Host implementations are encouraged to\nprovide pseudo-random values to any program exposed to\nattacker-controlled content, to enable DoS protection built into many\nlanguages' hash-map implementations.\n\nThis function is intended to only be called once, by a source language\nto initialize Denial Of Service (DoS) protection in its hash-map\nimplementation.\n\n# Expected future evolution\n\nThis will likely be changed to a value import, to prevent it from being\ncalled multiple times and potentially used for purposes other than DoS\nprotection."
+          }
+        }
+      },
+      "docs": {
+        "contents": "The insecure-seed interface for seeding hash-map DoS resistance.\n\nIt is intended to be portable at least between Unix-family platforms and\nWindows."
+      },
+      "package": 0
+    },
+    {
+      "name": "insecure",
+      "types": {},
+      "functions": {
+        "get-insecure-random-bytes": {
+          "name": "get-insecure-random-bytes",
+          "kind": "freestanding",
+          "params": [
+            {
+              "name": "len",
+              "type": "u64"
+            }
+          ],
+          "results": [
+            {
+              "type": 1
+            }
+          ],
+          "docs": {
+            "contents": "Return `len` insecure pseudo-random bytes.\n\nThis function is not cryptographically secure. Do not use it for\nanything related to security.\n\nThere are no requirements on the values of the returned bytes, however\nimplementations are encouraged to return evenly distributed values with\na long period."
+          }
+        },
+        "get-insecure-random-u64": {
+          "name": "get-insecure-random-u64",
+          "kind": "freestanding",
+          "params": [],
+          "results": [
+            {
+              "type": "u64"
+            }
+          ],
+          "docs": {
+            "contents": "Return an insecure pseudo-random `u64` value.\n\nThis function returns the same type of pseudo-random data as\n`get-insecure-random-bytes`, represented as a `u64`."
+          }
+        }
+      },
+      "docs": {
+        "contents": "The insecure interface for insecure pseudo-random numbers.\n\nIt is intended to be portable at least between Unix-family platforms and\nWindows."
+      },
+      "package": 0
+    },
+    {
+      "name": "random",
+      "types": {},
+      "functions": {
+        "get-random-bytes": {
+          "name": "get-random-bytes",
+          "kind": "freestanding",
+          "params": [
+            {
+              "name": "len",
+              "type": "u64"
+            }
+          ],
+          "results": [
+            {
+              "type": 1
+            }
+          ],
+          "docs": {
+            "contents": "Return `len` cryptographically-secure random or pseudo-random bytes.\n\nThis function must produce data at least as cryptographically secure and\nfast as an adequately seeded cryptographically-secure pseudo-random\nnumber generator (CSPRNG). It must not block, from the perspective of\nthe calling program, under any circumstances, including on the first\nrequest and on requests for numbers of bytes. The returned data must\nalways be unpredictable.\n\nThis function must always return fresh data. Deterministic environments\nmust omit this function, rather than implementing it with deterministic\ndata."
+          }
+        },
+        "get-random-u64": {
+          "name": "get-random-u64",
+          "kind": "freestanding",
+          "params": [],
+          "results": [
+            {
+              "type": "u64"
+            }
+          ],
+          "docs": {
+            "contents": "Return a cryptographically-secure random or pseudo-random `u64` value.\n\nThis function returns the same type of data as `get-random-bytes`,\nrepresented as a `u64`."
+          }
+        }
+      },
+      "docs": {
+        "contents": "WASI Random is a random data API.\n\nIt is intended to be portable at least between Unix-family platforms and\nWindows."
+      },
+      "package": 0
+    }
+  ],
+  "types": [
+    {
+      "name": null,
+      "kind": {
+        "tuple": {
+          "types": [
+            "u64",
+            "u64"
+          ]
+        }
+      },
+      "owner": null
+    },
+    {
+      "name": null,
+      "kind": {
+        "list": "u8"
+      },
+      "owner": null
+    }
+  ],
+  "packages": [
+    {
+      "name": "wasi:random@0.2.0",
+      "interfaces": {
+        "insecure-seed": 0,
+        "insecure": 1,
+        "random": 2
+      },
+      "worlds": {
+        "imports": 0
+      }
+    },
+    {
+      "name": "omnide:p2random",
+      "interfaces": {},
+      "worlds": {
+        "p2random": 1
+      }
+    }
+  ]
+}

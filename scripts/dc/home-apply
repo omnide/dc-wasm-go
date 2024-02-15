@@ -6,4 +6,5 @@ echo "Applying stash from .work/stash/"
 test -d .work/stash || { echo "exec only from workspace root"; exit 1; }
 
 rsync -avzq --delete .work/stash/atuin/ ~/.local/share/atuin/
-rsync -avzq --delete .work/stash/.gitconfig ~/.gitconfig
+cp -f .work/stash/.gitconfig ~/.gitconfig  || true
+rsync -avzq --delete .work/stash/.config-gh/ ~/.config/gh/ || true

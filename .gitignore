@@ -21,10 +21,9 @@
 *.cover
 
 # Build output
-bin/
-build/
+bin/*
+build/*
 
-# Local scratch/cache
-.work/
+# Scratch space
+.work/*
 !.work/stash/.gitkeep
-

@@ -6,6 +6,9 @@ Topics for working on MacOS with devcontainers and vscode.
 
 ### MacOS VSCode GPG Setup
 
+NOTE: the with combination of rancher-desktop, vscode, devcontainers and the Mac Host, this doesn't
+appear to be enough.
+
 On host:
 
 ```sh
@@ -15,7 +18,3 @@ echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.
 echo "use-agent" >> ~/.gnupg/gpg.conf
 echo 'export GPG_TTY=$(tty)' >> ~/.bash_profile # replace with ~/.zprofile if using ZSH
 ```
-
-In DC, make sure gpg is install (it almost always is already).
-
-

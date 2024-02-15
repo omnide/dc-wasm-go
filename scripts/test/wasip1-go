@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+pushd wasi-testsuite/tests/go >/dev/null
+./build.sh
+popd >/dev/null
+
+# TODO: why are these failing? should they be failing? the latest action runs from the wasi-testsuite github repo
+# has 7/45 tests failing, but locally I see 8/45 failing
+cat << EOF > /tmp/skip-go.json
+{
+    "WASI Rust tests": {
+        "path_link": "creating a link to a dangling symlink should succeed, but NOENT instead, rc=134",
+        "renumber": "fd_renumber should not allow renumbering to invalid destination file descriptors, rc=134",
+        "path_filestat": "open file, Not supported, or operation not supported on socket, rc=134",
+        "fd_advise": "alloc size, Not supported, or operation not supported on socket, rc=134",
+        "remove_directory_trailing_slashes": "INVALID ARGUMENT, rc=134",
+        "fd_fdstat_set_rights": "failed: base rights should not have FD_READ | FD_WRITE",
+        "file_allocate": "NOTSUP, Not supported, or operation not supported on socket.",
+        "truncation_rights": "failed: directories shouldn't have the fd_filestat_set_size right"
+    }
+}
+EOF
+
+pushd wasi-testsuite >/dev/null
+TEST_RUNTIME_EXE="wasmtime -Spreview2=y" \
+    python3 test-runner/wasi_test_runner.py \
+    -t ./tests/go/testsuite/ \
+    -r adapters/wasmtime.py \
+    --exclude-filter /tmp/skip-go.json 
+popd >/dev/null

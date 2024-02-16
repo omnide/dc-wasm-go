@@ -4,6 +4,7 @@ set -eEuo pipefail
 declare -a tools=(
     # group, tool, version option, transform
     "cpp cmake --version h1c3"
+    "cpp clang --version h1c4"
     "cpp g++ --version h1c4"
     "cpp gcc --version h1c4"
     "cpp make --version h1c3"

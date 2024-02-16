@@ -68,3 +68,11 @@ $$(WBGSMP_DIR)/$(1):
 	wasmtime run $$(WBG_OUT)/$(1)/main.component.wasm -Spreview2=y 2>/dev/null
 endef
 $(foreach samp,$(WASI_SAMPLES),$(eval $(call wbg_template,$(samp))))
+
+.PHONY: wasip2-test
+wasip2-test:
+	mkdir -p build/samples/wasip2-test
+	tinygo build -target=wasip2 -x -o build/samples/wasip2-test/main.wasm ./samples/wasip2-test
+	wasm-tools component embed -w wasi:cli/command $$(tinygo env TINYGOROOT)/lib/wasi-cli/wit/ build/samples/wasip2-test/main.wasm -o build/samples/wasip2-test/embedded.wasm
+	wasm-tools component new build/samples/wasip2-test/embedded.wasm -o build/samples/wasip2-test/component.wasm
+	wasmtime run --wasm component-model --env PWD --env USER --dir=. --dir=/tmp build/samples/wasip2-test/component.wasm ./LICENSE

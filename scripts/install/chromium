@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install chromium browser from debian repository
+
+sudo apt update
+sudo apt install chromium -y
+chromium --version

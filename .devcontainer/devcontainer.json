@@ -7,6 +7,9 @@
         "dockerfile": "Dockerfile"
     },
     "containerEnv": {
+        // "DISPLAY": "unix:0",
+        // "DISPLAY": "host.docker.internal:0",
+        "DISPLAY": "host.lima.internal:0",
         "EDITOR": "code --wait",
         "SD_ROOT": "${containerWorkspaceFolder}/scripts",
         "SD_EDITOR": "code --wait",
@@ -22,6 +25,9 @@
     "securityOpt": [
         "seccomp=unconfined"
     ],
+    // "mounts": [
+    //     "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+    // ],
     "customizations": {
         "vscode": {
             "settings": {
@@ -118,6 +124,7 @@
                 "chrischinchilla.vale-vscode",
                 "christian-kohler.path-intellisense",
                 "DavidAnson.vscode-markdownlint",
+                "dlech.chmod",
                 "eamodio.gitlens",
                 "esbenp.prettier-vscode",
                 "github.copilot",

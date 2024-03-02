@@ -1,7 +1,7 @@
 package main
 
 import (
-	p2fs "github.com/omnide/dc-wasm-go/samples/tinygo-wasi/p2fs/pkg"
+	p2fs "github.com/omnide/dc-wasm-go/ex/tinygo-wasi/p2fs/pkg"
 )
 
 type TypeDescriptor = p2fs.WasiFilesystem0_2_0_TypesDescriptor

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	p2random "github.com/omnide/dc-wasm-go/samples/tinygo-wasi/p2random/pkg"
+	p2random "github.com/omnide/dc-wasm-go/ex/tinygo-wasi/p2random/pkg"
 )
 
 //go:generate wit-bindgen tiny-go wit --out-dir=pkg

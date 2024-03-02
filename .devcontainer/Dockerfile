@@ -17,6 +17,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     gdb-multiarch \
     openocd \
     gcc-arm-linux-gnueabihf \
+    net-tools \
+    dnsutils \
     && apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 ARG HOME=/home/vscode

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="68" failures="6" errors="0" time="8.199775">
+	<testsuite tests="68" failures="6" time="0.000000" name="sync/atomic" timestamp="2024-03-11T01:45:10Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="sync/atomic" name="TestStoreLoadSeqCst32" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestStoreLoadSeqCst32&#xA;    Skipping test on 1 processor machine&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestStoreLoadSeqCst32 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestStoreLoadSeqCst64" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestStoreLoadSeqCst64&#xA;    Skipping test on 1 processor machine&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestStoreLoadSeqCst64 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestStoreLoadRelAcq32" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestStoreLoadRelAcq32&#xA;    Skipping test on 1 processor machine&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestStoreLoadRelAcq32 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestStoreLoadRelAcq64" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestStoreLoadRelAcq64&#xA;    Skipping test on 1 processor machine&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestStoreLoadRelAcq64 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestUnaligned64" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestUnaligned64&#xA;    test only runs on 32-bit systems&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    LoadUint64 did not panic&#xA;    LoadUint64Method did not panic&#xA;    StoreUint64 did not panic&#xA;    StoreUint64Method did not panic&#xA;    CompareAndSwapUint64 did not panic&#xA;    CompareAndSwapUint64Method did not panic&#xA;    AddUint64 did not panic&#xA;    AddUint64Method did not panic&#xA;--- FAIL: TestUnaligned64 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestNilDeref" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestNilDeref&#xA;</failure>
+		</testcase>
+		<testcase classname="sync/atomic" name="TestSwapInt32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapInt32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUint32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUint32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapInt64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapInt64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUint64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUint64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUintptr" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapUintptrMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapPointer" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestSwapPointerMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddInt32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddInt32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUint32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUint32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddInt64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddInt64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUint64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUint64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUintptr" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAddUintptrMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapInt32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapInt32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUint32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUint32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapInt64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapInt64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUint64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUint64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUintptr" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapUintptrMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapPointer" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestCompareAndSwapPointerMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadInt32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadInt32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUint32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUint32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadInt64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadInt64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUint64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUint64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUintptr" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadUintptrMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadPointer" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestLoadPointerMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreInt32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreInt32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUint32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUint32Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreInt64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreInt64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUint64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUint64Method" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUintptr" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStoreUintptrMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStorePointer" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestStorePointerMethod" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestHammer32" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestHammer64" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestHammerStoreLoad" time="0.000000"></testcase>
+		<testcase classname="sync/atomic" name="TestAutoAligned64" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

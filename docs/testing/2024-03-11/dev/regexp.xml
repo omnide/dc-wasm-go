@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="14" failures="1" errors="0" time="14.392604">
+	<testsuite tests="14" failures="1" time="0.000000" name="regexp" timestamp="2024-03-11T01:45:03Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="regexp" name="TestOnePassCutoff" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOnePassCutoff&#xA;</failure>
+		</testcase>
+		<testcase classname="regexp" name="TestGoodCompile" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestBadCompile" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestMatch" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestMatchFunction" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestCopyMatch" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestReplaceAll" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestReplaceAllLiteral" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestReplaceAllFunc" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestQuoteMeta" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestLiteralPrefix" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestSubexp" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestSplit" time="0.000000"></testcase>
+		<testcase classname="regexp" name="TestParseAndCompile" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

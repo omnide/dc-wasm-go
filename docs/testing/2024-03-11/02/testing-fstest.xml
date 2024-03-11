@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="1" errors="0" time="15.083448">
+	<testsuite tests="5" failures="1" time="0.000000" name="testing/fstest" timestamp="2024-03-11T02:06:28Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="testing/fstest" name="TestSymlink" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestSymlink&#xA;    TestFS found errors:&#xA;        .: diff first Open+ReadDir(-1) vs second Open+ReadDir(-1):&#xA;        &#x9;+ hello IsDir=false Type=----------&#xA;        &#x9;+ hello.link IsDir=false Type=L---------&#xA;        .: diff first Open+ReadDir(-1) vs third Open+ReadDir(1,2) loop:&#xA;        &#x9;+ hello IsDir=false Type=----------&#xA;        &#x9;+ hello.link IsDir=false Type=L---------&#xA;        .: diff first Open+ReadDir(-1) vs fs.ReadDir:&#xA;        &#x9;+ hello IsDir=false Type=----------&#xA;        &#x9;+ hello.link IsDir=false Type=L---------&#xA;        expected but not found: hello&#xA;        expected but not found: hello.link&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestSymlink (0.01s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink142146521: errno 52&#xA;</failure>
+		</testcase>
+		<testcase classname="testing/fstest" name="TestMapFS" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestMapFSChmodDot" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestDash" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestShuffledFS" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

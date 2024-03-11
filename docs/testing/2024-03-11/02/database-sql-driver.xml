@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" time="9.309676">
+	<testsuite tests="1" failures="0" time="0.000000" name="database/sql/driver" timestamp="2024-03-11T02:04:01Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="database/sql/driver" name="TestValueConverters" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

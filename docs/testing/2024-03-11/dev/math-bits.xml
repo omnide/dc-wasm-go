@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="21" failures="5" errors="0" time="7.903883">
+	<testsuite tests="21" failures="5" time="0.000000" name="math/bits" timestamp="2024-03-11T01:44:39Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="math/bits" name="TestDivPanicOverflow" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDivPanicOverflow&#xA;    Div should have panicked when y&lt;=hi&#xA;--- FAIL: TestDivPanicOverflow (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/bits" name="TestDiv32PanicOverflow" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDiv32PanicOverflow&#xA;    Div32 should have panicked when y&lt;=hi&#xA;--- FAIL: TestDiv32PanicOverflow (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/bits" name="TestDiv64PanicOverflow" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDiv64PanicOverflow&#xA;    Div64 should have panicked when y&lt;=hi&#xA;--- FAIL: TestDiv64PanicOverflow (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/bits" name="TestDivPanicZero" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDivPanicZero&#xA;    Div should have panicked when y==0&#xA;--- FAIL: TestDivPanicZero (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/bits" name="TestDiv32PanicZero" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDiv32PanicZero&#xA;panic: runtime error at 0x0000000000229298: divide by zero&#xA;</failure>
+		</testcase>
+		<testcase classname="math/bits" name="TestUintSize" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestLeadingZeros" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestTrailingZeros" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestOnesCount" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestRotateLeft" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestReverse" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestReverseBytes" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestLen" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestAddSubUint" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestAddSubUint32" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestAddSubUint64" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestAdd64OverflowPanic" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestSub64OverflowPanic" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestMulDiv" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestMulDiv32" time="0.000000"></testcase>
+		<testcase classname="math/bits" name="TestMulDiv64" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

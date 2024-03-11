@@ -119,7 +119,7 @@ tinygo-wasip2-test-all: $(XUNIT_FILES_WP2)
 	@jrm $(PATH_WP2)-merged-xunit.xml $(XUNIT_FILES_WP2)
 	sd test patch-xunit-classnames --xunit $(PATH_WP2)-merged-xunit.xml
 	junit2html $(PATH_WP2)-merged-xunit.xml $(PATH_WP2)-merged-xunit.html
-	junit2html --summary-matrix $(PATH_WP2)-merged-xunit.xml
+	junit2html $(PATH_WP2)-merged-xunit.xml --report-matrix $(PATH_WP2)-matrix.html
 	sd test tinygo-pkg-report --xunit $(PATH_WP2)-merged-xunit.xml --out $(PATH_WP2)-status.json
 
 define run_dev_test

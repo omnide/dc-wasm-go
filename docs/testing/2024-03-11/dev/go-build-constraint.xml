@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="81" failures="0" errors="0" time="3.045501">
+	<testsuite tests="81" failures="0" time="0.000000" name="go/build/constraint" timestamp="2024-03-11T01:41:59Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/build/constraint" name="TestExprString" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestLex" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestParseExpr" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestParseError" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestExprEval" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestParsePlusBuildExpr" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestParse" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestPlusBuildLines" time="0.000000"></testcase>
+		<testcase classname="go/build/constraint" name="TestGoVersion" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

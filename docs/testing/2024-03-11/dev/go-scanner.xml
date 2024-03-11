@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" errors="0" time="3.499139">
+	<testsuite tests="11" failures="0" time="0.000000" name="go/scanner" timestamp="2024-03-11T01:42:43Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/scanner" name="TestScan" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestStripCR" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestSemicolons" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestLineDirectives" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestInvalidLineDirectives" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestInit" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestStdErrorHandler" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestScanErrors" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestIssue10213" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestIssue28112" time="0.000000"></testcase>
+		<testcase classname="go/scanner" name="TestNumbers" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="11.345919">
+	<testsuite tests="0" failures="0" time="0.000000" name="math/rand/v2" timestamp="2024-03-11T01:44:47Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2554141732/main /tmp/tinygo2554141732/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;ld.lld: error: undefined symbol: internal/chacha8rand.block&#xA;&gt;&gt;&gt; referenced by chacha8.go:63 (/usr/local/go/src/internal/chacha8rand/chacha8.go:63)&#xA;&gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:((*internal/chacha8rand.State).Init)&#xA;&gt;&gt;&gt; referenced by chacha8.go:88 (/usr/local/go/src/internal/chacha8rand/chacha8.go:88)&#xA;&gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:((*math/rand/v2.ChaCha8).Uint64)&#xA;&gt;&gt;&gt; referenced by chacha8.go:150 (/usr/local/go/src/internal/chacha8rand/chacha8.go:150)&#xA;&gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:(math/rand/v2_test.TestChaCha8Marshal)&#xA;failed to run tool: ld.lld&#xA;FAIL&#x9;math/rand/v2&#x9;0.000s&#xA;error: failed to link /tmp/tinygo2554141732/main: exit status 1&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

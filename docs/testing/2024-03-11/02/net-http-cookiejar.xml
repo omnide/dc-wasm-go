@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="0" errors="0" time="0.157215">
+	<testsuite tests="0" failures="0" time="0.000000" name="net/http/cookiejar" timestamp="2024-03-11T02:05:41Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+	</testsuite>
+</testsuites>

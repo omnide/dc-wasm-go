@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="9" failures="1" errors="0" time="4.487798">
+	<testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-03-11T01:43:59Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="image/draw" name="TestSqDiff" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSqDiff&#xA;panic: unimplemented: (reflect.Type).NumIn()&#xA;</failure>
+		</testcase>
+		<testcase classname="image/draw" name="TestClip" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDraw" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDrawOverlap" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestNonZeroSrcPt" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestFill" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDrawSrcNonpremultiplied" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestFloydSteinbergCheckerboard" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestPaletted" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

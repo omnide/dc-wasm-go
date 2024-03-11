@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="19" failures="0" errors="0" time="7.992557">
+	<testsuite tests="19" failures="0" time="0.000000" name="sync" timestamp="2024-03-11T01:45:10Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="sync" name="TestCondSignal" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestCondBroadcast" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestCondUnlockNotify" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestMapLoadAndDelete" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestMutex" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestMutexUncontended" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestMutexConcurrent" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestRWMutexUncontended" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestRWMutexWriteToRead" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestRWMutexReadToWrite" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestOnceUncontended" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestOnceConcurrent" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestOnceFunc" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestOnceValue" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestOnceValues" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestPool" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestPool_noNew" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestWaitGroupUncontended" time="0.000000"></testcase>
+		<testcase classname="sync" name="TestWaitGroup" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

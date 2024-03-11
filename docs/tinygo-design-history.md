@@ -23,3 +23,10 @@ From [BA SIG-GL-Go Minutes](https://docs.google.com/document/d/1QPnHQSaLX8gPDzcW
 > - Expect more enhancements when implementing the component model cabi.
 
 Linked
+
+## 24-3-3
+
+Randy suggested adding some alternative golang implementations of math functions currently provided by libc for most
+targets in [pr4169](https://github.com/tinygo-org/tinygo/pull/4169).  Ayke: "I'm working on a math-only version of wasi-libc"
+
+New 'wasmbuiltins' math only libc:  [pr4176](https://github.com/tinygo-org/tinygo/pull/4176/files).

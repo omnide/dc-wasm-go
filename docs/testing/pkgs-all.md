@@ -11,181 +11,184 @@ Note that the fact tests built and passed, does not mean that all functions and 
 
 ## Legend
 
+
 Icon | Description |
---- | --- |
-<span style="color: green">✔</span> | Tests pass |
-<span style="color: red">✗</span> | Build error |
-<span style="color: yellow">∅</span> | No tests |
-<span style="color: orange">⛆</span> | Test failures |
+ --- | --- |
+🟢 | Tests pass |
+❌ | Build error |
+🫥 | No tests |
+⛈️ | Test failures |
+&nbsp; | (blank) Packaged skipped |
+
 
 ## Summary
 
 Package | Status | Tests | Failures | Status | Tests | Failures |
 --- | --- | --- | --- | --- | --- | --- |
 &nbsp; | linux/arm64 ||| wasip2/wasm |||
-archive/tar |[<span style="color: red">✗</span>](#archivetar-linuxarm64) | 0 | [1](#archivetar-linuxarm64) |[<span style="color: red">✗</span>](#archivetar-wasip2wasm) | 0 | [1](#archivetar-wasip2wasm) |
-archive/zip |<span style="color: yellow">∅</span> | 0 | 0 |&nbsp; | &nbsp; | &nbsp; |
-bufio |[<span style="color: orange">⛆</span>](#bufio-linuxarm64) | 81 | [1](#bufio-linuxarm64) |[<span style="color: orange">⛆</span>](#bufio-wasip2wasm) | 42 | [2](#bufio-wasip2wasm) |
-bytes |<span style="color: green">✔</span> | 91 | 0 |[<span style="color: orange">⛆</span>](#bytes-wasip2wasm) | 1 | [1](#bytes-wasip2wasm) |
-cmp |<span style="color: green">✔</span> | 4 | 0 |<span style="color: green">✔</span> | 4 | 0 |
-compress/bzip2 |<span style="color: green">✔</span> | 4 | 0 |<span style="color: green">✔</span> | 4 | 0 |
-compress/flate |<span style="color: green">✔</span> | 64 | 0 |[<span style="color: orange">⛆</span>](#compressflate-wasip2wasm) | 24 | [2](#compressflate-wasip2wasm) |
-compress/gzip |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-compress/lzw |<span style="color: green">✔</span> | 17 | 0 |<span style="color: green">✔</span> | 17 | 0 |
-compress/zlib |<span style="color: green">✔</span> | 6 | 0 |<span style="color: green">✔</span> | 6 | 0 |
-container/heap |<span style="color: green">✔</span> | 7 | 0 |<span style="color: green">✔</span> | 7 | 0 |
-container/list |<span style="color: green">✔</span> | 10 | 0 |<span style="color: green">✔</span> | 10 | 0 |
-container/ring |<span style="color: green">✔</span> | 8 | 0 |<span style="color: green">✔</span> | 8 | 0 |
-context |[<span style="color: red">✗</span>](#context-linuxarm64) | 0 | [1](#context-linuxarm64) |[<span style="color: red">✗</span>](#context-wasip2wasm) | 0 | [1](#context-wasip2wasm) |
-crypto |[<span style="color: red">✗</span>](#crypto-linuxarm64) | 0 | [1](#crypto-linuxarm64) |[<span style="color: orange">⛆</span>](#crypto-wasip2wasm) | 1 | [1](#crypto-wasip2wasm) |
-crypto/aes |[<span style="color: red">✗</span>](#cryptoaes-linuxarm64) | 0 | [1](#cryptoaes-linuxarm64) |[<span style="color: orange">⛆</span>](#cryptoaes-wasip2wasm) | 9 | [1](#cryptoaes-wasip2wasm) |
-crypto/cipher |[<span style="color: red">✗</span>](#cryptocipher-linuxarm64) | 0 | [1](#cryptocipher-linuxarm64) |[<span style="color: orange">⛆</span>](#cryptocipher-wasip2wasm) | 5 | [1](#cryptocipher-wasip2wasm) |
-crypto/des |<span style="color: green">✔</span> | 18 | 0 |<span style="color: green">✔</span> | 18 | 0 |
-crypto/dsa |<span style="color: green">✔</span> | 4 | 0 |[<span style="color: red">✗</span>](#cryptodsa-wasip2wasm) | 0 | [1](#cryptodsa-wasip2wasm) |
-crypto/ecdh |[<span style="color: red">✗</span>](#cryptoecdh-linuxarm64) | 0 | [1](#cryptoecdh-linuxarm64) |[<span style="color: red">✗</span>](#cryptoecdh-wasip2wasm) | 0 | [1](#cryptoecdh-wasip2wasm) |
-crypto/ecdsa |[<span style="color: red">✗</span>](#cryptoecdsa-linuxarm64) | 0 | [1](#cryptoecdsa-linuxarm64) |[<span style="color: red">✗</span>](#cryptoecdsa-wasip2wasm) | 0 | [1](#cryptoecdsa-wasip2wasm) |
-crypto/ed25519 |[<span style="color: orange">⛆</span>](#cryptoed25519-linuxarm64) | 9 | [1](#cryptoed25519-linuxarm64) |[<span style="color: red">✗</span>](#cryptoed25519-wasip2wasm) | 0 | [1](#cryptoed25519-wasip2wasm) |
-crypto/elliptic |[<span style="color: red">✗</span>](#cryptoelliptic-linuxarm64) | 0 | [1](#cryptoelliptic-linuxarm64) |[<span style="color: red">✗</span>](#cryptoelliptic-wasip2wasm) | 0 | [1](#cryptoelliptic-wasip2wasm) |
-crypto/hmac |<span style="color: green">✔</span> | 4 | 0 |[<span style="color: orange">⛆</span>](#cryptohmac-wasip2wasm) | 2 | [1](#cryptohmac-wasip2wasm) |
-crypto/md5 |<span style="color: green">✔</span> | 6 | 0 |<span style="color: green">✔</span> | 6 | 0 |
-crypto/rand |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-crypto/rc4 |<span style="color: green">✔</span> | 2 | 0 |<span style="color: green">✔</span> | 2 | 0 |
-crypto/rsa |[<span style="color: red">✗</span>](#cryptorsa-linuxarm64) | 0 | [1](#cryptorsa-linuxarm64) |[<span style="color: red">✗</span>](#cryptorsa-wasip2wasm) | 0 | [1](#cryptorsa-wasip2wasm) |
-crypto/sha1 |<span style="color: green">✔</span> | 7 | 0 |<span style="color: green">✔</span> | 7 | 0 |
-crypto/sha256 |<span style="color: green">✔</span> | 11 | 0 |<span style="color: green">✔</span> | 11 | 0 |
-crypto/sha512 |<span style="color: green">✔</span> | 12 | 0 |<span style="color: green">✔</span> | 12 | 0 |
-crypto/subtle |[<span style="color: orange">⛆</span>](#cryptosubtle-linuxarm64) | 2 | [1](#cryptosubtle-linuxarm64) |[<span style="color: orange">⛆</span>](#cryptosubtle-wasip2wasm) | 2 | [1](#cryptosubtle-wasip2wasm) |
-crypto/tls |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-crypto/x509 |[<span style="color: red">✗</span>](#cryptox509-linuxarm64) | 0 | [1](#cryptox509-linuxarm64) |[<span style="color: red">✗</span>](#cryptox509-wasip2wasm) | 0 | [1](#cryptox509-wasip2wasm) |
-crypto/x509/pkix |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-database/sql |[<span style="color: red">✗</span>](#databasesql-linuxarm64) | 0 | [1](#databasesql-linuxarm64) |[<span style="color: red">✗</span>](#databasesql-wasip2wasm) | 0 | [1](#databasesql-wasip2wasm) |
-database/sql/driver |<span style="color: green">✔</span> | 1 | 0 |<span style="color: green">✔</span> | 1 | 0 |
-debug/buildinfo |[<span style="color: red">✗</span>](#debugbuildinfo-linuxarm64) | 0 | [1](#debugbuildinfo-linuxarm64) |[<span style="color: red">✗</span>](#debugbuildinfo-wasip2wasm) | 0 | [1](#debugbuildinfo-wasip2wasm) |
-debug/dwarf |<span style="color: green">✔</span> | 40 | 0 |<span style="color: green">✔</span> | 29 | 0 |
-debug/elf |[<span style="color: red">✗</span>](#debugelf-linuxarm64) | 0 | [1](#debugelf-linuxarm64) |[<span style="color: red">✗</span>](#debugelf-wasip2wasm) | 0 | [1](#debugelf-wasip2wasm) |
-debug/gosym |[<span style="color: orange">⛆</span>](#debuggosym-linuxarm64) | 1 | [1](#debuggosym-linuxarm64) |[<span style="color: red">✗</span>](#debuggosym-wasip2wasm) | 0 | [1](#debuggosym-wasip2wasm) |
-debug/macho |<span style="color: green">✔</span> | 7 | 0 |<span style="color: green">✔</span> | 7 | 0 |
-debug/pe |[<span style="color: orange">⛆</span>](#debugpe-linuxarm64) | 1 | [1](#debugpe-linuxarm64) |[<span style="color: red">✗</span>](#debugpe-wasip2wasm) | 0 | [1](#debugpe-wasip2wasm) |
-debug/plan9obj |<span style="color: green">✔</span> | 2 | 0 |<span style="color: green">✔</span> | 2 | 0 |
-embed |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-encoding |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-encoding/ascii85 |<span style="color: green">✔</span> | 9 | 0 |<span style="color: green">✔</span> | 9 | 0 |
-encoding/asn1 |<span style="color: green">✔</span> | 38 | 0 |[<span style="color: red">✗</span>](#encodingasn1-wasip2wasm) | 0 | [1](#encodingasn1-wasip2wasm) |
-encoding/base32 |<span style="color: green">✔</span> | 24 | 0 |<span style="color: green">✔</span> | 24 | 0 |
-encoding/base64 |<span style="color: green">✔</span> | 17 | 0 |<span style="color: green">✔</span> | 17 | 0 |
-encoding/binary |[<span style="color: orange">⛆</span>](#encodingbinary-linuxarm64) | 20 | [1](#encodingbinary-linuxarm64) |[<span style="color: orange">⛆</span>](#encodingbinary-wasip2wasm) | 16 | [1](#encodingbinary-wasip2wasm) |
-encoding/csv |<span style="color: green">✔</span> | 71 | 0 |<span style="color: green">✔</span> | 71 | 0 |
-encoding/gob |[<span style="color: red">✗</span>](#encodinggob-linuxarm64) | 0 | [1](#encodinggob-linuxarm64) |[<span style="color: red">✗</span>](#encodinggob-wasip2wasm) | 0 | [1](#encodinggob-wasip2wasm) |
-encoding/hex |<span style="color: green">✔</span> | 12 | 0 |<span style="color: green">✔</span> | 12 | 0 |
-encoding/json |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-encoding/pem |[<span style="color: orange">⛆</span>](#encodingpem-linuxarm64) | 7 | [1](#encodingpem-linuxarm64) |[<span style="color: red">✗</span>](#encodingpem-wasip2wasm) | 0 | [1](#encodingpem-wasip2wasm) |
-encoding/xml |[<span style="color: orange">⛆</span>](#encodingxml-linuxarm64) | 336 | [1](#encodingxml-linuxarm64) |[<span style="color: orange">⛆</span>](#encodingxml-wasip2wasm) | 336 | [1](#encodingxml-wasip2wasm) |
-errors |[<span style="color: orange">⛆</span>](#errors-linuxarm64) | 60 | [19](#errors-linuxarm64) |[<span style="color: orange">⛆</span>](#errors-wasip2wasm) | 56 | [21](#errors-wasip2wasm) |
-expvar |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-flag |[<span style="color: orange">⛆</span>](#flag-linuxarm64) | 24 | [2](#flag-linuxarm64) |[<span style="color: red">✗</span>](#flag-wasip2wasm) | 0 | [1](#flag-wasip2wasm) |
-fmt |[<span style="color: orange">⛆</span>](#fmt-linuxarm64) | 3 | [1](#fmt-linuxarm64) |[<span style="color: orange">⛆</span>](#fmt-wasip2wasm) | 3 | [1](#fmt-wasip2wasm) |
-go/ast |<span style="color: green">✔</span> | 8 | 0 |[<span style="color: red">✗</span>](#goast-wasip2wasm) | 0 | [1](#goast-wasip2wasm) |
-go/build |[<span style="color: orange">⛆</span>](#gobuild-linuxarm64) | 56 | [16](#gobuild-linuxarm64) |[<span style="color: red">✗</span>](#gobuild-wasip2wasm) | 0 | [1](#gobuild-wasip2wasm) |
-go/build/constraint |<span style="color: green">✔</span> | 81 | 0 |[<span style="color: orange">⛆</span>](#gobuildconstraint-wasip2wasm) | 13 | [7](#gobuildconstraint-wasip2wasm) |
-go/constant |[<span style="color: orange">⛆</span>](#goconstant-linuxarm64) | 2 | [1](#goconstant-linuxarm64) |[<span style="color: red">✗</span>](#goconstant-wasip2wasm) | 0 | [1](#goconstant-wasip2wasm) |
-go/doc |[<span style="color: red">✗</span>](#godoc-linuxarm64) | 0 | [1](#godoc-linuxarm64) |[<span style="color: red">✗</span>](#godoc-wasip2wasm) | 0 | [1](#godoc-wasip2wasm) |
-go/doc/comment |[<span style="color: orange">⛆</span>](#godoccomment-linuxarm64) | 10059 | [1](#godoccomment-linuxarm64) |[<span style="color: red">✗</span>](#godoccomment-wasip2wasm) | 0 | [1](#godoccomment-wasip2wasm) |
-go/format |<span style="color: green">✔</span> | 4 | 0 |[<span style="color: red">✗</span>](#goformat-wasip2wasm) | 0 | [1](#goformat-wasip2wasm) |
-go/importer |[<span style="color: orange">⛆</span>](#goimporter-linuxarm64) | 2 | [2](#goimporter-linuxarm64) |[<span style="color: red">✗</span>](#goimporter-wasip2wasm) | 0 | [1](#goimporter-wasip2wasm) |
-go/parser |[<span style="color: orange">⛆</span>](#goparser-linuxarm64) | 43 | [2](#goparser-linuxarm64) |[<span style="color: orange">⛆</span>](#goparser-wasip2wasm) | 3 | [1](#goparser-wasip2wasm) |
-go/printer |[<span style="color: orange">⛆</span>](#goprinter-linuxarm64) | 12 | [12](#goprinter-linuxarm64) |[<span style="color: red">✗</span>](#goprinter-wasip2wasm) | 0 | [1](#goprinter-wasip2wasm) |
-go/scanner |<span style="color: green">✔</span> | 11 | 0 |<span style="color: green">✔</span> | 11 | 0 |
-go/token |[<span style="color: red">✗</span>](#gotoken-linuxarm64) | 0 | [1](#gotoken-linuxarm64) |[<span style="color: red">✗</span>](#gotoken-wasip2wasm) | 0 | [1](#gotoken-wasip2wasm) |
-go/types |[<span style="color: red">✗</span>](#gotypes-linuxarm64) | 0 | [1](#gotypes-linuxarm64) |[<span style="color: red">✗</span>](#gotypes-wasip2wasm) | 0 | [1](#gotypes-wasip2wasm) |
-go/version |<span style="color: green">✔</span> | 3 | 0 |<span style="color: green">✔</span> | 3 | 0 |
-hash |<span style="color: green">✔</span> | 18 | 0 |<span style="color: green">✔</span> | 18 | 0 |
-hash/adler32 |<span style="color: green">✔</span> | 2 | 0 |<span style="color: green">✔</span> | 2 | 0 |
-hash/crc32 |[<span style="color: orange">⛆</span>](#hashcrc32-linuxarm64) | 8 | [1](#hashcrc32-linuxarm64) |[<span style="color: orange">⛆</span>](#hashcrc32-wasip2wasm) | 8 | [1](#hashcrc32-wasip2wasm) |
-hash/crc64 |<span style="color: green">✔</span> | 5 | 0 |<span style="color: green">✔</span> | 5 | 0 |
-hash/fnv |<span style="color: green">✔</span> | 19 | 0 |<span style="color: green">✔</span> | 19 | 0 |
-hash/maphash |[<span style="color: orange">⛆</span>](#hashmaphash-linuxarm64) | 15 | [1](#hashmaphash-linuxarm64) |[<span style="color: red">✗</span>](#hashmaphash-wasip2wasm) | 0 | [1](#hashmaphash-wasip2wasm) |
-html |<span style="color: green">✔</span> | 3 | 0 |<span style="color: green">✔</span> | 3 | 0 |
-html/template |[<span style="color: orange">⛆</span>](#htmltemplate-linuxarm64) | 1 | [1](#htmltemplate-linuxarm64) |[<span style="color: orange">⛆</span>](#htmltemplate-wasip2wasm) | 1 | [1](#htmltemplate-wasip2wasm) |
-image |<span style="color: green">✔</span> | 8 | 0 |[<span style="color: orange">⛆</span>](#image-wasip2wasm) | 3 | [1](#image-wasip2wasm) |
-image/color |[<span style="color: orange">⛆</span>](#imagecolor-linuxarm64) | 1 | [1](#imagecolor-linuxarm64) |[<span style="color: orange">⛆</span>](#imagecolor-wasip2wasm) | 1 | [1](#imagecolor-wasip2wasm) |
-image/color/palette |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-image/draw |[<span style="color: orange">⛆</span>](#imagedraw-linuxarm64) | 9 | [1](#imagedraw-linuxarm64) |[<span style="color: orange">⛆</span>](#imagedraw-wasip2wasm) | 9 | [1](#imagedraw-wasip2wasm) |
-image/gif |[<span style="color: red">✗</span>](#imagegif-linuxarm64) | 0 | [1](#imagegif-linuxarm64) |[<span style="color: red">✗</span>](#imagegif-wasip2wasm) | 0 | [1](#imagegif-wasip2wasm) |
-image/jpeg |[<span style="color: red">✗</span>](#imagejpeg-linuxarm64) | 0 | [1](#imagejpeg-linuxarm64) |[<span style="color: red">✗</span>](#imagejpeg-wasip2wasm) | 0 | [1](#imagejpeg-wasip2wasm) |
-image/png |[<span style="color: orange">⛆</span>](#imagepng-linuxarm64) | 13 | [1](#imagepng-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
-index/suffixarray |<span style="color: green">✔</span> | 12 | 0 |&nbsp; | &nbsp; | &nbsp; |
-io |[<span style="color: orange">⛆</span>](#io-linuxarm64) | 60 | [4](#io-linuxarm64) |[<span style="color: orange">⛆</span>](#io-wasip2wasm) | 60 | [4](#io-wasip2wasm) |
-io/fs |[<span style="color: orange">⛆</span>](#iofs-linuxarm64) | 6 | [1](#iofs-linuxarm64) |[<span style="color: orange">⛆</span>](#iofs-wasip2wasm) | 6 | [2](#iofs-wasip2wasm) |
-io/ioutil |<span style="color: green">✔</span> | 28 | 0 |[<span style="color: orange">⛆</span>](#ioioutil-wasip2wasm) | 28 | [2](#ioioutil-wasip2wasm) |
-log |[<span style="color: orange">⛆</span>](#log-linuxarm64) | 9 | [1](#log-linuxarm64) |[<span style="color: orange">⛆</span>](#log-wasip2wasm) | 9 | [1](#log-wasip2wasm) |
-log/slog |[<span style="color: red">✗</span>](#logslog-linuxarm64) | 0 | [1](#logslog-linuxarm64) |[<span style="color: red">✗</span>](#logslog-wasip2wasm) | 0 | [1](#logslog-wasip2wasm) |
-log/syslog |[<span style="color: red">✗</span>](#logsyslog-linuxarm64) | 0 | [1](#logsyslog-linuxarm64) |[<span style="color: red">✗</span>](#logsyslog-wasip2wasm) | 0 | [1](#logsyslog-wasip2wasm) |
-maps |[<span style="color: red">✗</span>](#maps-linuxarm64) | 0 | [1](#maps-linuxarm64) |[<span style="color: red">✗</span>](#maps-wasip2wasm) | 0 | [1](#maps-wasip2wasm) |
-math |<span style="color: green">✔</span> | 76 | 0 |[<span style="color: red">✗</span>](#math-wasip2wasm) | 0 | [1](#math-wasip2wasm) |
-math/big |[<span style="color: red">✗</span>](#mathbig-linuxarm64) | 0 | [1](#mathbig-linuxarm64) |<span style="color: yellow">∅</span> | 0 | 0 |
-math/bits |[<span style="color: orange">⛆</span>](#mathbits-linuxarm64) | 21 | [5](#mathbits-linuxarm64) |[<span style="color: orange">⛆</span>](#mathbits-wasip2wasm) | 12 | [1](#mathbits-wasip2wasm) |
-math/cmplx |<span style="color: green">✔</span> | 24 | 0 |[<span style="color: red">✗</span>](#mathcmplx-wasip2wasm) | 0 | [1](#mathcmplx-wasip2wasm) |
-math/rand |[<span style="color: orange">⛆</span>](#mathrand-linuxarm64) | 43 | [8](#mathrand-linuxarm64) |[<span style="color: red">✗</span>](#mathrand-wasip2wasm) | 0 | [1](#mathrand-wasip2wasm) |
-math/rand/v2 |[<span style="color: red">✗</span>](#mathrandv2-linuxarm64) | 0 | [1](#mathrandv2-linuxarm64) |[<span style="color: red">✗</span>](#mathrandv2-wasip2wasm) | 0 | [1](#mathrandv2-wasip2wasm) |
-mime |[<span style="color: orange">⛆</span>](#mime-linuxarm64) | 14 | [1](#mime-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
-mime/multipart |<span style="color: green">✔</span> | 48 | 0 |&nbsp; | &nbsp; | &nbsp; |
-mime/quotedprintable |<span style="color: green">✔</span> | 5 | 0 |[<span style="color: red">✗</span>](#mimequotedprintable-wasip2wasm) | 0 | [1](#mimequotedprintable-wasip2wasm) |
-net |<span style="color: green">✔</span> | 1 | 0 |<span style="color: green">✔</span> | 1 | 0 |
-net/http |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/cgi |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/cookiejar |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/fcgi |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/httptest |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/httptrace |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/httputil |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/http/pprof |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/mail |<span style="color: green">✔</span> | 11 | 0 |<span style="color: green">✔</span> | 11 | 0 |
-net/netip |[<span style="color: orange">⛆</span>](#netnetip-linuxarm64) | 256 | [8](#netnetip-linuxarm64) |[<span style="color: red">✗</span>](#netnetip-wasip2wasm) | 0 | [1](#netnetip-wasip2wasm) |
-net/rpc |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-net/rpc/jsonrpc |[<span style="color: red">✗</span>](#netrpcjsonrpc-linuxarm64) | 0 | [1](#netrpcjsonrpc-linuxarm64) |[<span style="color: red">✗</span>](#netrpcjsonrpc-wasip2wasm) | 0 | [1](#netrpcjsonrpc-wasip2wasm) |
-net/smtp |[<span style="color: red">✗</span>](#netsmtp-linuxarm64) | 0 | [1](#netsmtp-linuxarm64) |[<span style="color: red">✗</span>](#netsmtp-wasip2wasm) | 0 | [1](#netsmtp-wasip2wasm) |
-net/textproto |<span style="color: green">✔</span> | 25 | 0 |<span style="color: green">✔</span> | 25 | 0 |
-net/url |[<span style="color: red">✗</span>](#neturl-linuxarm64) | 0 | [1](#neturl-linuxarm64) |[<span style="color: red">✗</span>](#neturl-wasip2wasm) | 0 | [1](#neturl-wasip2wasm) |
-os |<span style="color: green">✔</span> | 80 | 0 |[<span style="color: orange">⛆</span>](#os-wasip2wasm) | 37 | [3](#os-wasip2wasm) |
-os/exec |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-os/signal |[<span style="color: red">✗</span>](#ossignal-linuxarm64) | 0 | [1](#ossignal-linuxarm64) |[<span style="color: red">✗</span>](#ossignal-wasip2wasm) | 0 | [1](#ossignal-wasip2wasm) |
-os/user |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-path |<span style="color: green">✔</span> | 9 | 0 |<span style="color: green">✔</span> | 9 | 0 |
-path/filepath |[<span style="color: orange">⛆</span>](#pathfilepath-linuxarm64) | 3 | [1](#pathfilepath-linuxarm64) |[<span style="color: orange">⛆</span>](#pathfilepath-wasip2wasm) | 3 | [2](#pathfilepath-wasip2wasm) |
-plugin |[<span style="color: red">✗</span>](#plugin-linuxarm64) | 0 | [1](#plugin-linuxarm64) |[<span style="color: red">✗</span>](#plugin-wasip2wasm) | 0 | [1](#plugin-wasip2wasm) |
-reflect |<span style="color: green">✔</span> | 96 | 0 |<span style="color: green">✔</span> | 96 | 0 |
-regexp |[<span style="color: orange">⛆</span>](#regexp-linuxarm64) | 14 | [1](#regexp-linuxarm64) |[<span style="color: orange">⛆</span>](#regexp-wasip2wasm) | 2 | [1](#regexp-wasip2wasm) |
-regexp/syntax |<span style="color: green">✔</span> | 12 | 0 |[<span style="color: orange">⛆</span>](#regexpsyntax-wasip2wasm) | 8 | [1](#regexpsyntax-wasip2wasm) |
-runtime |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/cgo |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/coverage |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/debug |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/metrics |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/pprof |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/race |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-runtime/trace |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-slices |[<span style="color: orange">⛆</span>](#slices-linuxarm64) | 11 | [1](#slices-linuxarm64) |[<span style="color: red">✗</span>](#slices-wasip2wasm) | 0 | [1](#slices-wasip2wasm) |
-sort |<span style="color: green">✔</span> | 63 | 0 |<span style="color: green">✔</span> | 63 | 0 |
-strconv |<span style="color: green">✔</span> | 66 | 0 |[<span style="color: red">✗</span>](#strconv-wasip2wasm) | 0 | [1](#strconv-wasip2wasm) |
-strings |[<span style="color: orange">⛆</span>](#strings-linuxarm64) | 71 | [2](#strings-linuxarm64) |[<span style="color: orange">⛆</span>](#strings-wasip2wasm) | 4 | [1](#strings-wasip2wasm) |
-sync |<span style="color: green">✔</span> | 19 | 0 |<span style="color: green">✔</span> | 19 | 0 |
-sync/atomic |[<span style="color: orange">⛆</span>](#syncatomic-linuxarm64) | 68 | [6](#syncatomic-linuxarm64) |[<span style="color: orange">⛆</span>](#syncatomic-wasip2wasm) | 68 | [6](#syncatomic-wasip2wasm) |
-syscall |[<span style="color: red">✗</span>](#syscall-linuxarm64) | 0 | [1](#syscall-linuxarm64) |[<span style="color: orange">⛆</span>](#syscall-wasip2wasm) | 1 | [1](#syscall-wasip2wasm) |
-testing |<span style="color: green">✔</span> | 33 | 0 |<span style="color: green">✔</span> | 23 | 0 |
-testing/fstest |<span style="color: green">✔</span> | 5 | 0 |[<span style="color: orange">⛆</span>](#testingfstest-wasip2wasm) | 5 | [1](#testingfstest-wasip2wasm) |
-testing/iotest |<span style="color: green">✔</span> | 18 | 0 |<span style="color: green">✔</span> | 18 | 0 |
-testing/quick |[<span style="color: orange">⛆</span>](#testingquick-linuxarm64) | 1 | [1](#testingquick-linuxarm64) |[<span style="color: orange">⛆</span>](#testingquick-wasip2wasm) | 1 | [1](#testingquick-wasip2wasm) |
-testing/slogtest |[<span style="color: red">✗</span>](#testingslogtest-linuxarm64) | 0 | [1](#testingslogtest-linuxarm64) |[<span style="color: red">✗</span>](#testingslogtest-wasip2wasm) | 0 | [1](#testingslogtest-wasip2wasm) |
-text/scanner |<span style="color: green">✔</span> | 18 | 0 |<span style="color: green">✔</span> | 18 | 0 |
-text/tabwriter |<span style="color: green">✔</span> | 3 | 0 |[<span style="color: orange">⛆</span>](#texttabwriter-wasip2wasm) | 2 | [1](#texttabwriter-wasip2wasm) |
-text/template |[<span style="color: orange">⛆</span>](#texttemplate-linuxarm64) | 1 | [1](#texttemplate-linuxarm64) |[<span style="color: red">✗</span>](#texttemplate-wasip2wasm) | 0 | [1](#texttemplate-wasip2wasm) |
-text/template/parse |<span style="color: green">✔</span> | 52 | 0 |[<span style="color: orange">⛆</span>](#texttemplateparse-wasip2wasm) | 6 | [1](#texttemplateparse-wasip2wasm) |
-time |[<span style="color: red">✗</span>](#time-linuxarm64) | 0 | [1](#time-linuxarm64) |[<span style="color: red">✗</span>](#time-wasip2wasm) | 0 | [1](#time-wasip2wasm) |
-time/tzdata |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
-unicode |<span style="color: green">✔</span> | 28 | 0 |<span style="color: green">✔</span> | 28 | 0 |
-unicode/utf16 |<span style="color: green">✔</span> | 8 | 0 |<span style="color: green">✔</span> | 8 | 0 |
-unicode/utf8 |<span style="color: green">✔</span> | 14 | 0 |<span style="color: green">✔</span> | 14 | 0 |
-unsafe |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yellow">∅</span> | 0 | 0 |
+archive/tar |[<span style="color: red">❌</span>](#archivetar-linuxarm64) | 0 | [1](#archivetar-linuxarm64) |[<span style="color: red">❌</span>](#archivetar-wasip2wasm) | 0 | [1](#archivetar-wasip2wasm) |
+archive/zip |<span style="color: green">🟢</span> | 99 | 0 |&nbsp; | &nbsp; | &nbsp; |
+bufio |[<span style="color: orange">⛈️</span>](#bufio-linuxarm64) | 81 | [1](#bufio-linuxarm64) |[<span style="color: orange">⛈️</span>](#bufio-wasip2wasm) | 42 | [2](#bufio-wasip2wasm) |
+bytes |<span style="color: green">🟢</span> | 91 | 0 |[<span style="color: orange">⛈️</span>](#bytes-wasip2wasm) | 1 | [1](#bytes-wasip2wasm) |
+cmp |<span style="color: green">🟢</span> | 4 | 0 |<span style="color: green">🟢</span> | 4 | 0 |
+compress/bzip2 |<span style="color: green">🟢</span> | 4 | 0 |<span style="color: green">🟢</span> | 4 | 0 |
+compress/flate |<span style="color: green">🟢</span> | 64 | 0 |[<span style="color: orange">⛈️</span>](#compressflate-wasip2wasm) | 24 | [2](#compressflate-wasip2wasm) |
+compress/gzip |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+compress/lzw |<span style="color: green">🟢</span> | 17 | 0 |<span style="color: green">🟢</span> | 17 | 0 |
+compress/zlib |<span style="color: green">🟢</span> | 6 | 0 |<span style="color: green">🟢</span> | 6 | 0 |
+container/heap |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
+container/list |<span style="color: green">🟢</span> | 10 | 0 |<span style="color: green">🟢</span> | 10 | 0 |
+container/ring |<span style="color: green">🟢</span> | 8 | 0 |<span style="color: green">🟢</span> | 8 | 0 |
+context |[<span style="color: red">❌</span>](#context-linuxarm64) | 0 | [1](#context-linuxarm64) |[<span style="color: red">❌</span>](#context-wasip2wasm) | 0 | [1](#context-wasip2wasm) |
+crypto |[<span style="color: red">❌</span>](#crypto-linuxarm64) | 0 | [1](#crypto-linuxarm64) |[<span style="color: orange">⛈️</span>](#crypto-wasip2wasm) | 1 | [1](#crypto-wasip2wasm) |
+crypto/aes |[<span style="color: red">❌</span>](#cryptoaes-linuxarm64) | 0 | [1](#cryptoaes-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptoaes-wasip2wasm) | 9 | [1](#cryptoaes-wasip2wasm) |
+crypto/cipher |[<span style="color: red">❌</span>](#cryptocipher-linuxarm64) | 0 | [1](#cryptocipher-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptocipher-wasip2wasm) | 5 | [1](#cryptocipher-wasip2wasm) |
+crypto/des |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
+crypto/dsa |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: red">❌</span>](#cryptodsa-wasip2wasm) | 0 | [1](#cryptodsa-wasip2wasm) |
+crypto/ecdh |[<span style="color: red">❌</span>](#cryptoecdh-linuxarm64) | 0 | [1](#cryptoecdh-linuxarm64) |[<span style="color: red">❌</span>](#cryptoecdh-wasip2wasm) | 0 | [1](#cryptoecdh-wasip2wasm) |
+crypto/ecdsa |[<span style="color: red">❌</span>](#cryptoecdsa-linuxarm64) | 0 | [1](#cryptoecdsa-linuxarm64) |[<span style="color: red">❌</span>](#cryptoecdsa-wasip2wasm) | 0 | [1](#cryptoecdsa-wasip2wasm) |
+crypto/ed25519 |[<span style="color: orange">⛈️</span>](#cryptoed25519-linuxarm64) | 9 | [1](#cryptoed25519-linuxarm64) |[<span style="color: red">❌</span>](#cryptoed25519-wasip2wasm) | 0 | [1](#cryptoed25519-wasip2wasm) |
+crypto/elliptic |[<span style="color: red">❌</span>](#cryptoelliptic-linuxarm64) | 0 | [1](#cryptoelliptic-linuxarm64) |[<span style="color: red">❌</span>](#cryptoelliptic-wasip2wasm) | 0 | [1](#cryptoelliptic-wasip2wasm) |
+crypto/hmac |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: orange">⛈️</span>](#cryptohmac-wasip2wasm) | 2 | [1](#cryptohmac-wasip2wasm) |
+crypto/md5 |<span style="color: green">🟢</span> | 6 | 0 |<span style="color: green">🟢</span> | 6 | 0 |
+crypto/rand |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+crypto/rc4 |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
+crypto/rsa |[<span style="color: red">❌</span>](#cryptorsa-linuxarm64) | 0 | [1](#cryptorsa-linuxarm64) |[<span style="color: red">❌</span>](#cryptorsa-wasip2wasm) | 0 | [1](#cryptorsa-wasip2wasm) |
+crypto/sha1 |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
+crypto/sha256 |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
+crypto/sha512 |<span style="color: green">🟢</span> | 12 | 0 |<span style="color: green">🟢</span> | 12 | 0 |
+crypto/subtle |[<span style="color: orange">⛈️</span>](#cryptosubtle-linuxarm64) | 2 | [1](#cryptosubtle-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptosubtle-wasip2wasm) | 2 | [1](#cryptosubtle-wasip2wasm) |
+crypto/tls |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+crypto/x509 |[<span style="color: red">❌</span>](#cryptox509-linuxarm64) | 0 | [1](#cryptox509-linuxarm64) |[<span style="color: red">❌</span>](#cryptox509-wasip2wasm) | 0 | [1](#cryptox509-wasip2wasm) |
+crypto/x509/pkix |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+database/sql |[<span style="color: red">❌</span>](#databasesql-linuxarm64) | 0 | [1](#databasesql-linuxarm64) |[<span style="color: red">❌</span>](#databasesql-wasip2wasm) | 0 | [1](#databasesql-wasip2wasm) |
+database/sql/driver |<span style="color: green">🟢</span> | 1 | 0 |<span style="color: green">🟢</span> | 1 | 0 |
+debug/buildinfo |[<span style="color: red">❌</span>](#debugbuildinfo-linuxarm64) | 0 | [1](#debugbuildinfo-linuxarm64) |[<span style="color: red">❌</span>](#debugbuildinfo-wasip2wasm) | 0 | [1](#debugbuildinfo-wasip2wasm) |
+debug/dwarf |<span style="color: green">🟢</span> | 40 | 0 |<span style="color: green">🟢</span> | 29 | 0 |
+debug/elf |[<span style="color: red">❌</span>](#debugelf-linuxarm64) | 0 | [1](#debugelf-linuxarm64) |[<span style="color: red">❌</span>](#debugelf-wasip2wasm) | 0 | [1](#debugelf-wasip2wasm) |
+debug/gosym |[<span style="color: orange">⛈️</span>](#debuggosym-linuxarm64) | 1 | [1](#debuggosym-linuxarm64) |[<span style="color: red">❌</span>](#debuggosym-wasip2wasm) | 0 | [1](#debuggosym-wasip2wasm) |
+debug/macho |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
+debug/pe |[<span style="color: orange">⛈️</span>](#debugpe-linuxarm64) | 1 | [1](#debugpe-linuxarm64) |[<span style="color: red">❌</span>](#debugpe-wasip2wasm) | 0 | [1](#debugpe-wasip2wasm) |
+debug/plan9obj |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
+embed |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+encoding |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+encoding/ascii85 |<span style="color: green">🟢</span> | 9 | 0 |<span style="color: green">🟢</span> | 9 | 0 |
+encoding/asn1 |<span style="color: green">🟢</span> | 38 | 0 |[<span style="color: red">❌</span>](#encodingasn1-wasip2wasm) | 0 | [1](#encodingasn1-wasip2wasm) |
+encoding/base32 |<span style="color: green">🟢</span> | 24 | 0 |<span style="color: green">🟢</span> | 24 | 0 |
+encoding/base64 |<span style="color: green">🟢</span> | 17 | 0 |<span style="color: green">🟢</span> | 17 | 0 |
+encoding/binary |[<span style="color: orange">⛈️</span>](#encodingbinary-linuxarm64) | 20 | [1](#encodingbinary-linuxarm64) |[<span style="color: orange">⛈️</span>](#encodingbinary-wasip2wasm) | 16 | [1](#encodingbinary-wasip2wasm) |
+encoding/csv |<span style="color: green">🟢</span> | 71 | 0 |<span style="color: green">🟢</span> | 71 | 0 |
+encoding/gob |[<span style="color: red">❌</span>](#encodinggob-linuxarm64) | 0 | [1](#encodinggob-linuxarm64) |[<span style="color: red">❌</span>](#encodinggob-wasip2wasm) | 0 | [1](#encodinggob-wasip2wasm) |
+encoding/hex |<span style="color: green">🟢</span> | 12 | 0 |<span style="color: green">🟢</span> | 12 | 0 |
+encoding/json |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+encoding/pem |[<span style="color: orange">⛈️</span>](#encodingpem-linuxarm64) | 7 | [1](#encodingpem-linuxarm64) |[<span style="color: red">❌</span>](#encodingpem-wasip2wasm) | 0 | [1](#encodingpem-wasip2wasm) |
+encoding/xml |[<span style="color: orange">⛈️</span>](#encodingxml-linuxarm64) | 336 | [1](#encodingxml-linuxarm64) |[<span style="color: orange">⛈️</span>](#encodingxml-wasip2wasm) | 336 | [1](#encodingxml-wasip2wasm) |
+errors |[<span style="color: orange">⛈️</span>](#errors-linuxarm64) | 60 | [19](#errors-linuxarm64) |[<span style="color: orange">⛈️</span>](#errors-wasip2wasm) | 56 | [21](#errors-wasip2wasm) |
+expvar |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+flag |[<span style="color: orange">⛈️</span>](#flag-linuxarm64) | 24 | [2](#flag-linuxarm64) |[<span style="color: red">❌</span>](#flag-wasip2wasm) | 0 | [1](#flag-wasip2wasm) |
+fmt |[<span style="color: orange">⛈️</span>](#fmt-linuxarm64) | 3 | [1](#fmt-linuxarm64) |[<span style="color: orange">⛈️</span>](#fmt-wasip2wasm) | 3 | [1](#fmt-wasip2wasm) |
+go/ast |<span style="color: green">🟢</span> | 8 | 0 |[<span style="color: red">❌</span>](#goast-wasip2wasm) | 0 | [1](#goast-wasip2wasm) |
+go/build |[<span style="color: orange">⛈️</span>](#gobuild-linuxarm64) | 56 | [16](#gobuild-linuxarm64) |[<span style="color: red">❌</span>](#gobuild-wasip2wasm) | 0 | [1](#gobuild-wasip2wasm) |
+go/build/constraint |<span style="color: green">🟢</span> | 81 | 0 |[<span style="color: orange">⛈️</span>](#gobuildconstraint-wasip2wasm) | 13 | [7](#gobuildconstraint-wasip2wasm) |
+go/constant |[<span style="color: orange">⛈️</span>](#goconstant-linuxarm64) | 2 | [1](#goconstant-linuxarm64) |[<span style="color: red">❌</span>](#goconstant-wasip2wasm) | 0 | [1](#goconstant-wasip2wasm) |
+go/doc |[<span style="color: red">❌</span>](#godoc-linuxarm64) | 0 | [1](#godoc-linuxarm64) |[<span style="color: red">❌</span>](#godoc-wasip2wasm) | 0 | [1](#godoc-wasip2wasm) |
+go/doc/comment |[<span style="color: orange">⛈️</span>](#godoccomment-linuxarm64) | 10059 | [1](#godoccomment-linuxarm64) |[<span style="color: red">❌</span>](#godoccomment-wasip2wasm) | 0 | [1](#godoccomment-wasip2wasm) |
+go/format |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: red">❌</span>](#goformat-wasip2wasm) | 0 | [1](#goformat-wasip2wasm) |
+go/importer |[<span style="color: orange">⛈️</span>](#goimporter-linuxarm64) | 2 | [2](#goimporter-linuxarm64) |[<span style="color: red">❌</span>](#goimporter-wasip2wasm) | 0 | [1](#goimporter-wasip2wasm) |
+go/parser |[<span style="color: orange">⛈️</span>](#goparser-linuxarm64) | 43 | [2](#goparser-linuxarm64) |[<span style="color: orange">⛈️</span>](#goparser-wasip2wasm) | 3 | [1](#goparser-wasip2wasm) |
+go/printer |[<span style="color: orange">⛈️</span>](#goprinter-linuxarm64) | 12 | [12](#goprinter-linuxarm64) |[<span style="color: red">❌</span>](#goprinter-wasip2wasm) | 0 | [1](#goprinter-wasip2wasm) |
+go/scanner |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
+go/token |[<span style="color: red">❌</span>](#gotoken-linuxarm64) | 0 | [1](#gotoken-linuxarm64) |[<span style="color: red">❌</span>](#gotoken-wasip2wasm) | 0 | [1](#gotoken-wasip2wasm) |
+go/types |[<span style="color: red">❌</span>](#gotypes-linuxarm64) | 0 | [1](#gotypes-linuxarm64) |[<span style="color: red">❌</span>](#gotypes-wasip2wasm) | 0 | [1](#gotypes-wasip2wasm) |
+go/version |<span style="color: green">🟢</span> | 3 | 0 |<span style="color: green">🟢</span> | 3 | 0 |
+hash |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
+hash/adler32 |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
+hash/crc32 |[<span style="color: orange">⛈️</span>](#hashcrc32-linuxarm64) | 8 | [1](#hashcrc32-linuxarm64) |[<span style="color: orange">⛈️</span>](#hashcrc32-wasip2wasm) | 8 | [1](#hashcrc32-wasip2wasm) |
+hash/crc64 |<span style="color: green">🟢</span> | 5 | 0 |<span style="color: green">🟢</span> | 5 | 0 |
+hash/fnv |<span style="color: green">🟢</span> | 19 | 0 |<span style="color: green">🟢</span> | 19 | 0 |
+hash/maphash |[<span style="color: orange">⛈️</span>](#hashmaphash-linuxarm64) | 15 | [1](#hashmaphash-linuxarm64) |[<span style="color: red">❌</span>](#hashmaphash-wasip2wasm) | 0 | [1](#hashmaphash-wasip2wasm) |
+html |<span style="color: green">🟢</span> | 3 | 0 |<span style="color: green">🟢</span> | 3 | 0 |
+html/template |[<span style="color: orange">⛈️</span>](#htmltemplate-linuxarm64) | 1 | [1](#htmltemplate-linuxarm64) |[<span style="color: orange">⛈️</span>](#htmltemplate-wasip2wasm) | 1 | [1](#htmltemplate-wasip2wasm) |
+image |<span style="color: green">🟢</span> | 8 | 0 |[<span style="color: orange">⛈️</span>](#image-wasip2wasm) | 3 | [1](#image-wasip2wasm) |
+image/color |[<span style="color: orange">⛈️</span>](#imagecolor-linuxarm64) | 1 | [1](#imagecolor-linuxarm64) |[<span style="color: orange">⛈️</span>](#imagecolor-wasip2wasm) | 1 | [1](#imagecolor-wasip2wasm) |
+image/color/palette |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+image/draw |[<span style="color: orange">⛈️</span>](#imagedraw-linuxarm64) | 9 | [1](#imagedraw-linuxarm64) |[<span style="color: orange">⛈️</span>](#imagedraw-wasip2wasm) | 9 | [1](#imagedraw-wasip2wasm) |
+image/gif |[<span style="color: red">❌</span>](#imagegif-linuxarm64) | 0 | [1](#imagegif-linuxarm64) |[<span style="color: red">❌</span>](#imagegif-wasip2wasm) | 0 | [1](#imagegif-wasip2wasm) |
+image/jpeg |[<span style="color: red">❌</span>](#imagejpeg-linuxarm64) | 0 | [1](#imagejpeg-linuxarm64) |[<span style="color: red">❌</span>](#imagejpeg-wasip2wasm) | 0 | [1](#imagejpeg-wasip2wasm) |
+image/png |[<span style="color: orange">⛈️</span>](#imagepng-linuxarm64) | 13 | [1](#imagepng-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
+index/suffixarray |[<span style="color: orange">⛈️</span>](#indexsuffixarray-linuxarm64) | 6 | [4](#indexsuffixarray-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
+io |[<span style="color: orange">⛈️</span>](#io-linuxarm64) | 60 | [4](#io-linuxarm64) |[<span style="color: orange">⛈️</span>](#io-wasip2wasm) | 60 | [4](#io-wasip2wasm) |
+io/fs |[<span style="color: orange">⛈️</span>](#iofs-linuxarm64) | 6 | [1](#iofs-linuxarm64) |[<span style="color: orange">⛈️</span>](#iofs-wasip2wasm) | 6 | [2](#iofs-wasip2wasm) |
+io/ioutil |<span style="color: green">🟢</span> | 28 | 0 |[<span style="color: orange">⛈️</span>](#ioioutil-wasip2wasm) | 28 | [2](#ioioutil-wasip2wasm) |
+log |[<span style="color: orange">⛈️</span>](#log-linuxarm64) | 9 | [1](#log-linuxarm64) |[<span style="color: orange">⛈️</span>](#log-wasip2wasm) | 9 | [1](#log-wasip2wasm) |
+log/slog |[<span style="color: red">❌</span>](#logslog-linuxarm64) | 0 | [1](#logslog-linuxarm64) |[<span style="color: red">❌</span>](#logslog-wasip2wasm) | 0 | [1](#logslog-wasip2wasm) |
+log/syslog |[<span style="color: red">❌</span>](#logsyslog-linuxarm64) | 0 | [1](#logsyslog-linuxarm64) |[<span style="color: red">❌</span>](#logsyslog-wasip2wasm) | 0 | [1](#logsyslog-wasip2wasm) |
+maps |[<span style="color: red">❌</span>](#maps-linuxarm64) | 0 | [1](#maps-linuxarm64) |[<span style="color: red">❌</span>](#maps-wasip2wasm) | 0 | [1](#maps-wasip2wasm) |
+math |<span style="color: green">🟢</span> | 76 | 0 |[<span style="color: red">❌</span>](#math-wasip2wasm) | 0 | [1](#math-wasip2wasm) |
+math/big |[<span style="color: red">❌</span>](#mathbig-linuxarm64) | 0 | [1](#mathbig-linuxarm64) |<span style="color: yellow">🫥</span> | 0 | 0 |
+math/bits |[<span style="color: orange">⛈️</span>](#mathbits-linuxarm64) | 21 | [5](#mathbits-linuxarm64) |[<span style="color: orange">⛈️</span>](#mathbits-wasip2wasm) | 12 | [1](#mathbits-wasip2wasm) |
+math/cmplx |<span style="color: green">🟢</span> | 24 | 0 |[<span style="color: red">❌</span>](#mathcmplx-wasip2wasm) | 0 | [1](#mathcmplx-wasip2wasm) |
+math/rand |[<span style="color: orange">⛈️</span>](#mathrand-linuxarm64) | 43 | [8](#mathrand-linuxarm64) |[<span style="color: red">❌</span>](#mathrand-wasip2wasm) | 0 | [1](#mathrand-wasip2wasm) |
+math/rand/v2 |[<span style="color: red">❌</span>](#mathrandv2-linuxarm64) | 0 | [1](#mathrandv2-linuxarm64) |[<span style="color: red">❌</span>](#mathrandv2-wasip2wasm) | 0 | [1](#mathrandv2-wasip2wasm) |
+mime |[<span style="color: orange">⛈️</span>](#mime-linuxarm64) | 14 | [1](#mime-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
+mime/multipart |<span style="color: green">🟢</span> | 48 | 0 |&nbsp; | &nbsp; | &nbsp; |
+mime/quotedprintable |<span style="color: green">🟢</span> | 5 | 0 |[<span style="color: red">❌</span>](#mimequotedprintable-wasip2wasm) | 0 | [1](#mimequotedprintable-wasip2wasm) |
+net |<span style="color: green">🟢</span> | 1 | 0 |<span style="color: green">🟢</span> | 1 | 0 |
+net/http |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/cgi |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/cookiejar |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/fcgi |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/httptest |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/httptrace |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/httputil |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/http/pprof |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/mail |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
+net/netip |[<span style="color: orange">⛈️</span>](#netnetip-linuxarm64) | 256 | [8](#netnetip-linuxarm64) |[<span style="color: red">❌</span>](#netnetip-wasip2wasm) | 0 | [1](#netnetip-wasip2wasm) |
+net/rpc |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+net/rpc/jsonrpc |[<span style="color: red">❌</span>](#netrpcjsonrpc-linuxarm64) | 0 | [1](#netrpcjsonrpc-linuxarm64) |[<span style="color: red">❌</span>](#netrpcjsonrpc-wasip2wasm) | 0 | [1](#netrpcjsonrpc-wasip2wasm) |
+net/smtp |[<span style="color: red">❌</span>](#netsmtp-linuxarm64) | 0 | [1](#netsmtp-linuxarm64) |[<span style="color: red">❌</span>](#netsmtp-wasip2wasm) | 0 | [1](#netsmtp-wasip2wasm) |
+net/textproto |<span style="color: green">🟢</span> | 25 | 0 |<span style="color: green">🟢</span> | 25 | 0 |
+net/url |[<span style="color: red">❌</span>](#neturl-linuxarm64) | 0 | [1](#neturl-linuxarm64) |[<span style="color: red">❌</span>](#neturl-wasip2wasm) | 0 | [1](#neturl-wasip2wasm) |
+os |<span style="color: green">🟢</span> | 80 | 0 |[<span style="color: orange">⛈️</span>](#os-wasip2wasm) | 37 | [3](#os-wasip2wasm) |
+os/exec |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+os/signal |[<span style="color: red">❌</span>](#ossignal-linuxarm64) | 0 | [1](#ossignal-linuxarm64) |[<span style="color: red">❌</span>](#ossignal-wasip2wasm) | 0 | [1](#ossignal-wasip2wasm) |
+os/user |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+path |<span style="color: green">🟢</span> | 9 | 0 |<span style="color: green">🟢</span> | 9 | 0 |
+path/filepath |[<span style="color: orange">⛈️</span>](#pathfilepath-linuxarm64) | 3 | [1](#pathfilepath-linuxarm64) |[<span style="color: orange">⛈️</span>](#pathfilepath-wasip2wasm) | 3 | [2](#pathfilepath-wasip2wasm) |
+plugin |[<span style="color: red">❌</span>](#plugin-linuxarm64) | 0 | [1](#plugin-linuxarm64) |[<span style="color: red">❌</span>](#plugin-wasip2wasm) | 0 | [1](#plugin-wasip2wasm) |
+reflect |<span style="color: green">🟢</span> | 96 | 0 |<span style="color: green">🟢</span> | 96 | 0 |
+regexp |[<span style="color: orange">⛈️</span>](#regexp-linuxarm64) | 14 | [1](#regexp-linuxarm64) |[<span style="color: orange">⛈️</span>](#regexp-wasip2wasm) | 2 | [1](#regexp-wasip2wasm) |
+regexp/syntax |<span style="color: green">🟢</span> | 12 | 0 |[<span style="color: orange">⛈️</span>](#regexpsyntax-wasip2wasm) | 8 | [1](#regexpsyntax-wasip2wasm) |
+runtime |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/cgo |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/coverage |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/debug |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/metrics |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/pprof |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/race |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+runtime/trace |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+slices |[<span style="color: orange">⛈️</span>](#slices-linuxarm64) | 11 | [1](#slices-linuxarm64) |[<span style="color: red">❌</span>](#slices-wasip2wasm) | 0 | [1](#slices-wasip2wasm) |
+sort |<span style="color: green">🟢</span> | 63 | 0 |<span style="color: green">🟢</span> | 63 | 0 |
+strconv |<span style="color: green">🟢</span> | 66 | 0 |[<span style="color: red">❌</span>](#strconv-wasip2wasm) | 0 | [1](#strconv-wasip2wasm) |
+strings |[<span style="color: orange">⛈️</span>](#strings-linuxarm64) | 71 | [2](#strings-linuxarm64) |[<span style="color: orange">⛈️</span>](#strings-wasip2wasm) | 4 | [1](#strings-wasip2wasm) |
+sync |<span style="color: green">🟢</span> | 19 | 0 |<span style="color: green">🟢</span> | 19 | 0 |
+sync/atomic |[<span style="color: orange">⛈️</span>](#syncatomic-linuxarm64) | 68 | [6](#syncatomic-linuxarm64) |[<span style="color: orange">⛈️</span>](#syncatomic-wasip2wasm) | 68 | [6](#syncatomic-wasip2wasm) |
+syscall |[<span style="color: red">❌</span>](#syscall-linuxarm64) | 0 | [1](#syscall-linuxarm64) |[<span style="color: orange">⛈️</span>](#syscall-wasip2wasm) | 1 | [1](#syscall-wasip2wasm) |
+testing |<span style="color: green">🟢</span> | 33 | 0 |<span style="color: green">🟢</span> | 23 | 0 |
+testing/fstest |<span style="color: green">🟢</span> | 5 | 0 |[<span style="color: orange">⛈️</span>](#testingfstest-wasip2wasm) | 5 | [1](#testingfstest-wasip2wasm) |
+testing/iotest |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
+testing/quick |[<span style="color: orange">⛈️</span>](#testingquick-linuxarm64) | 1 | [1](#testingquick-linuxarm64) |[<span style="color: orange">⛈️</span>](#testingquick-wasip2wasm) | 1 | [1](#testingquick-wasip2wasm) |
+testing/slogtest |[<span style="color: red">❌</span>](#testingslogtest-linuxarm64) | 0 | [1](#testingslogtest-linuxarm64) |[<span style="color: red">❌</span>](#testingslogtest-wasip2wasm) | 0 | [1](#testingslogtest-wasip2wasm) |
+text/scanner |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
+text/tabwriter |<span style="color: green">🟢</span> | 3 | 0 |[<span style="color: orange">⛈️</span>](#texttabwriter-wasip2wasm) | 2 | [1](#texttabwriter-wasip2wasm) |
+text/template |[<span style="color: orange">⛈️</span>](#texttemplate-linuxarm64) | 1 | [1](#texttemplate-linuxarm64) |[<span style="color: red">❌</span>](#texttemplate-wasip2wasm) | 0 | [1](#texttemplate-wasip2wasm) |
+text/template/parse |<span style="color: green">🟢</span> | 52 | 0 |[<span style="color: orange">⛈️</span>](#texttemplateparse-wasip2wasm) | 6 | [1](#texttemplateparse-wasip2wasm) |
+time |[<span style="color: red">❌</span>](#time-linuxarm64) | 0 | [1](#time-linuxarm64) |[<span style="color: red">❌</span>](#time-wasip2wasm) | 0 | [1](#time-wasip2wasm) |
+time/tzdata |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+unicode |<span style="color: green">🟢</span> | 28 | 0 |<span style="color: green">🟢</span> | 28 | 0 |
+unicode/utf16 |<span style="color: green">🟢</span> | 8 | 0 |<span style="color: green">🟢</span> | 8 | 0 |
+unicode/utf8 |<span style="color: green">🟢</span> | 14 | 0 |<span style="color: green">🟢</span> | 14 | 0 |
+unsafe |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
 
 ## linux/arm64
 
@@ -193,7 +196,7 @@ unsafe |<span style="color: yellow">∅</span> | 0 | 0 |<span style="color: yell
 
 ### archive/tar linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	archive/tar	0.000s
@@ -205,9 +208,10 @@ FAIL	archive/tar	0.000s
 
 ### bufio linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/81
 === RUN   TestReadStringAllocs
     Unexpected number of allocations, got 0.000000, want 1
 --- FAIL: TestReadStringAllocs (0.00s)
@@ -217,7 +221,7 @@ FAIL	archive/tar	0.000s
 
 ### context linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	context	0.000s
@@ -232,25 +236,25 @@ FAIL	context	0.000s
 
 ### crypto linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2338591754/main /tmp/tinygo2338591754/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo304536086/main /tmp/tinygo304536086/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-1D16C73CA7A1E10346AAE81D9B45A9E4651F0103:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto	0.000s
-error: failed to link /tmp/tinygo2338591754/main: exit status 1
+error: failed to link /tmp/tinygo304536086/main: exit status 1
 ```
 
 
 ### crypto/aes linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3493162736/main /tmp/tinygo3493162736/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3054185604/main /tmp/tinygo3054185604/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.decryptBlockAsm
 >>> referenced by cipher_asm.go:95 (/usr/local/go/src/crypto/aes/cipher_asm.go:95)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-C0B38AE06461A58B42C5B34593CC845D19599555:((*crypto/aes.aesCipherAsm).Decrypt)
@@ -260,16 +264,16 @@ ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-C0B38AE06461A58B42C5B34593CC845D19599555:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto/aes	0.000s
-error: failed to link /tmp/tinygo3493162736/main: exit status 1
+error: failed to link /tmp/tinygo3054185604/main: exit status 1
 ```
 
 
 ### crypto/cipher linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1155774521/main /tmp/tinygo1155774521/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2869465497/main /tmp/tinygo2869465497/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.gcmAesInit
 >>> referenced by aes_gcm.go:49 (/usr/local/go/src/crypto/aes/aes_gcm.go:49)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-57AD32ADEDA80DAEB8A0426E8A174C9A22F0DB0A:(crypto/cipher.newGCMWithNonceAndTagSize)
@@ -313,16 +317,16 @@ ld.lld: error: undefined symbol: crypto/aes.gcmAesDec
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-57AD32ADEDA80DAEB8A0426E8A174C9A22F0DB0A:(interface:{NonceSize:func:{}{basic:int},Open:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8,named:error},Overhead:func:{}{basic:int},Seal:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8}}.Open$invoke)
 failed to run tool: ld.lld
 FAIL	crypto/cipher	0.000s
-error: failed to link /tmp/tinygo1155774521/main: exit status 1
+error: failed to link /tmp/tinygo2869465497/main: exit status 1
 ```
 
 
 ### crypto/ecdh linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1938277622/main /tmp/tinygo1938277622/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1938277622/embed-a3a5d08c40939adb7c0e9e4f5b689721-60427553.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo717681236/main /tmp/tinygo717681236/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo717681236/embed-a3a5d08c40939adb7c0e9e4f5b689721-3574969748.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256Sqr
 >>> referenced by p256_asm.go:584 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:584)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-BC525AE53343345D2E48A5D51D93E1EF157700A5:(crypto/internal/nistec.p256Inverse)
@@ -423,16 +427,16 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdBigToLittle
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-BC525AE53343345D2E48A5D51D93E1EF157700A5:(OUTLINED_FUNCTION_784)
 failed to run tool: ld.lld
 FAIL	crypto/ecdh	0.000s
-error: failed to link /tmp/tinygo1938277622/main: exit status 1
+error: failed to link /tmp/tinygo717681236/main: exit status 1
 ```
 
 
 ### crypto/ecdsa linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2813955403/main /tmp/tinygo2813955403/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2813955403/embed-a3a5d08c40939adb7c0e9e4f5b689721-3324985886.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2585959803/main /tmp/tinygo2585959803/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2585959803/embed-a3a5d08c40939adb7c0e9e4f5b689721-3332246600.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-09996352C817E6D43BB10C20F09C23BD1889E35E:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -562,15 +566,16 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdLittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-09996352C817E6D43BB10C20F09C23BD1889E35E:(crypto/internal/nistec.P256OrdInverse)
 failed to run tool: ld.lld
 FAIL	crypto/ecdsa	0.000s
-error: failed to link /tmp/tinygo2813955403/main: exit status 1
+error: failed to link /tmp/tinygo2585959803/main: exit status 1
 ```
 
 
 ### crypto/ed25519 linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/9
 === RUN   TestEd25519Vectors
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -591,10 +596,10 @@ error: failed to link /tmp/tinygo2813955403/main: exit status 1
 
 ### crypto/elliptic linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1191357189/main /tmp/tinygo1191357189/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1191357189/embed-a3a5d08c40939adb7c0e9e4f5b689721-3730177171.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo738482865/main /tmp/tinygo738482865/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo738482865/embed-a3a5d08c40939adb7c0e9e4f5b689721-3739815042.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256PointAddAsm
 >>> referenced by p256_asm.go:387 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:387)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-2BC0FDD646081BEEEF4F2CAABB009A608FD82696:((*crypto/internal/nistec.P256Point).Add)
@@ -694,16 +699,16 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-2BC0FDD646081BEEEF4F2CAABB009A608FD82696:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/elliptic	0.000s
-error: failed to link /tmp/tinygo1191357189/main: exit status 1
+error: failed to link /tmp/tinygo738482865/main: exit status 1
 ```
 
 
 ### crypto/rsa linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo569871169/main /tmp/tinygo569871169/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo569871169/embed-a3a5d08c40939adb7c0e9e4f5b689721-823147673.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1593332456/main /tmp/tinygo1593332456/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1593332456/embed-a3a5d08c40939adb7c0e9e4f5b689721-2735006889.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-73CE18BE4B3319E296DA0103298437A2235213F2:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -807,15 +812,16 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-73CE18BE4B3319E296DA0103298437A2235213F2:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/rsa	0.000s
-error: failed to link /tmp/tinygo569871169/main: exit status 1
+error: failed to link /tmp/tinygo1593332456/main: exit status 1
 ```
 
 
 ### crypto/subtle linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/2
 === RUN   TestConstantTimeByteEq
 panic: unimplemented: (reflect.Type).NumIn()
 
@@ -824,7 +830,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 
 ### crypto/x509 linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	crypto/x509	0.000s
@@ -835,7 +841,7 @@ FAIL	crypto/x509	0.000s
 
 ### database/sql linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	database/sql	0.000s
@@ -846,7 +852,7 @@ FAIL	database/sql	0.000s
 
 ### debug/buildinfo linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	debug/buildinfo	0.000s
@@ -857,7 +863,7 @@ FAIL	debug/buildinfo	0.000s
 
 ### debug/elf linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	debug/elf	0.000s
@@ -868,9 +874,10 @@ FAIL	debug/elf	0.000s
 
 ### debug/gosym linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestLineFromAline
     no .gosymtab section
     SkipNow is incomplete, requires runtime.Goexit()
@@ -881,9 +888,10 @@ panic: runtime error at 0x000000000025e144: nil pointer dereference
 
 ### debug/pe linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestDefaultLinkerDWARF
     skipping windows only test
     SkipNow is incomplete, requires runtime.Goexit()
@@ -895,7 +903,7 @@ panic: runtime error at 0x000000000025e144: nil pointer dereference
     FailNow is incomplete, requires runtime.Goexit()
     building test executable for linktype 1 failed: exec: no command 
     FailNow is incomplete, requires runtime.Goexit()
-    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF18742979/000/a.exe: operation not implemented 
+    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF175198082/000/a.exe: operation not implemented 
     FailNow is incomplete, requires runtime.Goexit()
     Testprog output:
     unexpected program output: 
@@ -907,9 +915,10 @@ panic: runtime error at 0x00000000002740a4: index out of range
 
 ### encoding/binary linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/20
 === RUN   TestEarlyBoundsChecks
 panic: runtime error at 0x000000000024e558: index out of range
 
@@ -918,22 +927,23 @@ panic: runtime error at 0x000000000024e558: index out of range
 
 ### encoding/gob linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo739321214/main /tmp/tinygo739321214/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo739321214/main /tmp/tinygo739321214/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2511238555/main /tmp/tinygo2511238555/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo2511238555/main /tmp/tinygo2511238555/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	encoding/gob	0.019s
+FAIL	encoding/gob	0.008s
 ```
 
 
 ### encoding/pem linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/7
 === RUN   TestFuzz
 panic: unimplemented: (reflect.Type).NumOut()
 
@@ -942,9 +952,10 @@ panic: unimplemented: (reflect.Type).NumOut()
 
 ### encoding/xml linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/336
 === RUN   TestCVE202228131
 
 ```
@@ -952,39 +963,40 @@ panic: unimplemented: (reflect.Type).NumOut()
 
 ### errors linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 19/60
 === RUN   TestAs
 --- FAIL: TestAs (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff702d2930)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff702d2930) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
     --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2930) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff702d2930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff702d2930) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930) (0.00s)
 === RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
     --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
 === RUN   TestAs/5:As(Errorf(...,_error),_errorT())
     --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff702d2930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff702d2930) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff702d2970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff702d2970) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff702d2950)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff78667930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff78667930) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff78667950)
         match: got true; want false
         FailNow is incomplete, requires runtime.Goexit()
         got &errors.errorString{s:"err"}, want <nil>
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff702d2950) (0.00s)
-=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2950) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff702d2950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff702d29b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff78667950) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff78667950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff702d2950) (0.00s)
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff78667950) (0.00s)
 === RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
     --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
 === RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
@@ -995,65 +1007,66 @@ panic: unimplemented: (reflect.Type).NumOut()
     --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 === RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff702d2950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff702d29b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff78667950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff702d2950) (0.00s)
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff78667950) (0.00s)
 === RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930) (0.00s)
 === RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
     --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff702d2950)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff78667950)
         match: got true; want false
         FailNow is incomplete, requires runtime.Goexit()
         got &errors.errorString{s:"err"}, want <nil>
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff702d2950) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff702d2950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff702d29b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff78667950) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff78667950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff702d2950) (0.00s)
-=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff702d2930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff702d2930) (0.00s)
-=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2950) (0.00s)
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff78667950) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff78667930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff78667930) (0.00s)
 === RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
     --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff702d2950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff702d29b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff78667950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff702d2950) (0.00s)
-=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
-    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff702d2930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff702d2930) (0.00s)
-=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
-    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
-=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
-    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff702d2930) (0.00s)
-=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
-    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
-=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
-    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff702d2970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff702d2970) (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff702d2930)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff702d2930) (0.00s)
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff78667950) (0.00s)
 
 ```
 
 
 ### flag linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 2/24
 === RUN   TestExitCode
     unexpected exit code for test case {flag:-h flagHandle: expectExit:0} 
         : got -1, expect 0
@@ -1076,9 +1089,10 @@ panic: unimplemented: (reflect.Type).NumOut()
 
 ### fmt linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/3
 === RUN   TestSprintf
     Sprintf("%#v", 0x267654) = "(func)(0x267654)" want "(func(*testing.T))(0xPTR)"
 panic: runtime error at 0x0000000000231cd0: nil pointer dereference
@@ -1088,9 +1102,10 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
 
 ### go/build linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 16/56
 === RUN   TestDotSlashImport
     import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
@@ -1138,7 +1153,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
 === RUN   TestIssue23594
     could not import testdata: import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestIssue23594 (0.01s)
+--- FAIL: TestIssue23594 (0.00s)
 === RUN   TestMissingImportErrorRepetition
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1161,21 +1176,22 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     could not import testdata: import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestDirectives (0.00s)
-=== RUN   TestImportDirNotExist/GO111MODULE=off
-    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
 === RUN   TestImportDirNotExist/GO111MODULE=on
         Import(full, 0) got error: "go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n", want "cannot find package" or "is not in std" error
         Import(full, FindOnly) got error: "go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n", want "cannot find package" or "is not in std" error
     --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)
+=== RUN   TestImportDirNotExist/GO111MODULE=off
+    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
 
 ```
 
 
 ### go/constant linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/2
 === RUN   TestOps
 panic: runtime error at 0x0000000000257f90: divide by zero
 
@@ -1184,21 +1200,22 @@ panic: runtime error at 0x0000000000257f90: divide by zero
 
 ### go/doc linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1958450244/main /tmp/tinygo1958450244/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo1958450244/main /tmp/tinygo1958450244/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo548201736/main /tmp/tinygo548201736/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo548201736/main /tmp/tinygo548201736/main -test.v
 panic: unimplemented: (reflect.Type).NumOut()
-FAIL	go/doc	0.010s
+FAIL	go/doc	0.007s
 ```
 
 
 ### go/doc/comment linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/10059
 === RUN   TestStd
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1255,9 +1272,12 @@ FAIL	go/doc	0.010s
 
 ### go/importer linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 2/2
+=== RUN   TestForCompiler/LookupDefault
+panic: runtime error at 0x00000000002f3730: nil pointer dereference
 === RUN   TestForCompiler
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1269,19 +1289,18 @@ FAIL	go/doc	0.010s
     FailNow is incomplete, requires runtime.Goexit()
 === RUN   TestForCompiler/LookupDefault
 panic: runtime error at 0x00000000002f3730: nil pointer dereference
-=== RUN   TestForCompiler/LookupDefault
-panic: runtime error at 0x00000000002f3730: nil pointer dereference
 
 ```
 
 
 ### go/parser linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
-=== RUN   TestParseDepthLimit/array/small
+Failures/Tests: 2/43
 === RUN   TestParseDepthLimit
+=== RUN   TestParseDepthLimit/array/small
 === RUN   TestParseDepthLimit/array/small
 
 ```
@@ -1289,74 +1308,75 @@ panic: runtime error at 0x00000000002f3730: nil pointer dereference
 
 ### go/printer linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
-=== RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.01s)
-=== RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.08s)
-=== RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.05s)
+Failures/Tests: 12/12
 === RUN   TestFiles
 === RUN   TestFiles/empty.input
     --- PASS: TestFiles/empty.input (0.00s)
 === RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.02s)
+    --- PASS: TestFiles/comments.input (0.01s)
 === RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.01s)
+    --- PASS: TestFiles/comments.input#01 (0.00s)
 === RUN   TestFiles/comments2.input
     --- PASS: TestFiles/comments2.input (0.00s)
 === RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.03s)
+    --- PASS: TestFiles/alignment.input (0.01s)
 === RUN   TestFiles/linebreaks.input
     --- PASS: TestFiles/linebreaks.input (0.01s)
 === RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.08s)
+    --- PASS: TestFiles/expressions.input (0.02s)
 === RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.05s)
+    --- PASS: TestFiles/expressions.input#01 (0.04s)
 === RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.04s)
+    --- PASS: TestFiles/declarations.input (0.02s)
 === RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.00s)
+    --- PASS: TestFiles/statements.input (0.03s)
+=== RUN   TestFiles/slow.input
+panic: runtime error at 0x000000000023a58c: goroutine stack overflow
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.01s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.02s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.03s)
 === RUN   TestFiles/slow.input
 panic: runtime error at 0x000000000023a58c: goroutine stack overflow
 === RUN   TestFiles/empty.input
     --- PASS: TestFiles/empty.input (0.00s)
 === RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.02s)
+    --- PASS: TestFiles/comments.input (0.01s)
 === RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.01s)
+    --- PASS: TestFiles/comments.input#01 (0.00s)
 === RUN   TestFiles/comments2.input
     --- PASS: TestFiles/comments2.input (0.00s)
 === RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.03s)
-=== RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.04s)
-=== RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.00s)
-=== RUN   TestFiles/slow.input
-panic: runtime error at 0x000000000023a58c: goroutine stack overflow
+    --- PASS: TestFiles/alignment.input (0.01s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.02s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.04s)
 
 ```
 
 
 ### go/token linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1214575706/main /tmp/tinygo1214575706/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo1214575706/main /tmp/tinygo1214575706/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2267698324/main /tmp/tinygo2267698324/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo2267698324/main /tmp/tinygo2267698324/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	go/token	0.016s
+FAIL	go/token	0.007s
 ```
 
 
 ### go/types linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	go/types	0.000s
@@ -1367,9 +1387,10 @@ FAIL	go/types	0.000s
 
 ### hash/crc32 linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/8
 === RUN   TestArchIEEE
     Arch-specific IEEE not available.
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1380,9 +1401,10 @@ panic: arch-specific crc32 instruction for IEEE not available
 
 ### hash/maphash linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/15
 === RUN   TestSmhasherTwoNonzero
 panic: runtime error at 0x000000000022ecf8: out of memory
 
@@ -1391,9 +1413,10 @@ panic: runtime error at 0x000000000022ecf8: out of memory
 
 ### html/template linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestAddParseTreeHTML
 panic: unimplemented: (reflect.Type).NumOut()
 
@@ -1402,9 +1425,10 @@ panic: unimplemented: (reflect.Type).NumOut()
 
 ### image/color linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
 
@@ -1413,9 +1437,10 @@ panic: unimplemented: (reflect.Type).NumIn()
 
 ### image/draw linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/9
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
 
@@ -1424,7 +1449,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 
 ### image/gif linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	image/gif	0.000s
@@ -1436,7 +1461,7 @@ FAIL	image/gif	0.000s
 
 ### image/jpeg linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	image/jpeg	0.000s
@@ -1447,20 +1472,43 @@ FAIL	image/jpeg	0.000s
 
 ### image/png linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/13
 === RUN   TestDimensionOverflow
 panic: runtime error at 0x000000000025ca64: out of memory
 
 ```
 
 
-### io linux/arm64
+### index/suffixarray linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 4/6
+=== RUN   TestNew32
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (3.09s)
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (0.42s)
+=== RUN   TestNew32/exhaustive2
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (3.09s)
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (0.42s)
+=== RUN   TestNew32/exhaustive2
+
+```
+
+
+### io linux/arm64
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 4/60
 === RUN   TestMultiWriter_WriteStringSingleAlloc
     num allocations = 0; want 1
 --- FAIL: TestMultiWriter_WriteStringSingleAlloc (0.00s)
@@ -1480,9 +1528,10 @@ panic: runtime error at 0x000000000025ca64: out of memory
 
 ### io/fs linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/6
 === RUN   TestCVE202230630
 
 ```
@@ -1490,9 +1539,10 @@ panic: runtime error at 0x000000000025ca64: out of memory
 
 ### log linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/9
 === RUN   TestAll
     log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
@@ -1500,26 +1550,26 @@ panic: runtime error at 0x000000000025ca64: out of memory
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/10 17:34:09.975400 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/10 17:34:09.975831 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/10 17:34:09.976708 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/10 17:34:09.976822 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/10 17:34:09.976856 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/10 17:34:09.977131 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/10 17:34:09.977156 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/10 17:34:09.977187 ???:0: XXXhello 23 world"
---- FAIL: TestAll (0.00s)
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793653 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793679 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793911 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793928 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.793949 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794314 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794329 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794347 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.01s)
 
 ```
 
 
 ### log/slog linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2811451951/main /tmp/tinygo2811451951/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2811451951/embed-a3a5d08c40939adb7c0e9e4f5b689721-2888019663.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo2811451951/main /tmp/tinygo2811451951/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1667480039/main /tmp/tinygo1667480039/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1667480039/embed-a3a5d08c40939adb7c0e9e4f5b689721-451659394.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo1667480039/main /tmp/tinygo1667480039/main -test.v
 panic: runtime.Caller failed
 FAIL	log/slog	0.012s
 ```
@@ -1527,7 +1577,7 @@ FAIL	log/slog	0.012s
 
 ### log/syslog linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	log/syslog	0.000s
@@ -1539,10 +1589,10 @@ FAIL	log/syslog	0.000s
 
 ### maps linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2516676844/main /tmp/tinygo2516676844/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo397733889/main /tmp/tinygo397733889/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: maps.clone
 >>> referenced by maps.go:46 (/usr/local/go/src/maps/maps.go:46)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-F9AB708965DA4E13606CA4FB6E1A78FE3C988F07:(maps.Clone[map[int]int int int])
@@ -1550,18 +1600,18 @@ ld.lld: error: undefined symbol: maps.clone
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-F9AB708965DA4E13606CA4FB6E1A78FE3C988F07:(maps.TestCloneLarge)
 failed to run tool: ld.lld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo2516676844/main: exit status 1
+error: failed to link /tmp/tinygo397733889/main: exit status 1
 ```
 
 
 ### math/big linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	math/big	0.000s
 # math/big
-/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 28987920)
+/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 35931993)
   %0 = and i64 %x, 4294967295, !dbg !30812
 
 traceback:
@@ -1582,15 +1632,16 @@ traceback:
 /usr/local/go/src/math/big/nat_test.go:92:31:
   %8 = call { { ptr, i64, i64 }, i64, i64, %runtime._interface } @"(math/big.nat).scan"(ptr null, i64 0, i64 0, ptr %6, ptr %7, i64 0, i1 false, ptr undef), !dbg !30804
 /usr/local/go/src/math/big:
-  %19 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %17, i64 %18, ptr undef), !dbg !30811
+  %32 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %30, i64 %31, ptr undef), !dbg !30811
 ```
 
 
 ### math/bits linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 5/21
 === RUN   TestDivPanicOverflow
     Div should have panicked when y<=hi
 --- FAIL: TestDivPanicOverflow (0.00s)
@@ -1611,59 +1662,60 @@ panic: runtime error at 0x0000000000229298: divide by zero
 
 ### math/rand linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 8/43
 === RUN   TestDefaultRace
 --- FAIL: TestDefaultRace (0.00s)
 === RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/0 (0.00s)
 === RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/1 (0.00s)
 === RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/2 (0.00s)
 === RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/3 (0.00s)
 === RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/4 (0.00s)
 === RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
-    --- FAIL: TestDefaultRace/5 (0.00s)
-=== RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
-    --- FAIL: TestDefaultRace/1 (0.00s)
-=== RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
-    --- FAIL: TestDefaultRace/3 (0.00s)
-=== RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
-    --- FAIL: TestDefaultRace/4 (0.00s)
-=== RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/5 (0.00s)
 === RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/0 (0.00s)
+=== RUN   TestDefaultRace/5
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+    --- FAIL: TestDefaultRace/5 (0.00s)
+=== RUN   TestDefaultRace/1
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+    --- FAIL: TestDefaultRace/1 (0.00s)
 === RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo3608171331/main: operation not implemented
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
     --- FAIL: TestDefaultRace/2 (0.00s)
 === RUN   TestRegress
 panic: unimplemented: (reflect.Type).Method()
+=== RUN   TestDefaultRace/3
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+    --- FAIL: TestDefaultRace/3 (0.00s)
+=== RUN   TestDefaultRace/4
+        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+    --- FAIL: TestDefaultRace/4 (0.00s)
 
 ```
 
 
 ### math/rand/v2 linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1160268928/main /tmp/tinygo1160268928/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2554141732/main /tmp/tinygo2554141732/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: internal/chacha8rand.block
 >>> referenced by chacha8.go:63 (/usr/local/go/src/internal/chacha8rand/chacha8.go:63)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:((*internal/chacha8rand.State).Init)
@@ -1673,15 +1725,16 @@ ld.lld: error: undefined symbol: internal/chacha8rand.block
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:(math/rand/v2_test.TestChaCha8Marshal)
 failed to run tool: ld.lld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo1160268928/main: exit status 1
+error: failed to link /tmp/tinygo2554141732/main: exit status 1
 ```
 
 
 ### mime linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/14
 === RUN   TestTypeByExtension_LocalData
 panic: runtime error at 0x0000000000237f38: deadlocked: no event source
 
@@ -1690,9 +1743,10 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
 
 ### net/netip linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 8/256
 === RUN   TestInlining
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1762,37 +1816,37 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
 === RUN   TestAddrStringAllocs/ipv6+zone
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)
+    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.00s)
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
-=== RUN   TestAddrStringAllocs/ipv4-in-ipv6
+=== RUN   TestAddrStringAllocs/ipv6+zone
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
-=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
+    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.00s)
 === RUN   TestAddrStringAllocs/ipv4
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)
+=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
 === RUN   TestAddrStringAllocs/ipv6
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
-=== RUN   TestAddrStringAllocs/ipv6+zone
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)
 === RUN   TestAddrStringAllocs/zero
     --- PASS: TestAddrStringAllocs/zero (0.00s)
+=== RUN   TestAddrStringAllocs/ipv4-in-ipv6
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
 
 ```
 
 
 ### net/rpc/jsonrpc linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	net/rpc/jsonrpc	0.000s
@@ -1803,7 +1857,7 @@ FAIL	net/rpc/jsonrpc	0.000s
 
 ### net/smtp linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	net/smtp	0.000s
@@ -1822,20 +1876,20 @@ FAIL	net/smtp	0.000s
 
 ### net/url linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo260228854/main /tmp/tinygo260228854/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo260228854/main /tmp/tinygo260228854/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3833504147/main /tmp/tinygo3833504147/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo3833504147/main /tmp/tinygo3833504147/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	net/url	0.037s
+FAIL	net/url	0.009s
 ```
 
 
 ### os/signal linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	os/signal	0.000s
@@ -1850,9 +1904,10 @@ FAIL	os/signal	0.000s
 
 ### path/filepath linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/3
 === RUN   TestCVE202230632
 
 ```
@@ -1860,7 +1915,7 @@ FAIL	os/signal	0.000s
 
 ### plugin linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	plugin	0.000s
@@ -1873,9 +1928,10 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
 
 ### regexp linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/14
 === RUN   TestOnePassCutoff
 
 ```
@@ -1883,9 +1939,10 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
 
 ### slices linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/11
 === RUN   TestInsertPanics
 panic: runtime error at 0x0000000000285364: slice out of range
 
@@ -1894,27 +1951,29 @@ panic: runtime error at 0x0000000000285364: slice out of range
 
 ### strings linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 2/71
 === RUN   TestBuilderGrow
     growLen=100: got 0 allocs during Write; want 1
     growLen=1000: got 0 allocs during Write; want 1
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
---- FAIL: TestBuilderGrow (0.11s)
+--- FAIL: TestBuilderGrow (0.16s)
 === RUN   TestBuilderAllocs
     Builder allocs = 0; want 1
---- FAIL: TestBuilderAllocs (0.00s)
+--- FAIL: TestBuilderAllocs (0.02s)
 
 ```
 
 
 ### sync/atomic linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 6/68
 === RUN   TestStoreLoadSeqCst32
     Skipping test on 1 processor machine
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1950,7 +2009,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
 
 ### syscall linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	syscall	0.000s
@@ -1969,9 +2028,10 @@ FAIL	syscall	0.000s
 
 ### testing/quick linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestCheckEqual
 panic: unimplemented: (reflect.Type).NumIn()
 
@@ -1980,21 +2040,22 @@ panic: unimplemented: (reflect.Type).NumIn()
 
 ### testing/slogtest linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1247991703/main /tmp/tinygo1247991703/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo1247991703/main /tmp/tinygo1247991703/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3568162867/main /tmp/tinygo3568162867/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo3568162867/main /tmp/tinygo3568162867/main -test.v
 panic: runtime.Caller failed
-FAIL	testing/slogtest	0.028s
+FAIL	testing/slogtest	0.015s
 ```
 
 
 ### text/template linux/arm64
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
+Failures/Tests: 1/1
 === RUN   TestExecute
 panic: unimplemented: (reflect.Type).NumOut()
 
@@ -2003,7 +2064,7 @@ panic: unimplemented: (reflect.Type).NumOut()
 
 ### time linux/arm64
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	time	0.000s
@@ -2023,7 +2084,7 @@ FAIL	time	0.000s
 
 ### archive/tar wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	archive/tar	0.000s
@@ -2035,7 +2096,7 @@ FAIL	archive/tar	0.000s
 
 ### bufio wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 2/42
@@ -2044,7 +2105,7 @@ Failures/Tests: 2/42
 --- FAIL: TestReadStringAllocs (0.00s)
 === RUN   TestNegativeRead
 panic: bufio: reader returned negative count from Read
-Error: failed to run main module `/tmp/tinygo3406265067/main`
+Error: failed to run main module `/tmp/tinygo1223462497/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2085,7 +2146,7 @@ Caused by:
 
 ### bytes wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
@@ -2093,7 +2154,7 @@ Failures/Tests: 1/1
     mmap failed errno 52
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo4011941139/main`
+Error: failed to run main module `/tmp/tinygo833153832/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2134,7 +2195,7 @@ Caused by:
 
 ### compress/flate wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 2/24
@@ -2217,12 +2278,12 @@ Failures/Tests: 2/24
     level: 8, size:0.00%, 5 b
     level: 9, size:0.00%, 5 b
     level: -2, size:0.00%, 5 b
---- FAIL: TestDeflateInflateString (10.03s)
+--- FAIL: TestDeflateInflateString (10.10s)
 === RUN   TestWriterPersistentWriteError
     ReadFile: open ../../testdata/Isaac.Newton-Opticks.txt: errno 63
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: slice out of range
-Error: failed to run main module `/tmp/tinygo4074293332/main`
+Error: failed to run main module `/tmp/tinygo4204143657/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2263,7 +2324,7 @@ Caused by:
 
 ### context wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	context	0.000s
@@ -2278,13 +2339,13 @@ FAIL	context	0.000s
 
 ### crypto wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
 === RUN   TestRC4OutOfBoundsWrite
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo2583176720/main`
+Error: failed to run main module `/tmp/tinygo3769505370/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2329,13 +2390,13 @@ Caused by:
 
 ### crypto/aes wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/9
 === RUN   TestShortBlocks
 panic: crypto/aes: input not full block
-Error: failed to run main module `/tmp/tinygo1596345428/main`
+Error: failed to run main module `/tmp/tinygo528300453/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2382,13 +2443,13 @@ Caused by:
 
 ### crypto/cipher wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/5
 === RUN   TestCryptBlocks
 panic: crypto/cipher: input not full blocks
-Error: failed to run main module `/tmp/tinygo1946308229/main`
+Error: failed to run main module `/tmp/tinygo3553846044/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2435,78 +2496,78 @@ Caused by:
 
 ### crypto/dsa wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo410270275/main /tmp/tinygo410270275/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3734785936/main /tmp/tinygo3734785936/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/dsa	0.000s
-error: failed to link /tmp/tinygo410270275/main: exit status 1
+error: failed to link /tmp/tinygo3734785936/main: exit status 1
 ```
 
 
 ### crypto/ecdh wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4028602410/main /tmp/tinygo4028602410/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo4028602410/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2534008928/main /tmp/tinygo2534008928/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2534008928/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	crypto/ecdh	0.000s
-error: failed to link /tmp/tinygo4028602410/main: exit status 1
+error: failed to link /tmp/tinygo2534008928/main: exit status 1
 ```
 
 
 ### crypto/ecdsa wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2875378867/main /tmp/tinygo2875378867/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo61882009/main /tmp/tinygo61882009/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/ecdsa	0.000s
-error: failed to link /tmp/tinygo2875378867/main: exit status 1
+error: failed to link /tmp/tinygo61882009/main: exit status 1
 ```
 
 
 ### crypto/ed25519 wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1458967881/main /tmp/tinygo1458967881/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1458967881/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1137263605/main /tmp/tinygo1137263605/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1137263605/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	crypto/ed25519	0.000s
-error: failed to link /tmp/tinygo1458967881/main: exit status 1
+error: failed to link /tmp/tinygo1137263605/main: exit status 1
 ```
 
 
 ### crypto/elliptic wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo247286908/main /tmp/tinygo247286908/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1826526435/main /tmp/tinygo1826526435/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/elliptic	0.000s
-error: failed to link /tmp/tinygo247286908/main: exit status 1
+error: failed to link /tmp/tinygo1826526435/main: exit status 1
 ```
 
 
 ### crypto/hmac wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/2
 === RUN   TestNonUniqueHash
 panic: crypto/hmac: hash generation function does not produce unique values
-Error: failed to run main module `/tmp/tinygo3117400466/main`
+Error: failed to run main module `/tmp/tinygo3857171440/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2547,27 +2608,27 @@ Caused by:
 
 ### crypto/rsa wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo47551474/main /tmp/tinygo47551474/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2135683027/main /tmp/tinygo2135683027/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/rsa	0.000s
-error: failed to link /tmp/tinygo47551474/main: exit status 1
+error: failed to link /tmp/tinygo2135683027/main: exit status 1
 ```
 
 
 ### crypto/subtle wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/2
 === RUN   TestConstantTimeByteEq
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo1690967935/main`
+Error: failed to run main module `/tmp/tinygo2160779262/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2612,7 +2673,7 @@ Caused by:
 
 ### crypto/x509 wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	crypto/x509	0.000s
@@ -2623,7 +2684,7 @@ FAIL	crypto/x509	0.000s
 
 ### database/sql wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	database/sql	0.000s
@@ -2634,7 +2695,7 @@ FAIL	database/sql	0.000s
 
 ### debug/buildinfo wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	debug/buildinfo	0.000s
@@ -2645,7 +2706,7 @@ FAIL	debug/buildinfo	0.000s
 
 ### debug/elf wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	debug/elf	0.000s
@@ -2656,52 +2717,52 @@ FAIL	debug/elf	0.000s
 
 ### debug/gosym wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2148283037/main /tmp/tinygo2148283037/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2148283037/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1198274814/main /tmp/tinygo1198274814/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1198274814/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	debug/gosym	0.000s
-error: failed to link /tmp/tinygo2148283037/main: exit status 1
+error: failed to link /tmp/tinygo1198274814/main: exit status 1
 ```
 
 
 ### debug/pe wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4240434362/main /tmp/tinygo4240434362/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo4240434362/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2339299728/main /tmp/tinygo2339299728/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2339299728/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	debug/pe	0.000s
-error: failed to link /tmp/tinygo4240434362/main: exit status 1
+error: failed to link /tmp/tinygo2339299728/main: exit status 1
 ```
 
 
 ### encoding/asn1 wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3731190783/main /tmp/tinygo3731190783/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1651278634/main /tmp/tinygo1651278634/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	encoding/asn1	0.000s
-error: failed to link /tmp/tinygo3731190783/main: exit status 1
+error: failed to link /tmp/tinygo1651278634/main: exit status 1
 ```
 
 
 ### encoding/binary wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/16
 === RUN   TestUnexportedRead
 panic: reflect: value is not settable
-Error: failed to run main module `/tmp/tinygo215065872/main`
+Error: failed to run main module `/tmp/tinygo2789013446/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2751,11 +2812,11 @@ Caused by:
 
 ### encoding/gob wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1595122478/main /tmp/tinygo1595122478/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1595122478/main --output /tmp/tinygo1595122478/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2745681366/main /tmp/tinygo2745681366/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2745681366/main --output /tmp/tinygo2745681366/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -2769,25 +2830,25 @@ error: wasm-opt failed: exit status 1
 
 ### encoding/pem wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2331471754/main /tmp/tinygo2331471754/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4271621446/main /tmp/tinygo4271621446/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	encoding/pem	0.000s
-error: failed to link /tmp/tinygo2331471754/main: exit status 1
+error: failed to link /tmp/tinygo4271621446/main: exit status 1
 ```
 
 
 ### encoding/xml wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/336
 === RUN   TestCVE202228131
-Error: failed to run main module `/tmp/tinygo760277929/main`
+Error: failed to run main module `/tmp/tinygo41461420/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2880,7 +2941,7 @@ Caused by:
 
 ### errors wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 21/56
@@ -2932,33 +2993,10 @@ Failures/Tests: 21/56
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
 === RUN   TestAs/7:As(Errorf(...,_oh_no),_0x458c0)
     --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x458c0) (0.00s)
-=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x458b0)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x458b0) (0.00s)
-=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
-    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
-    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x458a0)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x458a0) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x458a0)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x458a0) (0.00s)
-=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
-    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0x458b0)
-        match: got true; want false
-        FailNow is incomplete, requires runtime.Goexit()
-        got &errors.errorString{s:"err"}, want <nil>
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x458b0) (0.00s)
+=== RUN   TestAsValidation
 === RUN   TestAsValidation/<nil>(<nil>)
 panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo2328385259/main`
+Error: failed to run main module `/tmp/tinygo2906916059/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3000,96 +3038,119 @@ Caused by:
           14: 0x215c2 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0) (0.00s)
-=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
-    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x458a0)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x458a0) (0.00s)
 === RUN   TestAs/6:As(Errorf(...,_path),_0x458a0)
     --- PASS: TestAs/6:As(Errorf(...,_path),_0x458a0) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo2906916059/main`
+
+Caused by:
+    0: failed to invoke `run` function
+    1: error while executing at wasm backtrace:
+           0: 0x3182 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x102aa - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x73fc2 - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x554a9 - (*testing.T).Run
+           5: 0x73e07 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x554a9 - (*testing.T).Run
+           8: 0x2a9a5 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x25f25 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x21963 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12: 0x1845 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x2184a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5
+          14: 0x215c2 - wasi:cli/run@0.2.0#run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0) (0.00s)
 === RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458b0)
     --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458b0) (0.00s)
 === RUN   TestAs/10:As(Errorf(...,_path_error),_0x458b0)
         got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
         FailNow is incomplete, requires runtime.Goexit()
     --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x458b0) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
 === RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
     --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
-=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAsValidation
-=== RUN   TestAsValidation/<nil>(<nil>)
-panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo2328385259/main`
-
-Caused by:
-    0: failed to invoke `run` function
-    1: error while executing at wasm backtrace:
-           0: 0x3182 - runtime.abort
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime._panic
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
-           1: 0x102aa - (Go interface method)
-                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
-                           at /usr/local/go/src/errors/wrap.go:109:24
-           2: 0x73fc2 - errors_test.TestAsValidation$1
-                           at /usr/local/go/src/errors/wrap_test.go:232:22
-           3: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-           4: 0x554a9 - (*testing.T).Run
-           5: 0x73e07 - errors_test.TestAsValidation
-                           at /usr/local/go/src/errors/wrap_test.go:228:8
-           6: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-           7: 0x554a9 - (*testing.T).Run
-           8: 0x2a9a5 - testing.runTests$1
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
-           9: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-          10: 0x25f25 - testing.runTests
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
-                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
-          11: 0x21963 - <goroutine wrapper>
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
-          12: 0x1845 - tinygo_launch
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
-          13: 0x2184a - (*internal/task.Task).Resume
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5
-          14: 0x215c2 - wasi:cli/run@0.2.0#run
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
-    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x458b0)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x458b0) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x458a0)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x458a0) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x458b0)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x458b0) (0.00s)
 
 ```
 
 
 ### flag wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo783808678/main /tmp/tinygo783808678/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo783808678/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2835594068/main /tmp/tinygo2835594068/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2835594068/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	flag	0.000s
-error: failed to link /tmp/tinygo783808678/main: exit status 1
+error: failed to link /tmp/tinygo2835594068/main: exit status 1
 ```
 
 
 ### fmt wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/3
 === RUN   TestSprintf
     Sprintf("%#v", 0x2f) = "(func)(0x2f)" want "(func(*testing.T))(0xPTR)"
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo2692643401/main`
+Error: failed to run main module `/tmp/tinygo1830103836/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3143,57 +3204,50 @@ Caused by:
 
 ### go/ast wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1990993713/main /tmp/tinygo1990993713/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3931877979/main /tmp/tinygo3931877979/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/ast	0.000s
-error: failed to link /tmp/tinygo1990993713/main: exit status 1
+error: failed to link /tmp/tinygo3931877979/main: exit status 1
 ```
 
 
 ### go/build wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1008315131/main /tmp/tinygo1008315131/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1008315131/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3324709683/main /tmp/tinygo3324709683/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3324709683/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	go/build	0.000s
-error: failed to link /tmp/tinygo1008315131/main: exit status 1
+error: failed to link /tmp/tinygo3324709683/main: exit status 1
 ```
 
 
 ### go/build/constraint wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 7/13
 === RUN   TestLex/0
     --- PASS: TestLex/0 (0.00s)
-=== RUN   TestLex/2
-    --- PASS: TestLex/2 (0.00s)
-=== RUN   TestLex/4
-    --- PASS: TestLex/4 (0.00s)
-=== RUN   TestLex
-=== RUN   TestLex/0
-    --- PASS: TestLex/0 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
 === RUN   TestLex/1
     --- PASS: TestLex/1 (0.00s)
 === RUN   TestLex/2
     --- PASS: TestLex/2 (0.00s)
-=== RUN   TestLex/3
-    --- PASS: TestLex/3 (0.00s)
 === RUN   TestLex/4
     --- PASS: TestLex/4 (0.00s)
 === RUN   TestLex/5
 panic: invalid syntax at ²
-Error: failed to run main module `/tmp/tinygo2674848434/main`
+Error: failed to run main module `/tmp/tinygo3006413456/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3235,13 +3289,20 @@ Caused by:
           14: 0x27b36 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestLex
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
 === RUN   TestLex/1
     --- PASS: TestLex/1 (0.00s)
+=== RUN   TestLex/2
+    --- PASS: TestLex/2 (0.00s)
 === RUN   TestLex/3
     --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
 === RUN   TestLex/5
 panic: invalid syntax at ²
-Error: failed to run main module `/tmp/tinygo2674848434/main`
+Error: failed to run main module `/tmp/tinygo3006413456/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3289,83 +3350,83 @@ Caused by:
 
 ### go/constant wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3550536449/main /tmp/tinygo3550536449/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3223466746/main /tmp/tinygo3223466746/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/constant	0.000s
-error: failed to link /tmp/tinygo3550536449/main: exit status 1
+error: failed to link /tmp/tinygo3223466746/main: exit status 1
 ```
 
 
 ### go/doc wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4247959433/main /tmp/tinygo4247959433/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2855892677/main /tmp/tinygo2855892677/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/doc	0.000s
-error: failed to link /tmp/tinygo4247959433/main: exit status 1
+error: failed to link /tmp/tinygo2855892677/main: exit status 1
 ```
 
 
 ### go/doc/comment wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1970295906/main /tmp/tinygo1970295906/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1970295906/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1319120041/main /tmp/tinygo1319120041/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1319120041/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	go/doc/comment	0.000s
-error: failed to link /tmp/tinygo1970295906/main: exit status 1
+error: failed to link /tmp/tinygo1319120041/main: exit status 1
 ```
 
 
 ### go/format wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo888137399/main /tmp/tinygo888137399/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4235322888/main /tmp/tinygo4235322888/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/format	0.000s
-error: failed to link /tmp/tinygo888137399/main: exit status 1
+error: failed to link /tmp/tinygo4235322888/main: exit status 1
 ```
 
 
 ### go/importer wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1858079759/main /tmp/tinygo1858079759/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo803710478/main /tmp/tinygo803710478/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
-wasm-ld: error: /tmp/tinygo1858079759/main.o: undefined symbol: syscall.Faccessat
+wasm-ld: error: /tmp/tinygo803710478/main.o: undefined symbol: syscall.Faccessat
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/importer	0.000s
-error: failed to link /tmp/tinygo1858079759/main: exit status 1
+error: failed to link /tmp/tinygo803710478/main: exit status 1
 ```
 
 
 ### go/parser wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/3
 === RUN   TestParseFile
 panic: (125144:0x00020510)
-Error: failed to run main module `/tmp/tinygo3903055257/main`
+Error: failed to run main module `/tmp/tinygo3753330157/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3428,25 +3489,25 @@ Caused by:
 
 ### go/printer wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1385324314/main /tmp/tinygo1385324314/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2744585963/main /tmp/tinygo2744585963/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/printer	0.000s
-error: failed to link /tmp/tinygo1385324314/main: exit status 1
+error: failed to link /tmp/tinygo2744585963/main: exit status 1
 ```
 
 
 ### go/token wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3418352107/main /tmp/tinygo3418352107/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3418352107/main --output /tmp/tinygo3418352107/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3278385517/main /tmp/tinygo3278385517/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3278385517/main --output /tmp/tinygo3278385517/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -3460,7 +3521,7 @@ error: wasm-opt failed: exit status 1
 
 ### go/types wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	go/types	0.000s
@@ -3471,7 +3532,7 @@ FAIL	go/types	0.000s
 
 ### hash/crc32 wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/8
@@ -3479,7 +3540,7 @@ Failures/Tests: 1/8
     Arch-specific IEEE not available.
     SkipNow is incomplete, requires runtime.Goexit()
 panic: not available
-Error: failed to run main module `/tmp/tinygo2973868432/main`
+Error: failed to run main module `/tmp/tinygo1933128746/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3521,29 +3582,29 @@ Caused by:
 
 ### hash/maphash wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2682996694/main /tmp/tinygo2682996694/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo338605344/main /tmp/tinygo338605344/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	hash/maphash	0.000s
-error: failed to link /tmp/tinygo2682996694/main: exit status 1
+error: failed to link /tmp/tinygo338605344/main: exit status 1
 ```
 
 
 ### html/template wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
 === RUN   TestAddParseTreeHTML
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo1248341731/main`
+Error: failed to run main module `/tmp/tinygo3715814108/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3593,13 +3654,13 @@ Caused by:
 
 ### image wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/3
 === RUN   TestNewXxxBadRectangle
 panic: image: NewRGBA Rectangle has huge or negative dimensions
-Error: failed to run main module `/tmp/tinygo3068521352/main`
+Error: failed to run main module `/tmp/tinygo1170306420/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3648,13 +3709,13 @@ Caused by:
 
 ### image/color wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo1690312105/main`
+Error: failed to run main module `/tmp/tinygo1764958037/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3698,13 +3759,13 @@ Caused by:
 
 ### image/draw wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/9
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo395808264/main`
+Error: failed to run main module `/tmp/tinygo2453818818/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3748,7 +3809,7 @@ Caused by:
 
 ### image/gif wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	image/gif	0.000s
@@ -3760,7 +3821,7 @@ FAIL	image/gif	0.000s
 
 ### image/jpeg wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	image/jpeg	0.000s
@@ -3771,7 +3832,7 @@ FAIL	image/jpeg	0.000s
 
 ### io wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 4/60
@@ -3787,22 +3848,22 @@ Failures/Tests: 4/60
 === RUN   TestMultiReaderFreesExhaustedReaders
     timeout waiting for collection of buf1
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestMultiReaderFreesExhaustedReaders (5.02s)
+--- FAIL: TestMultiReaderFreesExhaustedReaders (5.03s)
 
 ```
 
 
 ### io/fs wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 2/6
 === RUN   TestGlob
     Glob(`gl?b.go`) = []string(nil) want glob.go
---- FAIL: TestGlob (0.03s)
+--- FAIL: TestGlob (0.02s)
 === RUN   TestCVE202230630
-Error: failed to run main module `/tmp/tinygo2229007371/main`
+Error: failed to run main module `/tmp/tinygo2348879130/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -5816,12 +5877,12 @@ Caused by:
 
 ### io/ioutil wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 2/28
 === RUN   TestReadOnlyWriteFile
-    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile134212601/blurp.txt
+    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile173470280/blurp.txt
     FailNow is incomplete, requires runtime.Goexit()
     want shmorp, got florp
     FailNow is incomplete, requires runtime.Goexit()
@@ -5838,7 +5899,7 @@ Failures/Tests: 2/28
 
 ### log wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/9
@@ -5849,31 +5910,31 @@ Failures/Tests: 1/9
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 00:28:17.320625 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 00:28:17.322083 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 00:28:17.322293 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 00:28:17.322509 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 00:28:17.322724 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 00:28:17.323012 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 00:28:17.323232 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 00:28:17.323481 ???:0: XXXhello 23 world"
---- FAIL: TestAll (0.02s)
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.917981 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919398 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919607 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919831 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920055 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920302 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920527 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920766 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.03s)
 
 ```
 
 
 ### log/slog wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3909188197/main /tmp/tinygo3909188197/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3909188197/main --output /tmp/tinygo3909188197/main
-wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo3909188197/main -o /tmp/tinygo3909188197/main
-wasm-tools component new /tmp/tinygo3909188197/main -o /tmp/tinygo3909188197/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo3909188197/main -test.v
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo705781216/main /tmp/tinygo705781216/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo705781216/main --output /tmp/tinygo705781216/main
+wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo705781216/main -o /tmp/tinygo705781216/main
+wasm-tools component new /tmp/tinygo705781216/main -o /tmp/tinygo705781216/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo705781216/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo3909188197/main`
+Error: failed to run main module `/tmp/tinygo705781216/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -5900,13 +5961,13 @@ Caused by:
            9: 0x1eadf - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	log/slog	0.665s
+FAIL	log/slog	0.782s
 ```
 
 
 ### log/syslog wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	log/syslog	0.000s
@@ -5918,24 +5979,24 @@ FAIL	log/syslog	0.000s
 
 ### maps wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo397213976/main /tmp/tinygo397213976/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo397213976/main.o: undefined symbol: maps.clone
-wasm-ld: error: /tmp/tinygo397213976/main.o: undefined symbol: maps.clone
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo794195125/main /tmp/tinygo794195125/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo794195125/main.o: undefined symbol: maps.clone
+wasm-ld: error: /tmp/tinygo794195125/main.o: undefined symbol: maps.clone
 failed to run tool: wasm-ld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo397213976/main: exit status 1
+error: failed to link /tmp/tinygo794195125/main: exit status 1
 ```
 
 
 ### math wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2691323807/main /tmp/tinygo2691323807/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2334663722/main /tmp/tinygo2334663722/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
@@ -5959,19 +6020,19 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
 failed to run tool: wasm-ld
 FAIL	math	0.000s
-error: failed to link /tmp/tinygo2691323807/main: exit status 1
+error: failed to link /tmp/tinygo2334663722/main: exit status 1
 ```
 
 
 ### math/bits wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/12
 === RUN   TestAdd64OverflowPanic
 panic: overflow
-Error: failed to run main module `/tmp/tinygo3851335049/main`
+Error: failed to run main module `/tmp/tinygo1845457845/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -6017,10 +6078,10 @@ Caused by:
 
 ### math/cmplx wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3000415111/main /tmp/tinygo3000415111/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1824118019/main /tmp/tinygo1824118019/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6038,22 +6099,22 @@ wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/cmplx	0.000s
-error: failed to link /tmp/tinygo3000415111/main: exit status 1
+error: failed to link /tmp/tinygo1824118019/main: exit status 1
 ```
 
 
 ### math/rand wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2483209331/main /tmp/tinygo2483209331/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3472514813/main /tmp/tinygo3472514813/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
-wasm-ld: error: /tmp/tinygo2483209331/main.o: undefined symbol: syscall.Faccessat
+wasm-ld: error: /tmp/tinygo3472514813/main.o: undefined symbol: syscall.Faccessat
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6062,18 +6123,18 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/rand	0.000s
-error: failed to link /tmp/tinygo2483209331/main: exit status 1
+error: failed to link /tmp/tinygo3472514813/main: exit status 1
 ```
 
 
 ### math/rand/v2 wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2274969892/main /tmp/tinygo2274969892/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2274969892/main.o: undefined symbol: internal/chacha8rand.block
-wasm-ld: error: /tmp/tinygo2274969892/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2653209393/main /tmp/tinygo2653209393/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
@@ -6081,7 +6142,7 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
-wasm-ld: error: /tmp/tinygo2274969892/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6090,39 +6151,39 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo2274969892/main: exit status 1
+error: failed to link /tmp/tinygo2653209393/main: exit status 1
 ```
 
 
 ### mime/quotedprintable wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2823067653/main /tmp/tinygo2823067653/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2823067653/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2213622877/main /tmp/tinygo2213622877/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2213622877/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	mime/quotedprintable	0.000s
-error: failed to link /tmp/tinygo2823067653/main: exit status 1
+error: failed to link /tmp/tinygo2213622877/main: exit status 1
 ```
 
 
 ### net/netip wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2789263348/main /tmp/tinygo2789263348/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2789263348/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3871844521/main /tmp/tinygo3871844521/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3871844521/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	net/netip	0.000s
-error: failed to link /tmp/tinygo2789263348/main: exit status 1
+error: failed to link /tmp/tinygo3871844521/main: exit status 1
 ```
 
 
 ### net/rpc/jsonrpc wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	net/rpc/jsonrpc	0.000s
@@ -6133,7 +6194,7 @@ FAIL	net/rpc/jsonrpc	0.000s
 
 ### net/smtp wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	net/smtp	0.000s
@@ -6152,11 +6213,11 @@ FAIL	net/smtp	0.000s
 
 ### net/url wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3861735140/main /tmp/tinygo3861735140/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3861735140/main --output /tmp/tinygo3861735140/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3271658277/main /tmp/tinygo3271658277/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3271658277/main --output /tmp/tinygo3271658277/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -6170,7 +6231,7 @@ error: wasm-opt failed: exit status 1
 
 ### os wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 3/37
@@ -6192,7 +6253,7 @@ Failures/Tests: 3/37
 
 ### os/signal wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	os/signal	0.000s
@@ -6203,7 +6264,7 @@ FAIL	os/signal	0.000s
 
 ### path/filepath wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 2/3
@@ -6211,7 +6272,7 @@ Failures/Tests: 2/3
     Glob(`mat?h.go`) = []string(nil) want match.go
 --- FAIL: TestGlob (0.04s)
 === RUN   TestCVE202230632
-Error: failed to run main module `/tmp/tinygo3824647072/main`
+Error: failed to run main module `/tmp/tinygo551525121/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8457,7 +8518,7 @@ Caused by:
 
 ### plugin wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	plugin	0.000s
@@ -8469,13 +8530,13 @@ FAIL	plugin	0.000s
 
 ### regexp wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/2
 === RUN   TestBadCompile
 panic: expression too large
-Error: failed to run main module `/tmp/tinygo3803646558/main`
+Error: failed to run main module `/tmp/tinygo1994610891/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8527,13 +8588,13 @@ Caused by:
 
 ### regexp/syntax wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/8
 === RUN   TestParseInvalidRegexps
 panic: expression nests too deeply
-Error: failed to run main module `/tmp/tinygo3796347969/main`
+Error: failed to run main module `/tmp/tinygo3008546514/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8581,11 +8642,11 @@ Caused by:
 
 ### slices wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1019134375/main /tmp/tinygo1019134375/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1019134375/main --output /tmp/tinygo1019134375/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo953315923/main /tmp/tinygo953315923/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo953315923/main --output /tmp/tinygo953315923/main
 FAIL	slices	0.000s
 error: wasm-opt failed: signal: killed
 ```
@@ -8593,22 +8654,22 @@ error: wasm-opt failed: signal: killed
 
 ### strconv wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3904997221/main /tmp/tinygo3904997221/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1187509119/main /tmp/tinygo1187509119/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	strconv	0.000s
-error: failed to link /tmp/tinygo3904997221/main: exit status 1
+error: failed to link /tmp/tinygo1187509119/main: exit status 1
 ```
 
 
 ### strings wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/4
@@ -8618,7 +8679,7 @@ Failures/Tests: 1/4
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
 panic: strings.Builder.Grow: negative count
-Error: failed to run main module `/tmp/tinygo4150275446/main`
+Error: failed to run main module `/tmp/tinygo2658371620/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8660,7 +8721,7 @@ Caused by:
 
 ### sync/atomic wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 6/68
@@ -8689,10 +8750,10 @@ Failures/Tests: 6/68
     CompareAndSwapUint64Method did not panic
     AddUint64 did not panic
     AddUint64Method did not panic
---- FAIL: TestUnaligned64 (0.90s)
+--- FAIL: TestUnaligned64 (2.18s)
 === RUN   TestNilDeref
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo244066245/main`
+Error: failed to run main module `/tmp/tinygo1737417034/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8738,7 +8799,7 @@ Caused by:
 
 ### syscall wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
@@ -8746,7 +8807,7 @@ Failures/Tests: 1/1
     Mmap: errno 52
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo1888783324/main`
+Error: failed to run main module `/tmp/tinygo1724218142/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8789,7 +8850,7 @@ Caused by:
 
 ### testing/fstest wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/5
@@ -8808,20 +8869,20 @@ Failures/Tests: 1/5
         expected but not found: hello.link
     FailNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestSymlink (0.01s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink256640561: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink142146521: errno 52
 
 ```
 
 
 ### testing/quick wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/1
 === RUN   TestCheckEqual
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo2214071950/main`
+Error: failed to run main module `/tmp/tinygo1462079876/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8866,16 +8927,16 @@ Caused by:
 
 ### testing/slogtest wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3598896392/main /tmp/tinygo3598896392/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3598896392/main --output /tmp/tinygo3598896392/main
-wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo3598896392/main -o /tmp/tinygo3598896392/main
-wasm-tools component new /tmp/tinygo3598896392/main -o /tmp/tinygo3598896392/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo3598896392/main -test.v
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3627211997/main /tmp/tinygo3627211997/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3627211997/main --output /tmp/tinygo3627211997/main
+wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo3627211997/main -o /tmp/tinygo3627211997/main
+wasm-tools component new /tmp/tinygo3627211997/main -o /tmp/tinygo3627211997/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo3627211997/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo3598896392/main`
+Error: failed to run main module `/tmp/tinygo3627211997/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8902,19 +8963,19 @@ Caused by:
            9: 0x16861 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	testing/slogtest	0.526s
+FAIL	testing/slogtest	0.407s
 ```
 
 
 ### text/tabwriter wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/2
 === RUN   TestPanicDuringFlush
 panic: cannot write
-Error: failed to run main module `/tmp/tinygo689706083/main`
+Error: failed to run main module `/tmp/tinygo162047265/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8968,26 +9029,26 @@ Caused by:
 
 ### text/template wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1881586924/main /tmp/tinygo1881586924/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1881586924/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo619246378/main /tmp/tinygo619246378/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo619246378/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	text/template	0.000s
-error: failed to link /tmp/tinygo1881586924/main: exit status 1
+error: failed to link /tmp/tinygo619246378/main: exit status 1
 ```
 
 
 ### text/template/parse wasip2/wasm
 
-[🔝](#summary)failure
+[🔝](#summary) failure
 
 ```text
 Failures/Tests: 1/6
 === RUN   TestNumberParse
 panic: (97676:0x00049460)
-Error: failed to run main module `/tmp/tinygo3428132596/main`
+Error: failed to run main module `/tmp/tinygo3860618545/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -9034,7 +9095,7 @@ Caused by:
 
 ### time wasip2/wasm
 
-[🔝](#summary)build error
+[🔝](#summary) build error
 
 ```text
 FAIL	time	0.000s

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="56" failures="16" errors="0" time="15.382587">
+	<testsuite tests="56" failures="16" time="0.000000" name="go/build" timestamp="2024-03-11T01:41:44Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/build" name="TestDotSlashImport" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDotSlashImport&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;./file&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDotSlashImport (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestLocalDirectory" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestLocalDirectory&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestLocalDirectory (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportCmd" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportCmd&#xA;    import &#34;cmd/internal/objfile&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportCmd (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportDirNotExist" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportDirNotExist&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportDirNotExist (0.00s)&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=off&#xA;    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportVendor" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportVendor&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    cannot find vendored c/d from testdata src/a/b directory: import &#34;c/d&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportVendor (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportVendorFailure" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportVendorFailure&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportVendorFailure (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportVendorParentFailure" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportVendorParentFailure&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportVendorParentFailure (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportPackageOutsideModule" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportPackageOutsideModule&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    error when importing package when no go.mod is present: got &#34;go/build: go list example.com/p: fork/exec /usr/local/go/bin/go: operation not implemented\n\n&#34;; want &#34;go.mod file not found in current directory or any parent directory&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportPackageOutsideModule (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestIssue23594" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestIssue23594&#xA;    could not import testdata: import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestIssue23594 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestMissingImportErrorRepetition" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestMissingImportErrorRepetition&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMissingImportErrorRepetition (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestCgoImportsIgnored" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestCgoImportsIgnored&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestCgoImportsIgnored (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestAllTags" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestAllTags&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestAllTags (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestAllTagsNonSourceFile" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestAllTagsNonSourceFile&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestAllTagsNonSourceFile (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestDirectives" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDirectives&#xA;    could not import testdata: import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDirectives (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=on" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: fork/exec /usr/local/go/bin/go: operation not implemented\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=off" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=off&#xA;    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestMatch" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestEmptyImport" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestEmptyFolderImport" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestMultiplePackageImport" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestShouldBuild" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestGoodOSArchFile" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestMatchFile" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestExpandSrcDir" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestShellSafety" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestIssue56509" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestDependencies" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestStdlibLowercase" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestFindImports" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestReadGoInfo" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestReadComments" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestReadFailuresIgnored" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestReadEmbed" time="0.000000"></testcase>
+		<testcase classname="go/build" name="TestGoodOSArch" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="52" failures="0" errors="0" time="8.457627">
+	<testsuite tests="52" failures="0" time="0.000000" name="text/template/parse" timestamp="2024-03-11T01:45:27Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="text/template/parse" name="TestLex" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestDelims" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestDelimsAlphaNumeric" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestDelimsAndMarkers" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestPos" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestNumberParse" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestParse" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestParseCopy" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestParseWithComments" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestKeywordsAndFuncs" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestSkipFuncCheck" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestIsEmpty" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestErrorContextWithTreeCopy" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestErrors" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestBlock" time="0.000000"></testcase>
+		<testcase classname="text/template/parse" name="TestLineNum" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13" failures="1" errors="0" time="6.140417">
+	<testsuite tests="13" failures="1" time="0.000000" name="image/png" timestamp="2024-03-11T01:44:04Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="image/png" name="TestDimensionOverflow" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDimensionOverflow&#xA;panic: runtime error at 0x000000000025ca64: out of memory&#xA;</failure>
+		</testcase>
+		<testcase classname="image/png" name="TestPaeth" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestPaethDecode" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestReaderError" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestPalettedDecodeConfig" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestInterlaced" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestIncompleteIDATOnRowBoundary" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestTrailingIDATChunks" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestMultipletRNSChunks" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestUnknownChunkLengthUnderflow" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestPaletted8OutOfRangePixel" time="0.000000"></testcase>
+		<testcase classname="image/png" name="TestGray8Transparent" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

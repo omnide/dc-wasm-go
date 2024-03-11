@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="0" errors="0" time="15.539865">
+	<testsuite tests="4" failures="0" time="0.000000" name="crypto/dsa" timestamp="2024-03-11T01:38:30Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/dsa" name="TestParameterGeneration" time="0.000000"></testcase>
+		<testcase classname="crypto/dsa" name="TestSignAndVerify" time="0.000000"></testcase>
+		<testcase classname="crypto/dsa" name="TestSignAndVerifyWithBadPublicKey" time="0.000000"></testcase>
+		<testcase classname="crypto/dsa" name="TestSigningWithDegenerateKeys" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

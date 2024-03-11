@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="37" failures="3" errors="0" time="13.326706">
+	<testsuite tests="37" failures="3" time="0.000000" name="os" timestamp="2024-03-11T02:05:46Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="os" name="TestChdir" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestChdir&#xA;    Getwd() returned errno 28&#xA;--- FAIL: TestChdir (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="os" name="TestGetpagesize" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestGetpagesize&#xA;    os.Getpagesize() returns strange value 0&#xA;--- FAIL: TestGetpagesize (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="os" name="TestWriteAtInAppendMode" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestWriteAtInAppendMode&#xA;    chtmpdir: errno 28&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    chtmpdir: chdir : errno 44&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestWriteAtInAppendMode (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="os" name="TestExpand" time="0.000000"></testcase>
+		<testcase classname="os" name="TestConsistentEnviron" time="0.000000"></testcase>
+		<testcase classname="os" name="TestUnsetenv" time="0.000000"></testcase>
+		<testcase classname="os" name="TestClearenv" time="0.000000"></testcase>
+		<testcase classname="os" name="TestLookupEnv" time="0.000000"></testcase>
+		<testcase classname="os" name="TestEnvironConsistency" time="0.000000"></testcase>
+		<testcase classname="os" name="TestSetenvUnixEinval" time="0.000000"></testcase>
+		<testcase classname="os" name="TestExpandEnvShellSpecialVar" time="0.000000"></testcase>
+		<testcase classname="os" name="TestTempDir" time="0.000000"></testcase>
+		<testcase classname="os" name="TestStandardFd" time="0.000000"></testcase>
+		<testcase classname="os" name="TestFd" time="0.000000"></testcase>
+		<testcase classname="os" name="TestClose" time="0.000000"></testcase>
+		<testcase classname="os" name="TestMkdir" time="0.000000"></testcase>
+		<testcase classname="os" name="TestStatBadDir" time="0.000000"></testcase>
+		<testcase classname="os" name="TestFstat" time="0.000000"></testcase>
+		<testcase classname="os" name="TestRemove" time="0.000000"></testcase>
+		<testcase classname="os" name="TestRename" time="0.000000"></testcase>
+		<testcase classname="os" name="TestRenameOverwriteDest" time="0.000000"></testcase>
+		<testcase classname="os" name="TestRenameFailed" time="0.000000"></testcase>
+		<testcase classname="os" name="TestUserHomeDir" time="0.000000"></testcase>
+		<testcase classname="os" name="TestDirFS" time="0.000000"></testcase>
+		<testcase classname="os" name="TestDirFSPathsValid" time="0.000000"></testcase>
+		<testcase classname="os" name="TestRead0" time="0.000000"></testcase>
+		<testcase classname="os" name="TestReadAt0" time="0.000000"></testcase>
+		<testcase classname="os" name="TestSeek" time="0.000000"></testcase>
+		<testcase classname="os" name="TestReadAt" time="0.000000"></testcase>
+		<testcase classname="os" name="TestReadAtOffset" time="0.000000"></testcase>
+		<testcase classname="os" name="TestReadAtNegativeOffset" time="0.000000"></testcase>
+		<testcase classname="os" name="TestReadAtEOF" time="0.000000"></testcase>
+		<testcase classname="os" name="TestWriteAt" time="0.000000"></testcase>
+		<testcase classname="os" name="TestWriteAtNegativeOffset" time="0.000000"></testcase>
+		<testcase classname="os" name="TestMkdirAll" time="0.000000"></testcase>
+		<testcase classname="os" name="TestDirAndSymlinkStats" time="0.000000"></testcase>
+		<testcase classname="os" name="TestFileAndSymlinkStats" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+npm install -g junit-report-merger

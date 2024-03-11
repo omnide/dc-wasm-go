@@ -1,0 +1,151 @@
+#!/usr/bin/env python
+from typing import Dict, List, Tuple, Union
+import argparse
+import json
+import pathlib
+import subprocess
+
+from jinja2 import Environment, BaseLoader
+
+# from 
+template="""
+---
+title: Packages supported by TinyGo
+---
+
+This table shows test status for all Go standard library packages, including the
+counts of the tests that were run along with failures/errors. Error messages 
+from build errors and test failures are linked below the table.
+
+Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
+
+Test results are for {{ goos }}/{{ goarch }}.
+
+Icon | Description |
+--- | --- |
+<span style="color: green">✔</span> | Tests pass |
+<span style="color: red">✗</span> | Build error |
+<span style="color: yellow">∅</span> | No tests |
+<span style="color: orange">⛆</span> | Test failures |
+
+Package |{% for target in targets %} Status | Tests | Failures |{% endfor %}
+--- |{% for target in targets %} --- | --- | --- |{% endfor %}
+&nbsp; |{% for target in targets %} {{ target }} |||{% endfor -%}
+{% for pkgname in pkgnames %}
+{{ pkgname }} |
+{%- for target in targets -%}
+{%- if target in pkgs[pkgname] -%}
+{%- set pkg = pkgs[pkgname][target] -%}
+{%- if pkg.ShowLink -%}
+[<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span>](#{{ pkg.Link }}) | {{ pkg.TestCount }} | [{{ pkg.TestFailures }}](#{{ pkg.Link }}) |
+{%- else -%}
+<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span> | {{ pkg.TestCount }} | {{ pkg.TestFailures }} |
+{%- endif -%}
+{%- else -%}
+&nbsp; | &nbsp; | &nbsp; |
+{%- endif -%}
+{%- endfor %}{% endfor -%}
+{% for target in targets -%}
+## {{ target }}
+
+{% for pkgname in pkgnames -%}
+{%- if target in pkgs[pkgname] -%}
+{%- set pkg = pkgs[pkgname][target] -%}
+{% if pkg.ShowLink %}
+
+### {{ pkg.Path }} {{ target }}
+
+{% if pkg.Output -%}
+
+{{ pkg.Output }}
+
+```text
+{{ pkg.IndentedOutput }}
+```
+{% elif pkg.Imports -%}
+This package cannot be imported because the following dependencies cannot be compiled:
+{% for import in pkg.Imports -%}
+{% if not pkg.CanBeCompiled -%}
+  * [{{ import.Path }}](#{{ import.Link }}){% endif %}
+{%- endfor -%}
+{%- else %}Could not compile for an unknown reason.
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor %}
+"""
+
+statuses = {
+    "passed": {"Icon": "✔", "Color": "green"},
+    "build error": {"Icon": "✗", "Color": "red"},
+    "no tests": {"Icon": "∅", "Color": "yellow"},
+    "failure": {"Icon": "⛆", "Color": "orange"}
+}
+
+def main():
+    parser = argparse.ArgumentParser(
+                    prog="tinygo-pkg-table",
+                    description="Identify facts from test results",
+                    epilog="In python")
+    parser.add_argument("with_data", action="append", nargs="+", help="os/arch:summary.json")
+    args = parser.parse_args()
+
+    model = {
+        "targets": [],
+        "pkgnames": [],
+        "pkgs": {},
+    }
+    pkgs = {}
+    for with_data in args.with_data[0]:
+        if ":" in with_data:
+            osarch, _, data_file = with_data.partition(":")
+            goos, goarch = osarch.split("/")
+        else:
+            goos = "unknown"
+            goarch = "unknown"
+            data_file = with_data
+        target = f"{goos}/{goarch}"
+        model["targets"].append(target)
+        with open(data_file, "r") as f:
+            data = json.load(f)
+
+        for pkgname, status in data.items():
+            if pkgname not in pkgs:
+                pkgs[pkgname] = {}
+            pkg = pkgs[pkgname]
+
+            output = None
+            if status["summary"] == "failure":
+                output = "Failures/Tests: " + f"{status['failures']+status['errors']}/{status['tests']}"
+
+            pkg[target] = {
+                "Path": pkgname,
+                "CanBeCompiled": status["summary"] != "build error",
+                "HasTests": status["summary"] != "no tests",
+                "TestCount": status["tests"],
+                "TestFailures": status["failures"] + status["errors"],
+                "PassesTests": status["summary"] == "passed" or status["summary"] == "no tests",
+                "Link": pkgname.replace("/", "-") + "-" + target.replace("/", "-"),
+                "ShowLink": status["summary"] != "passed" and status["summary"] != "no tests",
+                "Output": status["summary"],
+                "IndentedOutput": status.get("detail", ""),
+                "Imports": []
+            }
+            pkg[target].update(statuses.get(status["summary"], {}))
+
+    model["pkgs"] = pkgs
+    model["pkgnames"] = sorted(pkgs.keys())
+    # print(model)
+
+    rtemplate = Environment(loader=BaseLoader).from_string(template)
+    out = rtemplate.render(**model)
+    print(out)
+
+    # print("Passed: \n\t", "\n\t".join(sorted(passes)))
+    # print("Failed: \n\t", "\n\t".join(sorted([f"{n} - {c}" for n, c in fails])))
+    # print("No Tests: ", no_tests)
+    # print("Build Errors: ", [f[0] for f in build_fails])
+
+if __name__ == "__main__":
+    main()

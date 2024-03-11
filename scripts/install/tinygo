@@ -10,6 +10,7 @@ make llvm-source
 make llvm-build
 make wasi-libc
 make binaryen
+make gen-device
 make
 if [ ! -f "build/tinygo" ]; then
     echo "Failed to build tinygo"

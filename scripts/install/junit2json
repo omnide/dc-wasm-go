@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install junit2json module from crates.io
+
+cargo install junit2json

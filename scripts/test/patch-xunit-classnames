@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+from typing import List, Tuple
+import argparse
+import json
+import subprocess
+import xml.etree.ElementTree as ET
+
+def main():
+    parser = argparse.ArgumentParser(
+                    prog="patch-xunit-classnames",
+                    description="Fix up xunit classnames",
+                    epilog="In python")
+    parser.add_argument("--xunit", type=str, help="xUnit result file")
+    args = parser.parse_args()
+    tree = ET.parse(args.xunit)
+    root = tree.getroot()
+    for child in root:
+        for subchild in child:
+            subchild.attrib['classname'] = child.attrib['name']
+    tree.write(args.xunit)
+
+if __name__ == "__main__":
+    main()

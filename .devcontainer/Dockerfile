@@ -7,6 +7,7 @@ USER root
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install \
     build-essential \
+    autoconf \
     cmake \
     cppcheck \
     valgrind \

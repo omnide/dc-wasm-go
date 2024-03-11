@@ -1,7 +1,6 @@
 SHELL := /usr/bin/env bash -eEuo pipefail -c
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
-.DEFAULT_GOAL := serve
 
 BUILD_DIR := build
 SAMP_DIR := ex
@@ -77,3 +76,69 @@ wasip2-test:
 	# wasm-tools component new build/ex/wasip2-test/embedded.wasm -o build/ex/wasip2-test/component.wasm
 	cp build/ex/wasip2-test/main.wasm build/ex/wasip2-test/component.wasm
 	wasmtime run --wasm component-model --env PWD --env USER --dir=. --dir=/tmp build/ex/wasip2-test/component.wasm ./LICENSE
+
+.PHONY: wasmdoc-dev
+wasmdoc-dev:
+	cd wasmcloud.com && npm install
+	cd wasmcloud.com && npm run start
+
+TINYGO := tinygo
+GO := go
+TEST_PACKAGES_ALL := $(shell $(GO) list std | grep -v vendor | grep -v internal)
+# Timeouts: archive/zip mime mime-multipart index-suffixarray image-png
+TEST_PACKAGES_SKIP := archive/zip mime mime/multipart index/suffixarray image/png
+TEST_PACKAGES_RUN := $(filter-out $(TEST_PACKAGES_SKIP),$(TEST_PACKAGES_ALL))
+TODAY=$(shell date +%Y-%m-%d)
+HOUR=$(shell date +%H)
+PATH_WP2 := docs/testing/$(TODAY)/$(HOUR)
+PATH_DEV := docs/testing/$(TODAY)/dev
+XUNIT_FILES_WP2 := $(addprefix $(PATH_WP2)/,$(addsuffix .xml,$(subst /,-,$(TEST_PACKAGES_RUN))))
+XUNIT_FILES_DEV := $(addprefix $(PATH_DEV)/,$(addsuffix .xml,$(subst /,-,$(TEST_PACKAGES_ALL))))
+TIMEOUT := 300
+
+define run_wasip2_test
+$(PATH_WP2)/$(2).xml:
+	@mkdir -p $(PATH_WP2)
+	cd tinygo && \
+	TINYGO=$(TINYGO) \
+	TARGET=wasip2 \
+	TESTOPTS="-x" \
+	PACKAGES="$(1)" \
+	gotestsum --raw-command \
+		--junitfile ../$(PATH_WP2)/$(2).xml \
+		-- timeout $(TIMEOUT) ./tools/tgtestjson.sh
+endef
+$(foreach pkg,$(TEST_PACKAGES_RUN),$(eval $(call run_wasip2_test,$(pkg),$(subst /,-,$(pkg)))))
+
+.PHONY: tinygo-wasip2-test-all
+tinygo-wasip2-test-all: $(XUNIT_FILES_WP2)
+	@echo "All tests completed"
+	@echo "Skipped tests: $(TEST_PACKAGES_SKIP)"
+	@echo "Merging test results"
+	@# xunitmerge $(XUNIT_FILES_WP2) $(PATH_WP2)-merged-xunit.xml
+	@jrm $(PATH_WP2)-merged-xunit.xml $(XUNIT_FILES_WP2)
+	sd test patch-xunit-classnames --xunit $(PATH_WP2)-merged-xunit.xml
+	junit2html $(PATH_WP2)-merged-xunit.xml $(PATH_WP2)-merged-xunit.html
+	junit2html --summary-matrix $(PATH_WP2)-merged-xunit.xml
+	sd test tinygo-pkg-report --xunit $(PATH_WP2)-merged-xunit.xml --out $(PATH_WP2)-status.json
+
+define run_dev_test
+$(PATH_DEV)/$(2).xml:
+	@mkdir -p $(PATH_DEV)
+	cd tinygo && \
+	gotestsum --raw-command \
+		--junitfile ../$(PATH_DEV)/$(2).xml \
+		-- sh -c 'timeout $(TIMEOUT) $(TINYGO) test -v -x $(1) 2>&1 | go tool test2json -p $(1)'
+endef
+$(foreach pkg,$(TEST_PACKAGES_ALL),$(eval $(call run_dev_test,$(pkg),$(subst /,-,$(pkg)))))
+
+.PHONY: tinygo-dev-test-all
+tinygo-dev-test-all: $(XUNIT_FILES_DEV)
+	@echo "All tests completed"
+	@echo "Merging test results"
+	@# xunitmerge $(XUNIT_FILES_DEV) $(PATH_DEV)-merged-xunit.xml
+	@jrm $(PATH_DEV)-merged-xunit.xml $(XUNIT_FILES_DEV)
+	sd test patch-xunit-classnames --xunit $(PATH_DEV)-merged-xunit.xml
+	junit2html $(PATH_DEV)-merged-xunit.xml $(PATH_DEV)-merged-xunit.html
+	junit2html $(PATH_DEV)-merged-xunit.xml --report-matrix $(PATH_DEV)-matrix.html
+	sd test tinygo-pkg-report --xunit $(PATH_DEV)-merged-xunit.xml --out $(PATH_DEV)-status.json

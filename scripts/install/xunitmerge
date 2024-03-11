@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+pip install xunitmerge
+
+# For combining xunit results
+# xunitmerge report1.xml report2.xml report3.xml merged.xml

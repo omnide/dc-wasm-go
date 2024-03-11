@@ -34,3 +34,19 @@
 	path = wasm-tools-go
 	url = https://github.com/omnide/wasm-tools-go
 	branch = main
+[submodule "wit-grammar"]
+	path = wit-grammar
+	url = https://github.com/omnide/wit-grammar
+	branch = main
+[submodule "actor-tinygo"]
+	path = actor-tinygo
+	url = https://github.com/omnide/actor-tinygo
+	branch = main
+[submodule "wasmcloud.com"]
+	path = wasmcloud.com
+	url = https://github.com/wasmcloud/wasmcloud.com
+	branch = main
+[submodule "tinygo-site"]
+	path = tinygo-site
+	url = https://github.com/omnide/tinygo-site
+	branch = dev

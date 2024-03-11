@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+sudo apt install -y openjdk-17-jdk
+mkdir -p ./bin/antlr-pkg
+cd ./bin/antlr-pkg
+curl -O https://www.antlr.org/download/antlr-4.13.1-complete.jar
+chmod +x antlr-4.13.1-complete.jar
+cd ../
+rm -f antlr
+echo "#!/usr/bin/env bash" > antlr
+echo "java -jar $(pwd)/antlr-pkg/antlr-4.13.1-complete.jar \$@" >> antlr
+chmod +x antlr

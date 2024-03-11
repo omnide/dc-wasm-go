@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+from typing import Dict, List, Tuple, Union
+import argparse
+import json
+import pathlib
+import subprocess
+
+def main():
+    parser = argparse.ArgumentParser(
+                    prog="tinygo-pkg-report",
+                    description="Identify import facts from test results",
+                    epilog="In python")
+    parser.add_argument("--xunit", type=str, help="xUnit result file")
+    parser.add_argument("--out", type=str, help="output json file")
+    args = parser.parse_args()
+
+    result = subprocess.run(["junit2json", args.xunit], capture_output=True, encoding="utf-8")
+    data = json.loads(result.stdout)
+
+    status: Dict[str, Dict[str, Union[str, int]]] = {}
+    passes: List[Tuple[str, int]] = []
+    fails: List[Tuple[str, str]] = []
+    no_tests: List[str] = []
+    build_fails: List[Tuple[str, str]] = []
+    for suite in data["testsuites"]["testsuite"]:
+        tests = suite.get("tests", 0)
+        failures = suite.get("failures", 0)
+        errors = suite.get("errors", 0)
+        cases = suite.get("testcase", [])
+        if tests == 0 and failures == 0 and errors == 0:
+            if len(cases) == 0:
+                no_tests.append(suite["name"])
+                status[suite["name"]] = {"tests": 0, "failures": 0, "errors": 0, "summary": "no tests"} 
+                continue
+            if len(cases) == 1 and cases[0]["name"] == "TestMain" and "failure" in cases[0]:
+                build_fails.append((suite["name"], cases[0]["failure"]["inner"]))
+                status[suite["name"]] = {"tests": 0, "failures": 0, "errors": 1, "summary": "build error", "detail": cases[0]["failure"]["inner"]}
+                continue
+        if tests != 0 and (failures > 0 or errors > 0):
+            fails.append((suite["name"], f"{failures+errors}/{tests}"))
+            detail = "Failures/Tests: " + f"{failures+errors}/{tests}\n"
+            for case in cases:
+                if "failure" in case and "inner" in case["failure"]:
+                    detail += case["failure"]["inner"] + "\n"
+            status[suite["name"]] = {"tests": tests, "failures": failures, "errors": errors, "summary": f"failure", "detail": detail}
+        else:
+            passes.append(suite["name"])
+            status[suite["name"]] = {"tests": tests, "failures": failures, "errors": errors, "summary": "passed"}
+
+    with open(args.out, "w") as f:
+        json.dump(status, f, indent=4)
+
+    # print("Passed: \n\t", "\n\t".join(sorted(passes)))
+    # print("Failed: \n\t", "\n\t".join(sorted([f"{n} - {c}" for n, c in fails])))
+    # print("No Tests: ", no_tests)
+    # print("Build Errors: ", [f[0] for f in build_fails])
+
+if __name__ == "__main__":
+    main()
+
+
+"""
+{"testsuites":{"time":0.0,"tests":1465,"failures":76,"testsuite":
+[{"name":"archive/tar","tests":0,"failures":0,"time":0.0,"timestamp":"2024-03-09T18:37:08Z","properties":{"property":[{"name":"go.version","value":"go1.22.0 linux/arm64"}]},
+"testcase":[{"name":"TestMain","classname":"","time":0.0,"failure":{"message":"Failed","type":"","inner":"FAIL\tarchive/tar\t0.000s\n# archive/tar\n/usr/local/go/src/archive/tar/stat_unix.go:39:27: undefined: user.LookupId\n/usr/local/go/src/archive/tar/stat_unix.go:45:27: undefined: user.LookupGroupId"}}]},{"name":"bufio","tests":42,"failures":2,"time":0.0,"timestamp":"2024-03-09T18:37:08Z","properties":{"property":[{"name":"go.version","value":"go1.22.0 linux/arm64"}]},"testcase":[{"name":"TestReadStringAllocs","classname":"bufio","time":0.0,"failure":{"message":"Failed","type":"","inner":"=== RUN   TestReadStringAllocs\n    Unexpected number of allocations, got 0.000000, want 1\n--- FAIL: TestReadStringAllocs (0.00s)"}},{"name":"TestNegativeRead","classname":"bufio","time":-0.0,"failure":{"message":"Failed","type":"","inner":"=== RUN   TestNegativeRead\npanic: bufio: reader returned negative count from Read\nError: failed to run main module `/tmp/tinygo821318445/main`\n\nCaused by:\n    0: failed to invoke `run` function\n    1: error while executing at wasm backtrace:\n           0: 0x38d6 - runtime.abort\n                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime._panic\n                           at /workspaces/dc-wasm-go/tinygo/src/runtime
+"""

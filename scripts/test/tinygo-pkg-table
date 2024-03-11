@@ -19,12 +19,16 @@ from build errors and test failures are linked below the table.
 
 Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
 
+## Legend
+
 Icon | Description |
 --- | --- |
 <span style="color: green">✔</span> | Tests pass |
 <span style="color: red">✗</span> | Build error |
 <span style="color: yellow">∅</span> | No tests |
 <span style="color: orange">⛆</span> | Test failures |
+
+## Summary
 
 Package |{% for target in targets %} Status | Tests | Failures |{% endfor %}
 --- |{% for target in targets %} --- | --- | --- |{% endfor %}
@@ -43,7 +47,8 @@ Package |{% for target in targets %} Status | Tests | Failures |{% endfor %}
 &nbsp; | &nbsp; | &nbsp; |
 {%- endif -%}
 {%- endfor %}{% endfor -%}
-{% for target in targets -%}
+{% for target in targets %}
+
 ## {{ target }}
 
 {% for pkgname in pkgnames -%}
@@ -55,7 +60,7 @@ Package |{% for target in targets %} Status | Tests | Failures |{% endfor %}
 
 {% if pkg.Output -%}
 
-{{ pkg.Output }}
+[🔝](#summary) {{ pkg.Output }}
 
 ```text
 {{ pkg.IndentedOutput }}
@@ -129,7 +134,7 @@ def main():
                 "TestCount": status["tests"],
                 "TestFailures": status["failures"] + status["errors"],
                 "PassesTests": status["summary"] == "passed" or status["summary"] == "no tests",
-                "Link": pkgname.replace("/", "-") + "-" + target.replace("/", "-"),
+                "Link": link,
                 "ShowLink": status["summary"] != "passed" and status["summary"] != "no tests",
                 "Output": status["summary"],
                 "IndentedOutput": status.get("detail", ""),

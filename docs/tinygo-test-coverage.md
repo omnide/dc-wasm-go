@@ -191,3 +191,19 @@ ok   unicode/utf8 0.225s
 ok   crypto/internal/nistec/fiat 0.289s
 ok   github.com/tinygo-org/tinygo/tests/runtime_wasi 3.214s
 ```
+
+## build test failure
+
+If you have built tinygo and are trying to run the tests, you will see a failure
+in the builder package. The problem is that you must first run `make gen-device`.
+
+```text
+=== FAIL: builder TestBinarySize (unknown)
+/home/vscode/.cache/tinygo/goroot-4cf94731d16a56a2c5cbb4cb796750319a930a1028b55aa0c1eabcc81e30ed82/src/machine/board_hifive1b_baremetal.go:5:8: package device/sifive is not in std (/home/vscode/.cache/tinygo/goroot-4cf94731d16a56a2c5cbb4cb796750319a930a1028b55aa0c1eabcc81e30ed82/src/device/sifive)
+package examples/serial
+        imports time
+        imports runtime
+        imports device/nrf: no Go files in...
+```
+
+This is now noted in the docs after some recent updates.

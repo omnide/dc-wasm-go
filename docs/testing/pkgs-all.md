@@ -9,8 +9,6 @@ from build errors and test failures are linked below the table.
 
 Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
 
-Test results are for /.
-
 Icon | Description |
 --- | --- |
 <span style="color: green">✔</span> | Tests pass |

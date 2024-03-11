@@ -19,8 +19,6 @@ from build errors and test failures are linked below the table.
 
 Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
 
-Test results are for {{ goos }}/{{ goarch }}.
-
 Icon | Description |
 --- | --- |
 <span style="color: green">✔</span> | Tests pass |
@@ -118,6 +116,11 @@ def main():
             output = None
             if status["summary"] == "failure":
                 output = "Failures/Tests: " + f"{status['failures']+status['errors']}/{status['tests']}"
+
+            # Unfortunately automatic anchor links depend alot on the renderer...
+            # link = pkgname.replace("/", "-") + "-" + target.replace("/", "-")
+            # this matches github markdown
+            link = pkgname.replace("/", "") + "-" + target.replace("/", "")
 
             pkg[target] = {
                 "Path": pkgname,

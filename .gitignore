@@ -5,6 +5,9 @@
 *.so
 *.dylib
 
+# Mac stuffs
+.DS_Store
+
 # Test binary, build with `go test -c`
 *.test
 
@@ -27,3 +30,4 @@ build/*
 # Scratch space
 .work/*
 !.work/stash/.gitkeep
+

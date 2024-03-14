@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" errors="0" time="27.709531">
+	<testsuite tests="2" failures="0" time="0.000000" name="debug/plan9obj" timestamp="2024-03-14T16:22:25Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="debug/plan9obj" name="TestOpen" time="0.000000"></testcase>
+		<testcase classname="debug/plan9obj" name="TestOpenFailure" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

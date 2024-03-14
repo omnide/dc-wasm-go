@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="17" failures="0" errors="0" time="8.696054">
+	<testsuite tests="17" failures="0" time="0.000000" name="encoding/base64" timestamp="2024-03-14T15:46:26Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/base64" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestEncoder" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestEncoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoder" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecodeCorrupt" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecodeBounds" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestEncodedLen" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecodedLen" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestBig" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestNewLineCharacters" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderIssue3577" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderIssue4779" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderIssue7733" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderIssue15656" time="0.000000"></testcase>
+		<testcase classname="encoding/base64" name="TestDecoderRaw" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

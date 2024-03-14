@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="12" errors="0" time="10.783351">
+	<testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-03-14T15:46:48Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/printer" name="TestFiles" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles&#xA;=== RUN   TestFiles/empty.input&#xA;    --- PASS: TestFiles/empty.input (0.01s)&#xA;=== RUN   TestFiles/comments.input&#xA;    --- PASS: TestFiles/comments.input (0.02s)&#xA;=== RUN   TestFiles/comments.input#01&#xA;    --- PASS: TestFiles/comments.input#01 (0.01s)&#xA;=== RUN   TestFiles/comments2.input&#xA;    --- PASS: TestFiles/comments2.input (0.00s)&#xA;=== RUN   TestFiles/alignment.input&#xA;    --- PASS: TestFiles/alignment.input (0.00s)&#xA;=== RUN   TestFiles/linebreaks.input&#xA;    --- PASS: TestFiles/linebreaks.input (0.03s)&#xA;=== RUN   TestFiles/expressions.input&#xA;    --- PASS: TestFiles/expressions.input (0.05s)&#xA;=== RUN   TestFiles/expressions.input#01&#xA;    --- PASS: TestFiles/expressions.input#01 (0.06s)&#xA;=== RUN   TestFiles/declarations.input&#xA;    --- PASS: TestFiles/declarations.input (0.03s)&#xA;=== RUN   TestFiles/statements.input&#xA;    --- PASS: TestFiles/statements.input (0.00s)&#xA;=== RUN   TestFiles/slow.input&#xA;panic: runtime error at 0x000000000023a58c: goroutine stack overflow&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/empty.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/empty.input&#xA;    --- PASS: TestFiles/empty.input (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/alignment.input&#xA;    --- PASS: TestFiles/alignment.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/linebreaks.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/linebreaks.input&#xA;    --- PASS: TestFiles/linebreaks.input (0.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01&#xA;    --- PASS: TestFiles/expressions.input#01 (0.06s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/declarations.input&#xA;    --- PASS: TestFiles/declarations.input (0.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/statements.input&#xA;    --- PASS: TestFiles/statements.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/slow.input&#xA;panic: runtime error at 0x000000000023a58c: goroutine stack overflow&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input&#xA;    --- PASS: TestFiles/comments.input (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input#01&#xA;    --- PASS: TestFiles/comments.input#01 (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments2.input&#xA;    --- PASS: TestFiles/comments2.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input&#xA;    --- PASS: TestFiles/expressions.input (0.05s)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

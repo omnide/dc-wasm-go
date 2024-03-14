@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="36" failures="22" errors="1" time="39.644903">
+	<testsuite tests="36" failures="22" time="0.000000" name="math/rand" timestamp="2024-03-14T15:22:04Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="math/rand" name="TestDefaultRace" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace&#xA;--- FAIL: TestDefaultRace (0.00s)&#xA;=== RUN   TestDefaultRace/0&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/0 (0.00s)&#xA;=== RUN   TestDefaultRace/1&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/1 (0.00s)&#xA;=== RUN   TestDefaultRace/2&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/2 (0.00s)&#xA;=== RUN   TestDefaultRace/3&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/3 (0.00s)&#xA;=== RUN   TestDefaultRace/4&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/4 (0.00s)&#xA;=== RUN   TestDefaultRace/5&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/5 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=5" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=5&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=5/int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=5/int31n&#xA;    --- PASS: TestUniformFactorial/n=5/int31n (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial&#xA;=== RUN   TestUniformFactorial/n=3&#xA;=== RUN   TestUniformFactorial/n=3/Int31n&#xA;    --- PASS: TestUniformFactorial/n=3/Int31n (0.02s)&#xA;=== RUN   TestUniformFactorial/n=3/int31n&#xA;    --- PASS: TestUniformFactorial/n=3/int31n (0.02s)&#xA;=== RUN   TestUniformFactorial/n=3/Perm&#xA;    --- PASS: TestUniformFactorial/n=3/Perm (0.07s)&#xA;=== RUN   TestUniformFactorial/n=3/Shuffle&#xA;    --- PASS: TestUniformFactorial/n=3/Shuffle (0.03s)&#xA;    --- PASS: TestUniformFactorial/n=3 (0.13s)&#xA;=== RUN   TestUniformFactorial/n=4&#xA;=== RUN   TestUniformFactorial/n=4/Int31n&#xA;    --- PASS: TestUniformFactorial/n=4/Int31n (0.01s)&#xA;=== RUN   TestUniformFactorial/n=4/int31n&#xA;    --- PASS: TestUniformFactorial/n=4/int31n (0.01s)&#xA;=== RUN   TestUniformFactorial/n=4/Perm&#xA;    --- PASS: TestUniformFactorial/n=4/Perm (0.08s)&#xA;=== RUN   TestUniformFactorial/n=4/Shuffle&#xA;    --- PASS: TestUniformFactorial/n=4/Shuffle (0.05s)&#xA;    --- PASS: TestUniformFactorial/n=4 (0.15s)&#xA;=== RUN   TestUniformFactorial/n=5&#xA;=== RUN   TestUniformFactorial/n=5/Int31n&#xA;    --- PASS: TestUniformFactorial/n=5/Int31n (0.05s)&#xA;=== RUN   TestUniformFactorial/n=5/int31n&#xA;    --- PASS: TestUniformFactorial/n=5/int31n (0.05s)&#xA;=== RUN   TestUniformFactorial/n=5/Perm&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/1&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/1 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=3/int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=3/int31n&#xA;    --- PASS: TestUniformFactorial/n=3/int31n (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=3/Shuffle" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=3/Shuffle&#xA;    --- PASS: TestUniformFactorial/n=3/Shuffle (0.03s)&#xA;    --- PASS: TestUniformFactorial/n=3 (0.13s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=5/Int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=5/Int31n&#xA;    --- PASS: TestUniformFactorial/n=5/Int31n (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/2&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/2 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=3" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=3&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=4&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=4/Int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=4/Int31n&#xA;    --- PASS: TestUniformFactorial/n=4/Int31n (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/4&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/4 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=3/Perm" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=3/Perm&#xA;    --- PASS: TestUniformFactorial/n=3/Perm (0.07s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=4/Perm" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=4/Perm&#xA;    --- PASS: TestUniformFactorial/n=4/Perm (0.08s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=4/int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=4/int31n&#xA;    --- PASS: TestUniformFactorial/n=4/int31n (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=4/Shuffle" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=4/Shuffle&#xA;    --- PASS: TestUniformFactorial/n=4/Shuffle (0.05s)&#xA;    --- PASS: TestUniformFactorial/n=4 (0.15s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=5/Perm" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=5/Perm&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/0&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/0 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/3" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/3&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/3 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/5" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/5&#xA;        skipping test: cannot exec subprocess on wasip1/wasm: can&#39;t probe for exec support: Executable not implemented&#xA;        SkipNow is incomplete, requires runtime.Goexit()&#xA;        exec: &#34;main&#34;: executable file not found in $PATH&#xA;    --- FAIL: TestDefaultRace/5 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial/n=3/Int31n" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUniformFactorial/n=3/Int31n&#xA;    --- PASS: TestUniformFactorial/n=3/Int31n (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestAuto" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestConcurrent" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestStandardNormalValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNonStandardNormalValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestStandardExponentialValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNonStandardExponentialValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNormTables" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestExpTables" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestFloat32" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadUniformity" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadEmpty" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadByOneByte" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadSeedReset" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestShuffleSmall" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" errors="0" time="45.877217">
+	<testsuite tests="8" failures="0" time="0.000000" name="go/ast" timestamp="2024-03-14T15:11:18Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/ast" name="TestCommentText" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestIsDirective" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestPrint" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestCommentMap" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestFilter" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestFilterDuplicates" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestIssue33649" time="0.000000"></testcase>
+		<testcase classname="go/ast" name="TestIssue28089" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.133175">
+	<testsuite tests="0" failures="0" time="0.000000" name="os/signal" timestamp="2024-03-14T15:47:50Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;os/signal&#x9;0.000s&#xA;# os/signal&#xA;/usr/local/go/src/os/signal/signal_test.go:439:24: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;/usr/local/go/src/os/signal/signal_test.go:482:24: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;/usr/local/go/src/os/signal/signal_test.go:562:24: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;/usr/local/go/src/os/signal/signal_test.go:612:23: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;/usr/local/go/src/os/signal/signal_test.go:751:25: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

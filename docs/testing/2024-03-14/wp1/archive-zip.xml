@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="84" failures="1" errors="1" time="300.061017">
+	<testsuite tests="84" failures="1" time="0.000000" name="archive/zip" timestamp="2024-03-14T15:08:03Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="archive/zip" name="TestZip64EdgeCase" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestZip64EdgeCase&#xA;</failure>
+		</testcase>
+		<testcase classname="archive/zip" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestInvalidFiles" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue8186" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue10957" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue10956" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue11146" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue12449" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFS" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFSWalk" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFSModTime" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestCVE202127919" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestOpenReaderInsecurePath" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestCVE202133196" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestCVE202139293" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestCVE202141772" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestUnderSize" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue54801" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestInsecurePaths" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestDisableInsecurePathCheck" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestCompressedDirectory" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestBaseOffsetPlusOverflow" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterComment" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterUTF8" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterTime" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterOffset" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterFlush" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterDir" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterDirAttributes" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterCopy" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterCreateRaw" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestWriterAddFS" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestIssue61875" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestOver65kFiles" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestModTime" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFileHeaderRoundTrip" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFileHeaderRoundTrip64" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFileHeaderRoundTripModified" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestFileHeaderRoundTripWithoutModified" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestRLEBuffer" time="0.000000"></testcase>
+		<testcase classname="archive/zip" name="TestZip64" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

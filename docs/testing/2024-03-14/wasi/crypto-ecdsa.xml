@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="82" failures="0" errors="0" time="285.860866">
+	<testsuite tests="82" failures="0" time="0.000000" name="crypto/ecdsa" timestamp="2024-03-14T16:20:47Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/ecdsa" name="TestKeyGeneration" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestSignAndVerify" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestSignAndVerifyASN1" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestNonceSafety" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestINDCCA" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestVectors" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestNegativeInputs" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestZeroHashSignature" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestRandomPoint" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestHashToNat" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestZeroSignature" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestNegtativeSignature" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestRPlusNSignature" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestRMinusNSignature" time="0.000000"></testcase>
+		<testcase classname="crypto/ecdsa" name="TestEqual" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

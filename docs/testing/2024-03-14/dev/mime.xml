@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="14" failures="1" errors="0" time="9.960704">
+	<testsuite tests="14" failures="1" time="0.000000" name="mime" timestamp="2024-03-14T15:47:33Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="mime" name="TestTypeByExtension_LocalData" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypeByExtension_LocalData&#xA;panic: runtime error at 0x0000000000237f38: deadlocked: no event source&#xA;</failure>
+		</testcase>
+		<testcase classname="mime" name="TestEncodeWord" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestEncodedWordLength" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestDecodeWord" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestDecodeHeader" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestCharsetDecoder" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestCharsetDecoderError" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeToken" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeValue" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeMediaParam" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestParseMediaType" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestParseMediaTypeBogus" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestFormatMediaType" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestTypeByExtension" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

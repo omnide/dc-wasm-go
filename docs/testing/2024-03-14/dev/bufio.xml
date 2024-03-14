@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="81" failures="1" errors="0" time="11.840657">
+	<testsuite tests="81" failures="1" time="0.000000" name="bufio" timestamp="2024-03-14T15:45:18Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="bufio" name="TestReadStringAllocs" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadStringAllocs&#xA;    Unexpected number of allocations, got 0.000000, want 1&#xA;--- FAIL: TestReadStringAllocs (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="bufio" name="TestReaderSimple" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestZeroReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterDiscard" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterDiscard" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByte" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByteMultiple" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByteOthers" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRuneError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRuneAtEOF" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadWriteRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteInvalidRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterAppend" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNewReaderSizeIdempotent" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNewWriterSizeIdempotent" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteString" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteStringStringWriter" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestBufferFull" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestPeekThenUnreadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLine" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestLineTooLong" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadAfterLines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadEmptyBuffer" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestLinesAfterRead" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLineNonNilLineOrError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLineNewlines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderWriteToErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFrom" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromCounts" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNegativeRead" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderClearError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromWhileFull" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromUntilEOF" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromErrNoProgress" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromWithBufferedData" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadZero" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderReset" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReset" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderDiscard" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderSize" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterSize" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestPartialReadEOF" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromMustSetUnderlyingError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromMustReturnUnderlyingError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestSpace" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanByte" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanWords" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLongLines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLineTooLong" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLineNoNewline" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLineReturnButNoNewline" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLineEmptyFinalLine" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanLineEmptyFinalLineWithCR" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestSplitError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestErrAtEOF" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNonEOFWithEmptyRead" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestBadReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestScanWordsExcessiveWhiteSpace" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestEmptyTokens" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWithNoEmptyTokens" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestDontLoopForever" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestBlankLines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestEmptyLinesOK" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestHugeBuffer" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNegativeEOFReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestLargeReader" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

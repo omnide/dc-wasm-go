@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" errors="0" time="11.456775">
+	<testsuite tests="2" failures="0" time="0.000000" name="crypto/rc4" timestamp="2024-03-14T15:37:05Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/rc4" name="TestGolden" time="0.000000"></testcase>
+		<testcase classname="crypto/rc4" name="TestBlock" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="9" failures="1" errors="0" time="14.939520">
+	<testsuite tests="9" failures="1" time="0.000000" name="crypto/ed25519" timestamp="2024-03-14T15:45:47Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/ed25519" name="TestEd25519Vectors" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestEd25519Vectors&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    platform cannot run go tool&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    failed to run `go mod download -json filippo.io/mostly-harmless/ed25519vectors@v0.0.0-20210322192420-30a2d7243a94`, output: &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    unexpected end of JSON input&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    failed to read ed25519vectors.json: open ed25519vectors.json: file does not exist&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    unexpected end of JSON input&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestEd25519Vectors (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="crypto/ed25519" name="TestSignVerify" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestSignVerifyHashed" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestSignVerifyContext" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestCryptoSigner" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestEqual" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestGolden" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestMalleability" time="0.000000"></testcase>
+		<testcase classname="crypto/ed25519" name="TestAllocations" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

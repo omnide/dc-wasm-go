@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="66" failures="0" errors="0" time="19.836139">
+	<testsuite tests="66" failures="0" time="0.000000" name="strconv" timestamp="2024-03-14T15:48:01Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="strconv" name="TestParseBool" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFormatBool" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAppendBool" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseComplex" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseComplexIncorrectBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseFloatPrefix" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAtof" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAtofSlow" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAtofRandom" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestRoundTrip" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestRoundTrip32" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseFloatIncorrectBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUint32" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUint64" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUint64Base" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseInt32" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseInt64" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseInt64Base" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUint" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseInt" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAtoi" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseIntBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUintBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseIntBase" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestParseUintBase" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestNumError" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestNumErrorUnwrap" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFormatComplex" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFormatComplexInvalidBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestDecimalShift" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestDecimalRound" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestDecimalRoundedInteger" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFp" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFtoa" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFtoaPowersOfTwo" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFtoaRandom" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFormatFloatInvalidBitSize" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestMulByLog2Log10" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestMulByLog10Log2" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestItoa" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestUitoa" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestFormatUintVarlen" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestIsPrint" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestIsGraphic" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuote" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuoteToASCII" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuoteToGraphic" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuoteRune" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuoteRuneToASCII" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestQuoteRuneToGraphic" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestCanBackquote" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestUnquote" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestUnquoteInvalidUTF8" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestCountMallocs" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestAllocationsFromBytes" time="0.000000"></testcase>
+		<testcase classname="strconv" name="TestErrorPrefixes" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

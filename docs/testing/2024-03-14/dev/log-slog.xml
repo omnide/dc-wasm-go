@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="17.099690">
+	<testsuite tests="0" failures="0" time="0.000000" name="log/slog" timestamp="2024-03-14T15:47:23Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1398829460/main /tmp/tinygo1398829460/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1398829460/embed-a3a5d08c40939adb7c0e9e4f5b689721-331788511.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;/tmp/tinygo1398829460/main /tmp/tinygo1398829460/main -test.v&#xA;panic: runtime.Caller failed&#xA;FAIL&#x9;log/slog&#x9;0.020s&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

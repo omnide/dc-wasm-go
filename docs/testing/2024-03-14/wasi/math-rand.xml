@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="24.410067">
+	<testsuite tests="0" failures="0" time="0.000000" name="math/rand" timestamp="2024-03-14T16:35:58Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4220012787/main /tmp/tinygo4220012787/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;wasm-ld: error: /tmp/tinygo4220012787/main.o: undefined symbol: syscall.Faccessat&#xA;failed to run tool: wasm-ld&#xA;FAIL&#x9;math/rand&#x9;0.000s&#xA;error: failed to link /tmp/tinygo4220012787/main: exit status 1&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

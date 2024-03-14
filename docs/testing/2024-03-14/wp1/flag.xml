@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="14" failures="1" errors="0" time="36.794341">
+	<testsuite tests="14" failures="1" time="0.000000" name="flag" timestamp="2024-03-14T15:11:11Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="flag" name="TestPrintDefaults" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestPrintDefaults&#xA;panic: panic!&#xA;Error: failed to run main module `/tmp/tinygo3148260024/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x47d8 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7&#xA;           1: 0x2d51f - (*flag_test.zeroPanicker).String&#xA;                           at /usr/local/go/src/flag/flag_test.go:479:8&#xA;           2: 0x53333 - (Go interface method)&#xA;           3: 0x52a3c - (Go interface method)&#xA;                           at /usr/local/go/src/flag/flag.go:560:46              - flag.isZeroValue&#xA;                           at /usr/local/go/src/flag/flag.go:545:27              - (*flag.FlagSet).PrintDefaults$1&#xA;                           at /usr/local/go/src/flag/flag.go:630:32&#xA;           4: 0x53056 - (*flag.FlagSet).VisitAll&#xA;                           at /usr/local/go/src/flag/flag.go:458:5&#xA;           5: 0x51a7a - (*flag.FlagSet).PrintDefaults&#xA;                           at /usr/local/go/src/flag/flag.go:609:12&#xA;           6: 0x8c1fc - flag_test.TestPrintDefaults&#xA;                           at /usr/local/go/src/flag/flag_test.go:538:18&#xA;           7: 0x22b50 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           8: 0x22842 - (*testing.T).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           9: 0x22b50 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;          10: 0x1c758 - runtime.run$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10&#xA;          11: 0x18b70 - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;          12:  0x8cc - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;          13: 0x189d9 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="flag" name="TestEverything" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestGet" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUsage" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestParse" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestFlagSetParse" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefined" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedFunc" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedForCommandLine" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedBool" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedBoolUsage" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestSetOutput" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestChangingArgs" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestHelp" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" errors="0" time="31.047402">
+	<testsuite tests="8" failures="0" time="0.000000" name="container/ring" timestamp="2024-03-14T16:20:16Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="container/ring" name="TestCornerCases" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestNew" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestLink1" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestLink2" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestLink3" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestUnlink" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestLinkUnlink" time="0.000000"></testcase>
+		<testcase classname="container/ring" name="TestMoveEmptyRing" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

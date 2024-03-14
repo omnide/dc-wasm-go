@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="2" errors="0" time="34.430075">
+	<testsuite tests="2" failures="2" time="0.000000" name="go/importer" timestamp="2024-03-14T15:46:48Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/importer" name="TestForCompiler" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestForCompiler&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    platform cannot run go tool&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    go list math/big: exec: no command&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;=== RUN   TestForCompiler/LookupDefault&#xA;panic: runtime error at 0x00000000002f3730: nil pointer dereference&#xA;</failure>
+		</testcase>
+		<testcase classname="go/importer" name="TestForCompiler/LookupDefault" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestForCompiler/LookupDefault&#xA;panic: runtime error at 0x00000000002f3730: nil pointer dereference&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

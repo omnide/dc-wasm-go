@@ -85,35 +85,84 @@ wasmdoc-dev:
 TINYGO := tinygo
 GO := go
 TEST_PACKAGES_ALL := $(shell $(GO) list std | grep -v vendor | grep -v internal)
+TEST_PACKAGES_WASI := $(TEST_PACKAGES_ALL) ./tests/runtime_wasi
 # Timeouts: archive/zip mime mime-multipart index-suffixarray image-png
 TEST_PACKAGES_SKIP := archive/zip mime mime/multipart index/suffixarray image/png
 TEST_PACKAGES_RUN := $(filter-out $(TEST_PACKAGES_SKIP),$(TEST_PACKAGES_ALL))
 TODAY=$(shell date +%Y-%m-%d)
 HOUR=$(shell date +%H)
-PATH_WP2 := docs/testing/$(TODAY)/$(HOUR)
+# PATH_WP2 := docs/testing/$(TODAY)/$(HOUR)
+PATH_WASI := docs/testing/$(TODAY)/wasi
+PATH_WP1 := docs/testing/$(TODAY)/wp1
+PATH_WP2 := docs/testing/$(TODAY)/wp2
 PATH_DEV := docs/testing/$(TODAY)/dev
-XUNIT_FILES_WP2 := $(addprefix $(PATH_WP2)/,$(addsuffix .xml,$(subst /,-,$(TEST_PACKAGES_RUN))))
+XUNIT_FILES_WASI := $(addprefix $(PATH_WASI)/,$(addsuffix .xml,$(subst .,t,$(subst /,-,$(TEST_PACKAGES_WASI)))))
+XUNIT_FILES_WP1 := $(addprefix $(PATH_WP1)/,$(addsuffix .xml,$(subst .,t,$(subst /,-,$(TEST_PACKAGES_WASI)))))
+XUNIT_FILES_WP2 := $(addprefix $(PATH_WP2)/,$(addsuffix .xml,$(subst .,t,$(subst /,-,$(TEST_PACKAGES_WASI)))))
 XUNIT_FILES_DEV := $(addprefix $(PATH_DEV)/,$(addsuffix .xml,$(subst /,-,$(TEST_PACKAGES_ALL))))
 TIMEOUT := 300
 
+# wasm tests
+define run_wasi_test
+$(PATH_WASI)/$(2).xml:
+	@mkdir -p $(PATH_WASI)
+	cd tinygo && \
+	gotestsum --raw-command \
+		--junitfile ../$(PATH_WASI)/$(2).xml \
+		-- timeout $(TIMEOUT) \
+				sh -c '$(TINYGO) test -v -target wasi -x $(1) 2>&1 | go tool test2json -p $(1)'
+endef
+$(foreach pkg,$(TEST_PACKAGES_WASI),$(eval $(call run_wasi_test,$(pkg),$(subst /,-,$(subst .,t,$(pkg))))))
+$(PATH_WASI)-status.json: $(XUNIT_FILES_WASI)
+	@echo "All tests completed"
+	@echo "Merging test results"
+	@# xunitmerge $(XUNIT_FILES_WASI) $(PATH_WASI)-merged-xunit.xml
+	@jrm $(PATH_WASI)-merged-xunit.xml $(XUNIT_FILES_WASI)
+	sd test patch-xunit-classnames --xunit $(PATH_WASI)-merged-xunit.xml
+	junit2html $(PATH_WASI)-merged-xunit.xml $(PATH_WASI)-merged-xunit.html
+	junit2html $(PATH_WASI)-merged-xunit.xml --report-matrix $(PATH_WASI)-matrix.html
+	sd test tinygo-pkg-report --xunit $(PATH_WASI)-merged-xunit.xml --out $(PATH_WASI)-status.json
+
+# WP1 tests
+define run_wasip1_test
+$(PATH_WP1)/$(2).xml:
+	@mkdir -p $(PATH_WP1)
+	cd tinygo && \
+	GOOS=wasip1 \
+	GOARCH=wasm \
+	gotestsum --raw-command \
+		--junitfile ../$(PATH_WP1)/$(2).xml \
+		-- timeout $(TIMEOUT) \
+			sh -c '$(TINYGO) test -x -v $(1) 2>&1 | go tool test2json -p $(1)'
+endef
+$(foreach pkg,$(TEST_PACKAGES_WASI),$(eval $(call run_wasip1_test,$(pkg),$(subst /,-,$(subst .,t,$(pkg))))))
+$(PATH_WP1)-status.json: $(XUNIT_FILES_WP1)
+	@echo "All tests completed"
+	@echo "Merging test results"
+	@# xunitmerge $(XUNIT_FILES_WP1) $(PATH_WP1)-merged-xunit.xml
+	@jrm $(PATH_WP1)-merged-xunit.xml $(XUNIT_FILES_WP1)
+	sd test patch-xunit-classnames --xunit $(PATH_WP1)-merged-xunit.xml
+	junit2html $(PATH_WP1)-merged-xunit.xml $(PATH_WP1)-merged-xunit.html
+	junit2html $(PATH_WP1)-merged-xunit.xml --report-matrix $(PATH_WP1)-matrix.html
+	sd test tinygo-pkg-report --xunit $(PATH_WP1)-merged-xunit.xml --out $(PATH_WP1)-status.json
+
+# WP2 tests
 define run_wasip2_test
 $(PATH_WP2)/$(2).xml:
 	@mkdir -p $(PATH_WP2)
 	cd tinygo && \
 	TINYGO=$(TINYGO) \
-	TARGET=wasip2 \
 	TESTOPTS="-x" \
 	PACKAGES="$(1)" \
 	gotestsum --raw-command \
 		--junitfile ../$(PATH_WP2)/$(2).xml \
-		-- timeout $(TIMEOUT) ./tools/tgtestjson.sh
+		-- timeout $(TIMEOUT) \
+			sh -c '$(TINYGO) test -v -target wasip2 -x $(1) 2>&1 | go tool test2json -p $(1)'
 endef
-$(foreach pkg,$(TEST_PACKAGES_RUN),$(eval $(call run_wasip2_test,$(pkg),$(subst /,-,$(pkg)))))
-
-.PHONY: tinygo-wasip2-test-all
-tinygo-wasip2-test-all: $(XUNIT_FILES_WP2)
+$(foreach pkg,$(TEST_PACKAGES_WASI),$(eval $(call run_wasip2_test,$(pkg),$(subst /,-,$(subst .,t,$(pkg))))))
+$(PATH_WP2)-status.json: $(XUNIT_FILES_WP2)
 	@echo "All tests completed"
-	@echo "Skipped tests: $(TEST_PACKAGES_SKIP)"
+	@# echo "Skipped tests: $(TEST_PACKAGES_SKIP)"
 	@echo "Merging test results"
 	@# xunitmerge $(XUNIT_FILES_WP2) $(PATH_WP2)-merged-xunit.xml
 	@jrm $(PATH_WP2)-merged-xunit.xml $(XUNIT_FILES_WP2)
@@ -122,6 +171,7 @@ tinygo-wasip2-test-all: $(XUNIT_FILES_WP2)
 	junit2html $(PATH_WP2)-merged-xunit.xml --report-matrix $(PATH_WP2)-matrix.html
 	sd test tinygo-pkg-report --xunit $(PATH_WP2)-merged-xunit.xml --out $(PATH_WP2)-status.json
 
+# Dev branch regular tests
 define run_dev_test
 $(PATH_DEV)/$(2).xml:
 	@mkdir -p $(PATH_DEV)
@@ -130,10 +180,8 @@ $(PATH_DEV)/$(2).xml:
 		--junitfile ../$(PATH_DEV)/$(2).xml \
 		-- sh -c 'timeout $(TIMEOUT) $(TINYGO) test -v -x $(1) 2>&1 | go tool test2json -p $(1)'
 endef
-$(foreach pkg,$(TEST_PACKAGES_ALL),$(eval $(call run_dev_test,$(pkg),$(subst /,-,$(pkg)))))
-
-.PHONY: tinygo-dev-test-all
-tinygo-dev-test-all: $(XUNIT_FILES_DEV)
+$(foreach pkg,$(TEST_PACKAGES_ALL),$(eval $(call run_dev_test,$(pkg),$(subst /,-,$(subst .,t,$(pkg))))))
+$(PATH_DEV)-status.json: $(XUNIT_FILES_DEV)
 	@echo "All tests completed"
 	@echo "Merging test results"
 	@# xunitmerge $(XUNIT_FILES_DEV) $(PATH_DEV)-merged-xunit.xml
@@ -142,3 +190,30 @@ tinygo-dev-test-all: $(XUNIT_FILES_DEV)
 	junit2html $(PATH_DEV)-merged-xunit.xml $(PATH_DEV)-merged-xunit.html
 	junit2html $(PATH_DEV)-merged-xunit.xml --report-matrix $(PATH_DEV)-matrix.html
 	sd test tinygo-pkg-report --xunit $(PATH_DEV)-merged-xunit.xml --out $(PATH_DEV)-status.json
+
+
+# Some phony targets for convenience
+.PHONY: tinygo-wasip1-test-all tinygo-wasip2-test-all tinygo-dev-test-all
+tinygo-wasip1-test-all: $(PATH_WP1)-status.json
+	@echo "wasip1 tests complete"
+tinygo-wasip2-test-all: $(PATH_WP2)-status.json
+	@echo "wasip2 tests complete"
+tinygo-dev-test-all: $(PATH_DEV)-status.json
+	@echo "dev tests complete"
+
+# Require all test runs and build the table
+TEST_TARGET_SUMMARIES := \
+	$(PATH_WASI)-status.json \
+	$(PATH_WP1)-status.json \
+	$(PATH_WP2)-status.json \
+	$(PATH_DEV)-status.json
+TEST_TABLE_OUT := docs/testing/pkgs-all.md
+.PHONY: tinygo-test-table
+tinygo-test-table: $(TEST_TARGET_SUMMARIES)
+	@echo "Building test table at"
+	sd test tinygo-pkg-table --github \
+		"linux/arm64:$(PATH_DEV)-status.json" \
+		"wasi/wasm:$(PATH_WASI)-status.json" \
+		"wasip1/wasm:$(PATH_WP1)-status.json" \
+		"wasip2/wasm:$(PATH_WP2)-status.json" \
+		> $(TEST_TABLE_OUT)

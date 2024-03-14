@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="9" failures="0" errors="0" time="11.145415">
+	<testsuite tests="9" failures="0" time="0.000000" name="encoding/ascii85" timestamp="2024-03-14T15:37:41Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/ascii85" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestEncoder" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestEncoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestDecoder" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestDecoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestDecodeCorrupt" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestBig" time="0.000000"></testcase>
+		<testcase classname="encoding/ascii85" name="TestDecoderInternalWhitespace" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

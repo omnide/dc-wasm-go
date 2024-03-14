@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="1" errors="0" time="22.898627">
+	<testsuite tests="11" failures="1" time="0.000000" name="slices" timestamp="2024-03-14T15:48:00Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="slices" name="TestInsertPanics" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestInsertPanics&#xA;panic: runtime error at 0x0000000000285364: slice out of range&#xA;</failure>
+		</testcase>
+		<testcase classname="slices" name="TestEqual" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestEqualFunc" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestCompare" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestCompareFunc" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestIndex" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestIndexFunc" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestContains" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestContainsFunc" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestInsert" time="0.000000"></testcase>
+		<testcase classname="slices" name="TestInsertOverlap" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

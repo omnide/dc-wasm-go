@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="1" errors="0" time="30.989425">
+	<testsuite tests="5" failures="1" time="0.000000" name="testing/fstest" timestamp="2024-03-14T16:38:49Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="testing/fstest" name="TestSymlink" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestSymlink&#xA;    symlink /tmp/TestSymlink163058836/000/hello /tmp/TestSymlink163058836/000/hello.link: errno 0&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    TestFS found errors:&#xA;        expected but not found: hello.link&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestSymlink (0.03s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink163058836: errno 52&#xA;</failure>
+		</testcase>
+		<testcase classname="testing/fstest" name="TestMapFS" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestMapFSChmodDot" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestDash" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestShuffledFS" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

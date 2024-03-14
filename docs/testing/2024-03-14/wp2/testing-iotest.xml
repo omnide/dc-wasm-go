@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="18" failures="0" errors="0" time="9.795507">
+	<testsuite tests="18" failures="0" time="0.000000" name="testing/iotest" timestamp="2024-03-14T15:41:23Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="testing/iotest" name="TestWriteLogger" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestWriteLogger_errorOnWrite" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestReadLogger" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestReadLogger_errorOnRead" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestOneByteReader_nonEmptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestOneByteReader_emptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestHalfReader_nonEmptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestHalfReader_emptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestTimeOutReader_nonEmptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestTimeOutReader_emptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestDataErrReader_nonEmptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestDataErrReader_emptyReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestErrReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestStringsReader" time="0.000000"></testcase>
+		<testcase classname="testing/iotest" name="TestTruncateWriter" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

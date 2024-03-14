@@ -7,7 +7,17 @@ This table shows test status for all Go standard library packages, including the
 counts of the tests that were run along with failures/errors. Error messages 
 from build errors and test failures are linked below the table.
 
-Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
+Test targets include:
+
+- linux/arm64
+- wasi/wasm
+- wasip1/wasm
+- wasip2/wasm
+
+
+Note that tests may build and pass, but that does not mean that all functions 
+and types in the program can be used. For example, sometimes using some 
+functions or types of the package will still trigger compiler errors.
 
 ## Legend
 
@@ -23,172 +33,173 @@ Icon | Description |
 
 ## Summary
 
-Package | Status | Tests | Failures | Status | Tests | Failures |
---- | --- | --- | --- | --- | --- | --- |
-&nbsp; | linux/arm64 ||| wasip2/wasm |||
-archive/tar |[<span style="color: red">❌</span>](#archivetar-linuxarm64) | 0 | [1](#archivetar-linuxarm64) |[<span style="color: red">❌</span>](#archivetar-wasip2wasm) | 0 | [1](#archivetar-wasip2wasm) |
-archive/zip |<span style="color: green">🟢</span> | 99 | 0 |&nbsp; | &nbsp; | &nbsp; |
-bufio |[<span style="color: orange">⛈️</span>](#bufio-linuxarm64) | 81 | [1](#bufio-linuxarm64) |[<span style="color: orange">⛈️</span>](#bufio-wasip2wasm) | 42 | [2](#bufio-wasip2wasm) |
-bytes |<span style="color: green">🟢</span> | 91 | 0 |[<span style="color: orange">⛈️</span>](#bytes-wasip2wasm) | 1 | [1](#bytes-wasip2wasm) |
-cmp |<span style="color: green">🟢</span> | 4 | 0 |<span style="color: green">🟢</span> | 4 | 0 |
-compress/bzip2 |<span style="color: green">🟢</span> | 4 | 0 |<span style="color: green">🟢</span> | 4 | 0 |
-compress/flate |<span style="color: green">🟢</span> | 64 | 0 |[<span style="color: orange">⛈️</span>](#compressflate-wasip2wasm) | 24 | [2](#compressflate-wasip2wasm) |
-compress/gzip |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-compress/lzw |<span style="color: green">🟢</span> | 17 | 0 |<span style="color: green">🟢</span> | 17 | 0 |
-compress/zlib |<span style="color: green">🟢</span> | 6 | 0 |<span style="color: green">🟢</span> | 6 | 0 |
-container/heap |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
-container/list |<span style="color: green">🟢</span> | 10 | 0 |<span style="color: green">🟢</span> | 10 | 0 |
-container/ring |<span style="color: green">🟢</span> | 8 | 0 |<span style="color: green">🟢</span> | 8 | 0 |
-context |[<span style="color: red">❌</span>](#context-linuxarm64) | 0 | [1](#context-linuxarm64) |[<span style="color: red">❌</span>](#context-wasip2wasm) | 0 | [1](#context-wasip2wasm) |
-crypto |[<span style="color: red">❌</span>](#crypto-linuxarm64) | 0 | [1](#crypto-linuxarm64) |[<span style="color: orange">⛈️</span>](#crypto-wasip2wasm) | 1 | [1](#crypto-wasip2wasm) |
-crypto/aes |[<span style="color: red">❌</span>](#cryptoaes-linuxarm64) | 0 | [1](#cryptoaes-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptoaes-wasip2wasm) | 9 | [1](#cryptoaes-wasip2wasm) |
-crypto/cipher |[<span style="color: red">❌</span>](#cryptocipher-linuxarm64) | 0 | [1](#cryptocipher-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptocipher-wasip2wasm) | 5 | [1](#cryptocipher-wasip2wasm) |
-crypto/des |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
-crypto/dsa |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: red">❌</span>](#cryptodsa-wasip2wasm) | 0 | [1](#cryptodsa-wasip2wasm) |
-crypto/ecdh |[<span style="color: red">❌</span>](#cryptoecdh-linuxarm64) | 0 | [1](#cryptoecdh-linuxarm64) |[<span style="color: red">❌</span>](#cryptoecdh-wasip2wasm) | 0 | [1](#cryptoecdh-wasip2wasm) |
-crypto/ecdsa |[<span style="color: red">❌</span>](#cryptoecdsa-linuxarm64) | 0 | [1](#cryptoecdsa-linuxarm64) |[<span style="color: red">❌</span>](#cryptoecdsa-wasip2wasm) | 0 | [1](#cryptoecdsa-wasip2wasm) |
-crypto/ed25519 |[<span style="color: orange">⛈️</span>](#cryptoed25519-linuxarm64) | 9 | [1](#cryptoed25519-linuxarm64) |[<span style="color: red">❌</span>](#cryptoed25519-wasip2wasm) | 0 | [1](#cryptoed25519-wasip2wasm) |
-crypto/elliptic |[<span style="color: red">❌</span>](#cryptoelliptic-linuxarm64) | 0 | [1](#cryptoelliptic-linuxarm64) |[<span style="color: red">❌</span>](#cryptoelliptic-wasip2wasm) | 0 | [1](#cryptoelliptic-wasip2wasm) |
-crypto/hmac |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: orange">⛈️</span>](#cryptohmac-wasip2wasm) | 2 | [1](#cryptohmac-wasip2wasm) |
-crypto/md5 |<span style="color: green">🟢</span> | 6 | 0 |<span style="color: green">🟢</span> | 6 | 0 |
-crypto/rand |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-crypto/rc4 |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
-crypto/rsa |[<span style="color: red">❌</span>](#cryptorsa-linuxarm64) | 0 | [1](#cryptorsa-linuxarm64) |[<span style="color: red">❌</span>](#cryptorsa-wasip2wasm) | 0 | [1](#cryptorsa-wasip2wasm) |
-crypto/sha1 |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
-crypto/sha256 |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
-crypto/sha512 |<span style="color: green">🟢</span> | 12 | 0 |<span style="color: green">🟢</span> | 12 | 0 |
-crypto/subtle |[<span style="color: orange">⛈️</span>](#cryptosubtle-linuxarm64) | 2 | [1](#cryptosubtle-linuxarm64) |[<span style="color: orange">⛈️</span>](#cryptosubtle-wasip2wasm) | 2 | [1](#cryptosubtle-wasip2wasm) |
-crypto/tls |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-crypto/x509 |[<span style="color: red">❌</span>](#cryptox509-linuxarm64) | 0 | [1](#cryptox509-linuxarm64) |[<span style="color: red">❌</span>](#cryptox509-wasip2wasm) | 0 | [1](#cryptox509-wasip2wasm) |
-crypto/x509/pkix |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-database/sql |[<span style="color: red">❌</span>](#databasesql-linuxarm64) | 0 | [1](#databasesql-linuxarm64) |[<span style="color: red">❌</span>](#databasesql-wasip2wasm) | 0 | [1](#databasesql-wasip2wasm) |
-database/sql/driver |<span style="color: green">🟢</span> | 1 | 0 |<span style="color: green">🟢</span> | 1 | 0 |
-debug/buildinfo |[<span style="color: red">❌</span>](#debugbuildinfo-linuxarm64) | 0 | [1](#debugbuildinfo-linuxarm64) |[<span style="color: red">❌</span>](#debugbuildinfo-wasip2wasm) | 0 | [1](#debugbuildinfo-wasip2wasm) |
-debug/dwarf |<span style="color: green">🟢</span> | 40 | 0 |<span style="color: green">🟢</span> | 29 | 0 |
-debug/elf |[<span style="color: red">❌</span>](#debugelf-linuxarm64) | 0 | [1](#debugelf-linuxarm64) |[<span style="color: red">❌</span>](#debugelf-wasip2wasm) | 0 | [1](#debugelf-wasip2wasm) |
-debug/gosym |[<span style="color: orange">⛈️</span>](#debuggosym-linuxarm64) | 1 | [1](#debuggosym-linuxarm64) |[<span style="color: red">❌</span>](#debuggosym-wasip2wasm) | 0 | [1](#debuggosym-wasip2wasm) |
-debug/macho |<span style="color: green">🟢</span> | 7 | 0 |<span style="color: green">🟢</span> | 7 | 0 |
-debug/pe |[<span style="color: orange">⛈️</span>](#debugpe-linuxarm64) | 1 | [1](#debugpe-linuxarm64) |[<span style="color: red">❌</span>](#debugpe-wasip2wasm) | 0 | [1](#debugpe-wasip2wasm) |
-debug/plan9obj |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
-embed |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-encoding |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-encoding/ascii85 |<span style="color: green">🟢</span> | 9 | 0 |<span style="color: green">🟢</span> | 9 | 0 |
-encoding/asn1 |<span style="color: green">🟢</span> | 38 | 0 |[<span style="color: red">❌</span>](#encodingasn1-wasip2wasm) | 0 | [1](#encodingasn1-wasip2wasm) |
-encoding/base32 |<span style="color: green">🟢</span> | 24 | 0 |<span style="color: green">🟢</span> | 24 | 0 |
-encoding/base64 |<span style="color: green">🟢</span> | 17 | 0 |<span style="color: green">🟢</span> | 17 | 0 |
-encoding/binary |[<span style="color: orange">⛈️</span>](#encodingbinary-linuxarm64) | 20 | [1](#encodingbinary-linuxarm64) |[<span style="color: orange">⛈️</span>](#encodingbinary-wasip2wasm) | 16 | [1](#encodingbinary-wasip2wasm) |
-encoding/csv |<span style="color: green">🟢</span> | 71 | 0 |<span style="color: green">🟢</span> | 71 | 0 |
-encoding/gob |[<span style="color: red">❌</span>](#encodinggob-linuxarm64) | 0 | [1](#encodinggob-linuxarm64) |[<span style="color: red">❌</span>](#encodinggob-wasip2wasm) | 0 | [1](#encodinggob-wasip2wasm) |
-encoding/hex |<span style="color: green">🟢</span> | 12 | 0 |<span style="color: green">🟢</span> | 12 | 0 |
-encoding/json |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-encoding/pem |[<span style="color: orange">⛈️</span>](#encodingpem-linuxarm64) | 7 | [1](#encodingpem-linuxarm64) |[<span style="color: red">❌</span>](#encodingpem-wasip2wasm) | 0 | [1](#encodingpem-wasip2wasm) |
-encoding/xml |[<span style="color: orange">⛈️</span>](#encodingxml-linuxarm64) | 336 | [1](#encodingxml-linuxarm64) |[<span style="color: orange">⛈️</span>](#encodingxml-wasip2wasm) | 336 | [1](#encodingxml-wasip2wasm) |
-errors |[<span style="color: orange">⛈️</span>](#errors-linuxarm64) | 60 | [19](#errors-linuxarm64) |[<span style="color: orange">⛈️</span>](#errors-wasip2wasm) | 56 | [21](#errors-wasip2wasm) |
-expvar |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-flag |[<span style="color: orange">⛈️</span>](#flag-linuxarm64) | 24 | [2](#flag-linuxarm64) |[<span style="color: red">❌</span>](#flag-wasip2wasm) | 0 | [1](#flag-wasip2wasm) |
-fmt |[<span style="color: orange">⛈️</span>](#fmt-linuxarm64) | 3 | [1](#fmt-linuxarm64) |[<span style="color: orange">⛈️</span>](#fmt-wasip2wasm) | 3 | [1](#fmt-wasip2wasm) |
-go/ast |<span style="color: green">🟢</span> | 8 | 0 |[<span style="color: red">❌</span>](#goast-wasip2wasm) | 0 | [1](#goast-wasip2wasm) |
-go/build |[<span style="color: orange">⛈️</span>](#gobuild-linuxarm64) | 56 | [16](#gobuild-linuxarm64) |[<span style="color: red">❌</span>](#gobuild-wasip2wasm) | 0 | [1](#gobuild-wasip2wasm) |
-go/build/constraint |<span style="color: green">🟢</span> | 81 | 0 |[<span style="color: orange">⛈️</span>](#gobuildconstraint-wasip2wasm) | 13 | [7](#gobuildconstraint-wasip2wasm) |
-go/constant |[<span style="color: orange">⛈️</span>](#goconstant-linuxarm64) | 2 | [1](#goconstant-linuxarm64) |[<span style="color: red">❌</span>](#goconstant-wasip2wasm) | 0 | [1](#goconstant-wasip2wasm) |
-go/doc |[<span style="color: red">❌</span>](#godoc-linuxarm64) | 0 | [1](#godoc-linuxarm64) |[<span style="color: red">❌</span>](#godoc-wasip2wasm) | 0 | [1](#godoc-wasip2wasm) |
-go/doc/comment |[<span style="color: orange">⛈️</span>](#godoccomment-linuxarm64) | 10059 | [1](#godoccomment-linuxarm64) |[<span style="color: red">❌</span>](#godoccomment-wasip2wasm) | 0 | [1](#godoccomment-wasip2wasm) |
-go/format |<span style="color: green">🟢</span> | 4 | 0 |[<span style="color: red">❌</span>](#goformat-wasip2wasm) | 0 | [1](#goformat-wasip2wasm) |
-go/importer |[<span style="color: orange">⛈️</span>](#goimporter-linuxarm64) | 2 | [2](#goimporter-linuxarm64) |[<span style="color: red">❌</span>](#goimporter-wasip2wasm) | 0 | [1](#goimporter-wasip2wasm) |
-go/parser |[<span style="color: orange">⛈️</span>](#goparser-linuxarm64) | 43 | [2](#goparser-linuxarm64) |[<span style="color: orange">⛈️</span>](#goparser-wasip2wasm) | 3 | [1](#goparser-wasip2wasm) |
-go/printer |[<span style="color: orange">⛈️</span>](#goprinter-linuxarm64) | 12 | [12](#goprinter-linuxarm64) |[<span style="color: red">❌</span>](#goprinter-wasip2wasm) | 0 | [1](#goprinter-wasip2wasm) |
-go/scanner |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
-go/token |[<span style="color: red">❌</span>](#gotoken-linuxarm64) | 0 | [1](#gotoken-linuxarm64) |[<span style="color: red">❌</span>](#gotoken-wasip2wasm) | 0 | [1](#gotoken-wasip2wasm) |
-go/types |[<span style="color: red">❌</span>](#gotypes-linuxarm64) | 0 | [1](#gotypes-linuxarm64) |[<span style="color: red">❌</span>](#gotypes-wasip2wasm) | 0 | [1](#gotypes-wasip2wasm) |
-go/version |<span style="color: green">🟢</span> | 3 | 0 |<span style="color: green">🟢</span> | 3 | 0 |
-hash |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
-hash/adler32 |<span style="color: green">🟢</span> | 2 | 0 |<span style="color: green">🟢</span> | 2 | 0 |
-hash/crc32 |[<span style="color: orange">⛈️</span>](#hashcrc32-linuxarm64) | 8 | [1](#hashcrc32-linuxarm64) |[<span style="color: orange">⛈️</span>](#hashcrc32-wasip2wasm) | 8 | [1](#hashcrc32-wasip2wasm) |
-hash/crc64 |<span style="color: green">🟢</span> | 5 | 0 |<span style="color: green">🟢</span> | 5 | 0 |
-hash/fnv |<span style="color: green">🟢</span> | 19 | 0 |<span style="color: green">🟢</span> | 19 | 0 |
-hash/maphash |[<span style="color: orange">⛈️</span>](#hashmaphash-linuxarm64) | 15 | [1](#hashmaphash-linuxarm64) |[<span style="color: red">❌</span>](#hashmaphash-wasip2wasm) | 0 | [1](#hashmaphash-wasip2wasm) |
-html |<span style="color: green">🟢</span> | 3 | 0 |<span style="color: green">🟢</span> | 3 | 0 |
-html/template |[<span style="color: orange">⛈️</span>](#htmltemplate-linuxarm64) | 1 | [1](#htmltemplate-linuxarm64) |[<span style="color: orange">⛈️</span>](#htmltemplate-wasip2wasm) | 1 | [1](#htmltemplate-wasip2wasm) |
-image |<span style="color: green">🟢</span> | 8 | 0 |[<span style="color: orange">⛈️</span>](#image-wasip2wasm) | 3 | [1](#image-wasip2wasm) |
-image/color |[<span style="color: orange">⛈️</span>](#imagecolor-linuxarm64) | 1 | [1](#imagecolor-linuxarm64) |[<span style="color: orange">⛈️</span>](#imagecolor-wasip2wasm) | 1 | [1](#imagecolor-wasip2wasm) |
-image/color/palette |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-image/draw |[<span style="color: orange">⛈️</span>](#imagedraw-linuxarm64) | 9 | [1](#imagedraw-linuxarm64) |[<span style="color: orange">⛈️</span>](#imagedraw-wasip2wasm) | 9 | [1](#imagedraw-wasip2wasm) |
-image/gif |[<span style="color: red">❌</span>](#imagegif-linuxarm64) | 0 | [1](#imagegif-linuxarm64) |[<span style="color: red">❌</span>](#imagegif-wasip2wasm) | 0 | [1](#imagegif-wasip2wasm) |
-image/jpeg |[<span style="color: red">❌</span>](#imagejpeg-linuxarm64) | 0 | [1](#imagejpeg-linuxarm64) |[<span style="color: red">❌</span>](#imagejpeg-wasip2wasm) | 0 | [1](#imagejpeg-wasip2wasm) |
-image/png |[<span style="color: orange">⛈️</span>](#imagepng-linuxarm64) | 13 | [1](#imagepng-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
-index/suffixarray |[<span style="color: orange">⛈️</span>](#indexsuffixarray-linuxarm64) | 6 | [4](#indexsuffixarray-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
-io |[<span style="color: orange">⛈️</span>](#io-linuxarm64) | 60 | [4](#io-linuxarm64) |[<span style="color: orange">⛈️</span>](#io-wasip2wasm) | 60 | [4](#io-wasip2wasm) |
-io/fs |[<span style="color: orange">⛈️</span>](#iofs-linuxarm64) | 6 | [1](#iofs-linuxarm64) |[<span style="color: orange">⛈️</span>](#iofs-wasip2wasm) | 6 | [2](#iofs-wasip2wasm) |
-io/ioutil |<span style="color: green">🟢</span> | 28 | 0 |[<span style="color: orange">⛈️</span>](#ioioutil-wasip2wasm) | 28 | [2](#ioioutil-wasip2wasm) |
-log |[<span style="color: orange">⛈️</span>](#log-linuxarm64) | 9 | [1](#log-linuxarm64) |[<span style="color: orange">⛈️</span>](#log-wasip2wasm) | 9 | [1](#log-wasip2wasm) |
-log/slog |[<span style="color: red">❌</span>](#logslog-linuxarm64) | 0 | [1](#logslog-linuxarm64) |[<span style="color: red">❌</span>](#logslog-wasip2wasm) | 0 | [1](#logslog-wasip2wasm) |
-log/syslog |[<span style="color: red">❌</span>](#logsyslog-linuxarm64) | 0 | [1](#logsyslog-linuxarm64) |[<span style="color: red">❌</span>](#logsyslog-wasip2wasm) | 0 | [1](#logsyslog-wasip2wasm) |
-maps |[<span style="color: red">❌</span>](#maps-linuxarm64) | 0 | [1](#maps-linuxarm64) |[<span style="color: red">❌</span>](#maps-wasip2wasm) | 0 | [1](#maps-wasip2wasm) |
-math |<span style="color: green">🟢</span> | 76 | 0 |[<span style="color: red">❌</span>](#math-wasip2wasm) | 0 | [1](#math-wasip2wasm) |
-math/big |[<span style="color: red">❌</span>](#mathbig-linuxarm64) | 0 | [1](#mathbig-linuxarm64) |<span style="color: yellow">🫥</span> | 0 | 0 |
-math/bits |[<span style="color: orange">⛈️</span>](#mathbits-linuxarm64) | 21 | [5](#mathbits-linuxarm64) |[<span style="color: orange">⛈️</span>](#mathbits-wasip2wasm) | 12 | [1](#mathbits-wasip2wasm) |
-math/cmplx |<span style="color: green">🟢</span> | 24 | 0 |[<span style="color: red">❌</span>](#mathcmplx-wasip2wasm) | 0 | [1](#mathcmplx-wasip2wasm) |
-math/rand |[<span style="color: orange">⛈️</span>](#mathrand-linuxarm64) | 43 | [8](#mathrand-linuxarm64) |[<span style="color: red">❌</span>](#mathrand-wasip2wasm) | 0 | [1](#mathrand-wasip2wasm) |
-math/rand/v2 |[<span style="color: red">❌</span>](#mathrandv2-linuxarm64) | 0 | [1](#mathrandv2-linuxarm64) |[<span style="color: red">❌</span>](#mathrandv2-wasip2wasm) | 0 | [1](#mathrandv2-wasip2wasm) |
-mime |[<span style="color: orange">⛈️</span>](#mime-linuxarm64) | 14 | [1](#mime-linuxarm64) |&nbsp; | &nbsp; | &nbsp; |
-mime/multipart |<span style="color: green">🟢</span> | 48 | 0 |&nbsp; | &nbsp; | &nbsp; |
-mime/quotedprintable |<span style="color: green">🟢</span> | 5 | 0 |[<span style="color: red">❌</span>](#mimequotedprintable-wasip2wasm) | 0 | [1](#mimequotedprintable-wasip2wasm) |
-net |<span style="color: green">🟢</span> | 1 | 0 |<span style="color: green">🟢</span> | 1 | 0 |
-net/http |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/cgi |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/cookiejar |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/fcgi |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/httptest |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/httptrace |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/httputil |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/http/pprof |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/mail |<span style="color: green">🟢</span> | 11 | 0 |<span style="color: green">🟢</span> | 11 | 0 |
-net/netip |[<span style="color: orange">⛈️</span>](#netnetip-linuxarm64) | 256 | [8](#netnetip-linuxarm64) |[<span style="color: red">❌</span>](#netnetip-wasip2wasm) | 0 | [1](#netnetip-wasip2wasm) |
-net/rpc |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-net/rpc/jsonrpc |[<span style="color: red">❌</span>](#netrpcjsonrpc-linuxarm64) | 0 | [1](#netrpcjsonrpc-linuxarm64) |[<span style="color: red">❌</span>](#netrpcjsonrpc-wasip2wasm) | 0 | [1](#netrpcjsonrpc-wasip2wasm) |
-net/smtp |[<span style="color: red">❌</span>](#netsmtp-linuxarm64) | 0 | [1](#netsmtp-linuxarm64) |[<span style="color: red">❌</span>](#netsmtp-wasip2wasm) | 0 | [1](#netsmtp-wasip2wasm) |
-net/textproto |<span style="color: green">🟢</span> | 25 | 0 |<span style="color: green">🟢</span> | 25 | 0 |
-net/url |[<span style="color: red">❌</span>](#neturl-linuxarm64) | 0 | [1](#neturl-linuxarm64) |[<span style="color: red">❌</span>](#neturl-wasip2wasm) | 0 | [1](#neturl-wasip2wasm) |
-os |<span style="color: green">🟢</span> | 80 | 0 |[<span style="color: orange">⛈️</span>](#os-wasip2wasm) | 37 | [3](#os-wasip2wasm) |
-os/exec |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-os/signal |[<span style="color: red">❌</span>](#ossignal-linuxarm64) | 0 | [1](#ossignal-linuxarm64) |[<span style="color: red">❌</span>](#ossignal-wasip2wasm) | 0 | [1](#ossignal-wasip2wasm) |
-os/user |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-path |<span style="color: green">🟢</span> | 9 | 0 |<span style="color: green">🟢</span> | 9 | 0 |
-path/filepath |[<span style="color: orange">⛈️</span>](#pathfilepath-linuxarm64) | 3 | [1](#pathfilepath-linuxarm64) |[<span style="color: orange">⛈️</span>](#pathfilepath-wasip2wasm) | 3 | [2](#pathfilepath-wasip2wasm) |
-plugin |[<span style="color: red">❌</span>](#plugin-linuxarm64) | 0 | [1](#plugin-linuxarm64) |[<span style="color: red">❌</span>](#plugin-wasip2wasm) | 0 | [1](#plugin-wasip2wasm) |
-reflect |<span style="color: green">🟢</span> | 96 | 0 |<span style="color: green">🟢</span> | 96 | 0 |
-regexp |[<span style="color: orange">⛈️</span>](#regexp-linuxarm64) | 14 | [1](#regexp-linuxarm64) |[<span style="color: orange">⛈️</span>](#regexp-wasip2wasm) | 2 | [1](#regexp-wasip2wasm) |
-regexp/syntax |<span style="color: green">🟢</span> | 12 | 0 |[<span style="color: orange">⛈️</span>](#regexpsyntax-wasip2wasm) | 8 | [1](#regexpsyntax-wasip2wasm) |
-runtime |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/cgo |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/coverage |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/debug |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/metrics |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/pprof |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/race |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-runtime/trace |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-slices |[<span style="color: orange">⛈️</span>](#slices-linuxarm64) | 11 | [1](#slices-linuxarm64) |[<span style="color: red">❌</span>](#slices-wasip2wasm) | 0 | [1](#slices-wasip2wasm) |
-sort |<span style="color: green">🟢</span> | 63 | 0 |<span style="color: green">🟢</span> | 63 | 0 |
-strconv |<span style="color: green">🟢</span> | 66 | 0 |[<span style="color: red">❌</span>](#strconv-wasip2wasm) | 0 | [1](#strconv-wasip2wasm) |
-strings |[<span style="color: orange">⛈️</span>](#strings-linuxarm64) | 71 | [2](#strings-linuxarm64) |[<span style="color: orange">⛈️</span>](#strings-wasip2wasm) | 4 | [1](#strings-wasip2wasm) |
-sync |<span style="color: green">🟢</span> | 19 | 0 |<span style="color: green">🟢</span> | 19 | 0 |
-sync/atomic |[<span style="color: orange">⛈️</span>](#syncatomic-linuxarm64) | 68 | [6](#syncatomic-linuxarm64) |[<span style="color: orange">⛈️</span>](#syncatomic-wasip2wasm) | 68 | [6](#syncatomic-wasip2wasm) |
-syscall |[<span style="color: red">❌</span>](#syscall-linuxarm64) | 0 | [1](#syscall-linuxarm64) |[<span style="color: orange">⛈️</span>](#syscall-wasip2wasm) | 1 | [1](#syscall-wasip2wasm) |
-testing |<span style="color: green">🟢</span> | 33 | 0 |<span style="color: green">🟢</span> | 23 | 0 |
-testing/fstest |<span style="color: green">🟢</span> | 5 | 0 |[<span style="color: orange">⛈️</span>](#testingfstest-wasip2wasm) | 5 | [1](#testingfstest-wasip2wasm) |
-testing/iotest |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
-testing/quick |[<span style="color: orange">⛈️</span>](#testingquick-linuxarm64) | 1 | [1](#testingquick-linuxarm64) |[<span style="color: orange">⛈️</span>](#testingquick-wasip2wasm) | 1 | [1](#testingquick-wasip2wasm) |
-testing/slogtest |[<span style="color: red">❌</span>](#testingslogtest-linuxarm64) | 0 | [1](#testingslogtest-linuxarm64) |[<span style="color: red">❌</span>](#testingslogtest-wasip2wasm) | 0 | [1](#testingslogtest-wasip2wasm) |
-text/scanner |<span style="color: green">🟢</span> | 18 | 0 |<span style="color: green">🟢</span> | 18 | 0 |
-text/tabwriter |<span style="color: green">🟢</span> | 3 | 0 |[<span style="color: orange">⛈️</span>](#texttabwriter-wasip2wasm) | 2 | [1](#texttabwriter-wasip2wasm) |
-text/template |[<span style="color: orange">⛈️</span>](#texttemplate-linuxarm64) | 1 | [1](#texttemplate-linuxarm64) |[<span style="color: red">❌</span>](#texttemplate-wasip2wasm) | 0 | [1](#texttemplate-wasip2wasm) |
-text/template/parse |<span style="color: green">🟢</span> | 52 | 0 |[<span style="color: orange">⛈️</span>](#texttemplateparse-wasip2wasm) | 6 | [1](#texttemplateparse-wasip2wasm) |
-time |[<span style="color: red">❌</span>](#time-linuxarm64) | 0 | [1](#time-linuxarm64) |[<span style="color: red">❌</span>](#time-wasip2wasm) | 0 | [1](#time-wasip2wasm) |
-time/tzdata |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
-unicode |<span style="color: green">🟢</span> | 28 | 0 |<span style="color: green">🟢</span> | 28 | 0 |
-unicode/utf16 |<span style="color: green">🟢</span> | 8 | 0 |<span style="color: green">🟢</span> | 8 | 0 |
-unicode/utf8 |<span style="color: green">🟢</span> | 14 | 0 |<span style="color: green">🟢</span> | 14 | 0 |
-unsafe |<span style="color: yellow">🫥</span> | 0 | 0 |<span style="color: yellow">🫥</span> | 0 | 0 |
+Package | Status (Fail / Tests) | Status (Fail / Tests) | Status (Fail / Tests) | Status (Fail / Tests) |
+--- | --- | --- | --- | --- |
+&nbsp; | linux/arm64 | wasi/wasm | wasip1/wasm | wasip2/wasm |
+./tests/runtime_wasi |&nbsp; | &nbsp; | &nbsp; |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |
+archive/tar |[<span style="color: red">❌</span>](#archivetar-linuxarm64) &nbsp; [1](#archivetar-linuxarm64) / 0 |[<span style="color: red">❌</span>](#archivetar-wasiwasm) &nbsp; [1](#archivetar-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#archivetar-wasip1wasm) &nbsp; [1](#archivetar-wasip1wasm) / 58 |[<span style="color: red">❌</span>](#archivetar-wasip2wasm) &nbsp; [1](#archivetar-wasip2wasm) / 0 |
+archive/zip |<span style="color: green">🟢</span> &nbsp; 99 |[<span style="color: orange">⛈️</span>](#archivezip-wasiwasm) &nbsp; [1](#archivezip-wasiwasm) / 83 |[<span style="color: orange">⛈️</span>](#archivezip-wasip1wasm) &nbsp; [1](#archivezip-wasip1wasm) / 84 |[<span style="color: orange">⛈️</span>](#archivezip-wasip2wasm) &nbsp; [2](#archivezip-wasip2wasm) / 86 |
+bufio |[<span style="color: orange">⛈️</span>](#bufio-linuxarm64) &nbsp; [1](#bufio-linuxarm64) / 81 |[<span style="color: orange">⛈️</span>](#bufio-wasiwasm) &nbsp; [2](#bufio-wasiwasm) / 42 |[<span style="color: orange">⛈️</span>](#bufio-wasip1wasm) &nbsp; [2](#bufio-wasip1wasm) / 42 |[<span style="color: orange">⛈️</span>](#bufio-wasip2wasm) &nbsp; [2](#bufio-wasip2wasm) / 42 |
+bytes |<span style="color: green">🟢</span> &nbsp; 91 |[<span style="color: red">❌</span>](#bytes-wasiwasm) &nbsp; [1](#bytes-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#bytes-wasip1wasm) &nbsp; [1](#bytes-wasip1wasm) / 13 |[<span style="color: orange">⛈️</span>](#bytes-wasip2wasm) &nbsp; [1](#bytes-wasip2wasm) / 1 |
+cmp |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |
+compress/bzip2 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |
+compress/flate |<span style="color: green">🟢</span> &nbsp; 64 |[<span style="color: orange">⛈️</span>](#compressflate-wasiwasm) &nbsp; [1](#compressflate-wasiwasm) / 23 |[<span style="color: orange">⛈️</span>](#compressflate-wasip1wasm) &nbsp; [1](#compressflate-wasip1wasm) / 23 |[<span style="color: orange">⛈️</span>](#compressflate-wasip2wasm) &nbsp; [2](#compressflate-wasip2wasm) / 24 |
+compress/gzip |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+compress/lzw |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |
+compress/zlib |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |
+container/heap |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |
+container/list |<span style="color: green">🟢</span> &nbsp; 10 |<span style="color: green">🟢</span> &nbsp; 10 |<span style="color: green">🟢</span> &nbsp; 10 |<span style="color: green">🟢</span> &nbsp; 10 |
+container/ring |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |
+context |[<span style="color: red">❌</span>](#context-linuxarm64) &nbsp; [1](#context-linuxarm64) / 0 |[<span style="color: red">❌</span>](#context-wasiwasm) &nbsp; [1](#context-wasiwasm) / 0 |[<span style="color: red">❌</span>](#context-wasip1wasm) &nbsp; [1](#context-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#context-wasip2wasm) &nbsp; [1](#context-wasip2wasm) / 0 |
+crypto |[<span style="color: red">❌</span>](#crypto-linuxarm64) &nbsp; [1](#crypto-linuxarm64) / 0 |[<span style="color: orange">⛈️</span>](#crypto-wasiwasm) &nbsp; [1](#crypto-wasiwasm) / 1 |[<span style="color: orange">⛈️</span>](#crypto-wasip1wasm) &nbsp; [1](#crypto-wasip1wasm) / 1 |[<span style="color: orange">⛈️</span>](#crypto-wasip2wasm) &nbsp; [1](#crypto-wasip2wasm) / 1 |
+crypto/aes |[<span style="color: red">❌</span>](#cryptoaes-linuxarm64) &nbsp; [1](#cryptoaes-linuxarm64) / 0 |[<span style="color: orange">⛈️</span>](#cryptoaes-wasiwasm) &nbsp; [1](#cryptoaes-wasiwasm) / 9 |[<span style="color: orange">⛈️</span>](#cryptoaes-wasip1wasm) &nbsp; [1](#cryptoaes-wasip1wasm) / 9 |[<span style="color: orange">⛈️</span>](#cryptoaes-wasip2wasm) &nbsp; [1](#cryptoaes-wasip2wasm) / 9 |
+crypto/cipher |[<span style="color: red">❌</span>](#cryptocipher-linuxarm64) &nbsp; [1](#cryptocipher-linuxarm64) / 0 |[<span style="color: orange">⛈️</span>](#cryptocipher-wasiwasm) &nbsp; [1](#cryptocipher-wasiwasm) / 5 |[<span style="color: orange">⛈️</span>](#cryptocipher-wasip1wasm) &nbsp; [1](#cryptocipher-wasip1wasm) / 5 |[<span style="color: orange">⛈️</span>](#cryptocipher-wasip2wasm) &nbsp; [1](#cryptocipher-wasip2wasm) / 5 |
+crypto/des |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |
+crypto/dsa |<span style="color: green">🟢</span> &nbsp; 4 |[<span style="color: orange">⛈️</span>](#cryptodsa-wasiwasm) &nbsp; [1](#cryptodsa-wasiwasm) / 1 |<span style="color: green">🟢</span> &nbsp; 4 |[<span style="color: red">❌</span>](#cryptodsa-wasip2wasm) &nbsp; [1](#cryptodsa-wasip2wasm) / 0 |
+crypto/ecdh |[<span style="color: red">❌</span>](#cryptoecdh-linuxarm64) &nbsp; [1](#cryptoecdh-linuxarm64) / 0 |[<span style="color: red">❌</span>](#cryptoecdh-wasiwasm) &nbsp; [1](#cryptoecdh-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#cryptoecdh-wasip1wasm) &nbsp; [1](#cryptoecdh-wasip1wasm) / 47 |[<span style="color: red">❌</span>](#cryptoecdh-wasip2wasm) &nbsp; [1](#cryptoecdh-wasip2wasm) / 0 |
+crypto/ecdsa |[<span style="color: red">❌</span>](#cryptoecdsa-linuxarm64) &nbsp; [1](#cryptoecdsa-linuxarm64) / 0 |<span style="color: green">🟢</span> &nbsp; 82 |[<span style="color: orange">⛈️</span>](#cryptoecdsa-wasip1wasm) &nbsp; [6](#cryptoecdsa-wasip1wasm) / 77 |[<span style="color: red">❌</span>](#cryptoecdsa-wasip2wasm) &nbsp; [1](#cryptoecdsa-wasip2wasm) / 0 |
+crypto/ed25519 |[<span style="color: orange">⛈️</span>](#cryptoed25519-linuxarm64) &nbsp; [1](#cryptoed25519-linuxarm64) / 9 |[<span style="color: red">❌</span>](#cryptoed25519-wasiwasm) &nbsp; [1](#cryptoed25519-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: red">❌</span>](#cryptoed25519-wasip2wasm) &nbsp; [1](#cryptoed25519-wasip2wasm) / 0 |
+crypto/elliptic |[<span style="color: red">❌</span>](#cryptoelliptic-linuxarm64) &nbsp; [1](#cryptoelliptic-linuxarm64) / 0 |<span style="color: green">🟢</span> &nbsp; 82 |<span style="color: green">🟢</span> &nbsp; 82 |[<span style="color: red">❌</span>](#cryptoelliptic-wasip2wasm) &nbsp; [1](#cryptoelliptic-wasip2wasm) / 0 |
+crypto/hmac |<span style="color: green">🟢</span> &nbsp; 4 |[<span style="color: orange">⛈️</span>](#cryptohmac-wasiwasm) &nbsp; [1](#cryptohmac-wasiwasm) / 2 |[<span style="color: orange">⛈️</span>](#cryptohmac-wasip1wasm) &nbsp; [1](#cryptohmac-wasip1wasm) / 2 |[<span style="color: orange">⛈️</span>](#cryptohmac-wasip2wasm) &nbsp; [1](#cryptohmac-wasip2wasm) / 2 |
+crypto/md5 |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |<span style="color: green">🟢</span> &nbsp; 6 |
+crypto/rand |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+crypto/rc4 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |
+crypto/rsa |[<span style="color: red">❌</span>](#cryptorsa-linuxarm64) &nbsp; [1](#cryptorsa-linuxarm64) / 0 |[<span style="color: orange">⛈️</span>](#cryptorsa-wasiwasm) &nbsp; [1](#cryptorsa-wasiwasm) / 3 |[<span style="color: orange">⛈️</span>](#cryptorsa-wasip1wasm) &nbsp; [1](#cryptorsa-wasip1wasm) / 3 |[<span style="color: red">❌</span>](#cryptorsa-wasip2wasm) &nbsp; [1](#cryptorsa-wasip2wasm) / 0 |
+crypto/sha1 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |
+crypto/sha256 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |
+crypto/sha512 |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |
+crypto/subtle |[<span style="color: orange">⛈️</span>](#cryptosubtle-linuxarm64) &nbsp; [1](#cryptosubtle-linuxarm64) / 2 |[<span style="color: orange">⛈️</span>](#cryptosubtle-wasiwasm) &nbsp; [1](#cryptosubtle-wasiwasm) / 2 |[<span style="color: orange">⛈️</span>](#cryptosubtle-wasip1wasm) &nbsp; [1](#cryptosubtle-wasip1wasm) / 2 |[<span style="color: orange">⛈️</span>](#cryptosubtle-wasip2wasm) &nbsp; [1](#cryptosubtle-wasip2wasm) / 2 |
+crypto/tls |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+crypto/x509 |[<span style="color: red">❌</span>](#cryptox509-linuxarm64) &nbsp; [1](#cryptox509-linuxarm64) / 0 |[<span style="color: red">❌</span>](#cryptox509-wasiwasm) &nbsp; [1](#cryptox509-wasiwasm) / 0 |[<span style="color: red">❌</span>](#cryptox509-wasip1wasm) &nbsp; [1](#cryptox509-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#cryptox509-wasip2wasm) &nbsp; [1](#cryptox509-wasip2wasm) / 0 |
+crypto/x509/pkix |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+database/sql |[<span style="color: red">❌</span>](#databasesql-linuxarm64) &nbsp; [1](#databasesql-linuxarm64) / 0 |[<span style="color: red">❌</span>](#databasesql-wasiwasm) &nbsp; [1](#databasesql-wasiwasm) / 0 |[<span style="color: red">❌</span>](#databasesql-wasip1wasm) &nbsp; [1](#databasesql-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#databasesql-wasip2wasm) &nbsp; [1](#databasesql-wasip2wasm) / 0 |
+database/sql/driver |<span style="color: green">🟢</span> &nbsp; 1 |<span style="color: green">🟢</span> &nbsp; 1 |<span style="color: green">🟢</span> &nbsp; 1 |<span style="color: green">🟢</span> &nbsp; 1 |
+debug/buildinfo |[<span style="color: red">❌</span>](#debugbuildinfo-linuxarm64) &nbsp; [1](#debugbuildinfo-linuxarm64) / 0 |[<span style="color: red">❌</span>](#debugbuildinfo-wasiwasm) &nbsp; [1](#debugbuildinfo-wasiwasm) / 0 |[<span style="color: red">❌</span>](#debugbuildinfo-wasip1wasm) &nbsp; [1](#debugbuildinfo-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#debugbuildinfo-wasip2wasm) &nbsp; [1](#debugbuildinfo-wasip2wasm) / 0 |
+debug/dwarf |<span style="color: green">🟢</span> &nbsp; 40 |<span style="color: green">🟢</span> &nbsp; 40 |<span style="color: green">🟢</span> &nbsp; 40 |<span style="color: green">🟢</span> &nbsp; 29 |
+debug/elf |[<span style="color: red">❌</span>](#debugelf-linuxarm64) &nbsp; [1](#debugelf-linuxarm64) / 0 |[<span style="color: red">❌</span>](#debugelf-wasiwasm) &nbsp; [1](#debugelf-wasiwasm) / 0 |[<span style="color: red">❌</span>](#debugelf-wasip1wasm) &nbsp; [1](#debugelf-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#debugelf-wasip2wasm) &nbsp; [1](#debugelf-wasip2wasm) / 0 |
+debug/gosym |[<span style="color: orange">⛈️</span>](#debuggosym-linuxarm64) &nbsp; [1](#debuggosym-linuxarm64) / 1 |[<span style="color: red">❌</span>](#debuggosym-wasiwasm) &nbsp; [1](#debuggosym-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#debuggosym-wasip1wasm) &nbsp; [1](#debuggosym-wasip1wasm) / 1 |[<span style="color: red">❌</span>](#debuggosym-wasip2wasm) &nbsp; [1](#debuggosym-wasip2wasm) / 0 |
+debug/macho |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |<span style="color: green">🟢</span> &nbsp; 7 |
+debug/pe |[<span style="color: orange">⛈️</span>](#debugpe-linuxarm64) &nbsp; [1](#debugpe-linuxarm64) / 1 |[<span style="color: red">❌</span>](#debugpe-wasiwasm) &nbsp; [1](#debugpe-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#debugpe-wasip1wasm) &nbsp; [1](#debugpe-wasip1wasm) / 1 |[<span style="color: red">❌</span>](#debugpe-wasip2wasm) &nbsp; [1](#debugpe-wasip2wasm) / 0 |
+debug/plan9obj |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |
+embed |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+encoding |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+encoding/ascii85 |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |
+encoding/asn1 |<span style="color: green">🟢</span> &nbsp; 38 |<span style="color: green">🟢</span> &nbsp; 38 |<span style="color: green">🟢</span> &nbsp; 38 |[<span style="color: red">❌</span>](#encodingasn1-wasip2wasm) &nbsp; [1](#encodingasn1-wasip2wasm) / 0 |
+encoding/base32 |<span style="color: green">🟢</span> &nbsp; 24 |<span style="color: green">🟢</span> &nbsp; 24 |<span style="color: green">🟢</span> &nbsp; 24 |<span style="color: green">🟢</span> &nbsp; 24 |
+encoding/base64 |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |<span style="color: green">🟢</span> &nbsp; 17 |
+encoding/binary |[<span style="color: orange">⛈️</span>](#encodingbinary-linuxarm64) &nbsp; [1](#encodingbinary-linuxarm64) / 20 |[<span style="color: orange">⛈️</span>](#encodingbinary-wasiwasm) &nbsp; [1](#encodingbinary-wasiwasm) / 16 |[<span style="color: orange">⛈️</span>](#encodingbinary-wasip1wasm) &nbsp; [1](#encodingbinary-wasip1wasm) / 16 |[<span style="color: orange">⛈️</span>](#encodingbinary-wasip2wasm) &nbsp; [1](#encodingbinary-wasip2wasm) / 16 |
+encoding/csv |<span style="color: green">🟢</span> &nbsp; 71 |<span style="color: green">🟢</span> &nbsp; 71 |<span style="color: green">🟢</span> &nbsp; 71 |<span style="color: green">🟢</span> &nbsp; 71 |
+encoding/gob |[<span style="color: red">❌</span>](#encodinggob-linuxarm64) &nbsp; [1](#encodinggob-linuxarm64) / 0 |[<span style="color: red">❌</span>](#encodinggob-wasiwasm) &nbsp; [1](#encodinggob-wasiwasm) / 0 |[<span style="color: red">❌</span>](#encodinggob-wasip1wasm) &nbsp; [1](#encodinggob-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#encodinggob-wasip2wasm) &nbsp; [1](#encodinggob-wasip2wasm) / 0 |
+encoding/hex |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |<span style="color: green">🟢</span> &nbsp; 12 |
+encoding/json |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+encoding/pem |[<span style="color: orange">⛈️</span>](#encodingpem-linuxarm64) &nbsp; [1](#encodingpem-linuxarm64) / 7 |[<span style="color: orange">⛈️</span>](#encodingpem-wasiwasm) &nbsp; [1](#encodingpem-wasiwasm) / 4 |[<span style="color: orange">⛈️</span>](#encodingpem-wasip1wasm) &nbsp; [1](#encodingpem-wasip1wasm) / 4 |[<span style="color: red">❌</span>](#encodingpem-wasip2wasm) &nbsp; [1](#encodingpem-wasip2wasm) / 0 |
+encoding/xml |[<span style="color: orange">⛈️</span>](#encodingxml-linuxarm64) &nbsp; [1](#encodingxml-linuxarm64) / 336 |[<span style="color: orange">⛈️</span>](#encodingxml-wasiwasm) &nbsp; [1](#encodingxml-wasiwasm) / 336 |[<span style="color: orange">⛈️</span>](#encodingxml-wasip1wasm) &nbsp; [1](#encodingxml-wasip1wasm) / 336 |[<span style="color: orange">⛈️</span>](#encodingxml-wasip2wasm) &nbsp; [1](#encodingxml-wasip2wasm) / 336 |
+errors |[<span style="color: orange">⛈️</span>](#errors-linuxarm64) &nbsp; [19](#errors-linuxarm64) / 60 |[<span style="color: orange">⛈️</span>](#errors-wasiwasm) &nbsp; [21](#errors-wasiwasm) / 56 |[<span style="color: orange">⛈️</span>](#errors-wasip1wasm) &nbsp; [21](#errors-wasip1wasm) / 56 |[<span style="color: orange">⛈️</span>](#errors-wasip2wasm) &nbsp; [21](#errors-wasip2wasm) / 56 |
+expvar |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+flag |[<span style="color: orange">⛈️</span>](#flag-linuxarm64) &nbsp; [2](#flag-linuxarm64) / 24 |[<span style="color: red">❌</span>](#flag-wasiwasm) &nbsp; [1](#flag-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#flag-wasip1wasm) &nbsp; [1](#flag-wasip1wasm) / 14 |[<span style="color: red">❌</span>](#flag-wasip2wasm) &nbsp; [1](#flag-wasip2wasm) / 0 |
+fmt |[<span style="color: orange">⛈️</span>](#fmt-linuxarm64) &nbsp; [1](#fmt-linuxarm64) / 3 |[<span style="color: orange">⛈️</span>](#fmt-wasiwasm) &nbsp; [1](#fmt-wasiwasm) / 3 |[<span style="color: orange">⛈️</span>](#fmt-wasip1wasm) &nbsp; [1](#fmt-wasip1wasm) / 3 |[<span style="color: orange">⛈️</span>](#fmt-wasip2wasm) &nbsp; [1](#fmt-wasip2wasm) / 3 |
+go/ast |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |[<span style="color: red">❌</span>](#goast-wasip2wasm) &nbsp; [1](#goast-wasip2wasm) / 0 |
+go/build |[<span style="color: orange">⛈️</span>](#gobuild-linuxarm64) &nbsp; [16](#gobuild-linuxarm64) / 56 |[<span style="color: red">❌</span>](#gobuild-wasiwasm) &nbsp; [1](#gobuild-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#gobuild-wasip1wasm) &nbsp; [17](#gobuild-wasip1wasm) / 56 |[<span style="color: red">❌</span>](#gobuild-wasip2wasm) &nbsp; [1](#gobuild-wasip2wasm) / 0 |
+go/build/constraint |<span style="color: green">🟢</span> &nbsp; 81 |[<span style="color: orange">⛈️</span>](#gobuildconstraint-wasiwasm) &nbsp; [7](#gobuildconstraint-wasiwasm) / 13 |[<span style="color: orange">⛈️</span>](#gobuildconstraint-wasip1wasm) &nbsp; [7](#gobuildconstraint-wasip1wasm) / 13 |[<span style="color: orange">⛈️</span>](#gobuildconstraint-wasip2wasm) &nbsp; [7](#gobuildconstraint-wasip2wasm) / 13 |
+go/constant |[<span style="color: orange">⛈️</span>](#goconstant-linuxarm64) &nbsp; [1](#goconstant-linuxarm64) / 2 |[<span style="color: orange">⛈️</span>](#goconstant-wasiwasm) &nbsp; [1](#goconstant-wasiwasm) / 2 |[<span style="color: orange">⛈️</span>](#goconstant-wasip1wasm) &nbsp; [1](#goconstant-wasip1wasm) / 2 |[<span style="color: red">❌</span>](#goconstant-wasip2wasm) &nbsp; [1](#goconstant-wasip2wasm) / 0 |
+go/doc |[<span style="color: red">❌</span>](#godoc-linuxarm64) &nbsp; [1](#godoc-linuxarm64) / 0 |[<span style="color: red">❌</span>](#godoc-wasiwasm) &nbsp; [1](#godoc-wasiwasm) / 0 |[<span style="color: red">❌</span>](#godoc-wasip1wasm) &nbsp; [1](#godoc-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#godoc-wasip2wasm) &nbsp; [1](#godoc-wasip2wasm) / 0 |
+go/doc/comment |[<span style="color: orange">⛈️</span>](#godoccomment-linuxarm64) &nbsp; [1](#godoccomment-linuxarm64) / 10059 |[<span style="color: red">❌</span>](#godoccomment-wasiwasm) &nbsp; [1](#godoccomment-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#godoccomment-wasip1wasm) &nbsp; [1](#godoccomment-wasip1wasm) / 10059 |[<span style="color: red">❌</span>](#godoccomment-wasip2wasm) &nbsp; [1](#godoccomment-wasip2wasm) / 0 |
+go/format |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |<span style="color: green">🟢</span> &nbsp; 4 |[<span style="color: red">❌</span>](#goformat-wasip2wasm) &nbsp; [1](#goformat-wasip2wasm) / 0 |
+go/importer |[<span style="color: orange">⛈️</span>](#goimporter-linuxarm64) &nbsp; [2](#goimporter-linuxarm64) / 2 |[<span style="color: red">❌</span>](#goimporter-wasiwasm) &nbsp; [1](#goimporter-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#goimporter-wasip1wasm) &nbsp; [2](#goimporter-wasip1wasm) / 2 |[<span style="color: red">❌</span>](#goimporter-wasip2wasm) &nbsp; [1](#goimporter-wasip2wasm) / 0 |
+go/parser |[<span style="color: orange">⛈️</span>](#goparser-linuxarm64) &nbsp; [2](#goparser-linuxarm64) / 43 |[<span style="color: orange">⛈️</span>](#goparser-wasiwasm) &nbsp; [1](#goparser-wasiwasm) / 27 |[<span style="color: orange">⛈️</span>](#goparser-wasip1wasm) &nbsp; [1](#goparser-wasip1wasm) / 27 |[<span style="color: orange">⛈️</span>](#goparser-wasip2wasm) &nbsp; [1](#goparser-wasip2wasm) / 3 |
+go/printer |[<span style="color: orange">⛈️</span>](#goprinter-linuxarm64) &nbsp; [12](#goprinter-linuxarm64) / 12 |[<span style="color: orange">⛈️</span>](#goprinter-wasiwasm) &nbsp; [12](#goprinter-wasiwasm) / 12 |[<span style="color: orange">⛈️</span>](#goprinter-wasip1wasm) &nbsp; [12](#goprinter-wasip1wasm) / 12 |[<span style="color: red">❌</span>](#goprinter-wasip2wasm) &nbsp; [1](#goprinter-wasip2wasm) / 0 |
+go/scanner |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |
+go/token |[<span style="color: red">❌</span>](#gotoken-linuxarm64) &nbsp; [1](#gotoken-linuxarm64) / 0 |[<span style="color: red">❌</span>](#gotoken-wasiwasm) &nbsp; [1](#gotoken-wasiwasm) / 0 |[<span style="color: red">❌</span>](#gotoken-wasip1wasm) &nbsp; [1](#gotoken-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#gotoken-wasip2wasm) &nbsp; [1](#gotoken-wasip2wasm) / 0 |
+go/types |[<span style="color: red">❌</span>](#gotypes-linuxarm64) &nbsp; [1](#gotypes-linuxarm64) / 0 |[<span style="color: red">❌</span>](#gotypes-wasiwasm) &nbsp; [1](#gotypes-wasiwasm) / 0 |[<span style="color: red">❌</span>](#gotypes-wasip1wasm) &nbsp; [1](#gotypes-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#gotypes-wasip2wasm) &nbsp; [1](#gotypes-wasip2wasm) / 0 |
+go/version |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |
+hash |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |
+hash/adler32 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |<span style="color: green">🟢</span> &nbsp; 2 |
+hash/crc32 |[<span style="color: orange">⛈️</span>](#hashcrc32-linuxarm64) &nbsp; [1](#hashcrc32-linuxarm64) / 8 |[<span style="color: orange">⛈️</span>](#hashcrc32-wasiwasm) &nbsp; [1](#hashcrc32-wasiwasm) / 8 |[<span style="color: orange">⛈️</span>](#hashcrc32-wasip1wasm) &nbsp; [1](#hashcrc32-wasip1wasm) / 8 |[<span style="color: orange">⛈️</span>](#hashcrc32-wasip2wasm) &nbsp; [1](#hashcrc32-wasip2wasm) / 8 |
+hash/crc64 |<span style="color: green">🟢</span> &nbsp; 5 |<span style="color: green">🟢</span> &nbsp; 5 |<span style="color: green">🟢</span> &nbsp; 5 |<span style="color: green">🟢</span> &nbsp; 5 |
+hash/fnv |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |
+hash/maphash |[<span style="color: orange">⛈️</span>](#hashmaphash-linuxarm64) &nbsp; [1](#hashmaphash-linuxarm64) / 15 |[<span style="color: orange">⛈️</span>](#hashmaphash-wasiwasm) &nbsp; [1](#hashmaphash-wasiwasm) / 13 |[<span style="color: orange">⛈️</span>](#hashmaphash-wasip1wasm) &nbsp; [1](#hashmaphash-wasip1wasm) / 13 |[<span style="color: red">❌</span>](#hashmaphash-wasip2wasm) &nbsp; [1](#hashmaphash-wasip2wasm) / 0 |
+html |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |<span style="color: green">🟢</span> &nbsp; 3 |
+html/template |[<span style="color: orange">⛈️</span>](#htmltemplate-linuxarm64) &nbsp; [1](#htmltemplate-linuxarm64) / 1 |[<span style="color: orange">⛈️</span>](#htmltemplate-wasiwasm) &nbsp; [1](#htmltemplate-wasiwasm) / 1 |[<span style="color: orange">⛈️</span>](#htmltemplate-wasip1wasm) &nbsp; [1](#htmltemplate-wasip1wasm) / 1 |[<span style="color: orange">⛈️</span>](#htmltemplate-wasip2wasm) &nbsp; [1](#htmltemplate-wasip2wasm) / 1 |
+image |<span style="color: green">🟢</span> &nbsp; 8 |[<span style="color: orange">⛈️</span>](#image-wasiwasm) &nbsp; [1](#image-wasiwasm) / 3 |[<span style="color: orange">⛈️</span>](#image-wasip1wasm) &nbsp; [1](#image-wasip1wasm) / 3 |[<span style="color: orange">⛈️</span>](#image-wasip2wasm) &nbsp; [1](#image-wasip2wasm) / 3 |
+image/color |[<span style="color: orange">⛈️</span>](#imagecolor-linuxarm64) &nbsp; [1](#imagecolor-linuxarm64) / 1 |[<span style="color: orange">⛈️</span>](#imagecolor-wasiwasm) &nbsp; [1](#imagecolor-wasiwasm) / 1 |[<span style="color: orange">⛈️</span>](#imagecolor-wasip1wasm) &nbsp; [1](#imagecolor-wasip1wasm) / 1 |[<span style="color: orange">⛈️</span>](#imagecolor-wasip2wasm) &nbsp; [1](#imagecolor-wasip2wasm) / 1 |
+image/color/palette |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+image/draw |[<span style="color: orange">⛈️</span>](#imagedraw-linuxarm64) &nbsp; [1](#imagedraw-linuxarm64) / 9 |[<span style="color: orange">⛈️</span>](#imagedraw-wasiwasm) &nbsp; [1](#imagedraw-wasiwasm) / 9 |[<span style="color: orange">⛈️</span>](#imagedraw-wasip1wasm) &nbsp; [1](#imagedraw-wasip1wasm) / 9 |[<span style="color: orange">⛈️</span>](#imagedraw-wasip2wasm) &nbsp; [1](#imagedraw-wasip2wasm) / 9 |
+image/gif |[<span style="color: red">❌</span>](#imagegif-linuxarm64) &nbsp; [1](#imagegif-linuxarm64) / 0 |[<span style="color: red">❌</span>](#imagegif-wasiwasm) &nbsp; [1](#imagegif-wasiwasm) / 0 |[<span style="color: red">❌</span>](#imagegif-wasip1wasm) &nbsp; [1](#imagegif-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#imagegif-wasip2wasm) &nbsp; [1](#imagegif-wasip2wasm) / 0 |
+image/jpeg |[<span style="color: red">❌</span>](#imagejpeg-linuxarm64) &nbsp; [1](#imagejpeg-linuxarm64) / 0 |[<span style="color: red">❌</span>](#imagejpeg-wasiwasm) &nbsp; [1](#imagejpeg-wasiwasm) / 0 |[<span style="color: red">❌</span>](#imagejpeg-wasip1wasm) &nbsp; [1](#imagejpeg-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#imagejpeg-wasip2wasm) &nbsp; [1](#imagejpeg-wasip2wasm) / 0 |
+image/png |[<span style="color: orange">⛈️</span>](#imagepng-linuxarm64) &nbsp; [1](#imagepng-linuxarm64) / 13 |[<span style="color: orange">⛈️</span>](#imagepng-wasiwasm) &nbsp; [1](#imagepng-wasiwasm) / 13 |[<span style="color: orange">⛈️</span>](#imagepng-wasip1wasm) &nbsp; [1](#imagepng-wasip1wasm) / 13 |[<span style="color: orange">⛈️</span>](#imagepng-wasip2wasm) &nbsp; [1](#imagepng-wasip2wasm) / 13 |
+index/suffixarray |<span style="color: green">🟢</span> &nbsp; 12 |[<span style="color: orange">⛈️</span>](#indexsuffixarray-wasiwasm) &nbsp; [5](#indexsuffixarray-wasiwasm) / 7 |[<span style="color: orange">⛈️</span>](#indexsuffixarray-wasip1wasm) &nbsp; [4](#indexsuffixarray-wasip1wasm) / 6 |[<span style="color: orange">⛈️</span>](#indexsuffixarray-wasip2wasm) &nbsp; [4](#indexsuffixarray-wasip2wasm) / 11 |
+io |[<span style="color: orange">⛈️</span>](#io-linuxarm64) &nbsp; [4](#io-linuxarm64) / 60 |[<span style="color: orange">⛈️</span>](#io-wasiwasm) &nbsp; [4](#io-wasiwasm) / 60 |[<span style="color: orange">⛈️</span>](#io-wasip1wasm) &nbsp; [4](#io-wasip1wasm) / 60 |[<span style="color: orange">⛈️</span>](#io-wasip2wasm) &nbsp; [4](#io-wasip2wasm) / 60 |
+io/fs |[<span style="color: orange">⛈️</span>](#iofs-linuxarm64) &nbsp; [1](#iofs-linuxarm64) / 6 |[<span style="color: orange">⛈️</span>](#iofs-wasiwasm) &nbsp; [1](#iofs-wasiwasm) / 6 |[<span style="color: orange">⛈️</span>](#iofs-wasip1wasm) &nbsp; [1](#iofs-wasip1wasm) / 6 |[<span style="color: orange">⛈️</span>](#iofs-wasip2wasm) &nbsp; [2](#iofs-wasip2wasm) / 6 |
+io/ioutil |<span style="color: green">🟢</span> &nbsp; 28 |[<span style="color: orange">⛈️</span>](#ioioutil-wasiwasm) &nbsp; [2](#ioioutil-wasiwasm) / 28 |[<span style="color: orange">⛈️</span>](#ioioutil-wasip1wasm) &nbsp; [2](#ioioutil-wasip1wasm) / 28 |[<span style="color: orange">⛈️</span>](#ioioutil-wasip2wasm) &nbsp; [2](#ioioutil-wasip2wasm) / 28 |
+log |[<span style="color: orange">⛈️</span>](#log-linuxarm64) &nbsp; [1](#log-linuxarm64) / 9 |[<span style="color: orange">⛈️</span>](#log-wasiwasm) &nbsp; [1](#log-wasiwasm) / 9 |[<span style="color: orange">⛈️</span>](#log-wasip1wasm) &nbsp; [1](#log-wasip1wasm) / 9 |[<span style="color: orange">⛈️</span>](#log-wasip2wasm) &nbsp; [1](#log-wasip2wasm) / 9 |
+log/slog |[<span style="color: red">❌</span>](#logslog-linuxarm64) &nbsp; [1](#logslog-linuxarm64) / 0 |[<span style="color: red">❌</span>](#logslog-wasiwasm) &nbsp; [1](#logslog-wasiwasm) / 0 |[<span style="color: red">❌</span>](#logslog-wasip1wasm) &nbsp; [1](#logslog-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#logslog-wasip2wasm) &nbsp; [1](#logslog-wasip2wasm) / 0 |
+log/syslog |[<span style="color: red">❌</span>](#logsyslog-linuxarm64) &nbsp; [1](#logsyslog-linuxarm64) / 0 |[<span style="color: red">❌</span>](#logsyslog-wasiwasm) &nbsp; [1](#logsyslog-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: red">❌</span>](#logsyslog-wasip2wasm) &nbsp; [1](#logsyslog-wasip2wasm) / 0 |
+maps |[<span style="color: red">❌</span>](#maps-linuxarm64) &nbsp; [1](#maps-linuxarm64) / 0 |[<span style="color: red">❌</span>](#maps-wasiwasm) &nbsp; [1](#maps-wasiwasm) / 0 |[<span style="color: red">❌</span>](#maps-wasip1wasm) &nbsp; [1](#maps-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#maps-wasip2wasm) &nbsp; [1](#maps-wasip2wasm) / 0 |
+math |<span style="color: green">🟢</span> &nbsp; 76 |<span style="color: green">🟢</span> &nbsp; 76 |<span style="color: green">🟢</span> &nbsp; 76 |[<span style="color: red">❌</span>](#math-wasip2wasm) &nbsp; [1](#math-wasip2wasm) / 0 |
+math/big |[<span style="color: red">❌</span>](#mathbig-linuxarm64) &nbsp; [1](#mathbig-linuxarm64) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+math/bits |[<span style="color: orange">⛈️</span>](#mathbits-linuxarm64) &nbsp; [5](#mathbits-linuxarm64) / 21 |[<span style="color: orange">⛈️</span>](#mathbits-wasiwasm) &nbsp; [1](#mathbits-wasiwasm) / 12 |[<span style="color: orange">⛈️</span>](#mathbits-wasip1wasm) &nbsp; [1](#mathbits-wasip1wasm) / 12 |[<span style="color: orange">⛈️</span>](#mathbits-wasip2wasm) &nbsp; [1](#mathbits-wasip2wasm) / 12 |
+math/cmplx |<span style="color: green">🟢</span> &nbsp; 24 |<span style="color: green">🟢</span> &nbsp; 24 |<span style="color: green">🟢</span> &nbsp; 24 |[<span style="color: red">❌</span>](#mathcmplx-wasip2wasm) &nbsp; [1](#mathcmplx-wasip2wasm) / 0 |
+math/rand |[<span style="color: orange">⛈️</span>](#mathrand-linuxarm64) &nbsp; [8](#mathrand-linuxarm64) / 43 |[<span style="color: red">❌</span>](#mathrand-wasiwasm) &nbsp; [1](#mathrand-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#mathrand-wasip1wasm) &nbsp; [22](#mathrand-wasip1wasm) / 36 |[<span style="color: red">❌</span>](#mathrand-wasip2wasm) &nbsp; [1](#mathrand-wasip2wasm) / 0 |
+math/rand/v2 |[<span style="color: red">❌</span>](#mathrandv2-linuxarm64) &nbsp; [1](#mathrandv2-linuxarm64) / 0 |[<span style="color: red">❌</span>](#mathrandv2-wasiwasm) &nbsp; [1](#mathrandv2-wasiwasm) / 0 |[<span style="color: red">❌</span>](#mathrandv2-wasip1wasm) &nbsp; [1](#mathrandv2-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#mathrandv2-wasip2wasm) &nbsp; [1](#mathrandv2-wasip2wasm) / 0 |
+mime |[<span style="color: orange">⛈️</span>](#mime-linuxarm64) &nbsp; [1](#mime-linuxarm64) / 14 |[<span style="color: orange">⛈️</span>](#mime-wasiwasm) &nbsp; [1](#mime-wasiwasm) / 13 |[<span style="color: orange">⛈️</span>](#mime-wasip1wasm) &nbsp; [1](#mime-wasip1wasm) / 13 |[<span style="color: orange">⛈️</span>](#mime-wasip2wasm) &nbsp; [1](#mime-wasip2wasm) / 14 |
+mime/multipart |<span style="color: green">🟢</span> &nbsp; 48 |[<span style="color: orange">⛈️</span>](#mimemultipart-wasiwasm) &nbsp; [3](#mimemultipart-wasiwasm) / 10 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: orange">⛈️</span>](#mimemultipart-wasip2wasm) &nbsp; [3](#mimemultipart-wasip2wasm) / 10 |
+mime/quotedprintable |<span style="color: green">🟢</span> &nbsp; 5 |[<span style="color: red">❌</span>](#mimequotedprintable-wasiwasm) &nbsp; [1](#mimequotedprintable-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: red">❌</span>](#mimequotedprintable-wasip2wasm) &nbsp; [1](#mimequotedprintable-wasip2wasm) / 0 |
+net |<span style="color: green">🟢</span> &nbsp; 1 |<span style="color: green">🟢</span> &nbsp; 1 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: green">🟢</span> &nbsp; 1 |
+net/http |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/cgi |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/cookiejar |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/fcgi |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/httptest |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/httptrace |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/httputil |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/http/pprof |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/mail |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: green">🟢</span> &nbsp; 11 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: green">🟢</span> &nbsp; 11 |
+net/netip |[<span style="color: orange">⛈️</span>](#netnetip-linuxarm64) &nbsp; [8](#netnetip-linuxarm64) / 256 |[<span style="color: red">❌</span>](#netnetip-wasiwasm) &nbsp; [1](#netnetip-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: red">❌</span>](#netnetip-wasip2wasm) &nbsp; [1](#netnetip-wasip2wasm) / 0 |
+net/rpc |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+net/rpc/jsonrpc |[<span style="color: red">❌</span>](#netrpcjsonrpc-linuxarm64) &nbsp; [1](#netrpcjsonrpc-linuxarm64) / 0 |[<span style="color: red">❌</span>](#netrpcjsonrpc-wasiwasm) &nbsp; [1](#netrpcjsonrpc-wasiwasm) / 0 |[<span style="color: red">❌</span>](#netrpcjsonrpc-wasip1wasm) &nbsp; [1](#netrpcjsonrpc-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#netrpcjsonrpc-wasip2wasm) &nbsp; [1](#netrpcjsonrpc-wasip2wasm) / 0 |
+net/smtp |[<span style="color: red">❌</span>](#netsmtp-linuxarm64) &nbsp; [1](#netsmtp-linuxarm64) / 0 |[<span style="color: red">❌</span>](#netsmtp-wasiwasm) &nbsp; [1](#netsmtp-wasiwasm) / 0 |[<span style="color: red">❌</span>](#netsmtp-wasip1wasm) &nbsp; [1](#netsmtp-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#netsmtp-wasip2wasm) &nbsp; [1](#netsmtp-wasip2wasm) / 0 |
+net/textproto |<span style="color: green">🟢</span> &nbsp; 25 |<span style="color: green">🟢</span> &nbsp; 25 |<span style="color: green">🟢</span> &nbsp; 25 |<span style="color: green">🟢</span> &nbsp; 25 |
+net/url |[<span style="color: red">❌</span>](#neturl-linuxarm64) &nbsp; [1](#neturl-linuxarm64) / 0 |[<span style="color: red">❌</span>](#neturl-wasiwasm) &nbsp; [1](#neturl-wasiwasm) / 0 |[<span style="color: red">❌</span>](#neturl-wasip1wasm) &nbsp; [1](#neturl-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#neturl-wasip2wasm) &nbsp; [1](#neturl-wasip2wasm) / 0 |
+os |<span style="color: green">🟢</span> &nbsp; 80 |[<span style="color: orange">⛈️</span>](#os-wasiwasm) &nbsp; [3](#os-wasiwasm) / 37 |[<span style="color: orange">⛈️</span>](#os-wasip1wasm) &nbsp; [3](#os-wasip1wasm) / 37 |[<span style="color: orange">⛈️</span>](#os-wasip2wasm) &nbsp; [3](#os-wasip2wasm) / 37 |
+os/exec |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+os/signal |[<span style="color: red">❌</span>](#ossignal-linuxarm64) &nbsp; [1](#ossignal-linuxarm64) / 0 |[<span style="color: red">❌</span>](#ossignal-wasiwasm) &nbsp; [1](#ossignal-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: red">❌</span>](#ossignal-wasip2wasm) &nbsp; [1](#ossignal-wasip2wasm) / 0 |
+os/user |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+path |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |<span style="color: green">🟢</span> &nbsp; 9 |
+path/filepath |[<span style="color: orange">⛈️</span>](#pathfilepath-linuxarm64) &nbsp; [1](#pathfilepath-linuxarm64) / 3 |[<span style="color: orange">⛈️</span>](#pathfilepath-wasiwasm) &nbsp; [1](#pathfilepath-wasiwasm) / 3 |[<span style="color: orange">⛈️</span>](#pathfilepath-wasip1wasm) &nbsp; [1](#pathfilepath-wasip1wasm) / 3 |[<span style="color: orange">⛈️</span>](#pathfilepath-wasip2wasm) &nbsp; [2](#pathfilepath-wasip2wasm) / 3 |
+plugin |[<span style="color: red">❌</span>](#plugin-linuxarm64) &nbsp; [1](#plugin-linuxarm64) / 0 |[<span style="color: red">❌</span>](#plugin-wasiwasm) &nbsp; [1](#plugin-wasiwasm) / 0 |<span style="color: green">🟢</span> &nbsp; 1 |[<span style="color: red">❌</span>](#plugin-wasip2wasm) &nbsp; [1](#plugin-wasip2wasm) / 0 |
+reflect |<span style="color: green">🟢</span> &nbsp; 96 |<span style="color: green">🟢</span> &nbsp; 96 |<span style="color: green">🟢</span> &nbsp; 96 |<span style="color: green">🟢</span> &nbsp; 96 |
+regexp |[<span style="color: orange">⛈️</span>](#regexp-linuxarm64) &nbsp; [1](#regexp-linuxarm64) / 14 |[<span style="color: orange">⛈️</span>](#regexp-wasiwasm) &nbsp; [1](#regexp-wasiwasm) / 2 |[<span style="color: orange">⛈️</span>](#regexp-wasip1wasm) &nbsp; [1](#regexp-wasip1wasm) / 2 |[<span style="color: orange">⛈️</span>](#regexp-wasip2wasm) &nbsp; [1](#regexp-wasip2wasm) / 2 |
+regexp/syntax |<span style="color: green">🟢</span> &nbsp; 12 |[<span style="color: orange">⛈️</span>](#regexpsyntax-wasiwasm) &nbsp; [1](#regexpsyntax-wasiwasm) / 8 |[<span style="color: orange">⛈️</span>](#regexpsyntax-wasip1wasm) &nbsp; [1](#regexpsyntax-wasip1wasm) / 8 |[<span style="color: orange">⛈️</span>](#regexpsyntax-wasip2wasm) &nbsp; [1](#regexpsyntax-wasip2wasm) / 8 |
+runtime |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/cgo |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/coverage |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/debug |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/metrics |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/pprof |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/race |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+runtime/trace |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+slices |[<span style="color: orange">⛈️</span>](#slices-linuxarm64) &nbsp; [1](#slices-linuxarm64) / 11 |[<span style="color: red">❌</span>](#slices-wasiwasm) &nbsp; [1](#slices-wasiwasm) / 0 |[<span style="color: red">❌</span>](#slices-wasip1wasm) &nbsp; [1](#slices-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#slices-wasip2wasm) &nbsp; [1](#slices-wasip2wasm) / 0 |
+sort |<span style="color: green">🟢</span> &nbsp; 63 |<span style="color: green">🟢</span> &nbsp; 63 |<span style="color: green">🟢</span> &nbsp; 63 |<span style="color: green">🟢</span> &nbsp; 63 |
+strconv |<span style="color: green">🟢</span> &nbsp; 66 |[<span style="color: orange">⛈️</span>](#strconv-wasiwasm) &nbsp; [1](#strconv-wasiwasm) / 29 |[<span style="color: orange">⛈️</span>](#strconv-wasip1wasm) &nbsp; [1](#strconv-wasip1wasm) / 29 |[<span style="color: red">❌</span>](#strconv-wasip2wasm) &nbsp; [1](#strconv-wasip2wasm) / 0 |
+strings |[<span style="color: orange">⛈️</span>](#strings-linuxarm64) &nbsp; [2](#strings-linuxarm64) / 71 |[<span style="color: orange">⛈️</span>](#strings-wasiwasm) &nbsp; [1](#strings-wasiwasm) / 4 |[<span style="color: orange">⛈️</span>](#strings-wasip1wasm) &nbsp; [1](#strings-wasip1wasm) / 4 |[<span style="color: orange">⛈️</span>](#strings-wasip2wasm) &nbsp; [1](#strings-wasip2wasm) / 4 |
+sync |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |<span style="color: green">🟢</span> &nbsp; 19 |
+sync/atomic |[<span style="color: orange">⛈️</span>](#syncatomic-linuxarm64) &nbsp; [6](#syncatomic-linuxarm64) / 68 |[<span style="color: orange">⛈️</span>](#syncatomic-wasiwasm) &nbsp; [6](#syncatomic-wasiwasm) / 68 |[<span style="color: orange">⛈️</span>](#syncatomic-wasip1wasm) &nbsp; [6](#syncatomic-wasip1wasm) / 68 |[<span style="color: orange">⛈️</span>](#syncatomic-wasip2wasm) &nbsp; [6](#syncatomic-wasip2wasm) / 68 |
+syscall |[<span style="color: red">❌</span>](#syscall-linuxarm64) &nbsp; [1](#syscall-linuxarm64) / 0 |[<span style="color: red">❌</span>](#syscall-wasiwasm) &nbsp; [1](#syscall-wasiwasm) / 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |[<span style="color: orange">⛈️</span>](#syscall-wasip2wasm) &nbsp; [1](#syscall-wasip2wasm) / 1 |
+testing |<span style="color: green">🟢</span> &nbsp; 33 |<span style="color: green">🟢</span> &nbsp; 23 |<span style="color: green">🟢</span> &nbsp; 23 |<span style="color: green">🟢</span> &nbsp; 23 |
+testing/fstest |<span style="color: green">🟢</span> &nbsp; 5 |[<span style="color: orange">⛈️</span>](#testingfstest-wasiwasm) &nbsp; [1](#testingfstest-wasiwasm) / 5 |[<span style="color: orange">⛈️</span>](#testingfstest-wasip1wasm) &nbsp; [1](#testingfstest-wasip1wasm) / 5 |[<span style="color: orange">⛈️</span>](#testingfstest-wasip2wasm) &nbsp; [1](#testingfstest-wasip2wasm) / 5 |
+testing/iotest |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |
+testing/quick |[<span style="color: orange">⛈️</span>](#testingquick-linuxarm64) &nbsp; [1](#testingquick-linuxarm64) / 1 |[<span style="color: orange">⛈️</span>](#testingquick-wasiwasm) &nbsp; [1](#testingquick-wasiwasm) / 1 |[<span style="color: orange">⛈️</span>](#testingquick-wasip1wasm) &nbsp; [1](#testingquick-wasip1wasm) / 1 |[<span style="color: orange">⛈️</span>](#testingquick-wasip2wasm) &nbsp; [1](#testingquick-wasip2wasm) / 1 |
+testing/slogtest |[<span style="color: red">❌</span>](#testingslogtest-linuxarm64) &nbsp; [1](#testingslogtest-linuxarm64) / 0 |[<span style="color: red">❌</span>](#testingslogtest-wasiwasm) &nbsp; [1](#testingslogtest-wasiwasm) / 0 |[<span style="color: red">❌</span>](#testingslogtest-wasip1wasm) &nbsp; [1](#testingslogtest-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#testingslogtest-wasip2wasm) &nbsp; [1](#testingslogtest-wasip2wasm) / 0 |
+text/scanner |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |<span style="color: green">🟢</span> &nbsp; 18 |
+text/tabwriter |<span style="color: green">🟢</span> &nbsp; 3 |[<span style="color: orange">⛈️</span>](#texttabwriter-wasiwasm) &nbsp; [1](#texttabwriter-wasiwasm) / 2 |[<span style="color: orange">⛈️</span>](#texttabwriter-wasip1wasm) &nbsp; [1](#texttabwriter-wasip1wasm) / 2 |[<span style="color: orange">⛈️</span>](#texttabwriter-wasip2wasm) &nbsp; [1](#texttabwriter-wasip2wasm) / 2 |
+text/template |[<span style="color: orange">⛈️</span>](#texttemplate-linuxarm64) &nbsp; [1](#texttemplate-linuxarm64) / 1 |[<span style="color: red">❌</span>](#texttemplate-wasiwasm) &nbsp; [1](#texttemplate-wasiwasm) / 0 |[<span style="color: orange">⛈️</span>](#texttemplate-wasip1wasm) &nbsp; [1](#texttemplate-wasip1wasm) / 1 |[<span style="color: red">❌</span>](#texttemplate-wasip2wasm) &nbsp; [1](#texttemplate-wasip2wasm) / 0 |
+text/template/parse |<span style="color: green">🟢</span> &nbsp; 52 |[<span style="color: orange">⛈️</span>](#texttemplateparse-wasiwasm) &nbsp; [1](#texttemplateparse-wasiwasm) / 6 |[<span style="color: orange">⛈️</span>](#texttemplateparse-wasip1wasm) &nbsp; [1](#texttemplateparse-wasip1wasm) / 6 |[<span style="color: orange">⛈️</span>](#texttemplateparse-wasip2wasm) &nbsp; [1](#texttemplateparse-wasip2wasm) / 6 |
+time |[<span style="color: red">❌</span>](#time-linuxarm64) &nbsp; [1](#time-linuxarm64) / 0 |[<span style="color: red">❌</span>](#time-wasiwasm) &nbsp; [1](#time-wasiwasm) / 0 |[<span style="color: red">❌</span>](#time-wasip1wasm) &nbsp; [1](#time-wasip1wasm) / 0 |[<span style="color: red">❌</span>](#time-wasip2wasm) &nbsp; [1](#time-wasip2wasm) / 0 |
+time/tzdata |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
+unicode |<span style="color: green">🟢</span> &nbsp; 28 |<span style="color: green">🟢</span> &nbsp; 28 |<span style="color: green">🟢</span> &nbsp; 28 |<span style="color: green">🟢</span> &nbsp; 28 |
+unicode/utf16 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |<span style="color: green">🟢</span> &nbsp; 8 |
+unicode/utf8 |<span style="color: green">🟢</span> &nbsp; 14 |<span style="color: green">🟢</span> &nbsp; 14 |<span style="color: green">🟢</span> &nbsp; 14 |<span style="color: green">🟢</span> &nbsp; 14 |
+unsafe |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |<span style="color: yellow">🫥</span> &nbsp; 0 |
 
 ## linux/arm64
 
@@ -239,13 +250,13 @@ FAIL	context	0.000s
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo304536086/main /tmp/tinygo304536086/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1717052402/main /tmp/tinygo1717052402/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-1D16C73CA7A1E10346AAE81D9B45A9E4651F0103:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto	0.000s
-error: failed to link /tmp/tinygo304536086/main: exit status 1
+error: failed to link /tmp/tinygo1717052402/main: exit status 1
 ```
 
 
@@ -254,7 +265,7 @@ error: failed to link /tmp/tinygo304536086/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3054185604/main /tmp/tinygo3054185604/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1674167892/main /tmp/tinygo1674167892/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.decryptBlockAsm
 >>> referenced by cipher_asm.go:95 (/usr/local/go/src/crypto/aes/cipher_asm.go:95)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-C0B38AE06461A58B42C5B34593CC845D19599555:((*crypto/aes.aesCipherAsm).Decrypt)
@@ -264,7 +275,7 @@ ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-C0B38AE06461A58B42C5B34593CC845D19599555:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto/aes	0.000s
-error: failed to link /tmp/tinygo3054185604/main: exit status 1
+error: failed to link /tmp/tinygo1674167892/main: exit status 1
 ```
 
 
@@ -273,7 +284,7 @@ error: failed to link /tmp/tinygo3054185604/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2869465497/main /tmp/tinygo2869465497/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2258749837/main /tmp/tinygo2258749837/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.gcmAesInit
 >>> referenced by aes_gcm.go:49 (/usr/local/go/src/crypto/aes/aes_gcm.go:49)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-57AD32ADEDA80DAEB8A0426E8A174C9A22F0DB0A:(crypto/cipher.newGCMWithNonceAndTagSize)
@@ -317,7 +328,7 @@ ld.lld: error: undefined symbol: crypto/aes.gcmAesDec
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-57AD32ADEDA80DAEB8A0426E8A174C9A22F0DB0A:(interface:{NonceSize:func:{}{basic:int},Open:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8,named:error},Overhead:func:{}{basic:int},Seal:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8}}.Open$invoke)
 failed to run tool: ld.lld
 FAIL	crypto/cipher	0.000s
-error: failed to link /tmp/tinygo2869465497/main: exit status 1
+error: failed to link /tmp/tinygo2258749837/main: exit status 1
 ```
 
 
@@ -326,7 +337,7 @@ error: failed to link /tmp/tinygo2869465497/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo717681236/main /tmp/tinygo717681236/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo717681236/embed-a3a5d08c40939adb7c0e9e4f5b689721-3574969748.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1211406487/main /tmp/tinygo1211406487/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1211406487/embed-a3a5d08c40939adb7c0e9e4f5b689721-68947399.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256Sqr
 >>> referenced by p256_asm.go:584 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:584)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-BC525AE53343345D2E48A5D51D93E1EF157700A5:(crypto/internal/nistec.p256Inverse)
@@ -427,7 +438,7 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdBigToLittle
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-BC525AE53343345D2E48A5D51D93E1EF157700A5:(OUTLINED_FUNCTION_784)
 failed to run tool: ld.lld
 FAIL	crypto/ecdh	0.000s
-error: failed to link /tmp/tinygo717681236/main: exit status 1
+error: failed to link /tmp/tinygo1211406487/main: exit status 1
 ```
 
 
@@ -436,7 +447,7 @@ error: failed to link /tmp/tinygo717681236/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2585959803/main /tmp/tinygo2585959803/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2585959803/embed-a3a5d08c40939adb7c0e9e4f5b689721-3332246600.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3502400642/main /tmp/tinygo3502400642/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo3502400642/embed-a3a5d08c40939adb7c0e9e4f5b689721-3348270724.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-09996352C817E6D43BB10C20F09C23BD1889E35E:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -566,7 +577,7 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdLittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-09996352C817E6D43BB10C20F09C23BD1889E35E:(crypto/internal/nistec.P256OrdInverse)
 failed to run tool: ld.lld
 FAIL	crypto/ecdsa	0.000s
-error: failed to link /tmp/tinygo2585959803/main: exit status 1
+error: failed to link /tmp/tinygo3502400642/main: exit status 1
 ```
 
 
@@ -599,7 +610,7 @@ Failures/Tests: 1/9
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo738482865/main /tmp/tinygo738482865/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo738482865/embed-a3a5d08c40939adb7c0e9e4f5b689721-3739815042.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4021980983/main /tmp/tinygo4021980983/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo4021980983/embed-a3a5d08c40939adb7c0e9e4f5b689721-1755209092.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256PointAddAsm
 >>> referenced by p256_asm.go:387 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:387)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-2BC0FDD646081BEEEF4F2CAABB009A608FD82696:((*crypto/internal/nistec.P256Point).Add)
@@ -699,7 +710,7 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-2BC0FDD646081BEEEF4F2CAABB009A608FD82696:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/elliptic	0.000s
-error: failed to link /tmp/tinygo738482865/main: exit status 1
+error: failed to link /tmp/tinygo4021980983/main: exit status 1
 ```
 
 
@@ -708,7 +719,7 @@ error: failed to link /tmp/tinygo738482865/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1593332456/main /tmp/tinygo1593332456/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1593332456/embed-a3a5d08c40939adb7c0e9e4f5b689721-2735006889.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo41477130/main /tmp/tinygo41477130/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo41477130/embed-a3a5d08c40939adb7c0e9e4f5b689721-957481904.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 >>> referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-73CE18BE4B3319E296DA0103298437A2235213F2:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -812,7 +823,7 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-73CE18BE4B3319E296DA0103298437A2235213F2:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/rsa	0.000s
-error: failed to link /tmp/tinygo1593332456/main: exit status 1
+error: failed to link /tmp/tinygo41477130/main: exit status 1
 ```
 
 
@@ -903,7 +914,7 @@ Failures/Tests: 1/1
     FailNow is incomplete, requires runtime.Goexit()
     building test executable for linktype 1 failed: exec: no command 
     FailNow is incomplete, requires runtime.Goexit()
-    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF175198082/000/a.exe: operation not implemented 
+    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF225892264/000/a.exe: operation not implemented 
     FailNow is incomplete, requires runtime.Goexit()
     Testprog output:
     unexpected program output: 
@@ -930,11 +941,11 @@ panic: runtime error at 0x000000000024e558: index out of range
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2511238555/main /tmp/tinygo2511238555/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo2511238555/main /tmp/tinygo2511238555/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3958108318/main /tmp/tinygo3958108318/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo3958108318/main /tmp/tinygo3958108318/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	encoding/gob	0.008s
+FAIL	encoding/gob	0.010s
 ```
 
 
@@ -969,34 +980,34 @@ Failures/Tests: 1/336
 Failures/Tests: 19/60
 === RUN   TestAs
 --- FAIL: TestAs (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff44260930)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff44260930) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
     --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260930) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff44260930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff44260930) (0.00s)
 === RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
     --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
 === RUN   TestAs/5:As(Errorf(...,_error),_errorT())
     --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff78667930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff78667930) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff78667950)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff44260930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff44260930) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff44260970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff44260970) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff44260950)
         match: got true; want false
         FailNow is incomplete, requires runtime.Goexit()
         got &errors.errorString{s:"err"}, want <nil>
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff78667950) (0.00s)
-=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff78667950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff44260950) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260950) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff44260950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff442609b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff78667950) (0.00s)
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff44260950) (0.00s)
 === RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
     --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
 === RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
@@ -1007,56 +1018,56 @@ Failures/Tests: 19/60
     --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 === RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff78667950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff44260950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff442609b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff78667950) (0.00s)
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff44260950) (0.00s)
 === RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667950) (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff78667930) (0.00s)
 === RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
     --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff78667930) (0.00s)
-=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff78667970) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260950) (0.00s)
 === RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
     --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
-=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
-    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff44260950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff442609b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff44260950) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0xffff44260930)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0xffff44260930) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff44260930) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff44260930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff44260930) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff44260930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff44260930) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff44260970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff44260970) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff44260950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff442609b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff44260950) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
     --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff78667930) (0.00s)
 === RUN   TestAs/5:As(Errorf(...,_error),_errorT())
     --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff78667950)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff44260950)
         match: got true; want false
         FailNow is incomplete, requires runtime.Goexit()
         got &errors.errorString{s:"err"}, want <nil>
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff78667950) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff78667950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff78667950) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff78667930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff78667930) (0.00s)
-=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff78667950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff786679b0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff78667950) (0.00s)
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff44260950) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
 
 ```
 
@@ -1111,7 +1122,7 @@ Failures/Tests: 16/56
     FailNow is incomplete, requires runtime.Goexit()
     import "./file": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestDotSlashImport (0.00s)
+--- FAIL: TestDotSlashImport (0.01s)
 === RUN   TestLocalDirectory
     import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
@@ -1203,10 +1214,10 @@ panic: runtime error at 0x0000000000257f90: divide by zero
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo548201736/main /tmp/tinygo548201736/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo548201736/main /tmp/tinygo548201736/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo317423813/main /tmp/tinygo317423813/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo317423813/main /tmp/tinygo317423813/main -test.v
 panic: unimplemented: (reflect.Type).NumOut()
-FAIL	go/doc	0.007s
+FAIL	go/doc	0.021s
 ```
 
 
@@ -1276,8 +1287,6 @@ Failures/Tests: 1/10059
 
 ```text
 Failures/Tests: 2/2
-=== RUN   TestForCompiler/LookupDefault
-panic: runtime error at 0x00000000002f3730: nil pointer dereference
 === RUN   TestForCompiler
     skipping test: 'go build' unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented
     SkipNow is incomplete, requires runtime.Goexit()
@@ -1287,6 +1296,8 @@ panic: runtime error at 0x00000000002f3730: nil pointer dereference
     FailNow is incomplete, requires runtime.Goexit()
     go list math/big: exec: no command
     FailNow is incomplete, requires runtime.Goexit()
+=== RUN   TestForCompiler/LookupDefault
+panic: runtime error at 0x00000000002f3730: nil pointer dereference
 === RUN   TestForCompiler/LookupDefault
 panic: runtime error at 0x00000000002f3730: nil pointer dereference
 
@@ -1299,8 +1310,8 @@ panic: runtime error at 0x00000000002f3730: nil pointer dereference
 
 ```text
 Failures/Tests: 2/43
-=== RUN   TestParseDepthLimit
 === RUN   TestParseDepthLimit/array/small
+=== RUN   TestParseDepthLimit
 === RUN   TestParseDepthLimit/array/small
 
 ```
@@ -1314,49 +1325,49 @@ Failures/Tests: 2/43
 Failures/Tests: 12/12
 === RUN   TestFiles
 === RUN   TestFiles/empty.input
-    --- PASS: TestFiles/empty.input (0.00s)
+    --- PASS: TestFiles/empty.input (0.01s)
 === RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.01s)
+    --- PASS: TestFiles/comments.input (0.02s)
 === RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.00s)
+    --- PASS: TestFiles/comments.input#01 (0.01s)
 === RUN   TestFiles/comments2.input
     --- PASS: TestFiles/comments2.input (0.00s)
 === RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.01s)
+    --- PASS: TestFiles/alignment.input (0.00s)
 === RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.01s)
+    --- PASS: TestFiles/linebreaks.input (0.03s)
 === RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.02s)
+    --- PASS: TestFiles/expressions.input (0.05s)
 === RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.04s)
+    --- PASS: TestFiles/expressions.input#01 (0.06s)
 === RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.02s)
+    --- PASS: TestFiles/declarations.input (0.03s)
 === RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.03s)
-=== RUN   TestFiles/slow.input
-panic: runtime error at 0x000000000023a58c: goroutine stack overflow
-=== RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.01s)
-=== RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.02s)
-=== RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.03s)
+    --- PASS: TestFiles/statements.input (0.00s)
 === RUN   TestFiles/slow.input
 panic: runtime error at 0x000000000023a58c: goroutine stack overflow
 === RUN   TestFiles/empty.input
-    --- PASS: TestFiles/empty.input (0.00s)
+    --- PASS: TestFiles/empty.input (0.01s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.00s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.03s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.06s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.03s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.00s)
+=== RUN   TestFiles/slow.input
+panic: runtime error at 0x000000000023a58c: goroutine stack overflow
 === RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.01s)
+    --- PASS: TestFiles/comments.input (0.02s)
 === RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.00s)
+    --- PASS: TestFiles/comments.input#01 (0.01s)
 === RUN   TestFiles/comments2.input
     --- PASS: TestFiles/comments2.input (0.00s)
-=== RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.01s)
 === RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.02s)
-=== RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.04s)
+    --- PASS: TestFiles/expressions.input (0.05s)
 
 ```
 
@@ -1366,11 +1377,11 @@ panic: runtime error at 0x000000000023a58c: goroutine stack overflow
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2267698324/main /tmp/tinygo2267698324/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo2267698324/main /tmp/tinygo2267698324/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1767940313/main /tmp/tinygo1767940313/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo1767940313/main /tmp/tinygo1767940313/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	go/token	0.007s
+FAIL	go/token	0.014s
 ```
 
 
@@ -1482,27 +1493,6 @@ panic: runtime error at 0x000000000025ca64: out of memory
 ```
 
 
-### index/suffixarray linux/arm64
-
-[🔝](#summary) failure
-
-```text
-Failures/Tests: 4/6
-=== RUN   TestNew32
-=== RUN   TestNew32/ababab...
-    --- PASS: TestNew32/ababab... (3.09s)
-=== RUN   TestNew32/forcealloc
-    --- PASS: TestNew32/forcealloc (0.42s)
-=== RUN   TestNew32/exhaustive2
-=== RUN   TestNew32/ababab...
-    --- PASS: TestNew32/ababab... (3.09s)
-=== RUN   TestNew32/forcealloc
-    --- PASS: TestNew32/forcealloc (0.42s)
-=== RUN   TestNew32/exhaustive2
-
-```
-
-
 ### io linux/arm64
 
 [🔝](#summary) failure
@@ -1550,15 +1540,15 @@ Failures/Tests: 1/9
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793653 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793679 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793911 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 01:44:47.793928 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.793949 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794314 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794329 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 01:44:47.794347 ???:0: XXXhello 23 world"
---- FAIL: TestAll (0.01s)
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:47:30.874165 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:47:30.874190 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:47:30.874428 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:47:30.874447 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:47:30.874469 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:47:30.874705 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:47:30.874754 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:47:30.874780 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.00s)
 
 ```
 
@@ -1568,10 +1558,10 @@ Failures/Tests: 1/9
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1667480039/main /tmp/tinygo1667480039/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1667480039/embed-a3a5d08c40939adb7c0e9e4f5b689721-451659394.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo1667480039/main /tmp/tinygo1667480039/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1398829460/main /tmp/tinygo1398829460/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1398829460/embed-a3a5d08c40939adb7c0e9e4f5b689721-331788511.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo1398829460/main /tmp/tinygo1398829460/main -test.v
 panic: runtime.Caller failed
-FAIL	log/slog	0.012s
+FAIL	log/slog	0.020s
 ```
 
 
@@ -1592,7 +1582,7 @@ FAIL	log/syslog	0.000s
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo397733889/main /tmp/tinygo397733889/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3953381456/main /tmp/tinygo3953381456/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: maps.clone
 >>> referenced by maps.go:46 (/usr/local/go/src/maps/maps.go:46)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-F9AB708965DA4E13606CA4FB6E1A78FE3C988F07:(maps.Clone[map[int]int int int])
@@ -1600,7 +1590,7 @@ ld.lld: error: undefined symbol: maps.clone
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-F9AB708965DA4E13606CA4FB6E1A78FE3C988F07:(maps.TestCloneLarge)
 failed to run tool: ld.lld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo397733889/main: exit status 1
+error: failed to link /tmp/tinygo3953381456/main: exit status 1
 ```
 
 
@@ -1611,16 +1601,14 @@ error: failed to link /tmp/tinygo397733889/main: exit status 1
 ```text
 FAIL	math/big	0.000s
 # math/big
-/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 35931993)
-  %0 = and i64 %x, 4294967295, !dbg !30812
+/usr/local/go/src/math/bits/bits.go: interp: running for more than 3m0s, timing out (executed calls: 30685908)
+  br i1 false, label %if.then, label %if.done, !dbg !30806
 
 traceback:
-/usr/local/go/src/math/bits/bits.go:472:10:
-  %0 = and i64 %x, 4294967295, !dbg !30812
-/usr/local/go/src/math/bits/bits.go:450:15:
-  %9 = call { i64, i64 } @"math/bits.Mul64"(i64 %x, i64 %y, ptr undef), !dbg !30820
-/usr/local/go/src/math/big/arith.go:51:20:
-  %0 = call { i64, i64 } @"math/bits.Mul"(i64 %x, i64 %y, ptr undef), !dbg !30807
+/usr/local/go/src/math/bits/bits.go:
+  br i1 false, label %if.then, label %if.done, !dbg !30806
+/usr/local/go/src/math/big/arith.go:53:19:
+  %3 = call { i64, i64 } @"math/bits.Add"(i64 %2, i64 %c, i64 0, ptr undef), !dbg !30813
 /usr/local/go/src/math/big/arith.go:192:24:
   %13 = call { i64, i64 } @"math/big.mulAddWWW_g"(i64 %12, i64 %y, i64 %6, ptr undef), !dbg !30825
 /usr/local/go/src/math/big/arith_decl_pure.go:44:20:
@@ -1632,7 +1620,7 @@ traceback:
 /usr/local/go/src/math/big/nat_test.go:92:31:
   %8 = call { { ptr, i64, i64 }, i64, i64, %runtime._interface } @"(math/big.nat).scan"(ptr null, i64 0, i64 0, ptr %6, ptr %7, i64 0, i1 false, ptr undef), !dbg !30804
 /usr/local/go/src/math/big:
-  %32 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %30, i64 %31, ptr undef), !dbg !30811
+  %19 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %17, i64 %18, ptr undef), !dbg !30811
 ```
 
 
@@ -1669,43 +1657,43 @@ Failures/Tests: 8/43
 === RUN   TestDefaultRace
 --- FAIL: TestDefaultRace (0.00s)
 === RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/0 (0.00s)
 === RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/1 (0.00s)
 === RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/2 (0.00s)
 === RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/3 (0.00s)
 === RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/4 (0.00s)
 === RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/5 (0.00s)
 === RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/0 (0.00s)
-=== RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
-    --- FAIL: TestDefaultRace/5 (0.00s)
+=== RUN   TestDefaultRace/4
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
+    --- FAIL: TestDefaultRace/4 (0.00s)
 === RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/1 (0.00s)
+=== RUN   TestDefaultRace/3
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
+    --- FAIL: TestDefaultRace/3 (0.00s)
 === RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
     --- FAIL: TestDefaultRace/2 (0.00s)
+=== RUN   TestDefaultRace/5
+        fork/exec /tmp/tinygo2143648915/main: operation not implemented
+    --- FAIL: TestDefaultRace/5 (0.00s)
 === RUN   TestRegress
 panic: unimplemented: (reflect.Type).Method()
-=== RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
-    --- FAIL: TestDefaultRace/3 (0.00s)
-=== RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo3254648617/main: operation not implemented
-    --- FAIL: TestDefaultRace/4 (0.00s)
 
 ```
 
@@ -1715,7 +1703,7 @@ panic: unimplemented: (reflect.Type).Method()
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2554141732/main /tmp/tinygo2554141732/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3993341699/main /tmp/tinygo3993341699/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: internal/chacha8rand.block
 >>> referenced by chacha8.go:63 (/usr/local/go/src/internal/chacha8rand/chacha8.go:63)
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:((*internal/chacha8rand.State).Init)
@@ -1725,7 +1713,7 @@ ld.lld: error: undefined symbol: internal/chacha8rand.block
 >>>               /home/vscode/.cache/tinygo/thinlto/llvmcache-E19AB0EF203A0FE1520EE692DAC4A3A67226AA70:(math/rand/v2_test.TestChaCha8Marshal)
 failed to run tool: ld.lld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo2554141732/main: exit status 1
+error: failed to link /tmp/tinygo3993341699/main: exit status 1
 ```
 
 
@@ -1805,7 +1793,7 @@ Failures/Tests: 8/256
     "Addr.Prev" is no longer inlinable
 --- FAIL: TestInlining (0.00s)
 === RUN   TestAddrStringAllocs
---- FAIL: TestAddrStringAllocs (0.02s)
+--- FAIL: TestAddrStringAllocs (0.01s)
 === RUN   TestAddrStringAllocs/zero
     --- PASS: TestAddrStringAllocs/zero (0.00s)
 === RUN   TestAddrStringAllocs/ipv4
@@ -1813,7 +1801,7 @@ Failures/Tests: 8/256
     --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)
 === RUN   TestAddrStringAllocs/ipv6
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
+    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)
 === RUN   TestAddrStringAllocs/ipv6+zone
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv6+zone (0.00s)
@@ -1823,23 +1811,23 @@ Failures/Tests: 8/256
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
-=== RUN   TestAddrStringAllocs/ipv6+zone
+=== RUN   TestAddrStringAllocs/ipv6
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.00s)
+    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)
 === RUN   TestAddrStringAllocs/ipv4
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)
-=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
-=== RUN   TestAddrStringAllocs/ipv6
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
 === RUN   TestAddrStringAllocs/zero
     --- PASS: TestAddrStringAllocs/zero (0.00s)
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
+=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
+=== RUN   TestAddrStringAllocs/ipv6+zone
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.00s)
 
 ```
 
@@ -1879,11 +1867,11 @@ FAIL	net/smtp	0.000s
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3833504147/main /tmp/tinygo3833504147/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo3833504147/main /tmp/tinygo3833504147/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo779679173/main /tmp/tinygo779679173/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo779679173/main /tmp/tinygo779679173/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not <nil>
-FAIL	net/url	0.009s
+FAIL	net/url	0.036s
 ```
 
 
@@ -1960,10 +1948,10 @@ Failures/Tests: 2/71
     growLen=1000: got 0 allocs during Write; want 1
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
---- FAIL: TestBuilderGrow (0.16s)
+--- FAIL: TestBuilderGrow (0.11s)
 === RUN   TestBuilderAllocs
     Builder allocs = 0; want 1
---- FAIL: TestBuilderAllocs (0.02s)
+--- FAIL: TestBuilderAllocs (0.01s)
 
 ```
 
@@ -2043,10 +2031,10 @@ panic: unimplemented: (reflect.Type).NumIn()
 [🔝](#summary) build error
 
 ```text
-ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3568162867/main /tmp/tinygo3568162867/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo3568162867/main /tmp/tinygo3568162867/main -test.v
+ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4012990437/main /tmp/tinygo4012990437/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo4012990437/main /tmp/tinygo4012990437/main -test.v
 panic: runtime.Caller failed
-FAIL	testing/slogtest	0.015s
+FAIL	testing/slogtest	0.016s
 ```
 
 
@@ -2078,6 +2066,12866 @@ FAIL	time	0.000s
 ```
 
 
+## wasi/wasm
+
+
+
+### archive/tar wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	archive/tar	0.000s
+# archive/tar
+/usr/local/go/src/archive/tar/stat_unix.go:39:27: undefined: user.LookupId
+/usr/local/go/src/archive/tar/stat_unix.go:45:27: undefined: user.LookupGroupId
+```
+
+
+### archive/zip wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/83
+=== RUN   TestZip64
+
+```
+
+
+### bufio wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/42
+=== RUN   TestReadStringAllocs
+    Unexpected number of allocations, got 0.000000, want 1
+--- FAIL: TestReadStringAllocs (0.00s)
+=== RUN   TestNegativeRead
+panic: bufio: reader returned negative count from Read
+Error: failed to run main module `/tmp/tinygo3221858551/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x48ea - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xe9de - (*bufio.Reader).Read
+           2: 0x84a4f - bufio_test.TestNegativeRead
+                           at /usr/local/go/src/bufio/bufio_test.go:1303:8
+           3: 0x28c4a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x53b3a - (*testing.T).Run
+           5: 0x2894e - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x28c4a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x22e2a - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/06/069a56f2cf2c2675af173cda287292b2d6132751fa3da9153f4e8a10b1e3d344-d:241:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1e93d - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x95c - <unknown>!tinygo_rewind
+          10: 0x1e742 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### bytes wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1154148680/main /tmp/tinygo1154148680/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1154148680/main --output /tmp/tinygo1154148680/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1154148680/main -test.v
+Error: failed to run main module `/tmp/tinygo1154148680/main`
+
+Caused by:
+    0: failed to instantiate "/tmp/tinygo1154148680/main"
+    1: unknown import: `env::mmap` has not been defined
+FAIL	bytes	11.588s
+```
+
+
+### compress/flate wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/23
+=== RUN   TestBestSpeed
+
+```
+
+
+### context wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	context	0.000s
+# context_test
+/usr/local/go/src/context/x_test.go:21:27: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestParentFinishesChild: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:24:26: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestChildFinishesFirst: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:27:21: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCancelRemoves: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:30:31: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCustomContextGoroutines: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:50:20: t.Deadline undefined (type *testing.T has no field or method Deadline)
+```
+
+
+### crypto wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestRC4OutOfBoundsWrite
+panic: runtime error: index out of range
+Error: failed to run main module `/tmp/tinygo4168619976/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x18050 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x340f - runtime.lookupPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:144:16
+           2: 0x635b6 - <unknown>!(*crypto/rc4.Cipher).XORKeyStream$bound
+           3: 0x63952 - crypto_test.test
+                           at /usr/local/go/src/crypto/issue21104_test.go:60:5
+           4: 0x63375 - crypto_test.TestRC4OutOfBoundsWrite
+                           at /usr/local/go/src/crypto/issue21104_test.go:21:6
+           5: 0x232de - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x22fd4 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x232de - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x1dfa5 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/ae/ae5003e243985acd87c6eaa8aa139ba382fcef53385b020be05280b51425c1a5-d:57:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x19d8d - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x720 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x19c63 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/aes wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestShortBlocks
+panic: crypto/aes: input not full block
+Error: failed to run main module `/tmp/tinygo3342215052/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4459 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x2655e - (*crypto/aes.aesCipher).Encrypt
+                           at /usr/local/go/src/crypto/aes/cipher.go:60:8              - (Go interface method)
+                           at <Go interface method>
+           2: 0x6ac49 - crypto/aes.TestShortBlocks$2
+                           at /usr/local/go/src/crypto/aes/aes_test.go:327:69
+           3: 0x6aebf - crypto/aes.mustPanic
+                           at /usr/local/go/src/crypto/aes/aes_test.go:344:3
+           4: 0x6a64c - crypto/aes.TestShortBlocks
+                           at /usr/local/go/src/crypto/aes/aes_test.go:327:11
+           5: 0x1a096 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x19d8c - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1a096 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x14152 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/fb/fbd7cbbdabeaf1f6755c53f198ce468296a770fe68d3e21898f1ad5b22c4718e-d:77:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0xff36 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x74c - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0xfe0c - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/cipher wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/5
+=== RUN   TestCryptBlocks
+panic: crypto/cipher: input not full blocks
+Error: failed to run main module `/tmp/tinygo1285008730/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4eb5 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6ea48 - (*crypto/cipher.cbcDecrypter).CryptBlocks
+                           at /usr/local/go/src/crypto/cipher/cbc.go:145:8              - (Go interface method)
+                           at <Go interface method>
+           2: 0x70fb0 - crypto/cipher_test.TestCryptBlocks$1
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:20:80
+           3: 0x7121e - crypto/cipher_test.mustPanic
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:37:3
+           4: 0x70c3c - crypto/cipher_test.TestCryptBlocks
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:20:11
+           5: 0x1c9e2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1c6d8 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1c9e2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x16bf6 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/61/6162e4542004ff5d4561a2904bdcadfd96d18761f8e4484f36f3c8725ffde61c-d:107:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x129d9 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x7f2 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x128af - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/dsa wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestParameterGeneration
+
+```
+
+
+### crypto/ecdh wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2673032649/main /tmp/tinygo2673032649/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2673032649/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	crypto/ecdh	0.000s
+error: failed to link /tmp/tinygo2673032649/main: exit status 1
+```
+
+
+### crypto/ed25519 wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3285739920/main /tmp/tinygo3285739920/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3285739920/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	crypto/ed25519	0.000s
+error: failed to link /tmp/tinygo3285739920/main: exit status 1
+```
+
+
+### crypto/hmac wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestNonUniqueHash
+panic: crypto/hmac: hash generation function does not produce unique values
+Error: failed to run main module `/tmp/tinygo2726829239/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x446c - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6c12b - crypto/hmac.New
+           2: 0x6d097 - crypto/hmac.TestNonUniqueHash
+                           at /usr/local/go/src/crypto/hmac/hmac_test.go:597:45
+           3: 0x1fec1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x1fbb7 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           5: 0x1fec1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1acdf - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/8d/8dd68077524b4f9a102e80f0c613dde97831cb4f7273bcbb1841dcbf81bac77a-d:59:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           7: 0x16ac3 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           8:  0x75f - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           9: 0x16999 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/rsa wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestEncryptPKCS1v15
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo3222526973/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x48ad - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6b44 - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0xef234 - (Go interface method)
+           3: 0xf0de2 - testing/quick.Check
+                           at /usr/local/go/src/testing/quick/quick.go:273:17              - crypto/rsa_test.TestEncryptPKCS1v15
+                           at /usr/local/go/src/crypto/rsa/pkcs1v15_test.go:118:13
+           4: 0x36a20 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x7d9f8 - (*testing.T).Run
+           6: 0x36728 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x36a20 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x2f387 - <unknown>!runtime.run$1
+           9: 0x2c7e0 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0xb07 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x2c6bc - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/subtle wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestConstantTimeByteEq
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo4222627165/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x506d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x530f - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x63642 - (Go interface method)
+           3: 0x6383f - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48
+           4: 0x64121 - crypto/subtle.TestConstantTimeByteEq
+                           at /usr/local/go/src/crypto/subtle/constant_time_test.go:59:25
+           5: 0x16b00 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x167f6 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x16b00 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x1036b - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/7c/7cc9948b16646f06706c44112c930c26b98cbd01318a65fa88edfa29a37f5dbe-d:69:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0xbfe7 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x767 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0xbebd - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/x509 wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	crypto/x509	0.000s
+# crypto/x509_test
+/usr/local/go/src/crypto/x509/hybrid_pool_test.go:63:17: c.ConnectionState undefined (type *net.TLSConn has no field or method ConnectionState)
+```
+
+
+### database/sql wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	database/sql	0.000s
+# database/sql
+/usr/local/go/src/database/sql/sql_test.go:4722:4: b.SetParallelism undefined (type *testing.B has no field or method SetParallelism)
+```
+
+
+### debug/buildinfo wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	debug/buildinfo	0.000s
+# debug/buildinfo
+/usr/local/go/src/debug/buildinfo/buildinfo.go:80:19: undefined: debug.ParseBuildInfo
+```
+
+
+### debug/elf wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	debug/elf	0.000s
+# debug/elf
+/usr/local/go/src/debug/elf/file_test.go:1159:10: undefined: net.ResolveIPAddr
+```
+
+
+### debug/gosym wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2570931927/main /tmp/tinygo2570931927/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2570931927/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	debug/gosym	0.000s
+error: failed to link /tmp/tinygo2570931927/main: exit status 1
+```
+
+
+### debug/pe wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4063396928/main /tmp/tinygo4063396928/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo4063396928/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	debug/pe	0.000s
+error: failed to link /tmp/tinygo4063396928/main: exit status 1
+```
+
+
+### encoding/binary wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/16
+=== RUN   TestUnexportedRead
+panic: reflect: value is not settable
+Error: failed to run main module `/tmp/tinygo2665617755/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4eeb - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xcc5a - (reflect.Value).checkRO
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:56:8
+           2: 0xd189 - (reflect.Value).SetInt
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:1132:11
+           3: 0x6b063 - (*encoding/binary.decoder).int32
+                           at /usr/local/go/src/encoding/binary/binary.go:656:11              - (*encoding/binary.decoder).value
+                           at /usr/local/go/src/encoding/binary/binary.go:656:25
+           4: 0x6acc4 - (*encoding/binary.decoder).value
+                           at /usr/local/go/src/encoding/binary/binary.go:636:12
+           5: 0x69dad - encoding/binary.Read
+           6: 0x73caf - encoding/binary.TestUnexportedRead
+                           at /usr/local/go/src/encoding/binary/binary_test.go:395:6
+           7: 0x2358a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x4f518 - (*testing.T).Run
+           9: 0x23292 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x2358a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x1dda2 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/fb/fbc5d26cd0caebeb345e8f586b2417fd3156bc04f7d17813959166a5c6f5f5bb-d:179:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          12: 0x19b7f - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13:  0x84b - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x19a54 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### encoding/gob wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1638651692/main /tmp/tinygo1638651692/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1638651692/main --output /tmp/tinygo1638651692/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	encoding/gob	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### encoding/pem wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/4
+=== RUN   TestCVE202224675
+
+```
+
+
+### encoding/xml wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/336
+=== RUN   TestCVE202228131
+panic: runtime error: stack overflow
+Error: failed to run main module `/tmp/tinygo556765307/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x242b1 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x137eb - runtime.runtimePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:59:16
+           2: 0x13730 - internal/task.Pause
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:90:15
+           3: 0x13908 - (*sync.Mutex).Lock
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/mutex.go:22:13
+           4: 0x874c0 - (*sync.Map).Load
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/map.go:18:13              - encoding/xml.getTypeInfo
+                           at /usr/local/go/src/encoding/xml/typeinfo.go:54:28
+           5: 0x8fc72 - <unknown>!(*encoding/xml.Decoder).unmarshal
+           6: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+           7: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+           8: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+           9: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          10: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          11: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          12: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          13: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          14: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          15: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          16: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          17: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          18: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          19: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          20: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          21: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          22: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          23: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          24: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          25: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          26: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          27: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          28: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          29: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          30: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          31: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          32: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          33: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          34: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          35: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          36: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          37: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          38: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          39: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          40: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          41: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          42: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          43: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          44: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          45: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          46: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          47: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          48: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          49: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          50: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          51: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          52: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          53: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          54: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          55: 0x90e3a - <unknown>!(*encoding/xml.Decoder).unmarshal
+          56: 0x8ec84 - (*encoding/xml.Decoder).DecodeElement
+          57: 0x8e736 - (*encoding/xml.Decoder).Decode
+                           at /usr/local/go/src/encoding/xml/read.go:140:24
+          58: 0x8e41c - encoding/xml.Unmarshal
+                           at /usr/local/go/src/encoding/xml/read.go:134:49
+          59: 0xaaaed - encoding/xml.TestCVE202228131
+                           at /usr/local/go/src/encoding/xml/read_test.go:1106:18
+          60: 0x326ad - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          61: 0x6a7d8 - (*testing.T).Run
+          62: 0x323b5 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          63: 0x326ad - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          64: 0x28816 - <unknown>!runtime.run$1
+          65: 0x25ac8 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          66:  0x981 - <unknown>!tinygo_rewind
+          67: 0x2599d - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### errors wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 21/56
+=== RUN   TestAs
+--- FAIL: TestAs (0.01s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x44f30)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x44f30) (0.00s)
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44f30)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44f30) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44f30)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44f30) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0x44f30)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0x44f30) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44f50)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44f50) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x44f40)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x44f40) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44f40)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44f40) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44f40)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44f70)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44f40) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x44f40)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44f70)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x44f40) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44f30)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44f30) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0x44f30)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0x44f30) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44f40)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44f40) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x44f40)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44f70)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x44f40) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44f40)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44f70)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44f40) (0.00s)
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo3073273728/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x427e - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x112ba - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x6c97e - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4e841 - (*testing.T).Run
+           5: 0x6c7c3 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x4e841 - (*testing.T).Run
+           8: 0x234b1 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1ec83 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x1aaab - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x74b - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x1a980 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44f30)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44f30) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x44f30)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x44f30) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x44f40)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x44f40) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44f50)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44f50) (0.00s)
+=== RUN   TestAsValidation
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo3073273728/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x427e - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x112ba - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x6c97e - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4e841 - (*testing.T).Run
+           5: 0x6c7c3 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x4e841 - (*testing.T).Run
+           8: 0x234b1 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x237a9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1ec83 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x1aaab - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x74b - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x1a980 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+
+```
+
+
+### flag wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo522670600/main /tmp/tinygo522670600/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo522670600/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	flag	0.000s
+error: failed to link /tmp/tinygo522670600/main: exit status 1
+```
+
+
+### fmt wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestSprintf
+    Sprintf("%#v", 0x2f) = "(func)(0x2f)" want "(func(*testing.T))(0xPTR)"
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo1931921566/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x19b64 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x7390 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x4e2b - (*reflect.rawType).isNamed
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:491:11
+           3: 0x5215 - <unknown>!(*reflect.rawType).String
+           4: 0xd006 - (reflect.Value).String
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:506:33
+           5: 0x48d3a - (Go interface method)
+                           at /usr/local/go/src/regexp/syntax/prog.go:125:17
+           6: 0x70461 - <unknown>!(*fmt.pp).handleMethods
+           7: 0x6a16d - <unknown>!(*fmt.pp).printArg
+           8: 0x6cd3c - <unknown>!(*fmt.pp).doPrintf
+           9: 0x51366 - fmt.Sprintf
+                           at /usr/local/go/src/fmt/print.go:239:12
+          10: 0x9f7e2 - fmt_test.TestSprintf
+                           at /usr/local/go/src/fmt/fmt_test.go:1095:15
+          11: 0x44a16 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x853e9 - (*testing.T).Run
+          13: 0x4471e - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          14: 0x44a16 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          15: 0x1fb3b - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/66/665da5d4c977fc2a206006294ded03ebd6df63735e00381c714cf30190ea5398-d:233:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          16: 0x1b79f - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          17:  0x90a - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          18: 0x1b674 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/build wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo281773530/main /tmp/tinygo281773530/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo281773530/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	go/build	0.000s
+error: failed to link /tmp/tinygo281773530/main: exit status 1
+```
+
+
+### go/build/constraint wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 7/13
+=== RUN   TestLex
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
+=== RUN   TestLex/1
+    --- PASS: TestLex/1 (0.00s)
+=== RUN   TestLex/2
+    --- PASS: TestLex/2 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
+=== RUN   TestLex/5
+panic: invalid syntax at ²
+Error: failed to run main module `/tmp/tinygo826133687/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x49e3 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x69aaa - (*go/build/constraint.exprParser).lex
+                           at /usr/local/go/src/go/build/constraint/expr.go:339:8
+           2: 0x6bee1 - go/build/constraint.lexHelp
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:108:7              - go/build/constraint.TestLex$1
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:77:24
+           3: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4e6ae - (*testing.T).Run
+           5: 0x6bca5 - go/build/constraint.TestLex
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:73:8
+           6: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x4e6ae - (*testing.T).Run
+           8: 0x28396 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x24a54 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/30/30202da01dd9f128e3d8052cae5abedd5e12e2a69b87c6de9d7decc51b0c3b37-d:63:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x20885 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x763 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x2075a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestLex/2
+    --- PASS: TestLex/2 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
+=== RUN   TestLex/1
+    --- PASS: TestLex/1 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
+=== RUN   TestLex/5
+panic: invalid syntax at ²
+Error: failed to run main module `/tmp/tinygo826133687/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x49e3 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x69aaa - (*go/build/constraint.exprParser).lex
+                           at /usr/local/go/src/go/build/constraint/expr.go:339:8
+           2: 0x6bee1 - go/build/constraint.lexHelp
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:108:7              - go/build/constraint.TestLex$1
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:77:24
+           3: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4e6ae - (*testing.T).Run
+           5: 0x6bca5 - go/build/constraint.TestLex
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:73:8
+           6: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x4e6ae - (*testing.T).Run
+           8: 0x28396 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x2868e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x24a54 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/30/30202da01dd9f128e3d8052cae5abedd5e12e2a69b87c6de9d7decc51b0c3b37-d:63:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x20885 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x763 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x2075a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/constant wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestOps
+panic: division by zero
+Error: failed to run main module `/tmp/tinygo80626846/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3cd0 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x621f3 - (*math/big.Rat).SetFrac64
+                           at /usr/local/go/src/math/big/rat.go:321:8              - math/big.NewRat
+                           at /usr/local/go/src/math/big/rat.go:34:27
+           2: 0x8b371 - go/constant.BinaryOp
+                           at /usr/local/go/src/go/constant/value.go:1136:19
+           3: 0x8da87 - go/constant.doOp
+                           at /usr/local/go/src/go/constant/value_test.go:534:18              - go/constant.TestOps
+                           at /usr/local/go/src/go/constant/value_test.go:345:14
+           4: 0x2057e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x20274 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x2057e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x1a762 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/58/583445e0700a8fe2773fdef84b84344a144e28b007bdfab093c213a38db43c7d-d:79:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1605e - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x870 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x15f33 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/doc wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1986032260/main /tmp/tinygo1986032260/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1986032260/main --output /tmp/tinygo1986032260/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1986032260/main -test.v
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo1986032260/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x6d0b - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x7889 - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0x3c39e - (Go interface method)
+                           at /usr/local/go/src/text/template/funcs.go:112:6              - text/template.goodFunc
+                           at /usr/local/go/src/text/template/funcs.go:115:17              - text/template.addValueFuncs
+                           at /usr/local/go/src/text/template/funcs.go:96:15
+           3: 0x28144 - <unknown>!runtime.initAll
+           4: 0x226c6 - <unknown>!runtime.run$1
+           5: 0x22480 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           6:  0xbd0 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           7: 0x22355 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	go/doc	16.818s
+```
+
+
+### go/doc/comment wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3659428570/main /tmp/tinygo3659428570/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3659428570/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	go/doc/comment	0.000s
+error: failed to link /tmp/tinygo3659428570/main: exit status 1
+```
+
+
+### go/importer wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2714759898/main /tmp/tinygo2714759898/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2714759898/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	go/importer	0.000s
+error: failed to link /tmp/tinygo2714759898/main: exit status 1
+```
+
+
+### go/parser wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/27
+=== RUN   TestParseFile
+panic: (124928:0x00020438)
+Error: failed to run main module `/tmp/tinygo3430359413/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5dd1 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x86c71 - (*go/parser.parser).error
+                           at /usr/local/go/src/go/parser/parser.go:277:9
+           2: 0x90769 - (*go/parser.parser).parseIndexOrSliceOrInstance
+                           at /usr/local/go/src/go/parser/parser.go:1587:12              - (*go/parser.parser).parsePrimaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1732:37
+           3: 0x9b425 - (*go/parser.parser).parseUnaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1835:27
+           4: 0x90f06 - (*go/parser.parser).parseBinaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1856:23
+           5: 0x911ae - (*go/parser.parser).parseBinaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1870:25
+           6: 0x9ab87 - (*go/parser.parser).parseExpr
+                           at /usr/local/go/src/go/parser/parser.go:1881:26
+           7: 0x8e7f7 - (*go/parser.parser).parseExprList
+                           at /usr/local/go/src/go/parser/parser.go:502:33              - (*go/parser.parser).parseList
+                           at /usr/local/go/src/go/parser/parser.go:514:25
+           8: 0x89ec5 - <unknown>!(*go/parser.parser).parseValueSpec$bound
+           9: 0x87956 - (*go/parser.parser).parseGenDecl
+                           at /usr/local/go/src/go/parser/parser.go:2740:24
+          10: 0x8829f - (*go/parser.parser).parseDecl
+                           at /usr/local/go/src/go/parser/parser.go:2835:9
+          11: 0x853f6 - go/parser.ParseFile
+                           at /usr/local/go/src/go/parser/parser.go:2886:38
+          12: 0xa1f3c - go/parser.TestParseFile
+                           at /usr/local/go/src/go/parser/parser_test.go:46:21
+          13: 0x27af0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          14: 0x6f7a1 - (*testing.T).Run
+          15: 0x277f8 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          16: 0x27af0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          17: 0x1dea9 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/df/df1ffbc2f67009cb7164e9eddbd8e4a1427bd474a1a1b5ebd8579dc5d45f2a14-d:107:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          18: 0x19213 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          19:  0x91c - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          20: 0x190e8 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/printer wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 12/12
+=== RUN   TestFiles/comments.input
+    --- PASS: TestFiles/comments.input (0.04s)
+=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.01s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.24s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.18s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.07s)
+=== RUN   TestFiles/slow.input
+panic: runtime error: slice out of range
+Error: failed to run main module `/tmp/tinygo102970624/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1777d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x45cc - runtime.slicePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16
+           2: 0x3edaa - os.ReadFile
+           3: 0xcd528 - go/printer.runcheck
+                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
+                           at /usr/local/go/src/go/printer/printer_test.go:152:11
+           4: 0xcd9f2 - <goroutine wrapper>
+                           at /usr/local/go/src/go/printer/printer_test.go:151:2
+           5:  0x9be - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x194b6 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestFiles
+=== RUN   TestFiles/empty.input
+    --- PASS: TestFiles/empty.input (0.02s)
+=== RUN   TestFiles/comments.input
+    --- PASS: TestFiles/comments.input (0.04s)
+=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.03s)
+=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.01s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.05s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.09s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.24s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.32s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.18s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.07s)
+=== RUN   TestFiles/slow.input
+panic: runtime error: slice out of range
+Error: failed to run main module `/tmp/tinygo102970624/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1777d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x45cc - runtime.slicePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16
+           2: 0x3edaa - os.ReadFile
+           3: 0xcd528 - go/printer.runcheck
+                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
+                           at /usr/local/go/src/go/printer/printer_test.go:152:11
+           4: 0xcd9f2 - <goroutine wrapper>
+                           at /usr/local/go/src/go/printer/printer_test.go:151:2
+           5:  0x9be - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x194b6 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestFiles/empty.input
+    --- PASS: TestFiles/empty.input (0.02s)
+=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.03s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.05s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.09s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.32s)
+
+```
+
+
+### go/token wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo616040575/main /tmp/tinygo616040575/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo616040575/main --output /tmp/tinygo616040575/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	go/token	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### go/types wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	go/types	0.000s
+# go/types_test
+/usr/local/go/src/go/types/self_test.go:103:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+```
+
+
+### hash/crc32 wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/8
+=== RUN   TestArchIEEE
+    Arch-specific IEEE not available.
+    SkipNow is incomplete, requires runtime.Goexit()
+panic: not available
+Error: failed to run main module `/tmp/tinygo815322404/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4f53 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6615e - hash/crc32.archInitIEEE
+                           at /usr/local/go/src/hash/crc32/crc32_otherarch.go:10:57
+           2: 0x69e6c - hash/crc32.TestArchIEEE
+                           at /usr/local/go/src/hash/crc32/crc32_test.go:232:14
+           3: 0x1fbd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4ccb7 - (*testing.T).Run
+           5: 0x1f8d9 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x1fbd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x19ba3 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/42/42abff43a2f6d063760b5c32884a73c3b8a5ebac782b8fcf07ac3452956a7eef-d:67:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x15ae3 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x7b8 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x159c0 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### hash/maphash wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestSmhasherSmallKeys
+
+```
+
+
+### html/template wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestAddParseTreeHTML
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo3588848619/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x6d03 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x7fec - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0xfb6cb - (Go interface method)
+                           at /usr/local/go/src/text/template/funcs.go:112:6              - text/template.goodFunc
+                           at /usr/local/go/src/text/template/funcs.go:115:17              - text/template.addValueFuncs
+                           at /usr/local/go/src/text/template/funcs.go:96:15
+           3: 0x105516 - (*text/template.Template).Funcs
+                           at /usr/local/go/src/text/template/template.go:181:15
+           4: 0x12d9d7 - (*html/template.escaper).commit
+                           at /usr/local/go/src/html/template/escape.go:918:25              - html/template.escapeTemplate
+                           at /usr/local/go/src/html/template/escape.go:40:17
+           5: 0x12e679 - (*html/template.Template).lookupAndEscapeTemplate
+                           at /usr/local/go/src/html/template/template.go:163:23              - (*html/template.Template).ExecuteTemplate
+                           at /usr/local/go/src/html/template/template.go:135:40
+           6: 0x137a16 - html/template.TestAddParseTreeHTML
+                           at /usr/local/go/src/html/template/clone_test.go:25:29
+           7: 0x4db1b - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x10b886 - (*testing.T).Run
+           9: 0x4d823 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x4db1b - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x3e026 - <unknown>!runtime.run$1
+          12: 0x3b309 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13:  0xf38 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x3b1e5 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestNewXxxBadRectangle
+panic: image: NewRGBA Rectangle has huge or negative dimensions
+Error: failed to run main module `/tmp/tinygo2928050093/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x46b3 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6f015 - (image.Rectangle).Dx
+                           at /usr/local/go/src/image/image.go:96:8              - image.pixelBufferLength
+                           at /usr/local/go/src/image/image.go:94:47
+           2: 0x6d36e - image.NewRGBA
+                           at /usr/local/go/src/image/image.go:229:42
+           3: 0x7b1e4 - image.TestNewXxxBadRectangle$2
+                           at /usr/local/go/src/image/image_test.go:108:39
+           4: 0x7b38a - image.TestNewXxxBadRectangle$1
+                           at /usr/local/go/src/image/image_test.go:94:10
+           5: 0x7a1b2 - image.TestNewXxxBadRectangle
+                           at /usr/local/go/src/image/image_test.go:138:16
+           6: 0x2e083 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x2dd79 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x2e083 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x27721 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/03/03696e0658b26ce2ed516312d26adbf88abfcc3eab0abe0b39a79e0462e8f45c-d:101:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x231a2 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x88c - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x23078 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/color wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestSqDiff
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo220969497/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x446a - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x470c - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x62dbf - (Go interface method)
+           3: 0x63b97 - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48              - image/color.TestSqDiff
+                           at /usr/local/go/src/image/color/color_test.go:44:28
+           4: 0x1f4b0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x1f1a6 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x1f4b0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x194e6 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/4d/4dadc14d436b349970b7a4071a99fc9f8aefe01c3235a3bddedb0326061282e8-d:73:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1521f - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x75d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x150f5 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/draw wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestSqDiff
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo210449236/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4945 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x4be7 - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x80f44 - (Go interface method)
+           3: 0x932ac - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48              - image/draw.TestSqDiff
+                           at /usr/local/go/src/image/draw/draw_test.go:807:28
+           4: 0x3725d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x36f53 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x3725d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x31839 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/2a/2a9b332c08e48a6461f4d90bdca395e8895837da22f04105e348adb36252d90f-d:105:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x2b370 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x896 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x2b245 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/gif wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	image/gif	0.000s
+# image/gif
+/usr/local/go/src/image/gif/reader_test.go:421:26: s1.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)
+/usr/local/go/src/image/gif/reader_test.go:421:41: s0.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)
+```
+
+
+### image/jpeg wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	image/jpeg	0.000s
+# image/jpeg
+/usr/local/go/src/image/jpeg/reader_test.go:253:9: undefined: debug.SetTraceback
+```
+
+
+### image/png wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestDimensionOverflow
+
+```
+
+
+### index/suffixarray wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 5/7
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (5.48s)
+=== RUN   TestNew32/exhaustive2
+    --- PASS: TestNew32/exhaustive2 (150.49s)
+=== RUN   TestNew32/exhaustive3
+=== RUN   TestNew32
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (33.24s)
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (5.48s)
+=== RUN   TestNew32/exhaustive2
+    --- PASS: TestNew32/exhaustive2 (150.49s)
+=== RUN   TestNew32/exhaustive3
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (33.24s)
+
+```
+
+
+### io wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 4/60
+=== RUN   TestMultiWriter_WriteStringSingleAlloc
+    num allocations = 0; want 1
+--- FAIL: TestMultiWriter_WriteStringSingleAlloc (0.00s)
+=== RUN   TestMultiWriterSingleChainFlatten
+    multiWriter did not flatten chained multiWriters: expected writeDepth 12, got 4
+--- FAIL: TestMultiWriterSingleChainFlatten (0.00s)
+=== RUN   TestMultiReaderFlatten
+    multiReader did not flatten chained multiReaders: expected readDepth 3, got 1
+--- FAIL: TestMultiReaderFlatten (0.00s)
+=== RUN   TestMultiReaderFreesExhaustedReaders
+    timeout waiting for collection of buf1
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestMultiReaderFreesExhaustedReaders (5.01s)
+
+```
+
+
+### io/fs wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/6
+=== RUN   TestCVE202230630
+Error: failed to run main module `/tmp/tinygo590890883/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3dea7 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:37:6
+           1: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           2: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           3: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           4: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           5: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           6: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           7: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           8: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           9: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          10: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          11: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          12: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          13: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          14: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          15: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          16: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          17: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          18: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          19: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          20: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          21: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          22: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          23: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          24: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          25: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          26: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          27: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          28: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          29: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          30: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          31: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          32: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          33: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          34: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          35: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          36: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          37: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          38: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          39: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          40: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          41: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          42: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          43: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          44: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          45: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          46: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          47: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          48: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          49: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          50: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          51: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          52: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          53: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          54: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          55: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          56: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          57: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          58: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          59: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          60: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          61: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          62: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          63: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          64: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          65: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          66: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          67: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          68: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          69: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          70: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          71: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          72: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          73: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          74: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          75: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          76: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          77: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          78: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          79: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          80: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          81: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          82: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          83: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          84: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          85: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          86: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          87: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          88: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          89: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          90: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          91: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          92: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          93: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          94: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          95: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          96: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          97: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          98: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          99: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         100: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         101: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         102: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         103: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         104: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         105: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         106: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         107: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         108: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         109: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         110: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         111: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         112: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         113: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         114: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         115: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         116: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         117: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         118: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         119: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         120: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         121: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         122: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         123: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         124: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         125: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         126: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         127: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         128: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         129: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         130: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         131: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         132: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         133: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         134: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         135: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         136: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         137: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         138: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         139: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         140: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         141: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         142: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         143: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         144: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         145: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         146: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         147: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         148: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         149: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         150: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         151: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         152: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         153: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         154: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         155: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         156: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         157: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         158: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         159: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         160: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         161: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         162: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         163: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         164: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         165: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         166: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         167: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         168: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         169: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         170: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         171: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         172: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         173: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         174: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         175: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         176: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         177: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         178: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         179: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         180: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         181: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         182: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         183: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         184: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         185: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         186: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         187: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         188: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         189: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         190: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         191: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         192: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         193: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         194: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         195: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         196: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         197: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         198: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         199: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         200: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         201: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         202: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         203: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         204: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         205: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         206: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         207: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         208: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         209: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         210: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         211: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         212: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         213: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         214: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         215: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         216: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         217: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         218: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         219: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         220: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         221: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         222: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         223: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         224: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         225: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         226: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         227: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         228: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         229: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         230: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         231: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         232: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         233: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         234: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         235: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         236: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         237: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         238: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         239: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         240: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         241: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         242: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         243: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         244: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         245: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         246: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         247: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         248: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         249: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         250: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         251: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         252: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         253: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         254: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         255: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         256: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         257: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         258: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         259: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         260: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         261: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         262: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         263: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         264: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         265: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         266: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         267: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         268: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         269: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         270: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         271: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         272: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         273: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         274: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         275: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         276: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         277: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         278: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         279: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         280: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         281: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         282: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         283: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         284: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         285: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         286: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         287: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         288: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         289: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         290: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         291: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         292: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         293: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         294: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         295: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         296: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         297: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         298: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         299: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         300: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         301: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         302: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         303: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         304: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         305: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         306: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         307: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         308: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         309: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         310: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         311: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         312: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         313: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         314: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         315: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         316: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         317: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         318: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         319: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         320: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         321: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         322: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         323: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         324: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         325: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         326: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         327: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         328: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         329: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         330: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         331: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         332: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         333: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         334: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         335: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         336: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         337: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         338: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         339: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         340: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         341: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         342: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         343: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         344: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         345: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         346: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         347: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         348: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         349: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         350: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         351: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         352: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         353: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         354: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         355: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         356: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         357: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         358: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         359: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         360: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         361: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         362: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         363: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         364: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         365: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         366: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         367: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         368: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         369: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         370: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         371: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         372: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         373: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         374: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         375: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         376: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         377: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         378: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         379: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         380: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         381: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         382: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         383: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         384: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         385: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         386: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         387: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         388: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         389: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         390: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         391: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         392: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         393: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         394: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         395: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         396: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         397: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         398: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         399: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         400: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         401: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         402: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         403: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         404: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         405: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         406: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         407: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         408: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         409: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         410: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         411: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         412: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         413: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         414: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         415: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         416: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         417: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         418: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         419: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         420: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         421: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         422: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         423: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         424: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         425: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         426: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         427: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         428: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         429: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         430: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         431: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         432: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         433: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         434: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         435: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         436: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         437: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         438: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         439: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         440: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         441: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         442: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         443: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         444: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         445: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         446: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         447: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         448: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         449: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         450: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         451: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         452: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         453: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         454: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         455: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         456: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         457: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         458: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         459: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         460: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         461: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         462: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         463: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         464: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         465: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         466: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         467: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         468: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         469: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         470: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         471: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         472: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         473: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         474: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         475: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         476: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         477: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         478: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         479: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         480: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         481: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         482: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         483: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         484: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         485: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         486: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         487: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         488: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         489: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         490: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         491: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         492: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         493: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         494: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         495: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         496: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         497: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         498: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         499: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         500: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         501: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         502: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         503: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         504: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         505: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         506: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         507: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         508: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         509: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         510: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         511: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         512: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         513: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         514: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         515: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         516: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         517: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         518: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         519: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         520: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         521: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         522: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         523: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         524: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         525: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         526: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         527: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         528: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         529: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         530: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         531: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         532: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         533: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         534: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         535: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         536: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         537: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         538: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         539: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         540: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         541: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         542: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         543: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         544: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         545: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         546: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         547: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         548: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         549: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         550: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         551: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         552: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         553: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         554: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         555: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         556: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         557: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         558: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         559: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         560: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         561: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         562: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         563: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         564: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         565: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         566: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         567: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         568: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         569: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         570: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         571: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         572: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         573: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         574: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         575: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         576: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         577: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         578: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         579: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         580: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         581: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         582: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         583: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         584: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         585: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         586: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         587: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         588: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         589: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         590: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         591: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         592: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         593: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         594: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         595: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         596: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         597: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         598: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         599: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         600: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         601: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         602: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         603: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         604: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         605: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         606: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         607: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         608: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         609: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         610: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         611: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         612: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         613: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         614: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         615: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         616: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         617: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         618: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         619: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         620: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         621: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         622: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         623: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         624: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         625: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         626: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         627: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         628: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         629: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         630: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         631: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         632: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         633: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         634: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         635: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         636: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         637: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         638: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         639: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         640: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         641: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         642: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         643: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         644: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         645: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         646: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         647: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         648: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         649: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         650: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         651: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         652: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         653: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         654: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         655: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         656: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         657: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         658: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         659: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         660: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         661: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         662: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         663: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         664: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         665: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         666: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         667: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         668: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         669: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         670: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         671: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         672: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         673: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         674: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         675: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         676: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         677: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         678: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         679: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         680: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         681: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         682: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         683: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         684: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         685: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         686: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         687: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         688: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         689: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         690: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         691: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         692: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         693: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         694: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         695: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         696: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         697: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         698: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         699: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         700: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         701: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         702: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         703: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         704: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         705: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         706: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         707: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         708: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         709: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         710: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         711: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         712: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         713: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         714: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         715: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         716: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         717: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         718: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         719: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         720: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         721: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         722: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         723: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         724: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         725: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         726: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         727: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         728: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         729: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         730: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         731: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         732: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         733: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         734: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         735: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         736: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         737: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         738: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         739: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         740: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         741: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         742: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         743: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         744: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         745: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         746: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         747: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         748: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         749: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         750: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         751: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         752: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         753: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         754: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         755: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         756: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         757: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         758: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         759: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         760: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         761: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         762: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         763: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         764: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         765: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         766: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         767: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         768: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         769: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         770: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         771: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         772: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         773: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         774: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         775: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         776: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         777: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         778: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         779: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         780: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         781: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         782: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         783: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         784: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         785: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         786: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         787: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         788: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         789: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         790: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         791: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         792: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         793: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         794: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         795: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         796: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         797: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         798: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         799: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         800: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         801: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         802: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         803: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         804: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         805: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         806: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         807: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         808: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         809: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         810: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         811: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         812: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         813: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         814: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         815: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         816: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         817: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         818: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         819: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         820: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         821: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         822: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         823: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         824: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         825: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         826: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         827: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         828: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         829: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         830: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         831: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         832: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         833: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         834: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         835: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         836: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         837: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         838: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         839: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         840: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         841: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         842: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         843: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         844: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         845: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         846: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         847: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         848: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         849: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         850: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         851: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         852: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         853: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         854: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         855: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         856: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         857: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         858: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         859: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         860: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         861: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         862: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         863: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         864: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         865: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         866: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         867: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         868: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         869: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         870: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         871: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         872: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         873: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         874: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         875: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         876: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         877: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         878: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         879: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         880: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         881: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         882: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         883: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         884: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         885: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         886: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         887: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         888: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         889: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         890: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         891: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         892: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         893: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         894: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         895: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         896: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         897: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         898: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         899: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         900: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         901: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         902: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         903: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         904: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         905: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         906: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         907: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         908: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         909: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         910: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         911: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         912: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         913: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         914: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         915: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         916: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         917: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         918: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         919: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         920: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         921: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         922: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         923: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         924: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         925: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         926: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         927: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         928: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         929: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         930: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         931: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         932: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         933: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         934: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         935: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         936: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         937: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         938: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         939: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         940: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         941: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         942: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         943: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         944: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         945: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         946: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         947: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         948: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         949: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         950: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         951: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         952: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         953: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         954: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         955: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         956: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         957: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         958: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         959: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         960: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         961: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         962: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         963: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         964: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         965: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         966: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         967: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         968: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         969: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         970: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         971: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         972: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         973: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         974: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         975: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         976: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         977: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         978: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         979: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         980: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         981: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         982: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         983: 0x3e155 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         984: 0x3dd09 - io/fs.Glob
+                           at /usr/local/go/src/io/fs/glob.go:34:22
+         985: 0x82620 - <unknown>!io/fs_test.TestCVE202230630
+         986: 0x2683d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         987: 0x67397 - (*testing.T).Run
+         988: 0x26545 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+         989: 0x2683d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         990: 0x21acc - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/71/7165db203a5b207e8aad64f4dbbe3d50948c42aa01ac732215ca4ffa57aeb2ab-d:79:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+         991: 0x1d2d4 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+         992:  0x8ce - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+         993: 0x1d1a9 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: memory fault at wasm address 0x10000005c in linear memory of size 0x60000
+    3: wasm trap: out of bounds memory access
+
+```
+
+
+### io/ioutil wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/28
+=== RUN   TestReadOnlyWriteFile
+    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile58416829/blurp.txt
+    FailNow is incomplete, requires runtime.Goexit()
+    want shmorp, got florp
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestReadOnlyWriteFile (0.00s)
+=== RUN   TestTempDir_BadDir
+    TempDir error = &fs.PathError{Op:"mkdir", Path:"/tmp/TestTempDir_BadDir113770611/not-exist/foo168613783", Err:0x0}; want PathError for path "/tmp/TestTempDir_BadDir113770611/not-exist" satisfying os.IsNotExist
+--- FAIL: TestTempDir_BadDir (0.00s)
+
+```
+
+
+### log wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestAll
+    log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 16:35:46.806213 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 16:35:46.806425 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 16:35:46.807802 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 16:35:46.808020 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 16:35:46.808253 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 16:35:46.808437 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 16:35:46.808623 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 16:35:46.808826 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.02s)
+
+```
+
+
+### log/slog wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4009475476/main /tmp/tinygo4009475476/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo4009475476/main --output /tmp/tinygo4009475476/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo4009475476/main -test.v
+panic: runtime.Caller failed
+Error: failed to run main module `/tmp/tinygo4009475476/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x51bf - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x25d05 - testing/slogtest.withSource
+                           at /usr/local/go/src/testing/slogtest/slogtest.go:362:8
+           2: 0x1b65e - <unknown>!runtime.initAll
+           3: 0x1792c - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:24:10
+           4: 0xfb0e - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           5:  0x92f - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x1782c - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11
+           7: 0x176f8 - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11
+           8: 0x17674 - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	log/slog	7.455s
+```
+
+
+### log/syslog wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	log/syslog	0.000s
+# log/syslog
+/usr/local/go/src/log/syslog/syslog_test.go:35:21: oe.Temporary undefined (type *net.OpError has no field or method Temporary)
+/usr/local/go/src/log/syslog/syslog_test.go:110:15: undefined: net.ListenPacket
+```
+
+
+### maps wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo122702636/main /tmp/tinygo122702636/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo122702636/main.o: undefined symbol: maps.clone
+wasm-ld: error: /tmp/tinygo122702636/main.o: undefined symbol: maps.clone
+failed to run tool: wasm-ld
+FAIL	maps	0.000s
+error: failed to link /tmp/tinygo122702636/main: exit status 1
+```
+
+
+### math/bits wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/12
+=== RUN   TestAdd64OverflowPanic
+panic: overflow
+Error: failed to run main module `/tmp/tinygo2092610348/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3a87 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x68841 - math/bits_test.TestAdd64OverflowPanic$1
+                           at /usr/local/go/src/math/bits/bits_test.go:816:10
+           2: 0x6895b - math/bits_test.TestAdd64OverflowPanic$7
+                           at /usr/local/go/src/math/bits/bits_test.go:860:28
+           3: 0x68a86 - math/bits_test.TestAdd64OverflowPanic$6
+                           at /usr/local/go/src/math/bits/bits_test.go:856:5
+           4: 0x6832f - math/bits_test.TestAdd64OverflowPanic
+                           at /usr/local/go/src/math/bits/bits_test.go:860:14
+           5: 0x1efbc - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1ecb2 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1efbc - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x19086 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/19/196c6203a629495b14a7882fc6691602ad410973a090372256d92752f4e1a352-d:257:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x14e6a - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x87e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x14d40 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### math/rand wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4220012787/main /tmp/tinygo4220012787/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo4220012787/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	math/rand	0.000s
+error: failed to link /tmp/tinygo4220012787/main: exit status 1
+```
+
+
+### math/rand/v2 wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3862008199/main /tmp/tinygo3862008199/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3862008199/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo3862008199/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo3862008199/main.o: undefined symbol: internal/chacha8rand.block
+failed to run tool: wasm-ld
+FAIL	math/rand/v2	0.000s
+error: failed to link /tmp/tinygo3862008199/main: exit status 1
+```
+
+
+### mime wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestTypeByExtension
+panic: bufio.Scanner: Read returned impossible count
+Error: failed to run main module `/tmp/tinygo3527728555/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4b71 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6f154 - mime.loadMimeGlobsFile
+           2: 0x77812 - mime.initMimeUnix
+                           at /usr/local/go/src/mime/type_unix.go:107:30              - mime.initMime
+                           at /usr/local/go/src/mime/type.go:88:13
+           3: 0xf813 - (*sync.Once).Do
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/once.go:15:3
+           4: 0x77a3e - mime.TypeByExtension
+                           at /usr/local/go/src/mime/type.go:112:9
+           5: 0x82879 - mime.TestTypeByExtension
+                           at /usr/local/go/src/mime/type_test.go:47:25
+           6: 0x3198c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x3167e - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x3198c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x2cc4f - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/e1/e1d7e98e94a506059fa8f2416f3a38090be37d557d6a71283fc6a5c1dc7a0d11-d:105:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x27c8b - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x7d7 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x27b61 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### mime/multipart wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 3/10
+=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header
+=== RUN   TestReadForm_MetadataTooLarge
+=== RUN   TestReadForm_MetadataTooLarge/large_name
+    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.14s)
+=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header
+=== RUN   TestReadForm_MetadataTooLarge/large_name
+    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.14s)
+
+```
+
+
+### mime/quotedprintable wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo269504125/main /tmp/tinygo269504125/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo269504125/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	mime/quotedprintable	0.000s
+error: failed to link /tmp/tinygo269504125/main: exit status 1
+```
+
+
+### net/netip wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2491171803/main /tmp/tinygo2491171803/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2491171803/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	net/netip	0.000s
+error: failed to link /tmp/tinygo2491171803/main: exit status 1
+```
+
+
+### net/rpc/jsonrpc wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	net/rpc/jsonrpc	0.000s
+# net/rpc
+/usr/local/go/src/net/rpc/server.go:290:14: method.IsExported undefined (type reflect.Method has no field or method IsExported)
+```
+
+
+### net/smtp wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	net/smtp	0.000s
+# net/smtp
+/usr/local/go/src/net/smtp/smtp.go:72:24: undefined: tls.Conn
+/usr/local/go/src/net/smtp/smtp.go:172:25: undefined: tls.Conn
+/usr/local/go/src/net/smtp/smtp_test.go:591:19: undefined: tls.X509KeyPair
+/usr/local/go/src/net/smtp/smtp_test.go:598:17: undefined: tls.Listen
+/usr/local/go/src/net/smtp/smtp_test.go:600:17: undefined: tls.Listen
+/usr/local/go/src/net/smtp/smtp_test.go:1009:9: cs.Version undefined (type tls.ConnectionState has no field or method Version)
+/usr/local/go/src/net/smtp/smtp_test.go:1009:29: cs.HandshakeComplete undefined (type tls.ConnectionState has no field or method HandshakeComplete)
+/usr/local/go/src/net/smtp/smtp_test.go:1049:24: undefined: tls.X509KeyPair
+/usr/local/go/src/net/smtp/smtp_test.go:1054:12: undefined: tls.Server
+```
+
+
+### net/url wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2287327065/main /tmp/tinygo2287327065/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2287327065/main --output /tmp/tinygo2287327065/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	net/url	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### os wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 3/37
+=== RUN   TestStatBadDir
+    Mkdir error = &fs.PathError{Op:"stat", Path:"/tmp/not-exist/really-not-exist", Err:0x0}; want PathError for path "/tmp/not-exist/really-not-exist" satisifying IsNotExist
+--- FAIL: TestStatBadDir (0.00s)
+=== RUN   TestRemove
+    TestRemove: expected IsNotExist(err) true, got false; err "remove /tmp/TestRemove18446744073060648354: errno 0"
+--- FAIL: TestRemove (0.00s)
+=== RUN   TestRenameOverwriteDest
+    stat from: stat /tmp/TestRenameOverwrite-from: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestRenameOverwriteDest (0.00s)
+
+```
+
+
+### os/signal wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	os/signal	0.000s
+# os/signal
+/usr/local/go/src/os/signal/signal_linux_test.go:23:26: undefined: syscall.AllThreadsSyscall
+/usr/local/go/src/os/signal/signal_linux_test.go:23:52: undefined: syscall.SYS_PRCTL
+/usr/local/go/src/os/signal/signal_linux_test.go:31:29: undefined: syscall.AllThreadsSyscall
+/usr/local/go/src/os/signal/signal_linux_test.go:31:55: undefined: syscall.SYS_PRCTL
+/usr/local/go/src/os/signal/signal_test.go:94:28: undefined: syscall.SIGURG
+/usr/local/go/src/os/signal/signal_test.go:123:20: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:128:41: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:129:24: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:137:16: undefined: syscall.SIGURG
+/usr/local/go/src/os/signal/signal_test.go:142:41: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:143:28: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:149:41: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:150:28: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:152:41: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:153:28: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:156:24: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:167:22: undefined: syscall.SIGUSR1
+/usr/local/go/src/os/signal/signal_test.go:186:44: undefined: syscall.SIGUSR1
+/usr/local/go/src/os/signal/signal_test.go:200:21: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:205:21: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:209:41: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:210:25: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:213:41: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:214:25: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:219:18: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:219:36: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:224:17: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:224:35: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:228:41: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:232:42: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:254:21: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:255:21: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:273:20: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:276:21: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:280:17: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:283:22: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:295:23: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:306:21: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:317:18: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:344:11: undefined: syscall.SIGWINCH
+/usr/local/go/src/os/signal/signal_test.go:345:11: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:346:11: undefined: syscall.SIGUSR1
+/usr/local/go/src/os/signal/signal_test.go:363:40: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:395:22: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:435:21: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:439:24: t.Deadline undefined (type *testing.T has no field or method Deadline)
+/usr/local/go/src/os/signal/signal_test.go:482:24: t.Deadline undefined (type *testing.T has no field or method Deadline)
+/usr/local/go/src/os/signal/signal_test.go:531:20: undefined: syscall.SIGCONT
+/usr/local/go/src/os/signal/signal_test.go:533:41: undefined: syscall.SIGCONT
+/usr/local/go/src/os/signal/signal_test.go:534:24: undefined: syscall.SIGCONT
+/usr/local/go/src/os/signal/signal_test.go:562:24: t.Deadline undefined (type *testing.T has no field or method Deadline)
+/usr/local/go/src/os/signal/signal_test.go:612:23: t.Deadline undefined (type *testing.T has no field or method Deadline)
+/usr/local/go/src/os/signal/signal_test.go:667:22: undefined: syscall.SIGUSR1
+/usr/local/go/src/os/signal/signal_test.go:686:44: undefined: syscall.SIGUSR1
+/usr/local/go/src/os/signal/signal_test.go:751:25: t.Deadline undefined (type *testing.T has no field or method Deadline)
+/usr/local/go/src/os/signal/signal_test.go:780:17: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:781:22: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:787:43: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:791:21: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:868:43: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:882:20: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:896:31: undefined: syscall.SIGHUP
+/usr/local/go/src/os/signal/signal_test.go:898:26: undefined: syscall.SIGHUP
+```
+
+
+### path/filepath wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestCVE202230632
+Error: failed to run main module `/tmp/tinygo96657761/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0xcb1c - runtime.hashmapSet
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/hashmap.go:240:21
+           1: 0x1d1d2 - runtime.hashmapBinarySet
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/hashmap.go:469:12
+           2: 0x1d994 - realloc
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/arch_tinygowasm_malloc.go:43:6
+           3: 0x3569 - make_absolute
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/chdir.c:161:21              - __wasilibc_find_relpath_alloc
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/chdir.c:141:27
+           4: 0x412e - find_relpath2
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:23:16              - find_relpath
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:34:14              - lstat
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:115:17
+           5: 0x343c9 - syscall.Lstat
+                           at /workspaces/dc-wasm-go/tinygo/src/syscall/syscall_libc_wasi.go:387:17
+           6: 0x3f070 - os.lstatNolog$1
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat_unix.go:44:42
+           7: 0x3f239 - os.ignoringEINTR
+                           at /workspaces/dc-wasm-go/tinygo/src/os/file_anyos.go:157:6
+           8: 0x3edd9 - os.lstatNolog
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat_unix.go:43:22              - os.Lstat
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat.go:18:19
+           9: 0x7768a - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:258:23
+          10: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          11: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          12: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          13: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          14: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          15: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          16: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          17: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          18: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          19: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          20: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          21: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          22: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          23: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          24: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          25: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          26: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          27: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          28: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          29: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          30: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          31: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          32: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          33: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          34: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          35: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          36: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          37: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          38: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          39: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          40: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          41: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          42: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          43: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          44: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          45: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          46: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          47: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          48: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          49: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          50: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          51: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          52: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          53: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          54: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          55: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          56: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          57: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          58: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          59: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          60: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          61: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          62: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          63: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          64: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          65: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          66: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          67: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          68: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          69: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          70: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          71: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          72: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          73: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          74: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          75: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          76: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          77: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          78: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          79: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          80: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          81: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          82: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          83: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          84: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          85: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          86: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          87: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          88: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          89: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          90: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          91: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          92: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          93: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          94: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          95: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          96: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          97: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          98: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          99: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         100: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         101: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         102: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         103: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         104: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         105: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         106: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         107: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         108: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         109: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         110: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         111: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         112: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         113: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         114: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         115: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         116: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         117: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         118: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         119: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         120: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         121: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         122: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         123: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         124: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         125: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         126: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         127: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         128: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         129: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         130: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         131: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         132: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         133: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         134: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         135: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         136: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         137: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         138: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         139: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         140: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         141: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         142: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         143: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         144: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         145: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         146: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         147: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         148: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         149: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         150: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         151: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         152: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         153: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         154: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         155: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         156: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         157: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         158: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         159: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         160: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         161: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         162: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         163: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         164: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         165: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         166: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         167: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         168: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         169: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         170: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         171: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         172: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         173: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         174: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         175: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         176: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         177: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         178: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         179: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         180: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         181: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         182: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         183: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         184: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         185: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         186: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         187: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         188: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         189: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         190: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         191: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         192: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         193: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         194: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         195: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         196: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         197: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         198: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         199: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         200: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         201: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         202: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         203: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         204: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         205: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         206: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         207: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         208: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         209: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         210: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         211: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         212: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         213: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         214: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         215: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         216: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         217: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         218: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         219: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         220: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         221: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         222: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         223: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         224: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         225: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         226: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         227: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         228: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         229: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         230: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         231: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         232: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         233: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         234: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         235: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         236: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         237: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         238: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         239: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         240: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         241: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         242: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         243: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         244: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         245: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         246: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         247: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         248: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         249: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         250: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         251: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         252: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         253: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         254: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         255: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         256: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         257: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         258: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         259: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         260: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         261: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         262: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         263: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         264: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         265: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         266: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         267: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         268: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         269: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         270: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         271: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         272: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         273: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         274: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         275: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         276: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         277: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         278: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         279: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         280: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         281: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         282: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         283: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         284: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         285: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         286: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         287: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         288: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         289: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         290: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         291: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         292: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         293: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         294: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         295: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         296: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         297: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         298: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         299: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         300: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         301: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         302: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         303: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         304: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         305: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         306: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         307: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         308: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         309: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         310: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         311: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         312: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         313: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         314: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         315: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         316: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         317: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         318: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         319: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         320: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         321: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         322: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         323: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         324: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         325: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         326: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         327: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         328: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         329: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         330: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         331: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         332: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         333: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         334: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         335: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         336: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         337: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         338: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         339: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         340: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         341: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         342: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         343: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         344: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         345: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         346: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         347: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         348: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         349: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         350: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         351: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         352: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         353: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         354: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         355: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         356: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         357: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         358: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         359: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         360: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         361: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         362: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         363: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         364: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         365: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         366: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         367: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         368: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         369: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         370: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         371: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         372: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         373: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         374: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         375: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         376: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         377: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         378: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         379: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         380: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         381: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         382: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         383: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         384: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         385: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         386: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         387: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         388: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         389: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         390: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         391: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         392: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         393: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         394: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         395: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         396: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         397: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         398: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         399: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         400: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         401: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         402: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         403: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         404: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         405: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         406: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         407: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         408: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         409: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         410: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         411: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         412: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         413: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         414: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         415: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         416: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         417: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         418: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         419: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         420: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         421: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         422: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         423: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         424: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         425: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         426: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         427: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         428: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         429: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         430: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         431: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         432: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         433: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         434: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         435: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         436: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         437: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         438: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         439: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         440: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         441: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         442: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         443: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         444: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         445: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         446: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         447: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         448: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         449: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         450: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         451: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         452: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         453: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         454: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         455: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         456: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         457: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         458: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         459: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         460: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         461: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         462: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         463: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         464: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         465: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         466: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         467: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         468: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         469: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         470: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         471: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         472: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         473: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         474: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         475: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         476: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         477: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         478: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         479: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         480: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         481: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         482: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         483: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         484: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         485: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         486: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         487: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         488: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         489: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         490: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         491: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         492: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         493: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         494: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         495: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         496: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         497: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         498: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         499: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         500: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         501: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         502: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         503: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         504: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         505: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         506: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         507: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         508: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         509: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         510: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         511: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         512: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         513: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         514: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         515: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         516: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         517: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         518: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         519: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         520: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         521: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         522: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         523: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         524: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         525: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         526: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         527: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         528: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         529: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         530: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         531: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         532: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         533: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         534: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         535: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         536: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         537: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         538: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         539: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         540: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         541: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         542: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         543: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         544: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         545: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         546: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         547: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         548: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         549: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         550: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         551: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         552: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         553: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         554: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         555: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         556: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         557: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         558: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         559: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         560: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         561: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         562: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         563: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         564: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         565: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         566: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         567: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         568: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         569: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         570: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         571: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         572: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         573: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         574: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         575: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         576: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         577: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         578: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         579: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         580: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         581: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         582: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         583: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         584: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         585: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         586: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         587: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         588: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         589: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         590: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         591: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         592: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         593: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         594: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         595: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         596: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         597: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         598: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         599: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         600: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         601: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         602: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         603: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         604: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         605: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         606: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         607: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         608: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         609: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         610: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         611: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         612: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         613: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         614: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         615: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         616: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         617: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         618: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         619: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         620: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         621: 0x774dd - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         622: 0x77168 - path/filepath.Glob
+                           at /usr/local/go/src/path/filepath/match.go:243:22
+         623: 0x7ce3d - path/filepath_test.TestCVE202230632
+                           at /usr/local/go/src/path/filepath/match_test.go:162:16
+         624: 0x28253 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         625: 0x5db81 - (*testing.T).Run
+         626: 0x27f5b - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+         627: 0x28253 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         628: 0x2371a - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/69/69d7319c84f52f0989962bd60ff86333367c039c083caa727b0a26564f2ccf0f-d:147:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+         629: 0x1ddf0 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+         630:  0x9dc - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+         631: 0x1dcc5 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: memory fault at wasm address 0x2f2f2f2f in linear memory of size 0x60000
+    3: wasm trap: out of bounds memory access
+
+```
+
+
+### plugin wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	plugin	0.000s
+# plugin
+../../../usr/local/go/src/plugin/plugin_dlopen.go:10:6: not implemented: build constraints in #cgo line
+../../../usr/local/go/src/plugin/plugin_dlopen.go:11:10: fatal: 'dlfcn.h' file not found
+```
+
+
+### regexp wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestBadCompile
+panic: expression too large
+Error: failed to run main module `/tmp/tinygo2518508193/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5e72 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x2ca05 - (*regexp/syntax.parser).checkLimits
+                           at /usr/local/go/src/regexp/syntax/parse.go:163:8
+           2: 0x2c22d - (*regexp/syntax.parser).push
+           3: 0x35b23 - regexp/syntax.parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:1063:9              - regexp/syntax.Parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:889:14
+           4: 0x43582 - regexp.compile
+                           at /usr/local/go/src/regexp/regexp.go:172:25
+           5: 0x7aafa - regexp.Compile
+                           at /usr/local/go/src/regexp/regexp.go:135:16
+           6: 0x81477 - regexp.compileTest
+                           at /usr/local/go/src/regexp/all_test.go:56:20
+           7: 0x81c63 - regexp.TestBadCompile
+                           at /usr/local/go/src/regexp/all_test.go:76:14
+           8: 0x47133 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x6cdce - (*testing.T).Run
+          10: 0x46e3b - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          11: 0x47133 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x4245d - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/af/af4559cfe4edf69b71dc29ce1a2355bc32cd22553b56a2f648bb367548ede916-d:251:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          13: 0x3d2bc - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          14:  0x95a - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          15: 0x3d191 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### regexp/syntax wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/8
+=== RUN   TestParseInvalidRegexps
+panic: expression nests too deeply
+Error: failed to run main module `/tmp/tinygo760287527/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x444a - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x55a0d - (*regexp/syntax.parser).checkHeight
+                           at /usr/local/go/src/regexp/syntax/parse.go:270:8
+           2: 0x5449f - (*regexp/syntax.parser).checkLimits
+                           at /usr/local/go/src/regexp/syntax/parse.go:166:15
+           3: 0x53c85 - (*regexp/syntax.parser).push
+           4: 0x5ca04 - regexp/syntax.parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:1441:7              - regexp/syntax.Parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:889:14
+           5: 0x63cc9 - regexp/syntax.TestParseInvalidRegexps
+                           at /usr/local/go/src/regexp/syntax/parse_test.go:527:22
+           6: 0x2647e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x26174 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x2647e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x20dfb - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/c8/c83f19d2969c72a75eafbf9b6f8374b11bb5a0612b7c179397ec896c59a28f7d-d:73:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x1bfc1 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x73d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x1be96 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### slices wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo204378353/main /tmp/tinygo204378353/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo204378353/main --output /tmp/tinygo204378353/main
+FAIL	slices	0.000s
+error: wasm-opt failed: signal: killed
+```
+
+
+### strconv wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/29
+=== RUN   TestFormatComplexInvalidBitSize
+panic: invalid bitSize
+Error: failed to run main module `/tmp/tinygo100550811/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5a2f - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x4e4a2 - strconv.FormatComplex
+                           at /usr/local/go/src/strconv/ctoa.go:16:8
+           2: 0x97549 - strconv_test.TestFormatComplexInvalidBitSize
+                           at /usr/local/go/src/strconv/ctoa_test.go:52:19
+           3: 0x310ec - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x68aa1 - (*testing.T).Run
+           5: 0x30df4 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x310ec - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x1d53f - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/8c/8c2a46d03666ec6e1d366592d98f60839dcad46c12d8776fe157acce72d12691-d:279:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x192e0 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x98e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x191b5 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### strings wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/4
+=== RUN   TestBuilderGrow
+    growLen=100: got 0 allocs during Write; want 1
+    growLen=1000: got 0 allocs during Write; want 1
+    growLen=10000: got 0 allocs during Write; want 1
+    growLen=100000: got 0 allocs during Write; want 1
+panic: strings.Builder.Grow: negative count
+Error: failed to run main module `/tmp/tinygo940255644/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5a4b - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x3ac25 - (*strings.Builder).Grow
+                           at /usr/local/go/src/strings/builder.go:80:8
+           2: 0x80523 - strings_test.TestBuilderGrow
+                           at /usr/local/go/src/strings/builder_test.go:120:8
+           3: 0x28aea - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x65fb3 - (*testing.T).Run
+           5: 0x287f2 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x28aea - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x22790 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/7e/7e7530b4b41ba554fcd61a15fb56262397c798b6647dbef18c7e075b40e7bebf-d:415:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1cb29 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0xaa3 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x1ca05 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### sync/atomic wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 6/68
+=== RUN   TestStoreLoadSeqCst32
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadSeqCst32 (0.00s)
+=== RUN   TestStoreLoadSeqCst64
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadSeqCst64 (0.00s)
+=== RUN   TestStoreLoadRelAcq32
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadRelAcq32 (0.00s)
+=== RUN   TestStoreLoadRelAcq64
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadRelAcq64 (0.00s)
+=== RUN   TestUnaligned64
+    LoadUint64 did not panic
+    LoadUint64Method did not panic
+    StoreUint64 did not panic
+    StoreUint64Method did not panic
+    CompareAndSwapUint64 did not panic
+    CompareAndSwapUint64Method did not panic
+    AddUint64 did not panic
+    AddUint64Method did not panic
+--- FAIL: TestUnaligned64 (0.60s)
+=== RUN   TestNilDeref
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo2091322925/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x150aa - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x37da - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x7beb9 - (*sync/atomic.Int32).CompareAndSwap
+                           at /usr/local/go/src/sync/atomic/type.go:84:32              - sync/atomic_test.TestNilDeref$2
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2461:40
+           3: 0x7b316 - sync/atomic_test.TestNilDeref$59
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2525:5              - sync/atomic_test.TestNilDeref
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2526:4
+           4: 0x217af - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x4f1b1 - (*testing.T).Run
+           6: 0x214b7 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x217af - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x1b619 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/f9/f9c374e6b50bb5564ff0d98214950a7423dae89fb0765aa081b4edd02093723a-d:201:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x16a1f - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0xa1c - <unknown>!tinygo_rewind
+          11: 0x168f4 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### syscall wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1480439788/main /tmp/tinygo1480439788/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1480439788/main --output /tmp/tinygo1480439788/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1480439788/main -test.v
+Error: failed to run main module `/tmp/tinygo1480439788/main`
+
+Caused by:
+    0: failed to instantiate "/tmp/tinygo1480439788/main"
+    1: unknown import: `env::mmap` has not been defined
+FAIL	syscall	9.742s
+```
+
+
+### testing/fstest wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/5
+=== RUN   TestSymlink
+    symlink /tmp/TestSymlink163058836/000/hello /tmp/TestSymlink163058836/000/hello.link: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    TestFS found errors:
+        expected but not found: hello.link
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestSymlink (0.03s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink163058836: errno 52
+
+```
+
+
+### testing/quick wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestCheckEqual
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo169958455/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4500 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x47a2 - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x62c89 - (Go interface method)
+           3: 0x62e86 - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48
+           4: 0x63491 - testing/quick.TestCheckEqual
+                           at /usr/local/go/src/testing/quick/quick_test.go:163:34
+           5: 0x203a2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x20098 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x203a2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x1a52c - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/e3/e3de31e3b828492407d361e3b0cb64cd4f3e89c6ed71ece8ac334ab349c804a0-d:61:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x16269 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x7f3 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x1613e - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### testing/slogtest wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3655264852/main /tmp/tinygo3655264852/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3655264852/main --output /tmp/tinygo3655264852/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo3655264852/main -test.v
+panic: runtime.Caller failed
+Error: failed to run main module `/tmp/tinygo3655264852/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4313 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x19949 - testing/slogtest.withSource
+                           at /usr/local/go/src/testing/slogtest/slogtest.go:362:8
+           2: 0xf099 - <unknown>!runtime.initAll
+           3: 0xe7a1 - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:24:10
+           4: 0xc6cc - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           5:  0x65d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0xe6a2 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11
+           7: 0xe56f - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11
+           8: 0xe4ec - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	testing/slogtest	4.953s
+```
+
+
+### text/tabwriter wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestPanicDuringFlush
+panic: cannot write
+Error: failed to run main module `/tmp/tinygo3638101784/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4684 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xe3ac - (text/tabwriter_test.panicWriter).Write
+                           at /usr/local/go/src/text/tabwriter/tabwriter_test.go:622:7
+           2: 0xcd21 - <unknown>!interface:{Write:func:{slice:basic:uint8}{basic:int,named:error}}.Write$invoke
+           3: 0xfc8b - (*text/tabwriter.Writer).write0
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:251:26
+           4: 0xf862 - (*text/tabwriter.Writer).writeLines
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:318:14
+           5: 0xed57 - (*text/tabwriter.Writer).format
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:405:21
+           6: 0xe6cc - (*text/tabwriter.Writer).flushNoDefers
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:513:10
+           7: 0xe4f8 - (*text/tabwriter.Writer).flush
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:495:17              - (*text/tabwriter.Writer).Flush
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:488:16
+           8: 0x65ce9 - text/tabwriter_test.TestPanicDuringFlush
+                           at /usr/local/go/src/text/tabwriter/tabwriter_test.go:643:9
+           9: 0x2194c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x21642 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          11: 0x2194c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x1b8b1 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/82/820448a5a8b28b6568ca535f8febd255e560bfb39fb86b392c543db67f75b4a5-d:67:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          13: 0x17695 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          14:  0x734 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          15: 0x1756b - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### text/template wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2034425470/main /tmp/tinygo2034425470/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2034425470/main.o: undefined symbol: syscall.Faccessat
+failed to run tool: wasm-ld
+FAIL	text/template	0.000s
+error: failed to link /tmp/tinygo2034425470/main: exit status 1
+```
+
+
+### text/template/parse wasi/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/6
+=== RUN   TestNumberParse
+panic: (97380:0x00048c00)
+Error: failed to run main module `/tmp/tinygo2190611618/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4ad1 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x4f030 - (*fmt.ss).error
+                           at /usr/local/go/src/fmt/scan.go:240:7
+           2: 0x50649 - (*fmt.ss).accept
+                           at /usr/local/go/src/fmt/scan.go:750:10              - (*fmt.ss).complexTokens
+                           at /usr/local/go/src/fmt/scan.go:755:14              - (*fmt.ss).scanComplex
+                           at /usr/local/go/src/fmt/scan.go:816:33
+           3: 0x524ef - <unknown>!fmt.Sscan
+           4: 0x87b61 - text/template/parse.TestNumberParse
+                           at /usr/local/go/src/text/template/parse/parse_test.go:99:23
+           5: 0x219f1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x5a043 - (*testing.T).Run
+           7: 0x216f9 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x219f1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x1c374 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/97/97aff8905c92f3c2c83a3d8f59473c1d67c5a331a12ffae42fb9894564f7a41a-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x17394 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x83c - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x1726a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### time wasi/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	time	0.000s
+# time_test
+/usr/local/go/src/time/sleep_test.go:714:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:715:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:716:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:787:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:788:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:789:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+```
+
+
+## wasip1/wasm
+
+
+
+### archive/tar wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/58
+=== RUN   TestFileInfoHeaderSymlink
+    skipping test: cannot make symlinks on wasip1/wasm: 
+    SkipNow is incomplete, requires runtime.Goexit()
+    symlink /tmp/TestFileInfoHeaderSymlink55377496/000 /tmp/TestFileInfoHeaderSymlink55377496/000/link: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    lstat /tmp/TestFileInfoHeaderSymlink55377496/000/link: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    archive/tar: FileInfo is nil
+    FailNow is incomplete, requires runtime.Goexit()
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo2863745848/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3498a - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x9a87 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0xc2509 - archive/tar.TestFileInfoHeaderSymlink
+           3: 0x3994a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x744ef - (*testing.T).Run
+           5: 0x3964e - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x3994a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x33b0f - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/64/64e4f0b94238e71ca92a746be092ee54ca795a74809f454318857aae67ac27fc-d:137:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x2dba6 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0xa92 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x2da47 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### archive/zip wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/84
+=== RUN   TestZip64EdgeCase
+
+```
+
+
+### bufio wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/42
+=== RUN   TestReadStringAllocs
+    Unexpected number of allocations, got 0.000000, want 1
+--- FAIL: TestReadStringAllocs (0.00s)
+=== RUN   TestNegativeRead
+panic: bufio: reader returned negative count from Read
+Error: failed to run main module `/tmp/tinygo3118795342/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x296b - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xc7f5 - (*bufio.Reader).Read
+           2: 0x7e53e - bufio_test.TestNegativeRead
+                           at /usr/local/go/src/bufio/bufio_test.go:1303:8
+           3: 0x26892 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4d656 - (*testing.T).Run
+           5: 0x26596 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x26892 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x1fd30 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/06/069a56f2cf2c2675af173cda287292b2d6132751fa3da9153f4e8a10b1e3d344-d:241:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1b865 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x77e - tinygo_rewind
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:92
+          10: 0x1b636 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### bytes wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestReadFromPanicReader
+panic: oops
+Error: failed to run main module `/tmp/tinygo1512780710/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4790 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x11916 - (bytes_test.panicReader).Read
+                           at /usr/local/go/src/bytes/buffer_test.go:271:8
+           2: 0x10cac - (bytes_test.panicReader).Read$invoke
+                           at /usr/local/go/src/bytes/buffer_test.go:269:22              - (Go interface method)
+                           at <Go interface method>
+           3: 0x14f54 - (*bytes.Buffer).ReadFrom
+                           at /usr/local/go/src/bytes/buffer.go:211:23
+           4: 0x7943b - bytes_test.TestReadFromPanicReader
+                           at /usr/local/go/src/bytes/buffer_test.go:297:15
+           5: 0x28f12 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x28c04 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x28f12 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x21dc8 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/e9/e93c8444dc8df6f4a356946eb7b5b36c54937c0dfbc9b92af48cbe8e6cdc6d17-d:459:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x1be95 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x952 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x1bd3e - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### compress/flate wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/23
+=== RUN   TestBestSpeed
+
+```
+
+
+### context wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	context	0.000s
+# context_test
+/usr/local/go/src/context/x_test.go:21:27: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestParentFinishesChild: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:24:26: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestChildFinishesFirst: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:27:21: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCancelRemoves: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:30:31: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCustomContextGoroutines: *testing.T does not implement context.testingT (missing method Deadline)
+/usr/local/go/src/context/x_test.go:50:20: t.Deadline undefined (type *testing.T has no field or method Deadline)
+```
+
+
+### crypto wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestRC4OutOfBoundsWrite
+panic: runtime error: index out of range
+Error: failed to run main module `/tmp/tinygo123774282/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1bbe7 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x1265 - runtime.lookupPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:144:16
+           2: 0x5cea6 - <unknown>!(*crypto/rc4.Cipher).XORKeyStream$bound
+           3: 0x5d241 - crypto_test.test
+                           at /usr/local/go/src/crypto/issue21104_test.go:60:5
+           4: 0x5cc65 - crypto_test.TestRC4OutOfBoundsWrite
+                           at /usr/local/go/src/crypto/issue21104_test.go:21:6
+           5: 0x20cf1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x209e7 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x20cf1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x1ac76 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/ae/ae5003e243985acd87c6eaa8aa139ba382fcef53385b020be05280b51425c1a5-d:57:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x16a86 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x520 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x16928 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/aes wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestShortBlocks
+panic: crypto/aes: input not full block
+Error: failed to run main module `/tmp/tinygo2339628983/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x229a - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x23512 - (*crypto/aes.aesCipher).Encrypt
+                           at /usr/local/go/src/crypto/aes/cipher.go:60:8              - (Go interface method)
+                           at <Go interface method>
+           2: 0x64514 - crypto/aes.TestShortBlocks$2
+                           at /usr/local/go/src/crypto/aes/aes_test.go:327:69
+           3: 0x6478a - crypto/aes.mustPanic
+                           at /usr/local/go/src/crypto/aes/aes_test.go:344:3
+           4: 0x63f17 - crypto/aes.TestShortBlocks
+                           at /usr/local/go/src/crypto/aes/aes_test.go:327:11
+           5: 0x17a9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x17794 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x17a9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x10e50 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/fb/fbd7cbbdabeaf1f6755c53f198ce468296a770fe68d3e21898f1ad5b22c4718e-d:77:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0xcc72 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x541 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0xcb15 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/cipher wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/5
+=== RUN   TestCryptBlocks
+panic: crypto/cipher: input not full blocks
+Error: failed to run main module `/tmp/tinygo4263116336/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x32fe - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x688dd - (*crypto/cipher.cbcDecrypter).CryptBlocks
+                           at /usr/local/go/src/crypto/cipher/cbc.go:145:8              - (Go interface method)
+                           at <Go interface method>
+           2: 0x6ae40 - crypto/cipher_test.TestCryptBlocks$1
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:20:80
+           3: 0x6b0ae - crypto/cipher_test.mustPanic
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:37:3
+           4: 0x6aacc - crypto/cipher_test.TestCryptBlocks
+                           at /usr/local/go/src/crypto/cipher/cipher_test.go:20:11
+           5: 0x1a9e1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1a6d7 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1a9e1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x13ec8 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/61/6162e4542004ff5d4561a2904bdcadfd96d18761f8e4484f36f3c8725ffde61c-d:107:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0xfcd4 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x617 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0xfb76 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/ecdh wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/47
+=== RUN   TestLinker
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    platform cannot run go tool
+    FailNow is incomplete, requires runtime.Goexit()
+    [ build -o hello.exe hello.go]: exec: no command
+    FailNow is incomplete, requires runtime.Goexit()
+    [./hello.exe]: open /dev/null: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    unexpected output: 
+    [ tool nm hello.exe]: exec: no command
+    FailNow is incomplete, requires runtime.Goexit()
+    no P384 symbols found in program using ecdh.P384, test is broken
+--- FAIL: TestLinker (0.05s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestLinker194954232: errno 52
+
+```
+
+
+### crypto/ecdsa wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 6/77
+=== RUN   TestRMinusNSignature/P224
+    --- PASS: TestRMinusNSignature/P224 (0.00s)
+=== RUN   TestRMinusNSignature/P384
+    --- PASS: TestRMinusNSignature/P384 (0.00s)
+=== RUN   TestRMinusNSignature
+=== RUN   TestRMinusNSignature/P256
+    --- PASS: TestRMinusNSignature/P256 (0.00s)
+=== RUN   TestRMinusNSignature/P224
+    --- PASS: TestRMinusNSignature/P224 (0.00s)
+=== RUN   TestRMinusNSignature/P384
+    --- PASS: TestRMinusNSignature/P384 (0.00s)
+=== RUN   TestRMinusNSignature/P521
+    --- PASS: TestRMinusNSignature/P521 (0.00s)
+=== RUN   TestRMinusNSignature/P256/Generic
+=== RUN   TestRMinusNSignature/P256/Generic
+=== RUN   TestRMinusNSignature/P256
+    --- PASS: TestRMinusNSignature/P256 (0.00s)
+=== RUN   TestRMinusNSignature/P521
+    --- PASS: TestRMinusNSignature/P521 (0.00s)
+
+```
+
+
+### crypto/hmac wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestNonUniqueHash
+panic: crypto/hmac: hash generation function does not produce unique values
+Error: failed to run main module `/tmp/tinygo1295046564/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x22c2 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x659a1 - crypto/hmac.New
+           2: 0x6690c - crypto/hmac.TestNonUniqueHash
+                           at /usr/local/go/src/crypto/hmac/hmac_test.go:597:45
+           3: 0x1d90c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x1d602 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           5: 0x1d90c - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x179e9 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/8d/8dd68077524b4f9a102e80f0c613dde97831cb4f7273bcbb1841dcbf81bac77a-d:59:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           7: 0x137f5 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           8:  0x55f - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           9: 0x13697 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/rsa wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestEncryptPKCS1v15
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo1543504303/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4302 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6599 - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0xea5ee - (Go interface method)
+           3: 0xec19c - testing/quick.Check
+                           at /usr/local/go/src/testing/quick/quick.go:273:17              - crypto/rsa_test.TestEncryptPKCS1v15
+                           at /usr/local/go/src/crypto/rsa/pkcs1v15_test.go:118:13
+           4: 0x36145 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x78e3b - (*testing.T).Run
+           6: 0x35e4d - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x36145 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x2ddae - <unknown>!runtime.run$1
+           9: 0x2b20c - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0xab8 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x2b0b4 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/subtle wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestConstantTimeByteEq
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo92726316/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x327e - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x3520 - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x5d279 - (Go interface method)
+           3: 0x5d476 - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48
+           4: 0x5dd58 - crypto/subtle.TestConstantTimeByteEq
+                           at /usr/local/go/src/crypto/subtle/constant_time_test.go:59:25
+           5: 0x14ad3 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x147ca - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x14ad3 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0xd63d - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/7c/7cc9948b16646f06706c44112c930c26b98cbd01318a65fa88edfa29a37f5dbe-d:69:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x9381 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x55d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x9224 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### crypto/x509 wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	crypto/x509	0.000s
+# crypto/x509_test
+/usr/local/go/src/crypto/x509/hybrid_pool_test.go:63:17: c.ConnectionState undefined (type *net.TLSConn has no field or method ConnectionState)
+```
+
+
+### database/sql wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	database/sql	0.000s
+# database/sql
+/usr/local/go/src/database/sql/sql_test.go:4722:4: b.SetParallelism undefined (type *testing.B has no field or method SetParallelism)
+```
+
+
+### debug/buildinfo wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	debug/buildinfo	0.000s
+# debug/buildinfo
+/usr/local/go/src/debug/buildinfo/buildinfo.go:80:19: undefined: debug.ParseBuildInfo
+```
+
+
+### debug/elf wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	debug/elf	0.000s
+# debug/elf
+/usr/local/go/src/debug/elf/file_test.go:1159:10: undefined: net.ResolveIPAddr
+```
+
+
+### debug/gosym wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestLineFromAline
+    skipping on non-ELF system wasip1
+    SkipNow is incomplete, requires runtime.Goexit()
+    open main: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo2459568843/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2def3 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x86a4 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x8d7ee - (*debug/elf.File).Section
+           3: 0x9fd4a - debug/gosym.crack
+                           at /usr/local/go/src/debug/gosym/pclntab_test.go:81:10
+           4: 0x9d7e8 - debug/gosym.getTable
+                           at /usr/local/go/src/debug/gosym/pclntab_test.go:72:17
+           5: 0xa04ff - debug/gosym.TestLineFromAline
+                           at /usr/local/go/src/debug/gosym/pclntab_test.go:113:14
+           6: 0x38731 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x38423 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x38731 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x2d075 - <unknown>!runtime.run$1
+          10: 0x2a179 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x9d4 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x29fe2 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### debug/pe wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestDefaultLinkerDWARF
+    skipping test: gcc is missing
+    SkipNow is incomplete, requires runtime.Goexit()
+    skipping windows only test
+    SkipNow is incomplete, requires runtime.Goexit()
+    skipping test: 'go run' not available on wasip1/wasm
+    SkipNow is incomplete, requires runtime.Goexit()
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    platform cannot run go tool
+    FailNow is incomplete, requires runtime.Goexit()
+    building test executable for linktype 1 failed: exec: no command 
+    FailNow is incomplete, requires runtime.Goexit()
+    running test executable failed: open /dev/null: errno 0 
+    FailNow is incomplete, requires runtime.Goexit()
+    Testprog output:
+    unexpected program output: 
+    FailNow is incomplete, requires runtime.Goexit()
+panic: runtime error: index out of range
+Error: failed to run main module `/tmp/tinygo51195918/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x30575 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x4695 - runtime.lookupPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:144:16
+           2: 0xc140f - <unknown>!debug/pe.testDWARF
+           3: 0xbb80e - debug/pe.testCgoDWARF
+                           at /usr/local/go/src/debug/pe/file_cgo_test.go:19:11
+           4: 0xc1980 - debug/pe.TestDefaultLinkerDWARF
+                           at /usr/local/go/src/debug/pe/file_cgo_test.go:23:14
+           5: 0x35c41 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x35933 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x35c41 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x2f616 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/c6/c6b2594ecf7e1bc0013e59951cbc3017ad5a6d482f8dd4bcd166624b7c686322-d:71:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x2984e - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0xa68 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x296b7 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### encoding/binary wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/16
+=== RUN   TestUnexportedRead
+panic: reflect: value is not settable
+Error: failed to run main module `/tmp/tinygo3519147404/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2f6d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xacdc - (reflect.Value).checkRO
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:56:8
+           2: 0xb20b - (reflect.Value).SetInt
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:1132:11
+           3: 0x64b81 - (*encoding/binary.decoder).int32
+                           at /usr/local/go/src/encoding/binary/binary.go:656:11              - (*encoding/binary.decoder).value
+                           at /usr/local/go/src/encoding/binary/binary.go:656:25
+           4: 0x647e2 - (*encoding/binary.decoder).value
+                           at /usr/local/go/src/encoding/binary/binary.go:636:12
+           5: 0x638cf - encoding/binary.Read
+           6: 0x6d7c7 - encoding/binary.TestUnexportedRead
+                           at /usr/local/go/src/encoding/binary/binary_test.go:395:6
+           7: 0x211c4 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x49046 - (*testing.T).Run
+           9: 0x20ecc - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x211c4 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x1ac9d - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/fb/fbc5d26cd0caebeb345e8f586b2417fd3156bc04f7d17813959166a5c6f5f5bb-d:179:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          12: 0x16aa7 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13:  0x66e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x16949 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### encoding/gob wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo627394844/main /tmp/tinygo627394844/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo627394844/main --output /tmp/tinygo627394844/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	encoding/gob	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### encoding/pem wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/4
+=== RUN   TestCVE202224675
+
+```
+
+
+### encoding/xml wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/336
+=== RUN   TestCVE202228131
+panic: runtime error: stack overflow
+Error: failed to run main module `/tmp/tinygo572233764/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x266a5 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x115d7 - runtime.runtimePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:59:16
+           2: 0x1151d - internal/task.Pause
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:90:15
+           3: 0x116f2 - (*sync.Mutex).Lock
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/mutex.go:22:13
+           4: 0x810d0 - (*sync.Map).Load
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/map.go:18:13              - encoding/xml.getTypeInfo
+                           at /usr/local/go/src/encoding/xml/typeinfo.go:54:28
+           5: 0x89871 - <unknown>!(*encoding/xml.Decoder).unmarshal
+           6: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+           7: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+           8: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+           9: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          10: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          11: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          12: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          13: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          14: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          15: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          16: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          17: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          18: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          19: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          20: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          21: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          22: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          23: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          24: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          25: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          26: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          27: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          28: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          29: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          30: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          31: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          32: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          33: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          34: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          35: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          36: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          37: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          38: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          39: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          40: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          41: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          42: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          43: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          44: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          45: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          46: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          47: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          48: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          49: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          50: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          51: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          52: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          53: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          54: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          55: 0x8aa37 - <unknown>!(*encoding/xml.Decoder).unmarshal
+          56: 0x88887 - (*encoding/xml.Decoder).DecodeElement
+          57: 0x8833b - (*encoding/xml.Decoder).Decode
+                           at /usr/local/go/src/encoding/xml/read.go:140:24
+          58: 0x88021 - encoding/xml.Unmarshal
+                           at /usr/local/go/src/encoding/xml/read.go:134:49
+          59: 0xa46c6 - encoding/xml.TestCVE202228131
+                           at /usr/local/go/src/encoding/xml/read_test.go:1106:18
+          60: 0x30398 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          61: 0x643f2 - (*testing.T).Run
+          62: 0x300a0 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          63: 0x30398 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          64: 0x2587c - <unknown>!runtime.run$1
+          65: 0x22b44 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          66:  0x7a4 - tinygo_rewind
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:92
+          67: 0x229e6 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### errors wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 21/56
+=== RUN   TestAs
+--- FAIL: TestAs (0.03s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x44ea0)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x44ea0) (0.00s)
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44ea0)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44ea0) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44ea0)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44ea0) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0x44ea0)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0x44ea0) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44ec0)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44ec0) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x44eb0)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x44eb0) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44eb0)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44eb0) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44eb0)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44ee0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44eb0) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x44eb0)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44ee0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x44eb0) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x44ea0)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x44ea0) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44eb0)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44ee0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44eb0) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0x44ea0)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0x44ea0) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44eb0)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_errno_0),_0x44eb0) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44ea0)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_errno_0),_0x44ea0) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44ea0)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44ea0) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo3014394935/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x34fc - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x10202 - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x6768d - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x494e6 - (*testing.T).Run
+           5: 0x674d2 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x494e6 - (*testing.T).Run
+           8: 0x2234f - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1cd24 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x18b4d - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x665 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x189ef - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44ec0)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44ec0) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x44eb0)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x44eb0) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x44eb0)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44ee0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:0x0}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x44eb0) (0.00s)
+=== RUN   TestAsValidation
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo3014394935/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x34fc - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x10202 - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x6768d - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x494e6 - (*testing.T).Run
+           5: 0x674d2 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x494e6 - (*testing.T).Run
+           8: 0x2234f - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x22647 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1cd24 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x18b4d - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x665 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x189ef - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### flag wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/14
+=== RUN   TestPrintDefaults
+panic: panic!
+Error: failed to run main module `/tmp/tinygo3148260024/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x47d8 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x2d51f - (*flag_test.zeroPanicker).String
+                           at /usr/local/go/src/flag/flag_test.go:479:8
+           2: 0x53333 - (Go interface method)
+           3: 0x52a3c - (Go interface method)
+                           at /usr/local/go/src/flag/flag.go:560:46              - flag.isZeroValue
+                           at /usr/local/go/src/flag/flag.go:545:27              - (*flag.FlagSet).PrintDefaults$1
+                           at /usr/local/go/src/flag/flag.go:630:32
+           4: 0x53056 - (*flag.FlagSet).VisitAll
+                           at /usr/local/go/src/flag/flag.go:458:5
+           5: 0x51a7a - (*flag.FlagSet).PrintDefaults
+                           at /usr/local/go/src/flag/flag.go:609:12
+           6: 0x8c1fc - flag_test.TestPrintDefaults
+                           at /usr/local/go/src/flag/flag_test.go:538:18
+           7: 0x22b50 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x22842 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x22b50 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1c758 - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10
+          11: 0x18b70 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x8cc - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x189d9 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### fmt wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestSprintf
+    Sprintf("%#v", 0x2f) = "(func)(0x2f)" want "(func(*testing.T))(0xPTR)"
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo3657695005/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1d98d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x5412 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x2ead - (*reflect.rawType).isNamed
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:491:11
+           3: 0x3297 - <unknown>!(*reflect.rawType).String
+           4: 0xb088 - (reflect.Value).String
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/value.go:506:33
+           5: 0x46950 - (Go interface method)
+                           at /usr/local/go/src/regexp/syntax/prog.go:125:17
+           6: 0x69f91 - <unknown>!(*fmt.pp).handleMethods
+           7: 0x63ca1 - <unknown>!(*fmt.pp).printArg
+           8: 0x6686c - <unknown>!(*fmt.pp).doPrintf
+           9: 0x4e87c - fmt.Sprintf
+                           at /usr/local/go/src/fmt/print.go:239:12
+          10: 0x9930c - fmt_test.TestSprintf
+                           at /usr/local/go/src/fmt/fmt_test.go:1095:15
+          11: 0x42641 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x7ef17 - (*testing.T).Run
+          13: 0x42349 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          14: 0x42641 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          15: 0x1ca26 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/66/665da5d4c977fc2a206006294ded03ebd6df63735e00381c714cf30190ea5398-d:233:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          16: 0x186ae - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          17:  0x72d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          18: 0x18550 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/build wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 17/56
+=== RUN   TestDotSlashImport
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+    import "./file": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestDotSlashImport (0.02s)
+=== RUN   TestLocalDirectory
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+    ImportPath=".", want "go/build"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestLocalDirectory (0.03s)
+=== RUN   TestImportCmd
+    go/build: go list cmd/internal/objfile: open /dev/null: errno 0
+        
+        
+    FailNow is incomplete, requires runtime.Goexit()
+    Import cmd/internal/objfile returned Dir="", want ".../src/cmd/internal/objfile"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportCmd (0.00s)
+=== RUN   TestImportDirNotExist
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportDirNotExist (0.01s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportDirNotExist204995701: errno 52
+=== RUN   TestImportDirNotExist/GO111MODULE=off
+    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
+=== RUN   TestImportDirNotExist/GO111MODULE=on
+        Import(full, 0) got error: "go/build: go list go/build/doesnotexist: open /dev/null: errno 0\n\n", want "cannot find package" or "is not in std" error
+        Import(full, FindOnly) got error: "go/build: go list go/build/doesnotexist: open /dev/null: errno 0\n\n", want "cannot find package" or "is not in std" error
+    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)
+=== RUN   TestImportVendor
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    cannot find vendored c/d from testdata src/a/b directory: import "c/d": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportVendor (0.00s)
+=== RUN   TestImportVendorFailure
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportVendorFailure (0.00s)
+=== RUN   TestImportVendorParentFailure
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportVendorParentFailure (0.00s)
+=== RUN   TestImportPackageOutsideModule
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    error when importing package when no go.mod is present: got "go/build: go list example.com/p: open /dev/null: errno 0\n\n"; want "go.mod file not found in current directory or any parent directory"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestImportPackageOutsideModule (0.00s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportPackageOutsideModule11277493: errno 52
+=== RUN   TestIssue23594
+    could not import testdata: import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestIssue23594 (0.01s)
+=== RUN   TestMissingImportErrorRepetition
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestMissingImportErrorRepetition (0.01s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestMissingImportErrorRepetition257234511: errno 52
+=== RUN   TestCgoImportsIgnored
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestCgoImportsIgnored (0.00s)
+=== RUN   TestAllTags
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestAllTags (0.04s)
+=== RUN   TestAllTagsNonSourceFile
+    import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestAllTagsNonSourceFile (0.00s)
+=== RUN   TestDirectives
+    could not import testdata: import ".": unknown compiler "tinygo"
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestDirectives (0.01s)
+=== RUN   TestFindImports
+    open /usr/local/go/src/go/build: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    go/build imports []
+    expected to find "bytes" in import list
+    expected to find "os" in import list
+    expected to find "path/filepath" in import list
+    expected to find "strings" in import list
+--- FAIL: TestFindImports (0.00s)
+=== RUN   TestImportDirNotExist/GO111MODULE=on
+        Import(full, 0) got error: "go/build: go list go/build/doesnotexist: open /dev/null: errno 0\n\n", want "cannot find package" or "is not in std" error
+        Import(full, FindOnly) got error: "go/build: go list go/build/doesnotexist: open /dev/null: errno 0\n\n", want "cannot find package" or "is not in std" error
+    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)
+=== RUN   TestImportDirNotExist/GO111MODULE=off
+    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
+
+```
+
+
+### go/build/constraint wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 7/13
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
+=== RUN   TestLex/1
+    --- PASS: TestLex/1 (0.00s)
+=== RUN   TestLex/5
+panic: invalid syntax at ²
+Error: failed to run main module `/tmp/tinygo1776664339/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2839 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x633bf - (*go/build/constraint.exprParser).lex
+                           at /usr/local/go/src/go/build/constraint/expr.go:339:8
+           2: 0x657f4 - go/build/constraint.lexHelp
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:108:7              - go/build/constraint.TestLex$1
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:77:24
+           3: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x47fcb - (*testing.T).Run
+           5: 0x655b8 - go/build/constraint.TestLex
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:73:8
+           6: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x47fcb - (*testing.T).Run
+           8: 0x25de0 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x216a0 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/30/30202da01dd9f128e3d8052cae5abedd5e12e2a69b87c6de9d7decc51b0c3b37-d:63:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x1d4f7 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x563 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x1d399 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestLex/2
+    --- PASS: TestLex/2 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
+=== RUN   TestLex
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
+=== RUN   TestLex/1
+    --- PASS: TestLex/1 (0.00s)
+=== RUN   TestLex/2
+    --- PASS: TestLex/2 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
+=== RUN   TestLex/5
+panic: invalid syntax at ²
+Error: failed to run main module `/tmp/tinygo1776664339/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2839 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x633bf - (*go/build/constraint.exprParser).lex
+                           at /usr/local/go/src/go/build/constraint/expr.go:339:8
+           2: 0x657f4 - go/build/constraint.lexHelp
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:108:7              - go/build/constraint.TestLex$1
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:77:24
+           3: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x47fcb - (*testing.T).Run
+           5: 0x655b8 - go/build/constraint.TestLex
+                           at /usr/local/go/src/go/build/constraint/expr_test.go:73:8
+           6: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x47fcb - (*testing.T).Run
+           8: 0x25de0 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x260d8 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x216a0 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/30/30202da01dd9f128e3d8052cae5abedd5e12e2a69b87c6de9d7decc51b0c3b37-d:63:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x1d4f7 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0x563 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x1d399 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/constant wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestOps
+panic: division by zero
+Error: failed to run main module `/tmp/tinygo1545040440/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1b26 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x5baf8 - (*math/big.Rat).SetFrac64
+                           at /usr/local/go/src/math/big/rat.go:321:8              - math/big.NewRat
+                           at /usr/local/go/src/math/big/rat.go:34:27
+           2: 0x84c63 - go/constant.BinaryOp
+                           at /usr/local/go/src/go/constant/value.go:1136:19
+           3: 0x87375 - go/constant.doOp
+                           at /usr/local/go/src/go/constant/value_test.go:534:18              - go/constant.TestOps
+                           at /usr/local/go/src/go/constant/value_test.go:345:14
+           4: 0x1df94 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x1dc8a - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x1df94 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x1743c - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/58/583445e0700a8fe2773fdef84b84344a144e28b007bdfab093c213a38db43c7d-d:79:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x12d5d - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x670 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x12bff - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/doc wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2164026642/main /tmp/tinygo2164026642/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2164026642/main --output /tmp/tinygo2164026642/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo2164026642/main -test.v
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo2164026642/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x6332 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6eb0 - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0x3b5ab - (Go interface method)
+                           at /usr/local/go/src/text/template/funcs.go:112:6              - text/template.goodFunc
+                           at /usr/local/go/src/text/template/funcs.go:115:17              - text/template.addValueFuncs
+                           at /usr/local/go/src/text/template/funcs.go:96:15
+           3: 0x27456 - <unknown>!runtime.initAll
+           4: 0x20bb4 - <unknown>!runtime.run$1
+           5: 0x2096e - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           6:  0xb31 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           7: 0x2080f - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	go/doc	23.194s
+```
+
+
+### go/doc/comment wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/10059
+=== RUN   TestStd
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    platform cannot run go tool
+    FailNow is incomplete, requires runtime.Goexit()
+    skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+    SkipNow is incomplete, requires runtime.Goexit()
+    exec: no command
+    FailNow is incomplete, requires runtime.Goexit()
+    stdPkgs is out of date: regenerate with 'go generate'
+        diff stdPkgs want
+        --- stdPkgs
+        +++ want
+        @@ -1,36 +1,1 @@
+        -bufio
+        -bytes
+        -cmp
+        -context
+        -crypto
+        -embed
+        -encoding
+        -errors
+        -expvar
+        -flag
+        -fmt
+        -hash
+        -html
+        -image
+        -io
+        -log
+        -maps
+        -math
+        -mime
+        -net
+        -os
+        -path
+        -plugin
+        -reflect
+        -regexp
+        -runtime
+        -slices
+        -sort
+        -strconv
+        -strings
+        -sync
+        -syscall
+        -testing
+        -time
+        -unicode
+        -unsafe
+        +
+--- FAIL: TestStd (0.00s)
+
+```
+
+
+### go/importer wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/2
+=== RUN   TestForCompiler/LookupDefault
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo4053037695/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3dfda - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0xaf40 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x1de8b3 - (Go interface method)
+           3: 0x212817 - go/importer.TestForCompiler$1
+                           at /usr/local/go/src/go/importer/importer_test.go:41:25
+           4: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x20c940 - (*testing.T).Run
+           6: 0x212562 - go/importer.TestForCompiler
+                           at /usr/local/go/src/go/importer/importer_test.go:39:7
+           7: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x20c940 - (*testing.T).Run
+           9: 0x4de52 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x3c2c3 - <unknown>!runtime.run$1
+          12: 0x39312 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13: 0x10fd - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x3917a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestForCompiler
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
+    SkipNow is incomplete, requires runtime.Goexit()
+    platform cannot run go tool
+    FailNow is incomplete, requires runtime.Goexit()
+    skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+    SkipNow is incomplete, requires runtime.Goexit()
+    go list math/big: exec: no command
+    FailNow is incomplete, requires runtime.Goexit()
+=== RUN   TestForCompiler/LookupDefault
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo4053037695/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3dfda - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0xaf40 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x1de8b3 - (Go interface method)
+           3: 0x212817 - go/importer.TestForCompiler$1
+                           at /usr/local/go/src/go/importer/importer_test.go:41:25
+           4: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x20c940 - (*testing.T).Run
+           6: 0x212562 - go/importer.TestForCompiler
+                           at /usr/local/go/src/go/importer/importer_test.go:39:7
+           7: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x20c940 - (*testing.T).Run
+           9: 0x4de52 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x4e14f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x3c2c3 - <unknown>!runtime.run$1
+          12: 0x39312 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13: 0x10fd - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x3917a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/parser wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/27
+=== RUN   TestParseFile
+panic: (124656:0x00020328)
+Error: failed to run main module `/tmp/tinygo2205178122/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x53f8 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x81dee - (*go/parser.parser).error
+                           at /usr/local/go/src/go/parser/parser.go:277:9
+           2: 0x8b8e6 - (*go/parser.parser).parseIndexOrSliceOrInstance
+                           at /usr/local/go/src/go/parser/parser.go:1587:12              - (*go/parser.parser).parsePrimaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1732:37
+           3: 0x965a2 - (*go/parser.parser).parseUnaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1835:27
+           4: 0x8c083 - (*go/parser.parser).parseBinaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1856:23
+           5: 0x8c32b - (*go/parser.parser).parseBinaryExpr
+                           at /usr/local/go/src/go/parser/parser.go:1870:25
+           6: 0x95d04 - (*go/parser.parser).parseExpr
+                           at /usr/local/go/src/go/parser/parser.go:1881:26
+           7: 0x89974 - (*go/parser.parser).parseExprList
+                           at /usr/local/go/src/go/parser/parser.go:502:33              - (*go/parser.parser).parseList
+                           at /usr/local/go/src/go/parser/parser.go:514:25
+           8: 0x85042 - <unknown>!(*go/parser.parser).parseValueSpec$bound
+           9: 0x82ad3 - (*go/parser.parser).parseGenDecl
+                           at /usr/local/go/src/go/parser/parser.go:2740:24
+          10: 0x8341c - (*go/parser.parser).parseDecl
+                           at /usr/local/go/src/go/parser/parser.go:2835:9
+          11: 0x80577 - go/parser.ParseFile
+                           at /usr/local/go/src/go/parser/parser.go:2886:38
+          12: 0x9d0b7 - go/parser.TestParseFile
+                           at /usr/local/go/src/go/parser/parser_test.go:46:21
+          13: 0x26d58 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          14: 0x6a928 - (*testing.T).Run
+          15: 0x26a60 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          16: 0x26d58 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          17: 0x1c3d1 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/df/df1ffbc2f67009cb7164e9eddbd8e4a1427bd474a1a1b5ebd8579dc5d45f2a14-d:107:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          18: 0x1773c - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          19:  0x87d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          20: 0x175de - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### go/printer wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 12/12
+=== RUN   TestFiles/empty.input
+    --- PASS: TestFiles/empty.input (0.02s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.03s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.08s)
+=== RUN   TestFiles/slow.input
+panic: runtime error: slice out of range
+Error: failed to run main module `/tmp/tinygo954228129/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1d775 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x3bf2 - runtime.slicePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16
+           2: 0x39d9a - os.ReadFile
+           3: 0xc8512 - go/printer.runcheck
+                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
+                           at /usr/local/go/src/go/printer/printer_test.go:152:11
+           4: 0xc89dc - <goroutine wrapper>
+                           at /usr/local/go/src/go/printer/printer_test.go:151:2
+           5:  0x91e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x17981 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestFiles
+=== RUN   TestFiles/empty.input
+    --- PASS: TestFiles/empty.input (0.02s)
+=== RUN   TestFiles/comments.input
+    --- PASS: TestFiles/comments.input (0.05s)
+=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.01s)
+=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.02s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.03s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.08s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.22s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.20s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.04s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.03s)
+=== RUN   TestFiles/slow.input
+panic: runtime error: slice out of range
+Error: failed to run main module `/tmp/tinygo954228129/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1d775 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x3bf2 - runtime.slicePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16
+           2: 0x39d9a - os.ReadFile
+           3: 0xc8512 - go/printer.runcheck
+                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
+                           at /usr/local/go/src/go/printer/printer_test.go:152:11
+           4: 0xc89dc - <goroutine wrapper>
+                           at /usr/local/go/src/go/printer/printer_test.go:151:2
+           5:  0x91e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x17981 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestFiles/comments.input
+    --- PASS: TestFiles/comments.input (0.05s)
+=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.01s)
+=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.02s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.22s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.20s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.04s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.03s)
+
+```
+
+
+### go/token wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2911458203/main /tmp/tinygo2911458203/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2911458203/main --output /tmp/tinygo2911458203/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	go/token	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### go/types wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	go/types	0.000s
+# go/types_test
+/usr/local/go/src/go/types/self_test.go:103:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+```
+
+
+### hash/crc32 wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/8
+=== RUN   TestArchIEEE
+    Arch-specific IEEE not available.
+    SkipNow is incomplete, requires runtime.Goexit()
+panic: not available
+Error: failed to run main module `/tmp/tinygo662126840/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x316d - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x5fe02 - hash/crc32.archInitIEEE
+                           at /usr/local/go/src/hash/crc32/crc32_otherarch.go:10:57
+           2: 0x63b0f - hash/crc32.TestArchIEEE
+                           at /usr/local/go/src/hash/crc32/crc32_test.go:232:14
+           3: 0x1d9af - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x4695f - (*testing.T).Run
+           5: 0x1d6b7 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x1d9af - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x16d38 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/42/42abff43a2f6d063760b5c32884a73c3b8a5ebac782b8fcf07ac3452956a7eef-d:67:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x12c99 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x5b8 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x12b42 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### hash/maphash wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestSmhasherSmallKeys
+
+```
+
+
+### html/template wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestAddParseTreeHTML
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo569643556/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x6328 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x7611 - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0xf685e - (Go interface method)
+                           at /usr/local/go/src/text/template/funcs.go:112:6              - text/template.goodFunc
+                           at /usr/local/go/src/text/template/funcs.go:115:17              - text/template.addValueFuncs
+                           at /usr/local/go/src/text/template/funcs.go:96:15
+           3: 0x10069d - (*text/template.Template).Funcs
+                           at /usr/local/go/src/text/template/template.go:181:15
+           4: 0x128b58 - (*html/template.escaper).commit
+                           at /usr/local/go/src/html/template/escape.go:918:25              - html/template.escapeTemplate
+                           at /usr/local/go/src/html/template/escape.go:40:17
+           5: 0x1297fa - (*html/template.Template).lookupAndEscapeTemplate
+                           at /usr/local/go/src/html/template/template.go:163:23              - (*html/template.Template).ExecuteTemplate
+                           at /usr/local/go/src/html/template/template.go:135:40
+           6: 0x132b93 - html/template.TestAddParseTreeHTML
+                           at /usr/local/go/src/html/template/clone_test.go:25:29
+           7: 0x4ce08 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x106a0a - (*testing.T).Run
+           9: 0x4cb10 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          10: 0x4ce08 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          11: 0x3c608 - <unknown>!runtime.run$1
+          12: 0x398ec - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          13:  0xe97 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          14: 0x39794 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestNewXxxBadRectangle
+panic: image: NewRGBA Rectangle has huge or negative dimensions
+Error: failed to run main module `/tmp/tinygo4228697030/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3cd9 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x69fdb - (image.Rectangle).Dx
+                           at /usr/local/go/src/image/image.go:96:8              - image.pixelBufferLength
+                           at /usr/local/go/src/image/image.go:94:47
+           2: 0x68334 - image.NewRGBA
+                           at /usr/local/go/src/image/image.go:229:42
+           3: 0x761aa - image.TestNewXxxBadRectangle$2
+                           at /usr/local/go/src/image/image_test.go:108:39
+           4: 0x76350 - image.TestNewXxxBadRectangle$1
+                           at /usr/local/go/src/image/image_test.go:94:10
+           5: 0x75178 - image.TestNewXxxBadRectangle
+                           at /usr/local/go/src/image/image_test.go:138:16
+           6: 0x2d29e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x2cf94 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x2d29e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x25c0a - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/03/03696e0658b26ce2ed516312d26adbf88abfcc3eab0abe0b39a79e0462e8f45c-d:101:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x21694 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x7ec - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x21536 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/color wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestSqDiff
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo197961963/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x22b8 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x255a - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x5c6d8 - (Go interface method)
+           3: 0x5d4b0 - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48              - image/color.TestSqDiff
+                           at /usr/local/go/src/image/color/color_test.go:44:28
+           4: 0x1cec7 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x1cbbd - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x1cec7 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x161c0 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/4d/4dadc14d436b349970b7a4071a99fc9f8aefe01c3235a3bddedb0326061282e8-d:73:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x11f1b - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x555 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x11dbe - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/draw wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestSqDiff
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo2351431961/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x3f6b - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x420d - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x7be61 - (Go interface method)
+           3: 0x8e25d - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48              - image/draw.TestSqDiff
+                           at /usr/local/go/src/image/draw/draw_test.go:807:28
+           4: 0x3649f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x36195 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x3649f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x2fc7b - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/2a/2a9b332c08e48a6461f4d90bdca395e8895837da22f04105e348adb36252d90f-d:105:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x297b5 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x7f6 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x29657 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### image/gif wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	image/gif	0.000s
+# image/gif
+/usr/local/go/src/image/gif/reader_test.go:421:26: s1.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)
+/usr/local/go/src/image/gif/reader_test.go:421:41: s0.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)
+```
+
+
+### image/jpeg wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	image/jpeg	0.000s
+# image/jpeg
+/usr/local/go/src/image/jpeg/reader_test.go:253:9: undefined: debug.SetTraceback
+```
+
+
+### image/png wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestDimensionOverflow
+
+```
+
+
+### index/suffixarray wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 4/6
+=== RUN   TestNew32
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (37.70s)
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (2.60s)
+=== RUN   TestNew32/exhaustive2
+=== RUN   TestNew32/ababab...
+    --- PASS: TestNew32/ababab... (37.70s)
+=== RUN   TestNew32/forcealloc
+    --- PASS: TestNew32/forcealloc (2.60s)
+=== RUN   TestNew32/exhaustive2
+
+```
+
+
+### io wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 4/60
+=== RUN   TestMultiWriter_WriteStringSingleAlloc
+    num allocations = 0; want 1
+--- FAIL: TestMultiWriter_WriteStringSingleAlloc (0.00s)
+=== RUN   TestMultiWriterSingleChainFlatten
+    multiWriter did not flatten chained multiWriters: expected writeDepth 12, got 4
+--- FAIL: TestMultiWriterSingleChainFlatten (0.00s)
+=== RUN   TestMultiReaderFlatten
+    multiReader did not flatten chained multiReaders: expected readDepth 3, got 1
+--- FAIL: TestMultiReaderFlatten (0.00s)
+=== RUN   TestMultiReaderFreesExhaustedReaders
+    timeout waiting for collection of buf1
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestMultiReaderFreesExhaustedReaders (5.01s)
+
+```
+
+
+### io/fs wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/6
+=== RUN   TestCVE202230630
+Error: failed to run main module `/tmp/tinygo1470487103/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x14463 - path.Match
+                           at /usr/local/go/src/path/match.go:42:35
+           1: 0x39829 - (Go interface assert)
+                           at /usr/local/go/src/io/fs/glob.go:49:25              - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:44:22
+           2: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           3: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           4: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           5: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           6: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           7: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           8: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+           9: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          10: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          11: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          12: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          13: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          14: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          15: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          16: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          17: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          18: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          19: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          20: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          21: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          22: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          23: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          24: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          25: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          26: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          27: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          28: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          29: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          30: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          31: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          32: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          33: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          34: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          35: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          36: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          37: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          38: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          39: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          40: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          41: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          42: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          43: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          44: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          45: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          46: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          47: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          48: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          49: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          50: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          51: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          52: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          53: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          54: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          55: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          56: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          57: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          58: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          59: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          60: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          61: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          62: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          63: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          64: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          65: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          66: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          67: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          68: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          69: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          70: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          71: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          72: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          73: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          74: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          75: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          76: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          77: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          78: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          79: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          80: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          81: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          82: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          83: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          84: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          85: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          86: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          87: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          88: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          89: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          90: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          91: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          92: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          93: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          94: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          95: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          96: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          97: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          98: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+          99: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         100: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         101: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         102: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         103: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         104: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         105: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         106: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         107: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         108: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         109: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         110: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         111: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         112: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         113: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         114: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         115: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         116: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         117: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         118: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         119: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         120: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         121: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         122: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         123: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         124: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         125: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         126: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         127: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         128: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         129: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         130: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         131: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         132: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         133: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         134: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         135: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         136: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         137: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         138: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         139: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         140: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         141: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         142: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         143: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         144: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         145: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         146: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         147: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         148: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         149: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         150: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         151: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         152: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         153: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         154: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         155: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         156: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         157: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         158: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         159: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         160: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         161: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         162: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         163: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         164: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         165: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         166: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         167: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         168: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         169: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         170: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         171: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         172: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         173: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         174: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         175: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         176: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         177: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         178: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         179: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         180: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         181: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         182: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         183: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         184: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         185: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         186: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         187: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         188: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         189: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         190: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         191: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         192: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         193: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         194: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         195: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         196: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         197: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         198: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         199: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         200: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         201: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         202: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         203: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         204: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         205: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         206: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         207: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         208: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         209: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         210: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         211: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         212: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         213: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         214: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         215: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         216: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         217: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         218: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         219: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         220: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         221: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         222: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         223: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         224: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         225: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         226: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         227: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         228: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         229: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         230: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         231: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         232: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         233: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         234: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         235: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         236: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         237: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         238: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         239: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         240: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         241: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         242: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         243: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         244: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         245: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         246: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         247: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         248: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         249: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         250: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         251: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         252: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         253: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         254: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         255: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         256: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         257: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         258: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         259: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         260: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         261: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         262: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         263: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         264: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         265: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         266: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         267: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         268: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         269: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         270: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         271: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         272: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         273: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         274: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         275: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         276: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         277: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         278: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         279: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         280: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         281: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         282: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         283: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         284: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         285: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         286: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         287: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         288: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         289: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         290: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         291: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         292: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         293: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         294: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         295: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         296: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         297: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         298: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         299: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         300: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         301: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         302: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         303: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         304: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         305: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         306: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         307: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         308: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         309: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         310: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         311: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         312: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         313: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         314: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         315: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         316: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         317: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         318: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         319: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         320: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         321: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         322: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         323: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         324: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         325: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         326: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         327: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         328: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         329: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         330: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         331: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         332: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         333: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         334: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         335: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         336: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         337: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         338: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         339: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         340: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         341: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         342: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         343: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         344: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         345: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         346: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         347: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         348: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         349: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         350: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         351: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         352: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         353: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         354: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         355: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         356: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         357: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         358: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         359: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         360: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         361: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         362: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         363: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         364: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         365: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         366: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         367: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         368: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         369: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         370: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         371: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         372: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         373: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         374: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         375: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         376: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         377: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         378: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         379: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         380: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         381: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         382: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         383: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         384: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         385: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         386: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         387: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         388: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         389: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         390: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         391: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         392: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         393: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         394: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         395: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         396: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         397: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         398: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         399: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         400: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         401: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         402: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         403: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         404: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         405: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         406: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         407: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         408: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         409: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         410: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         411: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         412: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         413: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         414: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         415: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         416: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         417: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         418: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         419: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         420: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         421: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         422: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         423: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         424: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         425: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         426: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         427: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         428: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         429: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         430: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         431: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         432: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         433: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         434: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         435: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         436: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         437: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         438: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         439: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         440: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         441: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         442: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         443: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         444: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         445: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         446: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         447: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         448: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         449: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         450: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         451: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         452: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         453: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         454: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         455: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         456: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         457: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         458: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         459: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         460: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         461: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         462: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         463: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         464: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         465: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         466: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         467: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         468: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         469: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         470: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         471: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         472: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         473: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         474: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         475: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         476: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         477: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         478: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         479: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         480: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         481: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         482: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         483: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         484: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         485: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         486: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         487: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         488: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         489: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         490: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         491: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         492: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         493: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         494: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         495: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         496: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         497: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         498: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         499: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         500: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         501: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         502: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         503: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         504: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         505: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         506: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         507: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         508: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         509: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         510: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         511: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         512: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         513: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         514: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         515: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         516: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         517: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         518: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         519: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         520: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         521: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         522: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         523: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         524: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         525: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         526: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         527: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         528: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         529: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         530: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         531: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         532: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         533: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         534: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         535: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         536: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         537: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         538: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         539: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         540: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         541: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         542: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         543: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         544: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         545: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         546: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         547: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         548: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         549: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         550: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         551: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         552: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         553: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         554: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         555: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         556: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         557: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         558: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         559: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         560: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         561: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         562: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         563: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         564: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         565: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         566: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         567: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         568: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         569: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         570: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         571: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         572: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         573: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         574: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         575: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         576: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         577: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         578: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         579: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         580: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         581: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         582: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         583: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         584: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         585: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         586: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         587: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         588: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         589: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         590: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         591: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         592: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         593: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         594: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         595: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         596: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         597: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         598: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         599: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         600: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         601: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         602: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         603: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         604: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         605: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         606: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         607: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         608: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         609: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         610: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         611: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         612: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         613: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         614: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         615: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         616: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         617: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         618: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         619: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         620: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         621: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         622: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         623: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         624: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         625: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         626: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         627: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         628: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         629: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         630: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         631: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         632: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         633: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         634: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         635: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         636: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         637: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         638: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         639: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         640: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         641: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         642: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         643: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         644: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         645: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         646: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         647: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         648: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         649: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         650: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         651: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         652: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         653: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         654: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         655: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         656: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         657: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         658: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         659: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         660: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         661: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         662: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         663: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         664: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         665: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         666: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         667: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         668: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         669: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         670: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         671: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         672: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         673: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         674: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         675: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         676: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         677: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         678: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         679: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         680: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         681: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         682: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         683: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         684: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         685: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         686: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         687: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         688: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         689: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         690: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         691: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         692: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         693: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         694: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         695: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         696: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         697: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         698: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         699: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         700: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         701: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         702: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         703: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         704: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         705: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         706: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         707: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         708: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         709: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         710: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         711: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         712: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         713: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         714: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         715: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         716: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         717: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         718: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         719: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         720: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         721: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         722: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         723: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         724: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         725: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         726: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         727: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         728: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         729: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         730: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         731: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         732: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         733: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         734: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         735: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         736: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         737: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         738: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         739: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         740: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         741: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         742: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         743: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         744: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         745: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         746: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         747: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         748: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         749: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         750: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         751: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         752: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         753: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         754: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         755: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         756: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         757: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         758: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         759: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         760: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         761: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         762: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         763: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         764: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         765: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         766: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         767: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         768: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         769: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         770: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         771: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         772: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         773: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         774: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         775: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         776: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         777: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         778: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         779: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         780: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         781: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         782: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         783: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         784: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         785: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         786: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         787: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         788: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         789: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         790: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         791: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         792: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         793: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         794: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         795: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         796: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         797: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         798: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         799: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         800: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         801: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         802: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         803: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         804: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         805: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         806: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         807: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         808: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         809: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         810: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         811: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         812: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         813: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         814: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         815: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         816: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         817: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         818: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         819: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         820: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         821: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         822: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         823: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         824: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         825: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         826: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         827: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         828: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         829: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         830: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         831: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         832: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         833: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         834: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         835: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         836: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         837: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         838: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         839: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         840: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         841: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         842: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         843: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         844: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         845: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         846: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         847: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         848: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         849: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         850: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         851: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         852: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         853: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         854: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         855: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         856: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         857: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         858: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         859: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         860: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         861: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         862: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         863: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         864: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         865: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         866: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         867: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         868: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         869: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         870: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         871: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         872: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         873: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         874: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         875: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         876: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         877: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         878: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         879: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         880: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         881: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         882: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         883: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         884: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         885: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         886: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         887: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         888: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         889: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         890: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         891: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         892: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         893: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         894: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         895: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         896: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         897: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         898: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         899: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         900: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         901: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         902: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         903: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         904: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         905: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         906: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         907: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         908: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         909: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         910: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         911: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         912: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         913: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         914: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         915: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         916: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         917: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         918: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         919: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         920: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         921: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         922: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         923: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         924: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         925: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         926: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         927: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         928: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         929: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         930: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         931: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         932: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         933: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         934: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         935: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         936: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         937: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         938: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         939: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         940: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         941: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         942: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         943: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         944: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         945: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         946: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         947: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         948: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         949: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         950: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         951: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         952: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         953: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         954: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         955: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         956: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         957: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         958: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         959: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         960: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         961: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         962: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         963: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         964: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         965: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         966: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         967: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         968: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         969: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         970: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         971: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         972: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         973: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         974: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         975: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         976: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         977: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         978: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         979: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         980: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         981: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         982: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         983: 0x39982 - io/fs.globWithLimit
+                           at /usr/local/go/src/io/fs/glob.go:72:24
+         984: 0x39536 - io/fs.Glob
+                           at /usr/local/go/src/io/fs/glob.go:34:22
+         985: 0x7dfbe - <unknown>!io/fs_test.TestCVE202230630
+         986: 0x2622e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         987: 0x62d3b - (*testing.T).Run
+         988: 0x25f36 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+         989: 0x2622e - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         990: 0x206bd - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/71/7165db203a5b207e8aad64f4dbbe3d50948c42aa01ac732215ca4ffa57aeb2ab-d:79:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+         991: 0x1bec7 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+         992:  0x885 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+         993: 0x1bd68 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: memory fault at wasm address 0x100000018 in linear memory of size 0x60000
+    3: wasm trap: out of bounds memory access
+
+```
+
+
+### io/ioutil wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/28
+=== RUN   TestReadOnlyWriteFile
+    file permissions are not supported by wasip1
+    SkipNow is incomplete, requires runtime.Goexit()
+    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile195932552/blurp.txt
+    FailNow is incomplete, requires runtime.Goexit()
+    want shmorp, got florp
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestReadOnlyWriteFile (0.00s)
+=== RUN   TestTempDir_BadDir
+    TempDir error = &fs.PathError{Op:"mkdir", Path:"/tmp/TestTempDir_BadDir267175014/not-exist/foo92073848", Err:0x0}; want PathError for path "/tmp/TestTempDir_BadDir267175014/not-exist" satisfying os.IsNotExist
+--- FAIL: TestTempDir_BadDir (0.00s)
+
+```
+
+
+### log wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/9
+=== RUN   TestAll
+    log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^.*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:21:51.424147 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:21:51.424708 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:21:51.427859 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:21:51.428520 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:21:51.428974 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:21:51.429398 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:21:51.429836 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:21:51.430272 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.01s)
+
+```
+
+
+### log/slog wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo350225724/main /tmp/tinygo350225724/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo350225724/main --output /tmp/tinygo350225724/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo350225724/main -test.v
+panic: runtime.Caller failed
+Error: failed to run main module `/tmp/tinygo350225724/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x35ad - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x23ce0 - testing/slogtest.withSource
+                           at /usr/local/go/src/testing/slogtest/slogtest.go:362:8
+           2: 0x1971b - <unknown>!runtime.initAll
+           3: 0x14f13 - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:24:10
+           4: 0xdc8b - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           5:  0x7bc - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x14de0 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11
+           7: 0x14cac - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11
+           8: 0x14c29 - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	log/slog	8.104s
+```
+
+
+### maps wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo786686821/main /tmp/tinygo786686821/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo786686821/main.o: undefined symbol: maps.clone
+wasm-ld: error: /tmp/tinygo786686821/main.o: undefined symbol: maps.clone
+failed to run tool: wasm-ld
+FAIL	maps	0.000s
+error: failed to link /tmp/tinygo786686821/main: exit status 1
+```
+
+
+### math/bits wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/12
+=== RUN   TestAdd64OverflowPanic
+panic: overflow
+Error: failed to run main module `/tmp/tinygo1061569124/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x18da - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x6214a - math/bits_test.TestAdd64OverflowPanic$1
+                           at /usr/local/go/src/math/bits/bits_test.go:816:10
+           2: 0x62264 - math/bits_test.TestAdd64OverflowPanic$7
+                           at /usr/local/go/src/math/bits/bits_test.go:860:28
+           3: 0x6238f - math/bits_test.TestAdd64OverflowPanic$6
+                           at /usr/local/go/src/math/bits/bits_test.go:856:5
+           4: 0x61c38 - math/bits_test.TestAdd64OverflowPanic
+                           at /usr/local/go/src/math/bits/bits_test.go:860:14
+           5: 0x1c9ce - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1c6c4 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1c9ce - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x15d5b - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/19/196c6203a629495b14a7882fc6691602ad410973a090372256d92752f4e1a352-d:257:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x11b60 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x67b - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x11a02 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### math/rand wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 22/36
+=== RUN   TestDefaultRace
+--- FAIL: TestDefaultRace (0.00s)
+=== RUN   TestDefaultRace/0
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/0 (0.00s)
+=== RUN   TestDefaultRace/1
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/1 (0.00s)
+=== RUN   TestDefaultRace/2
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/2 (0.00s)
+=== RUN   TestDefaultRace/3
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/3 (0.00s)
+=== RUN   TestDefaultRace/4
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/4 (0.00s)
+=== RUN   TestDefaultRace/5
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/5 (0.00s)
+=== RUN   TestUniformFactorial/n=5
+=== RUN   TestUniformFactorial/n=5/int31n
+    --- PASS: TestUniformFactorial/n=5/int31n (0.05s)
+=== RUN   TestUniformFactorial
+=== RUN   TestUniformFactorial/n=3
+=== RUN   TestUniformFactorial/n=3/Int31n
+    --- PASS: TestUniformFactorial/n=3/Int31n (0.02s)
+=== RUN   TestUniformFactorial/n=3/int31n
+    --- PASS: TestUniformFactorial/n=3/int31n (0.02s)
+=== RUN   TestUniformFactorial/n=3/Perm
+    --- PASS: TestUniformFactorial/n=3/Perm (0.07s)
+=== RUN   TestUniformFactorial/n=3/Shuffle
+    --- PASS: TestUniformFactorial/n=3/Shuffle (0.03s)
+    --- PASS: TestUniformFactorial/n=3 (0.13s)
+=== RUN   TestUniformFactorial/n=4
+=== RUN   TestUniformFactorial/n=4/Int31n
+    --- PASS: TestUniformFactorial/n=4/Int31n (0.01s)
+=== RUN   TestUniformFactorial/n=4/int31n
+    --- PASS: TestUniformFactorial/n=4/int31n (0.01s)
+=== RUN   TestUniformFactorial/n=4/Perm
+    --- PASS: TestUniformFactorial/n=4/Perm (0.08s)
+=== RUN   TestUniformFactorial/n=4/Shuffle
+    --- PASS: TestUniformFactorial/n=4/Shuffle (0.05s)
+    --- PASS: TestUniformFactorial/n=4 (0.15s)
+=== RUN   TestUniformFactorial/n=5
+=== RUN   TestUniformFactorial/n=5/Int31n
+    --- PASS: TestUniformFactorial/n=5/Int31n (0.05s)
+=== RUN   TestUniformFactorial/n=5/int31n
+    --- PASS: TestUniformFactorial/n=5/int31n (0.05s)
+=== RUN   TestUniformFactorial/n=5/Perm
+=== RUN   TestDefaultRace/1
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/1 (0.00s)
+=== RUN   TestUniformFactorial/n=3/int31n
+    --- PASS: TestUniformFactorial/n=3/int31n (0.02s)
+=== RUN   TestUniformFactorial/n=3/Shuffle
+    --- PASS: TestUniformFactorial/n=3/Shuffle (0.03s)
+    --- PASS: TestUniformFactorial/n=3 (0.13s)
+=== RUN   TestUniformFactorial/n=5/Int31n
+    --- PASS: TestUniformFactorial/n=5/Int31n (0.05s)
+=== RUN   TestDefaultRace/2
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/2 (0.00s)
+=== RUN   TestUniformFactorial/n=3
+=== RUN   TestUniformFactorial/n=4
+=== RUN   TestUniformFactorial/n=4/Int31n
+    --- PASS: TestUniformFactorial/n=4/Int31n (0.01s)
+=== RUN   TestDefaultRace/4
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/4 (0.00s)
+=== RUN   TestUniformFactorial/n=3/Perm
+    --- PASS: TestUniformFactorial/n=3/Perm (0.07s)
+=== RUN   TestUniformFactorial/n=4/Perm
+    --- PASS: TestUniformFactorial/n=4/Perm (0.08s)
+=== RUN   TestUniformFactorial/n=4/int31n
+    --- PASS: TestUniformFactorial/n=4/int31n (0.01s)
+=== RUN   TestUniformFactorial/n=4/Shuffle
+    --- PASS: TestUniformFactorial/n=4/Shuffle (0.05s)
+    --- PASS: TestUniformFactorial/n=4 (0.15s)
+=== RUN   TestUniformFactorial/n=5/Perm
+=== RUN   TestDefaultRace/0
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/0 (0.00s)
+=== RUN   TestDefaultRace/3
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/3 (0.00s)
+=== RUN   TestDefaultRace/5
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/5 (0.00s)
+=== RUN   TestUniformFactorial/n=3/Int31n
+    --- PASS: TestUniformFactorial/n=3/Int31n (0.02s)
+
+```
+
+
+### math/rand/v2 wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2036364610/main /tmp/tinygo2036364610/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2036364610/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2036364610/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2036364610/main.o: undefined symbol: internal/chacha8rand.block
+failed to run tool: wasm-ld
+FAIL	math/rand/v2	0.000s
+error: failed to link /tmp/tinygo2036364610/main: exit status 1
+```
+
+
+### mime wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestTypeByExtension
+panic: bufio.Scanner: Read returned impossible count
+Error: failed to run main module `/tmp/tinygo4167117369/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x4190 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x72345 - mime.loadMimeGlobsFile
+                           at /usr/local/go/src/mime/type_unix.go:74:8              - mime.initMimeUnix
+                           at /usr/local/go/src/mime/type_unix.go:107:30              - mime.initMime
+                           at /usr/local/go/src/mime/type.go:88:13
+           2: 0xebc5 - (*sync.Once).Do
+                           at /workspaces/dc-wasm-go/tinygo/src/sync/once.go:15:3
+           3: 0x72531 - mime.TypeByExtension
+                           at /usr/local/go/src/mime/type.go:112:9
+           4: 0x7d365 - mime.TestTypeByExtension
+                           at /usr/local/go/src/mime/type_test.go:47:25
+           5: 0x30bd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x308c3 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x30bd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x2b150 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/09/099193785c39b02e3b11ad0bd26f57607faf46ef21bd807d79f3189fb39e2fe4-d:103:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x2618c - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x730 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x2602e - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### net/rpc/jsonrpc wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	net/rpc/jsonrpc	0.000s
+# net/rpc
+/usr/local/go/src/net/rpc/server.go:290:14: method.IsExported undefined (type reflect.Method has no field or method IsExported)
+```
+
+
+### net/smtp wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	net/smtp	0.000s
+# net/smtp
+/usr/local/go/src/net/smtp/smtp.go:72:24: undefined: tls.Conn
+/usr/local/go/src/net/smtp/smtp.go:172:25: undefined: tls.Conn
+/usr/local/go/src/net/smtp/smtp_test.go:591:19: undefined: tls.X509KeyPair
+/usr/local/go/src/net/smtp/smtp_test.go:598:17: undefined: tls.Listen
+/usr/local/go/src/net/smtp/smtp_test.go:600:17: undefined: tls.Listen
+/usr/local/go/src/net/smtp/smtp_test.go:1009:9: cs.Version undefined (type tls.ConnectionState has no field or method Version)
+/usr/local/go/src/net/smtp/smtp_test.go:1009:29: cs.HandshakeComplete undefined (type tls.ConnectionState has no field or method HandshakeComplete)
+/usr/local/go/src/net/smtp/smtp_test.go:1049:24: undefined: tls.X509KeyPair
+/usr/local/go/src/net/smtp/smtp_test.go:1054:12: undefined: tls.Server
+```
+
+
+### net/url wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1538498039/main /tmp/tinygo1538498039/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1538498039/main --output /tmp/tinygo1538498039/main
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 0)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 1)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 2)
+[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
+(call $runtime.fd_write
+ (local.tee $16
+  (i64.extend_i32_u
+   (local.tee $8
+    (call $\28*reflect.rawType\29.Size
+     (local.get $5)
+    )
+   )
+  )
+ )
+ (i64.const 0)
+ (local.get $15)
+ (i64.const 0)
+)
+(on argument 3)
+Fatal: error validating input
+FAIL	net/url	0.000s
+error: wasm-opt failed: exit status 1
+```
+
+
+### os wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 3/37
+=== RUN   TestStatBadDir
+    Mkdir error = &fs.PathError{Op:"stat", Path:"/tmp/not-exist/really-not-exist", Err:0x0}; want PathError for path "/tmp/not-exist/really-not-exist" satisifying IsNotExist
+--- FAIL: TestStatBadDir (0.00s)
+=== RUN   TestRemove
+    TestRemove: expected IsNotExist(err) true, got false; err "remove /tmp/TestRemove18446744072850662256: errno 0"
+--- FAIL: TestRemove (0.00s)
+=== RUN   TestRenameOverwriteDest
+    stat from: stat /tmp/TestRenameOverwrite-from: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestRenameOverwriteDest (0.00s)
+
+```
+
+
+### path/filepath wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/3
+=== RUN   TestCVE202230632
+Error: failed to run main module `/tmp/tinygo2004381824/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x1ba25 - runtime.hash32
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/memhash_fnv.go:17:8
+           1: 0x1bc90 - runtime.hashmapBinarySet
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/hashmap.go:468:16
+           2: 0x1c46b - realloc
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/arch_tinygowasm_malloc.go:43:6
+           3: 0x30e9 - make_absolute
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/chdir.c:161:21              - __wasilibc_find_relpath_alloc
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/chdir.c:141:27
+           4: 0x3cae - find_relpath2
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:23:16              - find_relpath
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:34:14              - lstat
+                           at /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/libc-bottom-half/sources/posix.c:115:17
+           5: 0x3332f - syscall.Lstat
+                           at /workspaces/dc-wasm-go/tinygo/src/syscall/syscall_libc_wasi.go:387:17
+           6: 0x3a5cf - os.lstatNolog$1
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat_unix.go:44:42
+           7: 0x3a798 - os.ignoringEINTR
+                           at /workspaces/dc-wasm-go/tinygo/src/os/file_anyos.go:157:6
+           8: 0x3a338 - os.lstatNolog
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat_unix.go:43:22              - os.Lstat
+                           at /workspaces/dc-wasm-go/tinygo/src/os/stat.go:18:19
+           9: 0x72d15 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:258:23
+          10: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          11: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          12: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          13: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          14: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          15: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          16: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          17: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          18: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          19: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          20: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          21: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          22: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          23: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          24: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          25: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          26: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          27: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          28: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          29: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          30: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          31: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          32: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          33: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          34: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          35: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          36: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          37: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          38: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          39: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          40: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          41: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          42: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          43: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          44: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          45: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          46: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          47: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          48: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          49: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          50: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          51: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          52: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          53: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          54: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          55: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          56: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          57: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          58: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          59: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          60: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          61: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          62: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          63: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          64: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          65: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          66: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          67: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          68: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          69: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          70: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          71: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          72: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          73: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          74: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          75: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          76: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          77: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          78: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          79: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          80: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          81: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          82: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          83: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          84: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          85: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          86: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          87: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          88: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          89: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          90: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          91: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          92: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          93: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          94: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          95: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          96: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          97: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          98: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+          99: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         100: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         101: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         102: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         103: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         104: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         105: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         106: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         107: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         108: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         109: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         110: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         111: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         112: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         113: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         114: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         115: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         116: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         117: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         118: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         119: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         120: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         121: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         122: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         123: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         124: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         125: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         126: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         127: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         128: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         129: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         130: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         131: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         132: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         133: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         134: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         135: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         136: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         137: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         138: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         139: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         140: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         141: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         142: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         143: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         144: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         145: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         146: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         147: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         148: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         149: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         150: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         151: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         152: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         153: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         154: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         155: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         156: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         157: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         158: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         159: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         160: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         161: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         162: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         163: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         164: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         165: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         166: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         167: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         168: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         169: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         170: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         171: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         172: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         173: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         174: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         175: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         176: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         177: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         178: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         179: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         180: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         181: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         182: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         183: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         184: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         185: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         186: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         187: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         188: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         189: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         190: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         191: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         192: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         193: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         194: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         195: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         196: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         197: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         198: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         199: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         200: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         201: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         202: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         203: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         204: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         205: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         206: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         207: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         208: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         209: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         210: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         211: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         212: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         213: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         214: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         215: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         216: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         217: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         218: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         219: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         220: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         221: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         222: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         223: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         224: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         225: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         226: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         227: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         228: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         229: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         230: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         231: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         232: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         233: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         234: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         235: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         236: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         237: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         238: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         239: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         240: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         241: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         242: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         243: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         244: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         245: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         246: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         247: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         248: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         249: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         250: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         251: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         252: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         253: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         254: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         255: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         256: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         257: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         258: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         259: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         260: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         261: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         262: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         263: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         264: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         265: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         266: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         267: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         268: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         269: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         270: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         271: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         272: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         273: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         274: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         275: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         276: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         277: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         278: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         279: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         280: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         281: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         282: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         283: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         284: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         285: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         286: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         287: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         288: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         289: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         290: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         291: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         292: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         293: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         294: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         295: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         296: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         297: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         298: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         299: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         300: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         301: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         302: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         303: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         304: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         305: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         306: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         307: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         308: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         309: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         310: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         311: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         312: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         313: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         314: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         315: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         316: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         317: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         318: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         319: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         320: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         321: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         322: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         323: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         324: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         325: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         326: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         327: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         328: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         329: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         330: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         331: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         332: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         333: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         334: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         335: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         336: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         337: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         338: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         339: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         340: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         341: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         342: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         343: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         344: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         345: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         346: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         347: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         348: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         349: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         350: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         351: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         352: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         353: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         354: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         355: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         356: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         357: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         358: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         359: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         360: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         361: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         362: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         363: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         364: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         365: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         366: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         367: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         368: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         369: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         370: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         371: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         372: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         373: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         374: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         375: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         376: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         377: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         378: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         379: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         380: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         381: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         382: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         383: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         384: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         385: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         386: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         387: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         388: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         389: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         390: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         391: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         392: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         393: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         394: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         395: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         396: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         397: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         398: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         399: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         400: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         401: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         402: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         403: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         404: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         405: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         406: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         407: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         408: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         409: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         410: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         411: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         412: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         413: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         414: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         415: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         416: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         417: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         418: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         419: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         420: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         421: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         422: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         423: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         424: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         425: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         426: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         427: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         428: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         429: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         430: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         431: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         432: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         433: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         434: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         435: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         436: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         437: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         438: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         439: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         440: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         441: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         442: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         443: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         444: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         445: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         446: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         447: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         448: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         449: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         450: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         451: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         452: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         453: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         454: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         455: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         456: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         457: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         458: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         459: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         460: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         461: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         462: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         463: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         464: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         465: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         466: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         467: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         468: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         469: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         470: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         471: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         472: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         473: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         474: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         475: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         476: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         477: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         478: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         479: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         480: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         481: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         482: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         483: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         484: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         485: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         486: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         487: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         488: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         489: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         490: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         491: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         492: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         493: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         494: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         495: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         496: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         497: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         498: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         499: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         500: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         501: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         502: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         503: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         504: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         505: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         506: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         507: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         508: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         509: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         510: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         511: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         512: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         513: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         514: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         515: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         516: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         517: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         518: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         519: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         520: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         521: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         522: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         523: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         524: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         525: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         526: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         527: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         528: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         529: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         530: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         531: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         532: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         533: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         534: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         535: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         536: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         537: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         538: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         539: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         540: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         541: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         542: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         543: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         544: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         545: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         546: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         547: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         548: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         549: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         550: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         551: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         552: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         553: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         554: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         555: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         556: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         557: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         558: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         559: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         560: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         561: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         562: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         563: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         564: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         565: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         566: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         567: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         568: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         569: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         570: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         571: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         572: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         573: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         574: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         575: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         576: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         577: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         578: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         579: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         580: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         581: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         582: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         583: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         584: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         585: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         586: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         587: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         588: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         589: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         590: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         591: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         592: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         593: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         594: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         595: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         596: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         597: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         598: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         599: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         600: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         601: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         602: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         603: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         604: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         605: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         606: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         607: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         608: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         609: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         610: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         611: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         612: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         613: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         614: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         615: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         616: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         617: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         618: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         619: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         620: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         621: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         622: 0x72b68 - path/filepath.globWithLimit
+                           at /usr/local/go/src/path/filepath/match.go:282:24
+         623: 0x727f3 - path/filepath.Glob
+                           at /usr/local/go/src/path/filepath/match.go:243:22
+         624: 0x78b5c - path/filepath_test.TestCVE202230632
+                           at /usr/local/go/src/path/filepath/match_test.go:162:16
+         625: 0x27af9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         626: 0x5920c - (*testing.T).Run
+         627: 0x27801 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+         628: 0x27af9 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+         629: 0x221bf - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/69/69d7319c84f52f0989962bd60ff86333367c039c083caa727b0a26564f2ccf0f-d:147:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+         630: 0x1c8fb - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+         631:  0x972 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+         632: 0x1c79c - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: memory fault at wasm address 0x60000 in linear memory of size 0x60000
+    3: wasm trap: out of bounds memory access
+
+```
+
+
+### regexp wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestBadCompile
+panic: expression too large
+Error: failed to run main module `/tmp/tinygo883447076/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5c1c - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x2c46c - (*regexp/syntax.parser).checkLimits
+                           at /usr/local/go/src/regexp/syntax/parse.go:163:8
+           2: 0x2bc94 - (*regexp/syntax.parser).push
+           3: 0x3558a - regexp/syntax.parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:1063:9              - regexp/syntax.Parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:889:14
+           4: 0x42f60 - regexp.compile
+                           at /usr/local/go/src/regexp/regexp.go:172:25
+           5: 0x763d8 - regexp.Compile
+                           at /usr/local/go/src/regexp/regexp.go:135:16
+           6: 0x7cd55 - regexp.compileTest
+                           at /usr/local/go/src/regexp/all_test.go:56:20
+           7: 0x7d541 - regexp.TestBadCompile
+                           at /usr/local/go/src/regexp/all_test.go:76:14
+           8: 0x46b11 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x68566 - (*testing.T).Run
+          10: 0x46819 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          11: 0x46b11 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x41039 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/af/af4559cfe4edf69b71dc29ce1a2355bc32cd22553b56a2f648bb367548ede916-d:251:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          13: 0x3be98 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          14:  0x911 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          15: 0x3bd39 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### regexp/syntax wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/8
+=== RUN   TestParseInvalidRegexps
+panic: expression nests too deeply
+Error: failed to run main module `/tmp/tinygo3233393274/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x22a0 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x4f307 - (*regexp/syntax.parser).checkHeight
+                           at /usr/local/go/src/regexp/syntax/parse.go:270:8
+           2: 0x4dd99 - (*regexp/syntax.parser).checkLimits
+                           at /usr/local/go/src/regexp/syntax/parse.go:166:15
+           3: 0x4d57f - (*regexp/syntax.parser).push
+           4: 0x562fe - regexp/syntax.parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:1441:7              - regexp/syntax.Parse
+                           at /usr/local/go/src/regexp/syntax/parse.go:889:14
+           5: 0x5d5bb - regexp/syntax.TestParseInvalidRegexps
+                           at /usr/local/go/src/regexp/syntax/parse_test.go:527:22
+           6: 0x23ea2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x23b98 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x23ea2 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x1dae3 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/c8/c83f19d2969c72a75eafbf9b6f8374b11bb5a0612b7c179397ec896c59a28f7d-d:73:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x18cea - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x53d - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x18b8c - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### slices wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2818285323/main /tmp/tinygo2818285323/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2818285323/main --output /tmp/tinygo2818285323/main
+FAIL	slices	0.000s
+error: wasm-opt failed: signal: killed
+```
+
+
+### strconv wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/29
+=== RUN   TestFormatComplexInvalidBitSize
+panic: invalid bitSize
+Error: failed to run main module `/tmp/tinygo570204492/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x5055 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x493a1 - strconv.FormatComplex
+                           at /usr/local/go/src/strconv/ctoa.go:16:8
+           2: 0x9243a - strconv_test.TestFormatComplexInvalidBitSize
+                           at /usr/local/go/src/strconv/ctoa_test.go:52:19
+           3: 0x3033a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x63997 - (*testing.T).Run
+           5: 0x30042 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x3033a - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x1bae8 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/8c/8c2a46d03666ec6e1d366592d98f60839dcad46c12d8776fe157acce72d12691-d:279:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x178a1 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x8ee - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x17742 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### strings wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/4
+=== RUN   TestBuilderGrow
+    growLen=100: got 0 allocs during Write; want 1
+    growLen=1000: got 0 allocs during Write; want 1
+    growLen=10000: got 0 allocs during Write; want 1
+    growLen=100000: got 0 allocs during Write; want 1
+panic: strings.Builder.Grow: negative count
+Error: failed to run main module `/tmp/tinygo1240256395/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x477f - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x352b5 - (*strings.Builder).Grow
+                           at /usr/local/go/src/strings/builder.go:80:8
+           2: 0x7ab9c - strings_test.TestBuilderGrow
+                           at /usr/local/go/src/strings/builder_test.go:120:8
+           3: 0x27423 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x60635 - (*testing.T).Run
+           5: 0x2712b - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           6: 0x27423 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x20483 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/7e/7e7530b4b41ba554fcd61a15fb56262397c798b6647dbef18c7e075b40e7bebf-d:415:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           8: 0x1a828 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           9:  0x958 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          10: 0x1a6d1 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### sync/atomic wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 6/68
+=== RUN   TestStoreLoadSeqCst32
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadSeqCst32 (0.00s)
+=== RUN   TestStoreLoadSeqCst64
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadSeqCst64 (0.01s)
+=== RUN   TestStoreLoadRelAcq32
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadRelAcq32 (0.00s)
+=== RUN   TestStoreLoadRelAcq64
+    Skipping test on 1 processor machine
+    SkipNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestStoreLoadRelAcq64 (0.00s)
+=== RUN   TestUnaligned64
+    LoadUint64 did not panic
+    LoadUint64Method did not panic
+    StoreUint64 did not panic
+    StoreUint64Method did not panic
+    CompareAndSwapUint64 did not panic
+    CompareAndSwapUint64Method did not panic
+    AddUint64 did not panic
+    AddUint64Method did not panic
+--- FAIL: TestUnaligned64 (0.83s)
+=== RUN   TestNilDeref
+panic: runtime error: nil pointer dereference
+Error: failed to run main module `/tmp/tinygo3368894544/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x19636 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0x19f6 - runtime.nilPanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:134:16
+           2: 0x75b44 - (*sync/atomic.Int32).CompareAndSwap
+                           at /usr/local/go/src/sync/atomic/type.go:84:32              - sync/atomic_test.TestNilDeref$2
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2461:40
+           3: 0x74fa1 - sync/atomic_test.TestNilDeref$59
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2525:5              - sync/atomic_test.TestNilDeref
+                           at /usr/local/go/src/sync/atomic/atomic_test.go:2526:4
+           4: 0x1f599 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           5: 0x48e4d - (*testing.T).Run
+           6: 0x1f2a1 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1f599 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x187bd - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/f9/f9c374e6b50bb5564ff0d98214950a7423dae89fb0765aa081b4edd02093723a-d:201:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x13bf0 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x81d - tinygo_rewind
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:92
+          11: 0x13a92 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### testing/fstest wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/5
+=== RUN   TestSymlink
+    skipping test: cannot make symlinks on wasip1/wasm: 
+    SkipNow is incomplete, requires runtime.Goexit()
+    symlink /tmp/TestSymlink167592619/000/hello /tmp/TestSymlink167592619/000/hello.link: errno 0
+    FailNow is incomplete, requires runtime.Goexit()
+    TestFS found errors:
+        expected but not found: hello.link
+    FailNow is incomplete, requires runtime.Goexit()
+--- FAIL: TestSymlink (0.04s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink167592619: errno 52
+
+```
+
+
+### testing/quick wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestCheckEqual
+panic: unimplemented: (reflect.Type).NumIn()
+Error: failed to run main module `/tmp/tinygo3170955443/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2350 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x25f2 - (*reflect.rawType).NumIn
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7
+           2: 0x5c5a0 - (Go interface method)
+           3: 0x5c79c - testing/quick.CheckEqual
+                           at /usr/local/go/src/testing/quick/quick.go:320:48
+           4: 0x5cda7 - testing/quick.TestCheckEqual
+                           at /usr/local/go/src/testing/quick/quick_test.go:163:34
+           5: 0x1ddd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x1dac7 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           7: 0x1ddd1 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           8: 0x17224 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/e3/e3de31e3b828492407d361e3b0cb64cd4f3e89c6ed71ece8ac334ab349c804a0-d:61:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+           9: 0x12f86 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          10:  0x5ed - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          11: 0x12e28 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### testing/slogtest wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1955692388/main /tmp/tinygo1955692388/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-b5c56a6b14a0f3fc27dbf7b10473e33c23de3276cbe615f4c89486a9.bc /home/vscode/.cache/tinygo/obj-ac4f577da4cf82b6646c4022bcfc70a794527615fbdc780656e95098.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1955692388/main --output /tmp/tinygo1955692388/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1955692388/main -test.v
+panic: runtime.Caller failed
+Error: failed to run main module `/tmp/tinygo1955692388/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x213c - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x16cda - testing/slogtest.withSource
+                           at /usr/local/go/src/testing/slogtest/slogtest.go:362:8
+           2: 0xcbc3 - <unknown>!runtime.initAll
+           3: 0xb732 - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:24:10
+           4: 0xa289 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+           5:  0x431 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0xb600 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11
+           7: 0xb4ce - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11
+           8: 0xb44e - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+FAIL	testing/slogtest	3.835s
+```
+
+
+### text/tabwriter wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/2
+=== RUN   TestPanicDuringFlush
+panic: cannot write
+Error: failed to run main module `/tmp/tinygo773185180/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x24da - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0xbf8e - (text/tabwriter_test.panicWriter).Write
+                           at /usr/local/go/src/text/tabwriter/tabwriter_test.go:622:7
+           2: 0xa910 - <unknown>!interface:{Write:func:{slice:basic:uint8}{basic:int,named:error}}.Write$invoke
+           3: 0xd85b - (*text/tabwriter.Writer).write0
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:251:26
+           4: 0xd438 - (*text/tabwriter.Writer).writeLines
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:318:14
+           5: 0xc932 - (*text/tabwriter.Writer).format
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:405:21
+           6: 0xc2ab - (*text/tabwriter.Writer).flushNoDefers
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:513:10
+           7: 0xc0da - (*text/tabwriter.Writer).flush
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:495:17              - (*text/tabwriter.Writer).Flush
+                           at /usr/local/go/src/text/tabwriter/tabwriter.go:488:16
+           8: 0x5f600 - text/tabwriter_test.TestPanicDuringFlush
+                           at /usr/local/go/src/text/tabwriter/tabwriter_test.go:643:9
+           9: 0x1f35f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x1f055 - (*testing.T).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+          11: 0x1f35f - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          12: 0x18581 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/82/820448a5a8b28b6568ca535f8febd255e560bfb39fb86b392c543db67f75b4a5-d:67:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          13: 0x14386 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          14:  0x534 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          15: 0x14228 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### text/template wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/1
+=== RUN   TestExecute
+panic: unimplemented: (reflect.Type).NumOut()
+Error: failed to run main module `/tmp/tinygo4236144841/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x66af - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x722d - (*reflect.rawType).NumOut
+                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1012:7
+           2: 0xa1588 - (Go interface method)
+                           at /usr/local/go/src/text/template/funcs.go:112:6              - text/template.goodFunc
+                           at /usr/local/go/src/text/template/funcs.go:115:17              - text/template.addValueFuncs
+                           at /usr/local/go/src/text/template/funcs.go:96:15
+           3: 0xa0fe5 - (*text/template.Template).Funcs
+                           at /usr/local/go/src/text/template/template.go:181:15
+           4: 0xafe97 - text/template.testExecute
+                           at /usr/local/go/src/text/template/exec_test.go:796:23
+           5: 0xb0628 - text/template.TestExecute
+                           at /usr/local/go/src/text/template/exec_test.go:831:13
+           6: 0x32ec0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x8346b - (*testing.T).Run
+           8: 0x32bc4 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x32ec0 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x23686 - <unknown>!runtime.run$1
+          11: 0x2078e - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12:  0xabd - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x205f7 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### text/template/parse wasip1/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/6
+=== RUN   TestNumberParse
+panic: (97092:0x00048a20)
+Error: failed to run main module `/tmp/tinygo4228110605/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x2b53 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x48b33 - (*fmt.ss).error
+                           at /usr/local/go/src/fmt/scan.go:240:7
+           2: 0x4a14c - (*fmt.ss).accept
+                           at /usr/local/go/src/fmt/scan.go:750:10              - (*fmt.ss).complexTokens
+                           at /usr/local/go/src/fmt/scan.go:755:14              - (*fmt.ss).scanComplex
+                           at /usr/local/go/src/fmt/scan.go:816:33
+           3: 0x4bff2 - <unknown>!fmt.Sscan
+           4: 0x81637 - text/template/parse.TestNumberParse
+                           at /usr/local/go/src/text/template/parse/parse_test.go:99:23
+           5: 0x1f621 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           6: 0x53b44 - (*testing.T).Run
+           7: 0x1f329 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           8: 0x1f621 - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           9: 0x1926f - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/97/97aff8905c92f3c2c83a3d8f59473c1d67c5a331a12ffae42fb9894564f7a41a-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          10: 0x142b6 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          11:  0x65f - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          12: 0x14158 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### time wasip1/wasm
+
+[🔝](#summary) build error
+
+```text
+FAIL	time	0.000s
+# time_test
+/usr/local/go/src/time/sleep_test.go:714:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:715:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:716:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:787:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:788:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+/usr/local/go/src/time/sleep_test.go:789:8: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)
+```
+
+
 ## wasip2/wasm
 
 
@@ -2094,6 +14942,19 @@ FAIL	archive/tar	0.000s
 ```
 
 
+### archive/zip wasip2/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 2/86
+=== RUN   TestZip64DirectoryOffset/uint32max-2_NoZip64
+=== RUN   TestZip64DirectoryOffset
+=== RUN   TestZip64DirectoryOffset/uint32max-2_NoZip64
+
+```
+
+
 ### bufio wasip2/wasm
 
 [🔝](#summary) failure
@@ -2105,7 +14966,7 @@ Failures/Tests: 2/42
 --- FAIL: TestReadStringAllocs (0.00s)
 === RUN   TestNegativeRead
 panic: bufio: reader returned negative count from Read
-Error: failed to run main module `/tmp/tinygo1223462497/main`
+Error: failed to run main module `/tmp/tinygo1669679062/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2154,7 +15015,7 @@ Failures/Tests: 1/1
     mmap failed errno 52
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo833153832/main`
+Error: failed to run main module `/tmp/tinygo2322200575/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2278,12 +15139,12 @@ Failures/Tests: 2/24
     level: 8, size:0.00%, 5 b
     level: 9, size:0.00%, 5 b
     level: -2, size:0.00%, 5 b
---- FAIL: TestDeflateInflateString (10.10s)
+--- FAIL: TestDeflateInflateString (4.76s)
 === RUN   TestWriterPersistentWriteError
     ReadFile: open ../../testdata/Isaac.Newton-Opticks.txt: errno 63
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: slice out of range
-Error: failed to run main module `/tmp/tinygo4204143657/main`
+Error: failed to run main module `/tmp/tinygo580292730/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2345,7 +15206,7 @@ FAIL	context	0.000s
 Failures/Tests: 1/1
 === RUN   TestRC4OutOfBoundsWrite
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo3769505370/main`
+Error: failed to run main module `/tmp/tinygo3745839567/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2396,7 +15257,7 @@ Caused by:
 Failures/Tests: 1/9
 === RUN   TestShortBlocks
 panic: crypto/aes: input not full block
-Error: failed to run main module `/tmp/tinygo528300453/main`
+Error: failed to run main module `/tmp/tinygo1721132849/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2449,7 +15310,7 @@ Caused by:
 Failures/Tests: 1/5
 === RUN   TestCryptBlocks
 panic: crypto/cipher: input not full blocks
-Error: failed to run main module `/tmp/tinygo3553846044/main`
+Error: failed to run main module `/tmp/tinygo934681008/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2499,11 +15360,11 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3734785936/main /tmp/tinygo3734785936/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1925859379/main /tmp/tinygo1925859379/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/dsa	0.000s
-error: failed to link /tmp/tinygo3734785936/main: exit status 1
+error: failed to link /tmp/tinygo1925859379/main: exit status 1
 ```
 
 
@@ -2512,11 +15373,11 @@ error: failed to link /tmp/tinygo3734785936/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2534008928/main /tmp/tinygo2534008928/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2534008928/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3912416029/main /tmp/tinygo3912416029/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3912416029/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	crypto/ecdh	0.000s
-error: failed to link /tmp/tinygo2534008928/main: exit status 1
+error: failed to link /tmp/tinygo3912416029/main: exit status 1
 ```
 
 
@@ -2525,11 +15386,11 @@ error: failed to link /tmp/tinygo2534008928/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo61882009/main /tmp/tinygo61882009/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1737543787/main /tmp/tinygo1737543787/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/ecdsa	0.000s
-error: failed to link /tmp/tinygo61882009/main: exit status 1
+error: failed to link /tmp/tinygo1737543787/main: exit status 1
 ```
 
 
@@ -2538,11 +15399,11 @@ error: failed to link /tmp/tinygo61882009/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1137263605/main /tmp/tinygo1137263605/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1137263605/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4030442170/main /tmp/tinygo4030442170/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo4030442170/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	crypto/ed25519	0.000s
-error: failed to link /tmp/tinygo1137263605/main: exit status 1
+error: failed to link /tmp/tinygo4030442170/main: exit status 1
 ```
 
 
@@ -2551,11 +15412,11 @@ error: failed to link /tmp/tinygo1137263605/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1826526435/main /tmp/tinygo1826526435/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2686796746/main /tmp/tinygo2686796746/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/elliptic	0.000s
-error: failed to link /tmp/tinygo1826526435/main: exit status 1
+error: failed to link /tmp/tinygo2686796746/main: exit status 1
 ```
 
 
@@ -2567,7 +15428,7 @@ error: failed to link /tmp/tinygo1826526435/main: exit status 1
 Failures/Tests: 1/2
 === RUN   TestNonUniqueHash
 panic: crypto/hmac: hash generation function does not produce unique values
-Error: failed to run main module `/tmp/tinygo3857171440/main`
+Error: failed to run main module `/tmp/tinygo4098369880/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2611,12 +15472,12 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2135683027/main /tmp/tinygo2135683027/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2850142099/main /tmp/tinygo2850142099/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	crypto/rsa	0.000s
-error: failed to link /tmp/tinygo2135683027/main: exit status 1
+error: failed to link /tmp/tinygo2850142099/main: exit status 1
 ```
 
 
@@ -2628,7 +15489,7 @@ error: failed to link /tmp/tinygo2135683027/main: exit status 1
 Failures/Tests: 1/2
 === RUN   TestConstantTimeByteEq
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo2160779262/main`
+Error: failed to run main module `/tmp/tinygo1107690824/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2720,11 +15581,11 @@ FAIL	debug/elf	0.000s
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1198274814/main /tmp/tinygo1198274814/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1198274814/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1345208172/main /tmp/tinygo1345208172/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1345208172/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	debug/gosym	0.000s
-error: failed to link /tmp/tinygo1198274814/main: exit status 1
+error: failed to link /tmp/tinygo1345208172/main: exit status 1
 ```
 
 
@@ -2733,11 +15594,11 @@ error: failed to link /tmp/tinygo1198274814/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2339299728/main /tmp/tinygo2339299728/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2339299728/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1188824906/main /tmp/tinygo1188824906/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1188824906/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	debug/pe	0.000s
-error: failed to link /tmp/tinygo2339299728/main: exit status 1
+error: failed to link /tmp/tinygo1188824906/main: exit status 1
 ```
 
 
@@ -2746,11 +15607,11 @@ error: failed to link /tmp/tinygo2339299728/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1651278634/main /tmp/tinygo1651278634/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1394506460/main /tmp/tinygo1394506460/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	encoding/asn1	0.000s
-error: failed to link /tmp/tinygo1651278634/main: exit status 1
+error: failed to link /tmp/tinygo1394506460/main: exit status 1
 ```
 
 
@@ -2762,7 +15623,7 @@ error: failed to link /tmp/tinygo1651278634/main: exit status 1
 Failures/Tests: 1/16
 === RUN   TestUnexportedRead
 panic: reflect: value is not settable
-Error: failed to run main module `/tmp/tinygo2789013446/main`
+Error: failed to run main module `/tmp/tinygo378669272/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2815,8 +15676,8 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2745681366/main /tmp/tinygo2745681366/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2745681366/main --output /tmp/tinygo2745681366/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2017704901/main /tmp/tinygo2017704901/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2017704901/main --output /tmp/tinygo2017704901/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -2833,11 +15694,11 @@ error: wasm-opt failed: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4271621446/main /tmp/tinygo4271621446/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3041449798/main /tmp/tinygo3041449798/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	encoding/pem	0.000s
-error: failed to link /tmp/tinygo4271621446/main: exit status 1
+error: failed to link /tmp/tinygo3041449798/main: exit status 1
 ```
 
 
@@ -2848,7 +15709,7 @@ error: failed to link /tmp/tinygo4271621446/main: exit status 1
 ```text
 Failures/Tests: 1/336
 === RUN   TestCVE202228131
-Error: failed to run main module `/tmp/tinygo41461420/main`
+Error: failed to run main module `/tmp/tinygo2454111043/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -2946,7 +15807,7 @@ Caused by:
 ```text
 Failures/Tests: 21/56
 === RUN   TestAs
---- FAIL: TestAs (0.01s)
+--- FAIL: TestAs (0.02s)
 === RUN   TestAs/0:As(Errorf(...,_<nil>),_0x458a0)
     --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x458a0) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
@@ -2991,12 +15852,88 @@ Failures/Tests: 21/56
     --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x458b0) (0.00s)
 === RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x458c0)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x458c0) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x458a0)
+    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x458a0) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0x458b0)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &errors.errorString{s:"err"}, want <nil>
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x458b0) (0.00s)
+=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0x458a0)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0x458a0) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x458b0)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x458b0) (0.00s)
+=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAsValidation/<nil>(<nil>)
+panic: errors: target cannot be nil
+Error: failed to run main module `/tmp/tinygo2137396727/main`
+
+Caused by:
+    0: failed to invoke `run` function
+    1: error while executing at wasm backtrace:
+           0: 0x3182 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime._panic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
+           1: 0x102aa - (Go interface method)
+                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
+                           at /usr/local/go/src/errors/wrap.go:109:24
+           2: 0x73fc2 - errors_test.TestAsValidation$1
+                           at /usr/local/go/src/errors/wrap_test.go:232:22
+           3: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           4: 0x554a9 - (*testing.T).Run
+           5: 0x73e07 - errors_test.TestAsValidation
+                           at /usr/local/go/src/errors/wrap_test.go:228:8
+           6: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+           7: 0x554a9 - (*testing.T).Run
+           8: 0x2a9a5 - testing.runTests$1
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
+           9: 0x2ac9d - testing.tRunner
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
+          10: 0x25f25 - testing.runTests
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
+                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
+                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
+          11: 0x21963 - <goroutine wrapper>
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
+          12: 0x1845 - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+          13: 0x2184a - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5
+          14: 0x215c2 - wasi:cli/run@0.2.0#run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
+    2: wasm trap: wasm `unreachable` instruction executed
+=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x458b0)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x458b0) (0.00s)
 === RUN   TestAsValidation
 === RUN   TestAsValidation/<nil>(<nil>)
 panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo2906916059/main`
+Error: failed to run main module `/tmp/tinygo2137396727/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3038,92 +15975,16 @@ Caused by:
           14: 0x215c2 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x458a0)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x458a0) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0x458a0)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0x458a0) (0.00s)
-=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
-    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
-=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
-    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAsValidation/<nil>(<nil>)
-panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo2906916059/main`
-
-Caused by:
-    0: failed to invoke `run` function
-    1: error while executing at wasm backtrace:
-           0: 0x3182 - runtime.abort
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime._panic
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7
-           1: 0x102aa - (Go interface method)
-                           at /usr/local/go/src/errors/wrap.go:102:8              - errors.As
-                           at /usr/local/go/src/errors/wrap.go:109:24
-           2: 0x73fc2 - errors_test.TestAsValidation$1
-                           at /usr/local/go/src/errors/wrap_test.go:232:22
-           3: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-           4: 0x554a9 - (*testing.T).Run
-           5: 0x73e07 - errors_test.TestAsValidation
-                           at /usr/local/go/src/errors/wrap_test.go:228:8
-           6: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-           7: 0x554a9 - (*testing.T).Run
-           8: 0x2a9a5 - testing.runTests$1
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10
-           9: 0x2ac9d - testing.tRunner
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4
-          10: 0x25f25 - testing.runTests
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run
-                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main
-                           at /home/vscode/.cache/go-build/29/296ea2046c05354d953725f9ec87bf4599cebf04d3fee3fb5de97bc80e2f53e0-d:83:15              - runtime.run$1
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11
-          11: 0x21963 - <goroutine wrapper>
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2
-          12: 0x1845 - tinygo_launch
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
-          13: 0x2184a - (*internal/task.Task).Resume
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5
-          14: 0x215c2 - wasi:cli/run@0.2.0#run
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
-    2: wasm trap: wasm `unreachable` instruction executed
-=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
-    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
 === RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0)
     --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458a0) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x458c0)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x458c0) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x458a0)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x458a0) (0.00s)
 === RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458b0)
     --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x458b0) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x458b0)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x458b0) (0.00s)
-=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
-    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
-=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
-    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0x458b0)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x458f0)}}, want &fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27064)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0x458b0) (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_<nil>),_0x458a0)
-    --- PASS: TestAs/0:As(Errorf(...,_<nil>),_0x458a0) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0x458b0)
-        match: got true; want false
-        FailNow is incomplete, requires runtime.Goexit()
-        got &errors.errorString{s:"err"}, want <nil>
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0x458b0) (0.00s)
+=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 
 ```
 
@@ -3133,11 +15994,11 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2835594068/main /tmp/tinygo2835594068/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2835594068/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3154106258/main /tmp/tinygo3154106258/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo3154106258/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	flag	0.000s
-error: failed to link /tmp/tinygo2835594068/main: exit status 1
+error: failed to link /tmp/tinygo3154106258/main: exit status 1
 ```
 
 
@@ -3150,7 +16011,7 @@ Failures/Tests: 1/3
 === RUN   TestSprintf
     Sprintf("%#v", 0x2f) = "(func)(0x2f)" want "(func(*testing.T))(0xPTR)"
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo1830103836/main`
+Error: failed to run main module `/tmp/tinygo2177047890/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3207,12 +16068,12 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3931877979/main /tmp/tinygo3931877979/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2019955899/main /tmp/tinygo2019955899/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/ast	0.000s
-error: failed to link /tmp/tinygo3931877979/main: exit status 1
+error: failed to link /tmp/tinygo2019955899/main: exit status 1
 ```
 
 
@@ -3221,11 +16082,11 @@ error: failed to link /tmp/tinygo3931877979/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3324709683/main /tmp/tinygo3324709683/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo3324709683/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2470863269/main /tmp/tinygo2470863269/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2470863269/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	go/build	0.000s
-error: failed to link /tmp/tinygo3324709683/main: exit status 1
+error: failed to link /tmp/tinygo2470863269/main: exit status 1
 ```
 
 
@@ -3235,19 +16096,24 @@ error: failed to link /tmp/tinygo3324709683/main: exit status 1
 
 ```text
 Failures/Tests: 7/13
-=== RUN   TestLex/0
-    --- PASS: TestLex/0 (0.00s)
 === RUN   TestLex/3
     --- PASS: TestLex/3 (0.00s)
+=== RUN   TestLex/4
+    --- PASS: TestLex/4 (0.00s)
+=== RUN   TestLex
+=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
 === RUN   TestLex/1
     --- PASS: TestLex/1 (0.00s)
 === RUN   TestLex/2
     --- PASS: TestLex/2 (0.00s)
+=== RUN   TestLex/3
+    --- PASS: TestLex/3 (0.00s)
 === RUN   TestLex/4
     --- PASS: TestLex/4 (0.00s)
 === RUN   TestLex/5
 panic: invalid syntax at ²
-Error: failed to run main module `/tmp/tinygo3006413456/main`
+Error: failed to run main module `/tmp/tinygo1057669990/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3289,20 +16155,15 @@ Caused by:
           14: 0x27b36 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-=== RUN   TestLex
 === RUN   TestLex/0
     --- PASS: TestLex/0 (0.00s)
 === RUN   TestLex/1
     --- PASS: TestLex/1 (0.00s)
 === RUN   TestLex/2
     --- PASS: TestLex/2 (0.00s)
-=== RUN   TestLex/3
-    --- PASS: TestLex/3 (0.00s)
-=== RUN   TestLex/4
-    --- PASS: TestLex/4 (0.00s)
 === RUN   TestLex/5
 panic: invalid syntax at ²
-Error: failed to run main module `/tmp/tinygo3006413456/main`
+Error: failed to run main module `/tmp/tinygo1057669990/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3353,12 +16214,12 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3223466746/main /tmp/tinygo3223466746/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3521624848/main /tmp/tinygo3521624848/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/constant	0.000s
-error: failed to link /tmp/tinygo3223466746/main: exit status 1
+error: failed to link /tmp/tinygo3521624848/main: exit status 1
 ```
 
 
@@ -3367,12 +16228,12 @@ error: failed to link /tmp/tinygo3223466746/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2855892677/main /tmp/tinygo2855892677/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1378011770/main /tmp/tinygo1378011770/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/doc	0.000s
-error: failed to link /tmp/tinygo2855892677/main: exit status 1
+error: failed to link /tmp/tinygo1378011770/main: exit status 1
 ```
 
 
@@ -3381,11 +16242,11 @@ error: failed to link /tmp/tinygo2855892677/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1319120041/main /tmp/tinygo1319120041/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo1319120041/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo737373644/main /tmp/tinygo737373644/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo737373644/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	go/doc/comment	0.000s
-error: failed to link /tmp/tinygo1319120041/main: exit status 1
+error: failed to link /tmp/tinygo737373644/main: exit status 1
 ```
 
 
@@ -3394,12 +16255,12 @@ error: failed to link /tmp/tinygo1319120041/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4235322888/main /tmp/tinygo4235322888/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2331846317/main /tmp/tinygo2331846317/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/format	0.000s
-error: failed to link /tmp/tinygo4235322888/main: exit status 1
+error: failed to link /tmp/tinygo2331846317/main: exit status 1
 ```
 
 
@@ -3408,13 +16269,13 @@ error: failed to link /tmp/tinygo4235322888/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo803710478/main /tmp/tinygo803710478/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2839846317/main /tmp/tinygo2839846317/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
-wasm-ld: error: /tmp/tinygo803710478/main.o: undefined symbol: syscall.Faccessat
+wasm-ld: error: /tmp/tinygo2839846317/main.o: undefined symbol: syscall.Faccessat
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/importer	0.000s
-error: failed to link /tmp/tinygo803710478/main: exit status 1
+error: failed to link /tmp/tinygo2839846317/main: exit status 1
 ```
 
 
@@ -3426,7 +16287,7 @@ error: failed to link /tmp/tinygo803710478/main: exit status 1
 Failures/Tests: 1/3
 === RUN   TestParseFile
 panic: (125144:0x00020510)
-Error: failed to run main module `/tmp/tinygo3753330157/main`
+Error: failed to run main module `/tmp/tinygo2173326932/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3492,12 +16353,12 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2744585963/main /tmp/tinygo2744585963/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2540810753/main /tmp/tinygo2540810753/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 failed to run tool: wasm-ld
 FAIL	go/printer	0.000s
-error: failed to link /tmp/tinygo2744585963/main: exit status 1
+error: failed to link /tmp/tinygo2540810753/main: exit status 1
 ```
 
 
@@ -3506,8 +16367,8 @@ error: failed to link /tmp/tinygo2744585963/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3278385517/main /tmp/tinygo3278385517/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3278385517/main --output /tmp/tinygo3278385517/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1790399833/main /tmp/tinygo1790399833/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1790399833/main --output /tmp/tinygo1790399833/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -3540,7 +16401,7 @@ Failures/Tests: 1/8
     Arch-specific IEEE not available.
     SkipNow is incomplete, requires runtime.Goexit()
 panic: not available
-Error: failed to run main module `/tmp/tinygo1933128746/main`
+Error: failed to run main module `/tmp/tinygo1542166155/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3585,14 +16446,14 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo338605344/main /tmp/tinygo338605344/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2003156253/main /tmp/tinygo2003156253/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	hash/maphash	0.000s
-error: failed to link /tmp/tinygo338605344/main: exit status 1
+error: failed to link /tmp/tinygo2003156253/main: exit status 1
 ```
 
 
@@ -3604,7 +16465,7 @@ error: failed to link /tmp/tinygo338605344/main: exit status 1
 Failures/Tests: 1/1
 === RUN   TestAddParseTreeHTML
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo3715814108/main`
+Error: failed to run main module `/tmp/tinygo1619480291/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3660,7 +16521,7 @@ Caused by:
 Failures/Tests: 1/3
 === RUN   TestNewXxxBadRectangle
 panic: image: NewRGBA Rectangle has huge or negative dimensions
-Error: failed to run main module `/tmp/tinygo1170306420/main`
+Error: failed to run main module `/tmp/tinygo1768874040/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3715,7 +16576,7 @@ Caused by:
 Failures/Tests: 1/1
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo1764958037/main`
+Error: failed to run main module `/tmp/tinygo2968857060/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3765,7 +16626,7 @@ Caused by:
 Failures/Tests: 1/9
 === RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo2453818818/main`
+Error: failed to run main module `/tmp/tinygo2096637640/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -3830,6 +16691,38 @@ FAIL	image/jpeg	0.000s
 ```
 
 
+### image/png wasip2/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/13
+=== RUN   TestDimensionOverflow
+
+```
+
+
+### index/suffixarray wasip2/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 4/11
+=== RUN   TestNew64/ababab...
+    --- PASS: TestNew64/ababab... (9.76s)
+=== RUN   TestNew64/forcealloc
+    --- PASS: TestNew64/forcealloc (1.21s)
+=== RUN   TestNew64/exhaustive2
+=== RUN   TestNew64
+=== RUN   TestNew64/ababab...
+    --- PASS: TestNew64/ababab... (9.76s)
+=== RUN   TestNew64/forcealloc
+    --- PASS: TestNew64/forcealloc (1.21s)
+=== RUN   TestNew64/exhaustive2
+
+```
+
+
 ### io wasip2/wasm
 
 [🔝](#summary) failure
@@ -3848,7 +16741,7 @@ Failures/Tests: 4/60
 === RUN   TestMultiReaderFreesExhaustedReaders
     timeout waiting for collection of buf1
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestMultiReaderFreesExhaustedReaders (5.03s)
+--- FAIL: TestMultiReaderFreesExhaustedReaders (5.05s)
 
 ```
 
@@ -3863,7 +16756,7 @@ Failures/Tests: 2/6
     Glob(`gl?b.go`) = []string(nil) want glob.go
 --- FAIL: TestGlob (0.02s)
 === RUN   TestCVE202230630
-Error: failed to run main module `/tmp/tinygo2348879130/main`
+Error: failed to run main module `/tmp/tinygo754835501/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -5882,7 +18775,7 @@ Caused by:
 ```text
 Failures/Tests: 2/28
 === RUN   TestReadOnlyWriteFile
-    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile173470280/blurp.txt
+    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile114873432/blurp.txt
     FailNow is incomplete, requires runtime.Goexit()
     want shmorp, got florp
     FailNow is incomplete, requires runtime.Goexit()
@@ -5910,15 +18803,15 @@ Failures/Tests: 1/9
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.917981 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919398 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919607 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/11 02:05:31.919831 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920055 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920302 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920527 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/11 02:05:31.920766 ???:0: XXXhello 23 world"
---- FAIL: TestAll (0.03s)
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:39:17.087542 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:39:17.088983 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:39:17.089174 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/03/14 15:39:17.089384 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:39:17.089602 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:39:17.089788 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:39:17.089975 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/03/14 15:39:17.090190 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.02s)
 
 ```
 
@@ -5928,13 +18821,13 @@ Failures/Tests: 1/9
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo705781216/main /tmp/tinygo705781216/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo705781216/main --output /tmp/tinygo705781216/main
-wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo705781216/main -o /tmp/tinygo705781216/main
-wasm-tools component new /tmp/tinygo705781216/main -o /tmp/tinygo705781216/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo705781216/main -test.v
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4288463468/main /tmp/tinygo4288463468/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo4288463468/main --output /tmp/tinygo4288463468/main
+wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo4288463468/main -o /tmp/tinygo4288463468/main
+wasm-tools component new /tmp/tinygo4288463468/main -o /tmp/tinygo4288463468/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo4288463468/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo705781216/main`
+Error: failed to run main module `/tmp/tinygo4288463468/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -5961,7 +18854,7 @@ Caused by:
            9: 0x1eadf - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	log/slog	0.782s
+FAIL	log/slog	0.852s
 ```
 
 
@@ -5982,12 +18875,12 @@ FAIL	log/syslog	0.000s
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo794195125/main /tmp/tinygo794195125/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo794195125/main.o: undefined symbol: maps.clone
-wasm-ld: error: /tmp/tinygo794195125/main.o: undefined symbol: maps.clone
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1118039167/main /tmp/tinygo1118039167/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1118039167/main.o: undefined symbol: maps.clone
+wasm-ld: error: /tmp/tinygo1118039167/main.o: undefined symbol: maps.clone
 failed to run tool: wasm-ld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo794195125/main: exit status 1
+error: failed to link /tmp/tinygo1118039167/main: exit status 1
 ```
 
 
@@ -5996,7 +18889,7 @@ error: failed to link /tmp/tinygo794195125/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2334663722/main /tmp/tinygo2334663722/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2083911529/main /tmp/tinygo2083911529/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
@@ -6020,7 +18913,7 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: too many errors emitted, stopping now (use -error-limit=0 to see all errors)
 failed to run tool: wasm-ld
 FAIL	math	0.000s
-error: failed to link /tmp/tinygo2334663722/main: exit status 1
+error: failed to link /tmp/tinygo2083911529/main: exit status 1
 ```
 
 
@@ -6032,7 +18925,7 @@ error: failed to link /tmp/tinygo2334663722/main: exit status 1
 Failures/Tests: 1/12
 === RUN   TestAdd64OverflowPanic
 panic: overflow
-Error: failed to run main module `/tmp/tinygo1845457845/main`
+Error: failed to run main module `/tmp/tinygo2209710452/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -6081,7 +18974,7 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1824118019/main /tmp/tinygo1824118019/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1979681995/main /tmp/tinygo1979681995/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6099,7 +18992,7 @@ wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/cmplx	0.000s
-error: failed to link /tmp/tinygo1824118019/main: exit status 1
+error: failed to link /tmp/tinygo1979681995/main: exit status 1
 ```
 
 
@@ -6108,13 +19001,13 @@ error: failed to link /tmp/tinygo1824118019/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3472514813/main /tmp/tinygo3472514813/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2033391545/main /tmp/tinygo2033391545/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
-wasm-ld: error: /tmp/tinygo3472514813/main.o: undefined symbol: syscall.Faccessat
+wasm-ld: error: /tmp/tinygo2033391545/main.o: undefined symbol: syscall.Faccessat
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6123,7 +19016,7 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/rand	0.000s
-error: failed to link /tmp/tinygo3472514813/main: exit status 1
+error: failed to link /tmp/tinygo2033391545/main: exit status 1
 ```
 
 
@@ -6132,9 +19025,9 @@ error: failed to link /tmp/tinygo3472514813/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2653209393/main /tmp/tinygo2653209393/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
-wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2522798539/main /tmp/tinygo2522798539/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2522798539/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2522798539/main.o: undefined symbol: internal/chacha8rand.block
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
@@ -6142,7 +19035,7 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
-wasm-ld: error: /tmp/tinygo2653209393/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2522798539/main.o: undefined symbol: internal/chacha8rand.block
 wasm-ld: error: lto.tmp: undefined symbol: exp
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
@@ -6151,7 +19044,55 @@ wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo2653209393/main: exit status 1
+error: failed to link /tmp/tinygo2522798539/main: exit status 1
+```
+
+
+### mime wasip2/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 1/14
+=== RUN   TestTypeByExtension_LocalData
+panic: runtime error: deadlocked: no event source
+Error: failed to run main module `/tmp/tinygo3575578669/main`
+
+Caused by:
+    0: failed to invoke `run` function
+    1: error while executing at wasm backtrace:
+           0: 0x25f44 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:58:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7
+           1: 0xdb22 - runtime.runtimePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:59:16
+           2: 0x2e79e - runtime.waitForEvents
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/wait_other.go:6:14
+           3: 0x2e632 - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:199:18              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5
+           4: 0x2e37e - wasi:cli/run@0.2.0#run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
+    2: wasm trap: wasm `unreachable` instruction executed
+
+```
+
+
+### mime/multipart wasip2/wasm
+
+[🔝](#summary) failure
+
+```text
+Failures/Tests: 3/10
+=== RUN   TestReadForm_MetadataTooLarge
+=== RUN   TestReadForm_MetadataTooLarge/large_name
+    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.11s)
+=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header
+=== RUN   TestReadForm_MetadataTooLarge/large_name
+    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.11s)
+=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header
+
 ```
 
 
@@ -6160,11 +19101,11 @@ error: failed to link /tmp/tinygo2653209393/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2213622877/main /tmp/tinygo2213622877/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo2213622877/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1619401447/main /tmp/tinygo1619401447/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1619401447/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	mime/quotedprintable	0.000s
-error: failed to link /tmp/tinygo2213622877/main: exit status 1
+error: failed to link /tmp/tinygo1619401447/main: exit status 1
 ```
 
 
@@ -6173,11 +19114,11 @@ error: failed to link /tmp/tinygo2213622877/main: exit status 1
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3871844521/main /tmp/tinygo3871844521/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo3871844521/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1672578805/main /tmp/tinygo1672578805/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo1672578805/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	net/netip	0.000s
-error: failed to link /tmp/tinygo3871844521/main: exit status 1
+error: failed to link /tmp/tinygo1672578805/main: exit status 1
 ```
 
 
@@ -6216,8 +19157,8 @@ FAIL	net/smtp	0.000s
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3271658277/main /tmp/tinygo3271658277/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3271658277/main --output /tmp/tinygo3271658277/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo874738133/main /tmp/tinygo874738133/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo874738133/main --output /tmp/tinygo874738133/main
 [wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on 
 (call $vendor/github.com/ydnar/wasm-tools-go/wasi/cli/environment.wasmimport_GetArguments
  (i64.const 0)
@@ -6270,9 +19211,9 @@ FAIL	os/signal	0.000s
 Failures/Tests: 2/3
 === RUN   TestGlob
     Glob(`mat?h.go`) = []string(nil) want match.go
---- FAIL: TestGlob (0.04s)
+--- FAIL: TestGlob (0.03s)
 === RUN   TestCVE202230632
-Error: failed to run main module `/tmp/tinygo551525121/main`
+Error: failed to run main module `/tmp/tinygo3763873534/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8536,7 +21477,7 @@ FAIL	plugin	0.000s
 Failures/Tests: 1/2
 === RUN   TestBadCompile
 panic: expression too large
-Error: failed to run main module `/tmp/tinygo1994610891/main`
+Error: failed to run main module `/tmp/tinygo4285203912/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8594,7 +21535,7 @@ Caused by:
 Failures/Tests: 1/8
 === RUN   TestParseInvalidRegexps
 panic: expression nests too deeply
-Error: failed to run main module `/tmp/tinygo3008546514/main`
+Error: failed to run main module `/tmp/tinygo2397639451/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8645,8 +21586,8 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo953315923/main /tmp/tinygo953315923/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo953315923/main --output /tmp/tinygo953315923/main
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1566968233/main /tmp/tinygo1566968233/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1566968233/main --output /tmp/tinygo1566968233/main
 FAIL	slices	0.000s
 error: wasm-opt failed: signal: killed
 ```
@@ -8657,13 +21598,13 @@ error: wasm-opt failed: signal: killed
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1187509119/main /tmp/tinygo1187509119/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo75105009/main /tmp/tinygo75105009/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: log
 wasm-ld: error: lto.tmp: undefined symbol: exp
 failed to run tool: wasm-ld
 FAIL	strconv	0.000s
-error: failed to link /tmp/tinygo1187509119/main: exit status 1
+error: failed to link /tmp/tinygo75105009/main: exit status 1
 ```
 
 
@@ -8679,7 +21620,7 @@ Failures/Tests: 1/4
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
 panic: strings.Builder.Grow: negative count
-Error: failed to run main module `/tmp/tinygo2658371620/main`
+Error: failed to run main module `/tmp/tinygo2889445723/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8750,10 +21691,10 @@ Failures/Tests: 6/68
     CompareAndSwapUint64Method did not panic
     AddUint64 did not panic
     AddUint64Method did not panic
---- FAIL: TestUnaligned64 (2.18s)
+--- FAIL: TestUnaligned64 (1.61s)
 === RUN   TestNilDeref
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo1737417034/main`
+Error: failed to run main module `/tmp/tinygo3101729293/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8807,7 +21748,7 @@ Failures/Tests: 1/1
     Mmap: errno 52
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo1724218142/main`
+Error: failed to run main module `/tmp/tinygo1797902238/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8868,8 +21809,8 @@ Failures/Tests: 1/5
         expected but not found: hello
         expected but not found: hello.link
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestSymlink (0.01s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink142146521: errno 52
+--- FAIL: TestSymlink (0.02s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink57369360: errno 52
 
 ```
 
@@ -8882,7 +21823,7 @@ Failures/Tests: 1/5
 Failures/Tests: 1/1
 === RUN   TestCheckEqual
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo1462079876/main`
+Error: failed to run main module `/tmp/tinygo1558881415/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8930,13 +21871,13 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3627211997/main /tmp/tinygo3627211997/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3627211997/main --output /tmp/tinygo3627211997/main
-wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo3627211997/main -o /tmp/tinygo3627211997/main
-wasm-tools component new /tmp/tinygo3627211997/main -o /tmp/tinygo3627211997/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo3627211997/main -test.v
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo624842623/main /tmp/tinygo624842623/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo624842623/main --output /tmp/tinygo624842623/main
+wasm-tools component embed -w wasi:cli/command /workspaces/dc-wasm-go/tinygo/lib/wasi-cli/wit/ /tmp/tinygo624842623/main -o /tmp/tinygo624842623/main
+wasm-tools component new /tmp/tinygo624842623/main -o /tmp/tinygo624842623/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --wasm component-model --dir=/tmp::/tmp /tmp/tinygo624842623/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo3627211997/main`
+Error: failed to run main module `/tmp/tinygo624842623/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -8963,7 +21904,7 @@ Caused by:
            9: 0x16861 - wasi:cli/run@0.2.0#run
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	testing/slogtest	0.407s
+FAIL	testing/slogtest	0.333s
 ```
 
 
@@ -8975,7 +21916,7 @@ FAIL	testing/slogtest	0.407s
 Failures/Tests: 1/2
 === RUN   TestPanicDuringFlush
 panic: cannot write
-Error: failed to run main module `/tmp/tinygo162047265/main`
+Error: failed to run main module `/tmp/tinygo308606811/main`
 
 Caused by:
     0: failed to invoke `run` function
@@ -9032,11 +21973,11 @@ Caused by:
 [🔝](#summary) build error
 
 ```text
-wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo619246378/main /tmp/tinygo619246378/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo619246378/main.o: undefined symbol: syscall.Faccessat
+wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo88982869/main /tmp/tinygo88982869/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo88982869/main.o: undefined symbol: syscall.Faccessat
 failed to run tool: wasm-ld
 FAIL	text/template	0.000s
-error: failed to link /tmp/tinygo619246378/main: exit status 1
+error: failed to link /tmp/tinygo88982869/main: exit status 1
 ```
 
 
@@ -9048,7 +21989,7 @@ error: failed to link /tmp/tinygo619246378/main: exit status 1
 Failures/Tests: 1/6
 === RUN   TestNumberParse
 panic: (97676:0x00049460)
-Error: failed to run main module `/tmp/tinygo3860618545/main`
+Error: failed to run main module `/tmp/tinygo1506582873/main`
 
 Caused by:
     0: failed to invoke `run` function

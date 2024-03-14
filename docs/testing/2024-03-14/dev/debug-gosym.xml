@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="0" time="11.930258">
+	<testsuite tests="1" failures="1" time="0.000000" name="debug/gosym" timestamp="2024-03-14T15:46:16Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="debug/gosym" name="TestLineFromAline" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineFromAline&#xA;    no .gosymtab section&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;panic: runtime error at 0x000000000025e144: nil pointer dereference&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

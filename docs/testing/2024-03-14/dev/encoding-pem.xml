@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="7" failures="1" errors="0" time="44.050280">
+	<testsuite tests="7" failures="1" time="0.000000" name="encoding/pem" timestamp="2024-03-14T15:46:35Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/pem" name="TestFuzz" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFuzz&#xA;panic: unimplemented: (reflect.Type).NumOut()&#xA;</failure>
+		</testcase>
+		<testcase classname="encoding/pem" name="TestGetLine" time="0.000000"></testcase>
+		<testcase classname="encoding/pem" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/pem" name="TestBadDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/pem" name="TestCVE202224675" time="0.000000"></testcase>
+		<testcase classname="encoding/pem" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="encoding/pem" name="TestLineBreaker" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

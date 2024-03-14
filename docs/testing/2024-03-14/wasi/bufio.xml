@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="42" failures="2" errors="0" time="43.448857">
+	<testsuite tests="42" failures="2" time="0.000000" name="bufio" timestamp="2024-03-14T16:19:43Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="bufio" name="TestReadStringAllocs" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadStringAllocs&#xA;    Unexpected number of allocations, got 0.000000, want 1&#xA;--- FAIL: TestReadStringAllocs (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="bufio" name="TestNegativeRead" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestNegativeRead&#xA;panic: bufio: reader returned negative count from Read&#xA;Error: failed to run main module `/tmp/tinygo3221858551/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x48ea - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:52:7&#xA;           1: 0xe9de - (*bufio.Reader).Read&#xA;           2: 0x84a4f - bufio_test.TestNegativeRead&#xA;                           at /usr/local/go/src/bufio/bufio_test.go:1303:8&#xA;           3: 0x28c4a - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           4: 0x53b3a - (*testing.T).Run&#xA;           5: 0x2894e - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           6: 0x28c4a - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           7: 0x22e2a - testing.runTests&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main&#xA;                           at /home/vscode/.cache/go-build/06/069a56f2cf2c2675af173cda287292b2d6132751fa3da9153f4e8a10b1e3d344-d:241:15              - runtime.run$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11&#xA;           8: 0x1e93d - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;           9:  0x95c - &lt;unknown&gt;!tinygo_rewind&#xA;          10: 0x1e742 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="bufio" name="TestReaderSimple" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestZeroReader" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterDiscard" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterDiscard" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadRuneAfterWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNoUnreadByteAfterWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByte" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByteMultiple" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadByteOthers" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRuneError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestUnreadRuneAtEOF" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadWriteRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteInvalidRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterAppend" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNewReaderSizeIdempotent" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestNewWriterSizeIdempotent" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteString" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriteStringStringWriter" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestBufferFull" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestPeek" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestPeekThenUnreadRune" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLine" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestLineTooLong" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadAfterLines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadEmptyBuffer" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestLinesAfterRead" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLineNonNilLineOrError" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReadLineNewlines" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderWriteTo" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestReaderWriteToErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFrom" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromErrors" time="0.000000"></testcase>
+		<testcase classname="bufio" name="TestWriterReadFromCounts" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

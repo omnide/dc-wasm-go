@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="64" failures="0" errors="0" time="27.640715">
+	<testsuite tests="64" failures="0" time="0.000000" name="compress/flate" timestamp="2024-03-14T15:45:30Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="compress/flate" name="TestBulkHash4" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflate" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterClose" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestVeryLongSparseChunk" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflateInflate" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReverseBits" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflateInflateString" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReaderDict" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterDict" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestRegression2508" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterReset" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestBestSpeed" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterPersistentWriteError" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterPersistentFlushError" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterPersistentCloseError" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestBestSpeedMatch" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestBestSpeedMaxMatchOffset" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestBestSpeedShiftOffsets" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestMaxStackSize" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDictDecoder" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestIssue5915" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestIssue5962" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestIssue6255" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestInvalidEncoding" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestInvalidBits" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestStreams" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestTruncatedStreams" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReaderEarlyEOF" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestBlockHuff" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriteBlock" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriteBlockDynamic" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReset" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReaderTruncated" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestResetDict" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReaderReusesReaderBuffer" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestNlitOutOfRange" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriteError" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeterministic" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflateFast_Reset" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

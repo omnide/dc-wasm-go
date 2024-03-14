@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from typing import Dict, List, Tuple, Union
 import argparse
+import datetime
 import json
 import pathlib
 import subprocess
@@ -17,26 +18,34 @@ This table shows test status for all Go standard library packages, including the
 counts of the tests that were run along with failures/errors. Error messages 
 from build errors and test failures are linked below the table.
 
-Note that the fact tests built and passed, does not mean that all functions and types in the program can be used. For example, sometimes using some functions or types of the package will still trigger compiler errors.
+Test targets include:
+
+{% for target in targets -%}
+- {{ target }}
+{% endfor %}
+
+Note that tests may build and pass, but that does not mean that all functions 
+and types in the program can be used. For example, sometimes using some 
+functions or types of the package will still trigger compiler errors.
 
 ## Legend
 
-{{ legend}}
+{{ legend }}
 
 ## Summary
 
-Package |{% for target in targets %} Status | Tests | Failures |{% endfor %}
---- |{% for target in targets %} --- | --- | --- |{% endfor %}
-&nbsp; |{% for target in targets %} {{ target }} |||{% endfor -%}
+Package |{% for target in targets %} Status (Fail / Tests) |{% endfor %}
+--- |{% for target in targets %} --- |{% endfor %}
+&nbsp; |{% for target in targets %} {{ target }} |{% endfor -%}
 {% for pkgname in pkgnames %}
 {{ pkgname }} |
 {%- for target in targets -%}
 {%- if target in pkgs[pkgname] -%}
 {%- set pkg = pkgs[pkgname][target] -%}
 {%- if pkg.ShowLink -%}
-[<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span>](#{{ pkg.Link }}) | {{ pkg.TestCount }} | [{{ pkg.TestFailures }}](#{{ pkg.Link }}) |
+[<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span>](#{{ pkg.Link }}) &nbsp; [{{ pkg.TestFailures }}](#{{ pkg.Link }}) / {{ pkg.TestCount }} |
 {%- else -%}
-<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span> | {{ pkg.TestCount }} | {{ pkg.TestFailures }} |
+<span style="color: {{ pkg.Color }}">{{ pkg.Icon }}</span> &nbsp; {{ pkg.TestCount }} |
 {%- endif -%}
 {%- else -%}
 &nbsp; | &nbsp; | &nbsp; |
@@ -111,6 +120,8 @@ Icon | Description |
 &nbsp; | (blank) Packaged skipped |
 """
 
+default_today = datetime.datetime.now().strftime("%Y-%m-%d")
+
 def main():
     parser = argparse.ArgumentParser(
                     prog="tinygo-pkg-table",
@@ -118,9 +129,11 @@ def main():
                     epilog="In python")
     parser.add_argument("with_data", action="append", nargs="+", help="os/arch:summary.json")
     parser.add_argument("--github", action="store_true", help="Use github markdown")
+    parser.add_argument("--date", type=str, default=default_today, help="Date of the test run")
     args = parser.parse_args()
 
     model = {
+        "date": args.date,
         "targets": [],
         "pkgnames": [],
         "pkgs": {},

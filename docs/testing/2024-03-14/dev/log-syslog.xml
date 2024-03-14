@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="0.989993">
+	<testsuite tests="0" failures="0" time="0.000000" name="log/syslog" timestamp="2024-03-14T15:47:25Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;log/syslog&#x9;0.000s&#xA;# log/syslog&#xA;/usr/local/go/src/log/syslog/syslog_test.go:35:21: oe.Temporary undefined (type *net.OpError has no field or method Temporary)&#xA;/usr/local/go/src/log/syslog/syslog_test.go:110:15: undefined: net.ListenPacket&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

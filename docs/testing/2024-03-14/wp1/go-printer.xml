@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="12" errors="0" time="32.317948">
+	<testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-03-14T15:12:55Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/printer" name="TestFiles/empty.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/empty.input&#xA;    --- PASS: TestFiles/empty.input (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/alignment.input&#xA;    --- PASS: TestFiles/alignment.input (0.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/linebreaks.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/linebreaks.input&#xA;    --- PASS: TestFiles/linebreaks.input (0.08s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/slow.input&#xA;panic: runtime error: slice out of range&#xA;Error: failed to run main module `/tmp/tinygo954228129/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x1d775 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7&#xA;           1: 0x3bf2 - runtime.slicePanic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16&#xA;           2: 0x39d9a - os.ReadFile&#xA;           3: 0xc8512 - go/printer.runcheck&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:152:11&#xA;           4: 0xc89dc - &lt;goroutine wrapper&gt;&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:151:2&#xA;           5:  0x91e - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;           6: 0x17981 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles&#xA;=== RUN   TestFiles/empty.input&#xA;    --- PASS: TestFiles/empty.input (0.02s)&#xA;=== RUN   TestFiles/comments.input&#xA;    --- PASS: TestFiles/comments.input (0.05s)&#xA;=== RUN   TestFiles/comments.input#01&#xA;    --- PASS: TestFiles/comments.input#01 (0.01s)&#xA;=== RUN   TestFiles/comments2.input&#xA;    --- PASS: TestFiles/comments2.input (0.02s)&#xA;=== RUN   TestFiles/alignment.input&#xA;    --- PASS: TestFiles/alignment.input (0.03s)&#xA;=== RUN   TestFiles/linebreaks.input&#xA;    --- PASS: TestFiles/linebreaks.input (0.08s)&#xA;=== RUN   TestFiles/expressions.input&#xA;    --- PASS: TestFiles/expressions.input (0.22s)&#xA;=== RUN   TestFiles/expressions.input#01&#xA;    --- PASS: TestFiles/expressions.input#01 (0.20s)&#xA;=== RUN   TestFiles/declarations.input&#xA;    --- PASS: TestFiles/declarations.input (0.04s)&#xA;=== RUN   TestFiles/statements.input&#xA;    --- PASS: TestFiles/statements.input (0.03s)&#xA;=== RUN   TestFiles/slow.input&#xA;panic: runtime error: slice out of range&#xA;Error: failed to run main module `/tmp/tinygo954228129/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x1d775 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:71:7&#xA;           1: 0x3bf2 - runtime.slicePanic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:149:16&#xA;           2: 0x39d9a - os.ReadFile&#xA;           3: 0xc8512 - go/printer.runcheck&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:152:11&#xA;           4: 0xc89dc - &lt;goroutine wrapper&gt;&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:151:2&#xA;           5:  0x91e - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;           6: 0x17981 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasi.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input&#xA;    --- PASS: TestFiles/comments.input (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input#01&#xA;    --- PASS: TestFiles/comments.input#01 (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments2.input&#xA;    --- PASS: TestFiles/comments2.input (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input&#xA;    --- PASS: TestFiles/expressions.input (0.22s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01&#xA;    --- PASS: TestFiles/expressions.input#01 (0.20s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/declarations.input&#xA;    --- PASS: TestFiles/declarations.input (0.04s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/statements.input&#xA;    --- PASS: TestFiles/statements.input (0.03s)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

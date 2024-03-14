@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="1" errors="0" time="8.707677">
+	<testsuite tests="8" failures="1" time="0.000000" name="hash/crc32" timestamp="2024-03-14T15:47:01Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="hash/crc32" name="TestArchIEEE" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestArchIEEE&#xA;    Arch-specific IEEE not available.&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;panic: arch-specific crc32 instruction for IEEE not available&#xA;</failure>
+		</testcase>
+		<testcase classname="hash/crc32" name="TestCastagnoliRace" time="0.000000"></testcase>
+		<testcase classname="hash/crc32" name="TestSimple" time="0.000000"></testcase>
+		<testcase classname="hash/crc32" name="TestGoldenMarshal" time="0.000000"></testcase>
+		<testcase classname="hash/crc32" name="TestMarshalTableMismatch" time="0.000000"></testcase>
+		<testcase classname="hash/crc32" name="TestSlicing" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="14.890296">
+	<testsuite tests="0" failures="0" time="0.000000" name="encoding/gob" timestamp="2024-03-14T15:46:33Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3958108318/main /tmp/tinygo3958108318/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;/tmp/tinygo3958108318/main /tmp/tinygo3958108318/main -test.v&#xA;checkId: 22 should be 23&#xA;panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;&#xA;FAIL&#x9;encoding/gob&#x9;0.010s&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

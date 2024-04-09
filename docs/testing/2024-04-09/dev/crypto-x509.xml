@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.597133">
+	<testsuite tests="0" failures="0" time="0.000000" name="crypto/x509" timestamp="2024-04-09T12:42:42Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;crypto/x509&#x9;0.000s&#xA;# crypto/x509_test&#xA;/usr/local/go/src/crypto/x509/hybrid_pool_test.go:63:17: c.ConnectionState undefined (type *net.TLSConn has no field or method ConnectionState)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

@@ -203,17 +203,28 @@ tinygo-dev-test-all: $(PATH_DEV)-status.json
 
 # Require all test runs and build the table
 TEST_TARGET_SUMMARIES := \
-	$(PATH_WASI)-status.json \
 	$(PATH_WP1)-status.json \
 	$(PATH_WP2)-status.json \
 	$(PATH_DEV)-status.json
+
+# $(PATH_WASI)-status.json
+
 TEST_TABLE_OUT := docs/testing/pkgs-all.md
 .PHONY: tinygo-test-table
 tinygo-test-table: $(TEST_TARGET_SUMMARIES)
 	@echo "Building test table at"
 	sd test tinygo-pkg-table --github \
 		"linux/arm64:$(PATH_DEV)-status.json" \
-		"wasi/wasm:$(PATH_WASI)-status.json" \
 		"wasip1/wasm:$(PATH_WP1)-status.json" \
 		"wasip2/wasm:$(PATH_WP2)-status.json" \
 		> $(TEST_TABLE_OUT)
+
+# "wasi/wasm:$(PATH_WASI)-status.json"
+
+
+# Dev branch regular tests
+define list_for_tags
+$(1):
+	cd tinygo && \
+	$(TINYGO) list -
+endef

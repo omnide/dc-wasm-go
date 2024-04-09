@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="35.563721">
+	<testsuite tests="0" failures="0" time="0.000000" name="go/token" timestamp="2024-04-09T12:28:07Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1712296555/main /tmp/tinygo1712296555/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-9f377d764891b0ee28a07e083c4e0a015091c6d2eba944fa92c6e3df.bc /home/vscode/.cache/tinygo/obj-8e79898f1f39e40617eb4cfe362e633fa2c37f8ed1a76c41b45a24e8.bc /home/vscode/.cache/tinygo/wasmbuiltins-wasm32-unknown-wasi-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1712296555/main --output /tmp/tinygo1712296555/main&#xA;[wasm-validator error in function \28*encoding/gob.Decoder\29.decOpFor$3] call param types must match, on &#xA;(call $internal/wasi/cli/v0.2.0/environment.wasmimport_GetArguments&#xA; (i64.const 0)&#xA;)&#xA;(on argument 0)&#xA;Fatal: error validating input&#xA;FAIL&#x9;go/token&#x9;0.000s&#xA;error: wasm-opt failed: exit status 1&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="175.392882">
+	<testsuite tests="0" failures="0" time="0.000000" name="slices" timestamp="2024-04-09T12:22:52Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2907008187/main /tmp/tinygo2907008187/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0&#xA;/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2907008187/main --output /tmp/tinygo2907008187/main&#xA;FAIL&#x9;slices&#x9;0.000s&#xA;error: wasm-opt failed: signal: killed&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

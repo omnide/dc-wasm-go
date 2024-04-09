@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="43" failures="8" errors="0" time="25.252289">
+	<testsuite tests="43" failures="8" time="0.000000" name="math/rand" timestamp="2024-04-09T12:45:12Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="math/rand" name="TestDefaultRace" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace&#xA;--- FAIL: TestDefaultRace (0.00s)&#xA;=== RUN   TestDefaultRace/0&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/0 (0.00s)&#xA;=== RUN   TestDefaultRace/1&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/1 (0.00s)&#xA;=== RUN   TestDefaultRace/2&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/2 (0.00s)&#xA;=== RUN   TestDefaultRace/3&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/3 (0.00s)&#xA;=== RUN   TestDefaultRace/4&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/4 (0.00s)&#xA;=== RUN   TestDefaultRace/5&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/5 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/1&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/1 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/3" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/3&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/3 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/4&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/4 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestRegress" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestRegress&#xA;panic: unimplemented: (reflect.Type).Method()&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/0&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/0 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/2&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/2 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestDefaultRace/5" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultRace/5&#xA;        fork/exec /tmp/tinygo3966790371/main: operation not implemented&#xA;    --- FAIL: TestDefaultRace/5 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="math/rand" name="TestAuto" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestConcurrent" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestStandardNormalValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNonStandardNormalValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestStandardExponentialValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNonStandardExponentialValues" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestNormTables" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestExpTables" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestFloat32" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadUniformity" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadEmpty" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadByOneByte" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestReadSeedReset" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestShuffleSmall" time="0.000000"></testcase>
+		<testcase classname="math/rand" name="TestUniformFactorial" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

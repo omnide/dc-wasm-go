@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="14" failures="0" errors="0" time="35.150070">
+	<testsuite tests="14" failures="0" time="0.000000" name="unicode/utf8" timestamp="2024-04-09T12:24:08Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="unicode/utf8" name="TestConstants" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestFullRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestEncodeRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestAppendRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestDecodeRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestDecodeSurrogateRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestSequencing" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestRuntimeConversion" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestDecodeInvalidSequence" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestNegativeRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestRuneCount" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestRuneLen" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestValid" time="0.000000"></testcase>
+		<testcase classname="unicode/utf8" name="TestValidRune" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

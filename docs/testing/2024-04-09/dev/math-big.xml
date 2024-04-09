@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="189.339335">
+	<testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-09T12:44:56Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;math/big&#x9;0.000s&#xA;# math/big&#xA;/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 28596023)&#xA;  %0 = and i64 %x, 4294967295, !dbg !30812&#xA;&#xA;traceback:&#xA;/usr/local/go/src/math/bits/bits.go:472:10:&#xA;  %0 = and i64 %x, 4294967295, !dbg !30812&#xA;/usr/local/go/src/math/bits/bits.go:450:15:&#xA;  %9 = call { i64, i64 } @&#34;math/bits.Mul64&#34;(i64 %x, i64 %y, ptr undef), !dbg !30820&#xA;/usr/local/go/src/math/big/arith.go:51:20:&#xA;  %0 = call { i64, i64 } @&#34;math/bits.Mul&#34;(i64 %x, i64 %y, ptr undef), !dbg !30807&#xA;/usr/local/go/src/math/big/arith.go:192:24:&#xA;  %13 = call { i64, i64 } @&#34;math/big.mulAddWWW_g&#34;(i64 %12, i64 %y, i64 %6, ptr undef), !dbg !30825&#xA;/usr/local/go/src/math/big/arith_decl_pure.go:44:20:&#xA;  %12 = call i64 @&#34;math/big.mulAddVWW_g&#34;(ptr %6, i64 %7, i64 %8, ptr %9, i64 %10, i64 %11, i64 %y, i64 %r, ptr undef), !dbg !30808&#xA;/usr/local/go/src/math/big/nat.go:191:18:&#xA;  %32 = call i64 @&#34;math/big.mulAddVWW&#34;(ptr %26, i64 %27, i64 %28, ptr %29, i64 %30, i64 %31, i64 %y, i64 %r, ptr undef), !dbg !30829&#xA;/usr/local/go/src/math/big/natconv.go:213:19:&#xA;  %98 = call { ptr, i64, i64 } @&#34;(math/big.nat).mulAddWW&#34;(ptr %92, i64 %93, i64 %94, ptr %95, i64 %96, i64 %97, i64 %47, i64 %89, ptr undef), !dbg !30949&#xA;/usr/local/go/src/math/big/nat_test.go:92:31:&#xA;  %8 = call { { ptr, i64, i64 }, i64, i64, %runtime._interface } @&#34;(math/big.nat).scan&#34;(ptr null, i64 0, i64 0, ptr %6, ptr %7, i64 0, i1 false, ptr undef), !dbg !30804&#xA;/usr/local/go/src/math/big:&#xA;  %19 = call { ptr, i64, i64 } @&#34;math/big.natFromString&#34;(ptr %17, i64 %18, ptr undef), !dbg !30811&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

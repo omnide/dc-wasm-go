@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="58" failures="1" errors="0" time="50.463088">
+	<testsuite tests="58" failures="1" time="0.000000" name="archive/tar" timestamp="2024-04-09T12:13:25Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="archive/tar" name="TestFileInfoHeaderSymlink" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFileInfoHeaderSymlink&#xA;    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/176020032/testfile.txt /tmp/176020032/testlink: errno 63&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    symlink /tmp/TestFileInfoHeaderSymlink143914376/000 /tmp/TestFileInfoHeaderSymlink143914376/000/link: errno 63&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    lstat /tmp/TestFileInfoHeaderSymlink143914376/000/link: file does not exist&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    archive/tar: FileInfo is nil&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;panic: runtime error: nil pointer dereference&#xA;Error: failed to run main module `/tmp/tinygo3347863268/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x2d05c - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:87:7&#xA;           1: 0x9a87 - runtime.nilPanic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:150:16&#xA;           2: 0xc2a9e - archive/tar.TestFileInfoHeaderSymlink&#xA;           3: 0x39a98 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           4: 0x74a84 - (*testing.T).Run&#xA;           5: 0x3979c - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           6: 0x39a98 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           7: 0x348d2 - testing.runTests&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main&#xA;                           at /home/vscode/.cache/go-build/64/64e4f0b94238e71ca92a746be092ee54ca795a74809f454318857aae67ac27fc-d:137:15              - runtime.run$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11&#xA;           8: 0x2e969 - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;           9:  0xa92 - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;          10: 0x2e83e - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="archive/tar" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestPartialRead" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestUninitializedRead" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestReadTruncation" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestReadHeaderOnly" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestMergePAX" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestParsePAX" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestReadOldGNUSparseMap" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestReadGNUSparsePAXHeaders" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFileReader" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestInsecurePaths" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestDisableInsecurePathCheck" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFitsInBase256" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestParseNumeric" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFormatNumeric" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFitsInOctal" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestParsePAXTime" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFormatPAXTime" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestParsePAXRecord" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFormatPAXRecord" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestSparseEntries" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFileInfoHeader" time="0.000000"></testcase>
+		<testcase classname="archive/tar" name="TestFileInfoHeaderDir" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

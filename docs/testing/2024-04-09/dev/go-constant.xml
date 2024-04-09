@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="1" errors="0" time="14.849771">
+	<testsuite tests="2" failures="1" time="0.000000" name="go/constant" timestamp="2024-04-09T12:43:24Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/constant" name="TestOps" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOps&#xA;panic: runtime error at 0x0000000000257f90: divide by zero&#xA;</failure>
+		</testcase>
+		<testcase classname="go/constant" name="TestNumbers" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

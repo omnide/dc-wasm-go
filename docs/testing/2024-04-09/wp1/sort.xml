@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="63" failures="0" errors="0" time="121.022965">
+	<testsuite tests="63" failures="0" time="0.000000" name="sort" timestamp="2024-04-09T12:22:52Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="sort" name="TestSearch" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestFind" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSearchEfficiency" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSearchWrappers" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSearchWrappersDontAlloc" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSearchExhaustive" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestFindExhaustive" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestStructSorts" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortIntSlice" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortFloat64Slice" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortFloat64sCompareSlicesSort" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortStringSlice" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestInts" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestFloat64s" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestStrings" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSlice" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortLarge_Random" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestReverseSortIntSlice" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestBreakPatterns" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestReverseRange" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestNonDeterministicComparison" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestSortBM" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestHeapsortBM" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestStableBM" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestAdversary" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestStableInts" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestStability" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestCountStableOps" time="0.000000"></testcase>
+		<testcase classname="sort" name="TestCountSortOps" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

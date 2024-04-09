@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="2" errors="0" time="53.535339">
+	<testsuite tests="4" failures="2" time="0.000000" name="go/format" timestamp="2024-04-09T12:27:43Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/format" name="TestNode" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestNode&#xA;    open format_test.go: errno 2&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    format_test.go:1:1: expected &#39;package&#39;, found &#39;EOF&#39;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    len(dst) = 8, len(src) = 0&#xA;        src = &#34;&#34;&#xA;--- FAIL: TestNode (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/format" name="TestSource" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestSource&#xA;    open format_test.go: errno 2&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestSource (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/format" name="TestNodeNoModify" time="0.000000"></testcase>
+		<testcase classname="go/format" name="TestPartial" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

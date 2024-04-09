@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="28" failures="1" errors="0" time="9.030116">
+	<testsuite tests="28" failures="1" time="0.000000" name="io/ioutil" timestamp="2024-04-09T12:16:53Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="io/ioutil" name="TestReadOnlyWriteFile" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadOnlyWriteFile&#xA;    file permissions are not supported by wasip1&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile227879832/blurp.txt&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    want shmorp, got florp&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestReadOnlyWriteFile (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io/ioutil" name="TestReadFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestWriteFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestReadDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile_pattern" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile_BadPattern" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir_BadDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir_BadPattern" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

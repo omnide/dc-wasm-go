@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="24" failures="0" errors="0" time="21.959878">
+	<testsuite tests="24" failures="0" time="0.000000" name="encoding/base32" timestamp="2024-04-09T12:26:29Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/base32" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestEncoder" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestEncoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecoder" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestIssue20044" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecoderError" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestReaderEOF" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecoderBuffering" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodeCorrupt" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestBig" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestNewLineCharacters" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecoderIssue4779" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestWithCustomPadding" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestWithoutPadding" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodeWithPadding" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodeWithWrongPadding" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestBufferedDecodingSameError" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestBufferedDecodingPadding" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestEncodedLen" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodedLen" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestWithoutPaddingClose" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodeReadAll" time="0.000000"></testcase>
+		<testcase classname="encoding/base32" name="TestDecodeSmallBuffer" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

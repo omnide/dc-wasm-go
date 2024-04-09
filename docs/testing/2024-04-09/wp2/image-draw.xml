@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="9" failures="1" errors="0" time="39.360629">
+	<testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-04-09T12:28:48Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="image/draw" name="TestSqDiff" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSqDiff&#xA;panic: unimplemented: (reflect.Type).NumIn()&#xA;Error: failed to run main module `/tmp/tinygo3258198992/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke `run` function&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x3869 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:59:6              - runtime._panic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:65:7&#xA;           1: 0x3b5e - (*reflect.rawType).NumIn&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/reflect/type.go:1008:7&#xA;           2: 0x8b04f - (Go interface method)&#xA;           3: 0x9d791 - testing/quick.CheckEqual&#xA;                           at /usr/local/go/src/testing/quick/quick.go:320:48              - image/draw.TestSqDiff&#xA;                           at /usr/local/go/src/image/draw/draw_test.go:807:28&#xA;           4: 0x3f207 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           5: 0x3eefd - (*testing.T).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           6: 0x3f207 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           7: 0x39300 - &lt;unknown&gt;!runtime.run$1&#xA;           8: 0x2aa02 - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;           9: 0x1aca - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;          10: 0x2a8b5 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5&#xA;          11: 0x2a62d - wasi:cli/run@0.2.0#run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="image/draw" name="TestClip" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDraw" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDrawOverlap" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestNonZeroSrcPt" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestFill" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestDrawSrcNonpremultiplied" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestFloydSteinbergCheckerboard" time="0.000000"></testcase>
+		<testcase classname="image/draw" name="TestPaletted" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

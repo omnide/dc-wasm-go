@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.235938">
+	<testsuite tests="0" failures="0" time="0.000000" name="image/gif" timestamp="2024-04-09T12:16:33Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;image/gif&#x9;0.000s&#xA;# image/gif&#xA;/usr/local/go/src/image/gif/reader_test.go:421:26: s1.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)&#xA;/usr/local/go/src/image/gif/reader_test.go:421:41: s0.HeapAlloc undefined (type *runtime.MemStats has no field or method HeapAlloc)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

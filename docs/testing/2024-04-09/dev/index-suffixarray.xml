@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="0" errors="0" time="114.102723">
+	<testsuite tests="12" failures="0" time="0.000000" name="index/suffixarray" timestamp="2024-04-09T12:44:56Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="index/suffixarray" name="TestIndex32" time="0.000000"></testcase>
+		<testcase classname="index/suffixarray" name="TestIndex64" time="0.000000"></testcase>
+		<testcase classname="index/suffixarray" name="TestNew32" time="0.000000"></testcase>
+		<testcase classname="index/suffixarray" name="TestNew64" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

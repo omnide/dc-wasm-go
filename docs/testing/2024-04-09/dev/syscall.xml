@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.529117">
+	<testsuite tests="0" failures="0" time="0.000000" name="syscall" timestamp="2024-04-09T12:45:57Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;syscall&#x9;0.000s&#xA;# syscall_test&#xA;/usr/local/go/src/syscall/creds_test.go:53:19: undefined: net.FileConn&#xA;/usr/local/go/src/syscall/creds_test.go:60:19: undefined: net.FileConn&#xA;/usr/local/go/src/syscall/exec_linux_test.go:671:17: undefined: user.Lookup&#xA;/usr/local/go/src/syscall/exec_linux_test.go:708:14: f.Chmod undefined (type *os.File has no field or method Chmod)&#xA;/usr/local/go/src/syscall/exec_pdeathsig_test.go:116:18: undefined: user.Lookup&#xA;/usr/local/go/src/syscall/syscall_linux_test.go:244:11: undefined: os.Chown&#xA;/usr/local/go/src/syscall/syscall_unix_test.go:183:16: undefined: net.FileConn&#xA;/usr/local/go/src/syscall/syscall_unix_test.go:238:14: undefined: net.UnixConn&#xA;/usr/local/go/src/syscall/syscall_unix_test.go:242:18: undefined: net.FileConn&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

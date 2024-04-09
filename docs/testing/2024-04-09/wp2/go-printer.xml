@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="31" failures="24" errors="0" time="55.394707">
+	<testsuite tests="31" failures="24" time="0.000000" name="go/printer" timestamp="2024-04-09T12:27:50Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="go/printer" name="TestFiles" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles&#xA;--- FAIL: TestFiles (0.01s)&#xA;=== RUN   TestFiles/empty.input&#xA;        open testdata/empty.input: errno 2&#xA;    --- FAIL: TestFiles/empty.input (0.00s)&#xA;=== RUN   TestFiles/comments.input&#xA;        open testdata/comments.input: errno 2&#xA;    --- FAIL: TestFiles/comments.input (0.00s)&#xA;=== RUN   TestFiles/comments.input#01&#xA;        open testdata/comments.input: errno 2&#xA;    --- FAIL: TestFiles/comments.input#01 (0.00s)&#xA;=== RUN   TestFiles/comments2.input&#xA;        open testdata/comments2.input: errno 2&#xA;    --- FAIL: TestFiles/comments2.input (0.00s)&#xA;=== RUN   TestFiles/alignment.input&#xA;        open testdata/alignment.input: errno 2&#xA;    --- FAIL: TestFiles/alignment.input (0.00s)&#xA;=== RUN   TestFiles/linebreaks.input&#xA;        open testdata/linebreaks.input: errno 2&#xA;    --- FAIL: TestFiles/linebreaks.input (0.00s)&#xA;=== RUN   TestFiles/expressions.input&#xA;        open testdata/expressions.input: errno 2&#xA;    --- FAIL: TestFiles/expressions.input (0.00s)&#xA;=== RUN   TestFiles/expressions.input#01&#xA;        open testdata/expressions.input: errno 2&#xA;    --- FAIL: TestFiles/expressions.input#01 (0.00s)&#xA;=== RUN   TestFiles/declarations.input&#xA;        open testdata/declarations.input: errno 2&#xA;    --- FAIL: TestFiles/declarations.input (0.00s)&#xA;=== RUN   TestFiles/statements.input&#xA;        open testdata/statements.input: errno 2&#xA;    --- FAIL: TestFiles/statements.input (0.00s)&#xA;=== RUN   TestFiles/slow.input&#xA;        open testdata/slow.input: errno 2&#xA;    --- FAIL: TestFiles/slow.input (0.00s)&#xA;=== RUN   TestFiles/complit.input&#xA;        open testdata/complit.input: errno 2&#xA;    --- FAIL: TestFiles/complit.input (0.01s)&#xA;=== RUN   TestFiles/go2numbers.input&#xA;        open testdata/go2numbers.input: errno 2&#xA;    --- FAIL: TestFiles/go2numbers.input (0.00s)&#xA;=== RUN   TestFiles/go2numbers.input#01&#xA;        open testdata/go2numbers.input: errno 2&#xA;    --- FAIL: TestFiles/go2numbers.input#01 (0.00s)&#xA;=== RUN   TestFiles/generics.input&#xA;        open testdata/generics.input: errno 2&#xA;    --- FAIL: TestFiles/generics.input (0.00s)&#xA;=== RUN   TestFiles/gobuild1.input&#xA;        open testdata/gobuild1.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild1.input (0.00s)&#xA;=== RUN   TestFiles/gobuild2.input&#xA;        open testdata/gobuild2.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild2.input (0.00s)&#xA;=== RUN   TestFiles/gobuild3.input&#xA;        open testdata/gobuild3.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild3.input (0.00s)&#xA;=== RUN   TestFiles/gobuild4.input&#xA;        open testdata/gobuild4.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild4.input (0.00s)&#xA;=== RUN   TestFiles/gobuild5.input&#xA;        open testdata/gobuild5.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild5.input (0.00s)&#xA;=== RUN   TestFiles/gobuild6.input&#xA;        open testdata/gobuild6.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild6.input (0.00s)&#xA;=== RUN   TestFiles/gobuild7.input&#xA;        open testdata/gobuild7.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild7.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/empty.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/empty.input&#xA;        open testdata/empty.input: errno 2&#xA;    --- FAIL: TestFiles/empty.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input&#xA;        open testdata/expressions.input: errno 2&#xA;    --- FAIL: TestFiles/expressions.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/slow.input&#xA;        open testdata/slow.input: errno 2&#xA;    --- FAIL: TestFiles/slow.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild3.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild3.input&#xA;        open testdata/gobuild3.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild3.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild4.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild4.input&#xA;        open testdata/gobuild4.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild4.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild5.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild5.input&#xA;        open testdata/gobuild5.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild5.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild6.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild6.input&#xA;        open testdata/gobuild6.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild6.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input&#xA;        open testdata/comments.input: errno 2&#xA;    --- FAIL: TestFiles/comments.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments.input#01&#xA;        open testdata/comments.input: errno 2&#xA;    --- FAIL: TestFiles/comments.input#01 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/comments2.input&#xA;        open testdata/comments2.input: errno 2&#xA;    --- FAIL: TestFiles/comments2.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/declarations.input&#xA;        open testdata/declarations.input: errno 2&#xA;    --- FAIL: TestFiles/declarations.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/statements.input&#xA;        open testdata/statements.input: errno 2&#xA;    --- FAIL: TestFiles/statements.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/go2numbers.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/go2numbers.input#01&#xA;        open testdata/go2numbers.input: errno 2&#xA;    --- FAIL: TestFiles/go2numbers.input#01 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01&#xA;        open testdata/expressions.input: errno 2&#xA;    --- FAIL: TestFiles/expressions.input#01 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/go2numbers.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/go2numbers.input&#xA;        open testdata/go2numbers.input: errno 2&#xA;    --- FAIL: TestFiles/go2numbers.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/generics.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/generics.input&#xA;        open testdata/generics.input: errno 2&#xA;    --- FAIL: TestFiles/generics.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild1.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild1.input&#xA;        open testdata/gobuild1.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild1.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild7.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild7.input&#xA;        open testdata/gobuild7.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild7.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/alignment.input&#xA;        open testdata/alignment.input: errno 2&#xA;    --- FAIL: TestFiles/alignment.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/linebreaks.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/linebreaks.input&#xA;        open testdata/linebreaks.input: errno 2&#xA;    --- FAIL: TestFiles/linebreaks.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/complit.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/complit.input&#xA;        open testdata/complit.input: errno 2&#xA;    --- FAIL: TestFiles/complit.input (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestFiles/gobuild2.input" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestFiles/gobuild2.input&#xA;        open testdata/gobuild2.input: errno 2&#xA;    --- FAIL: TestFiles/gobuild2.input (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestBaseIndent" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestBaseIndent&#xA;panic: open printer.go: errno 2&#xA;Error: failed to run main module `/tmp/tinygo1258715429/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke `run` function&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x4576 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasmp2.go:59:6              - runtime._panic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:65:7&#xA;           1: 0xdd6a4 - go/printer.TestBaseIndent&#xA;                           at /usr/local/go/src/go/printer/printer_test.go:542:8&#xA;           2: 0x2d103 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           3: 0x841d2 - (*testing.T).Run&#xA;           4: 0x2ce0b - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           5: 0x2d103 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           6: 0x27893 - &lt;unknown&gt;!runtime.run$1&#xA;           7: 0x17d46 - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;           8: 0x1cec - tinygo_rewind&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:92&#xA;           9: 0x17b22 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:112:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:30:5&#xA;          10: 0x1780e - wasi:cli/run@0.2.0#run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasm_wasip2.go:21:8&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="go/printer" name="TestLineComments" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestBadNodes" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestBadComments" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestSourcePos" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestIssue5945" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestDeclLists" time="0.000000"></testcase>
+		<testcase classname="go/printer" name="TestStmtLists" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

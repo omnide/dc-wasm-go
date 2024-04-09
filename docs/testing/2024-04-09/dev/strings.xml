@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="71" failures="2" errors="0" time="35.057091">
+	<testsuite tests="71" failures="2" time="0.000000" name="strings" timestamp="2024-04-09T12:45:53Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="strings" name="TestBuilderGrow" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestBuilderGrow&#xA;    growLen=100: got 0 allocs during Write; want 1&#xA;    growLen=1000: got 0 allocs during Write; want 1&#xA;    growLen=10000: got 0 allocs during Write; want 1&#xA;    growLen=100000: got 0 allocs during Write; want 1&#xA;--- FAIL: TestBuilderGrow (0.10s)&#xA;</failure>
+		</testcase>
+		<testcase classname="strings" name="TestBuilderAllocs" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestBuilderAllocs&#xA;    Builder allocs = 0; want 1&#xA;--- FAIL: TestBuilderAllocs (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="strings" name="TestBuilder" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderString" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderReset" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderWrite2" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderWriteByte" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderCopyPanic" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestBuilderWriteInvalidRune" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestClone" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCompare" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCompareIdenticalString" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCompareStrings" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReadAfterBigSeek" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReaderAt" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReaderAtConcurrent" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestEmptyReaderConcurrent" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestWriteTo" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReaderLenSize" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReaderReset" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReaderZero" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReplacer" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestPickAlgorithm" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestWriteStringError" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestGenericTrieBuilding" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestFinderNext" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestFinderCreation" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndex" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestLastIndex" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndexAny" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestLastIndexAny" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndexByte" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestLastIndexByte" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndexRandom" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndexRune" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestSplit" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestSplitAfter" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestFields" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestFieldsFunc" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestMap" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestToUpper" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestToLower" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestToValidUTF8" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestSpecialCase" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestTrimSpace" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestTrim" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestTrimFunc" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestIndexFunc" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCaseConsistency" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestRepeat" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestRepeatCatchesOverflow" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestRunes" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReadByte" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReadRune" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestUnreadRuneError" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestReplace" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestTitle" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestContains" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestContainsAny" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestContainsRune" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestContainsFunc" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestEqualFold" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCount" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCut" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCutPrefix" time="0.000000"></testcase>
+		<testcase classname="strings" name="TestCutSuffix" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

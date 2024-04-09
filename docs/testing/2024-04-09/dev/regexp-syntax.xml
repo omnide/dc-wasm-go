@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="0" errors="0" time="58.611061">
+	<testsuite tests="12" failures="0" time="0.000000" name="regexp/syntax" timestamp="2024-04-09T12:45:44Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="regexp/syntax" name="TestParseSimple" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestParseFoldCase" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestParseLiteral" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestParseMatchNL" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestParseNoMatchNL" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestFoldConstants" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestAppendRangeCollapse" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestParseInvalidRegexps" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestToStringEquivalentParse" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestString" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestCompile" time="0.000000"></testcase>
+		<testcase classname="regexp/syntax" name="TestSimplify" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

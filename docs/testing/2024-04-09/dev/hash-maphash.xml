@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="15" failures="1" errors="0" time="34.833419">
+	<testsuite tests="15" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-09T12:44:03Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="hash/maphash" name="TestSmhasherTwoNonzero" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSmhasherTwoNonzero&#xA;panic: runtime error at 0x000000000022ecf8: out of memory&#xA;</failure>
+		</testcase>
+		<testcase classname="hash/maphash" name="TestUnseededHash" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeededHash" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashGrouping" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashBytesVsString" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashHighBytes" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestRepeat" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromSum64" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromSeed" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromFlush" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromReset" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherSanity" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherAppendedZeros" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherSmallKeys" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherZeros" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

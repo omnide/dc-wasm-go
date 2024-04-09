@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="256" failures="8" errors="0" time="29.030578">
+	<testsuite tests="256" failures="8" time="0.000000" name="net/netip" timestamp="2024-04-09T12:45:21Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="net/netip" name="TestInlining" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestInlining&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    platform cannot run go tool&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    go build: exec: no command, &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    &#34;(*uint128).halves&#34; is no longer inlinable&#xA;    &#34;Addr.BitLen&#34; is no longer inlinable&#xA;    &#34;Addr.hasZone&#34; is no longer inlinable&#xA;    &#34;Addr.Is4&#34; is no longer inlinable&#xA;    &#34;Addr.Is4In6&#34; is no longer inlinable&#xA;    &#34;Addr.Is6&#34; is no longer inlinable&#xA;    &#34;Addr.IsLoopback&#34; is no longer inlinable&#xA;    &#34;Addr.IsMulticast&#34; is no longer inlinable&#xA;    &#34;Addr.IsInterfaceLocalMulticast&#34; is no longer inlinable&#xA;    &#34;Addr.IsValid&#34; is no longer inlinable&#xA;    &#34;Addr.IsUnspecified&#34; is no longer inlinable&#xA;    &#34;Addr.Less&#34; is no longer inlinable&#xA;    &#34;Addr.Unmap&#34; is no longer inlinable&#xA;    &#34;Addr.Zone&#34; is no longer inlinable&#xA;    &#34;Addr.v4&#34; is no longer inlinable&#xA;    &#34;Addr.v6&#34; is no longer inlinable&#xA;    &#34;Addr.v6u16&#34; is no longer inlinable&#xA;    &#34;Addr.withoutZone&#34; is no longer inlinable&#xA;    &#34;AddrPortFrom&#34; is no longer inlinable&#xA;    &#34;AddrPort.Addr&#34; is no longer inlinable&#xA;    &#34;AddrPort.Port&#34; is no longer inlinable&#xA;    &#34;AddrPort.IsValid&#34; is no longer inlinable&#xA;    &#34;Prefix.IsSingleIP&#34; is no longer inlinable&#xA;    &#34;Prefix.Masked&#34; is no longer inlinable&#xA;    &#34;Prefix.IsValid&#34; is no longer inlinable&#xA;    &#34;PrefixFrom&#34; is no longer inlinable&#xA;    &#34;Prefix.Addr&#34; is no longer inlinable&#xA;    &#34;Prefix.Bits&#34; is no longer inlinable&#xA;    &#34;AddrFrom4&#34; is no longer inlinable&#xA;    &#34;IPv6LinkLocalAllNodes&#34; is no longer inlinable&#xA;    &#34;IPv6Unspecified&#34; is no longer inlinable&#xA;    &#34;MustParseAddr&#34; is no longer inlinable&#xA;    &#34;MustParseAddrPort&#34; is no longer inlinable&#xA;    &#34;MustParsePrefix&#34; is no longer inlinable&#xA;    &#34;appendDecimal&#34; is no longer inlinable&#xA;    &#34;appendHex&#34; is no longer inlinable&#xA;    &#34;uint128.addOne&#34; is no longer inlinable&#xA;    &#34;uint128.and&#34; is no longer inlinable&#xA;    &#34;uint128.bitsClearedFrom&#34; is no longer inlinable&#xA;    &#34;uint128.bitsSetFrom&#34; is no longer inlinable&#xA;    &#34;uint128.isZero&#34; is no longer inlinable&#xA;    &#34;uint128.not&#34; is no longer inlinable&#xA;    &#34;uint128.or&#34; is no longer inlinable&#xA;    &#34;uint128.subOne&#34; is no longer inlinable&#xA;    &#34;uint128.xor&#34; is no longer inlinable&#xA;    &#34;Addr.Next&#34; is no longer inlinable&#xA;    &#34;Addr.Prev&#34; is no longer inlinable&#xA;--- FAIL: TestInlining (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs&#xA;--- FAIL: TestAddrStringAllocs (0.02s)&#xA;=== RUN   TestAddrStringAllocs/zero&#xA;    --- PASS: TestAddrStringAllocs/zero (0.00s)&#xA;=== RUN   TestAddrStringAllocs/ipv4&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)&#xA;=== RUN   TestAddrStringAllocs/ipv6&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)&#xA;=== RUN   TestAddrStringAllocs/ipv6+zone&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)&#xA;=== RUN   TestAddrStringAllocs/ipv4-in-ipv6&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)&#xA;=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/ipv6+zone" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6+zone&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/zero" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/zero&#xA;    --- PASS: TestAddrStringAllocs/zero (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/ipv6" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/ipv4-in-ipv6" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4-in-ipv6&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/ipv4-in-ipv6+zone" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestAddrStringAllocs/ipv4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4&#xA;        allocs=0, want 1&#xA;    --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="net/netip" name="TestPrefixValid" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPNextPrev" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPBitLen" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixContains" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestParseIPError" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestParseAddrPort" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrPortMarshalUnmarshal" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPv6Accessor" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestUint128AddSub" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestBitsSetFrom" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestBitsClearedFrom" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestParseAddr" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrFromSlice" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPv4Constructors" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrMarshalUnmarshalBinary" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrPortMarshalTextString" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrPortMarshalUnmarshalBinary" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixMarshalTextString" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixMarshalUnmarshalBinary" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrMarshalUnmarshal" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrFrom16" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPProperties" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrWellKnown" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrLessCompare" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAddrPortCompare" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixCompare" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIPStringExpanded" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixMasking" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixMarshalUnmarshal" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixUnmarshalTextNonZero" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIs4AndIs6" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestIs4In6" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixMasked" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefix" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixFromInvalidBits" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestParsePrefixAllocs" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestParsePrefixError" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixIsSingleIP" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAs4" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixOverlaps" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestNoAllocs" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestPrefixString" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestInvalidAddrPortString" time="0.000000"></testcase>
+		<testcase classname="net/netip" name="TestAsSlice" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="0" time="21.524883">
+	<testsuite tests="1" failures="1" time="0.000000" name="debug/pe" timestamp="2024-04-09T12:42:52Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="debug/pe" name="TestDefaultLinkerDWARF" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefaultLinkerDWARF&#xA;    skipping windows only test&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    skipping test: &#39;go run&#39; not available on linux/arm64&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    skipping test: &#39;go build&#39; unavailable: /usr/local/go/bin/go tool -n compile: fork/exec /usr/local/go/bin/go: operation not implemented&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    platform cannot run go tool&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    building test executable for linktype 1 failed: exec: no command &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF170414405/000/a.exe: operation not implemented &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    Testprog output:&#xA;    unexpected program output: &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;panic: runtime error at 0x00000000002740a4: index out of range&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

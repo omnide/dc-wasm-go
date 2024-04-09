@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eEuo pipefail
+
+# Install from golang.org, github.com
+
+go install golang.org/x/tools/cmd/gonew@latest
+go install github.com/hybridgroup/mechanoid/cmd/mecha@latest

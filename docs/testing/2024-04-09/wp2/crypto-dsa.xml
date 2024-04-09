@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="1" time="300.010966">
+	<testsuite tests="1" failures="1" time="0.000000" name="crypto/dsa" timestamp="2024-04-09T12:25:12Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/dsa" name="TestParameterGeneration" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestParameterGeneration&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

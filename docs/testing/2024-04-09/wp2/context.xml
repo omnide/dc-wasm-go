@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="2.067594">
+	<testsuite tests="0" failures="0" time="0.000000" name="context" timestamp="2024-04-09T12:25:07Z">
+		<properties>
+			<property name="go.version" value="go1.22.0 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;context&#x9;0.000s&#xA;# context_test&#xA;/usr/local/go/src/context/x_test.go:21:27: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestParentFinishesChild: *testing.T does not implement context.testingT (missing method Deadline)&#xA;/usr/local/go/src/context/x_test.go:24:26: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestChildFinishesFirst: *testing.T does not implement context.testingT (missing method Deadline)&#xA;/usr/local/go/src/context/x_test.go:27:21: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCancelRemoves: *testing.T does not implement context.testingT (missing method Deadline)&#xA;/usr/local/go/src/context/x_test.go:30:31: cannot use t (variable of type *testing.T) as context.testingT value in argument to XTestCustomContextGoroutines: *testing.T does not implement context.testingT (missing method Deadline)&#xA;/usr/local/go/src/context/x_test.go:50:20: t.Deadline undefined (type *testing.T has no field or method Deadline)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

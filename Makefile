@@ -128,12 +128,10 @@ define run_wasip1_test
 $(PATH_WP1)/$(2).xml:
 	@mkdir -p $(PATH_WP1)
 	cd tinygo && \
-	GOOS=wasip1 \
-	GOARCH=wasm \
 	gotestsum --raw-command \
 		--junitfile ../$(PATH_WP1)/$(2).xml \
 		-- timeout $(TIMEOUT) \
-			sh -c '$(TINYGO) test -x -v $(1) 2>&1 | go tool test2json -p $(1)'
+			sh -c '$(TINYGO) test -target wasip1 -x -v $(1) 2>&1 | go tool test2json -p $(1)'
 endef
 $(foreach pkg,$(TEST_PACKAGES_WASI),$(eval $(call run_wasip1_test,$(pkg),$(subst /,-,$(subst .,t,$(pkg))))))
 $(PATH_WP1)-status.json: $(XUNIT_FILES_WP1)
@@ -151,9 +149,6 @@ define run_wasip2_test
 $(PATH_WP2)/$(2).xml:
 	@mkdir -p $(PATH_WP2)
 	cd tinygo && \
-	TINYGO=$(TINYGO) \
-	TESTOPTS="-x" \
-	PACKAGES="$(1)" \
 	gotestsum --raw-command \
 		--junitfile ../$(PATH_WP2)/$(2).xml \
 		-- timeout $(TIMEOUT) \

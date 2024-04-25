@@ -23,9 +23,16 @@ sd
 │   └── sync
 ├── install
 │   ├── all
+│   ├── antlr
 │   ├── cargo-component
+│   ├── chromium
 │   ├── cosmo
+│   ├── gotestsum
 │   ├── jco
+│   ├── junit2html
+│   ├── junit2json
+│   ├── junit-report-merger
+│   ├── mechanoid
 │   ├── tinygo
 │   ├── wabt
 │   ├── warg
@@ -36,12 +43,18 @@ sd
 │   ├── wazero
 │   ├── wit-bindgen
 │   ├── wit-bindgen-go
-│   └── wit-deps
+│   ├── wit-deps
+│   └── xunitmerge
 ├── test
+│   ├── patch-xunit-classnames
+│   ├── tinygo-pkg-report
+│   ├── tinygo-pkg-table
 │   ├── wasip1-go
 │   └── wasip1-rust
-└── tool
-    └── versions
+├── tool
+│   └── versions
+└── wasi
+    └── regen-worlds
 ```
 
 ## Tool Versions
@@ -52,6 +65,7 @@ Current snapshot
 ❯ sd tool versions
 ----------------------------------------------------------------------------------------
 cpp
+ clang           14.0.6     /usr/bin/clang
  cmake           3.25.1     /usr/bin/cmake
  gcc             12.2.0     /usr/bin/gcc
  g++             12.2.0     /usr/bin/g++
@@ -59,46 +73,46 @@ cpp
  ninja           1.11.1     /home/vscode/.nix-profile/bin/ninja
 ----------------------------------------------------------------------------------------
 git
- gh              2.43.1     /home/vscode/.nix-profile/bin/gh
- git-lfs         3.4.1      /usr/local/bin/git-lfs
+ gh              2.47.0     /home/vscode/.nix-profile/bin/gh
+ git-lfs         -x-        
  git             2.43.0     /usr/local/bin/git
 ----------------------------------------------------------------------------------------
 go
- golangci-lint   1.56.1     /go/bin/golangci-lint
- gotestsum       1.11.0     /usr/local/bin/gotestsum
- go              1.21.7     /usr/local/go/bin/go
- tinygo          0.31.0     /workspaces/dc-wasm-go/bin/tinygo
+ golangci-lint   1.57.2     /go/bin/golangci-lint
+ gotestsum       dev        /go/bin/gotestsum
+ go              1.22.2     /usr/local/go/bin/go
+ tinygo          0.32.0     /workspaces/dc-wasm-go/bin/tinygo
 ----------------------------------------------------------------------------------------
 js
- node            20.11.0    /usr/local/share/nvm/versions/node/v20.11.0/bin/node
- npm             10.2.4     /usr/local/share/nvm/versions/node/v20.11.0/bin/npm
+ node            20.12.1    /usr/local/share/nvm/versions/node/v20.12.1/bin/node
+ npm             10.5.0     /usr/local/share/nvm/versions/node/v20.12.1/bin/npm
  yarn            1.22.19    /usr/bin/yarn
 ----------------------------------------------------------------------------------------
 py
  pip3            24.0       /usr/local/python/current/bin/pip3
  pip             24.0       /usr/local/python/current/bin/pip
- python3         3.11.8     /usr/local/python/current/bin/python3
- python          3.11.8     /usr/local/python/current/bin/python
+ python3         3.11.9     /usr/local/python/current/bin/python3
+ python          3.11.9     /usr/local/python/current/bin/python
 ----------------------------------------------------------------------------------------
 rust
- cargo           1.76.0     /usr/local/cargo/bin/cargo
+ cargo           1.77.1     /usr/local/cargo/bin/cargo
  clang           14.0.6     /usr/bin/clang
- rustc           1.76.0     /usr/local/cargo/bin/rustc
- rustup          1.26.0     /usr/local/cargo/bin/rustup
+ rustc           1.77.1     /usr/local/cargo/bin/rustc
+ rustup          1.27.0     /usr/local/cargo/bin/rustup
 ----------------------------------------------------------------------------------------
 util
  jq              1.7.1      /home/vscode/.nix-profile/bin/jq
  yq              3.2.3      /home/vscode/.nix-profile/bin/yq
 ----------------------------------------------------------------------------------------
 wasm
- cargo-component 0.7.1      /usr/local/cargo/bin/cargo-component
+ cargo-component 0.10.1     /usr/local/cargo/bin/cargo-component
  cosmo           0.25.0     /workspaces/dc-wasm-go/bin/cosmo
- jco             1.0.0      /usr/local/share/nvm/versions/node/v20.11.0/bin/jco
+ jco             1.1.1      /usr/local/share/nvm/versions/node/v20.12.1/bin/jco
  wash            0.22.0     /workspaces/dc-wasm-go/bin/wash
- wasmer          4.2.5      /workspaces/dc-wasm-go/bin/wasmer
+ wasmer          4.2.8      /workspaces/dc-wasm-go/bin/wasmer
  wasmtime        19.0.0     /workspaces/dc-wasm-go/bin/wasmtime
- wasm-tools      1.0.58     /usr/local/cargo/bin/wasm-tools
- wazero          1.6.0      /go/bin/wazero
+ wasm-tools      1.205.0    /usr/local/cargo/bin/wasm-tools
+ wazero          1.7.0      /go/bin/wazero
  wit-bindgen-go  ?.?.?      /workspaces/dc-wasm-go/bin/wit-bindgen-go
  wit-bindgen     0.17.0     /workspaces/dc-wasm-go/bin/wit-bindgen
  wit-deps        0.3.5      /usr/local/cargo/bin/wit-deps

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="1" errors="0" time="18.833033">
+	<testsuite tests="2" failures="1" time="0.000000" name="crypto/subtle" timestamp="2024-04-25T19:17:30Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/subtle" name="TestConstantTimeByteEq" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestConstantTimeByteEq&#xA;panic: unimplemented: (reflect.Type).NumIn()&#xA;</failure>
+		</testcase>
+		<testcase classname="crypto/subtle" name="TestConstantTimeCompare" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

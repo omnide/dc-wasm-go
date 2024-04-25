@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="52" failures="0" errors="0" time="29.964957">
+	<testsuite tests="52" failures="0" time="0.000000" name="mime/multipart" timestamp="2024-04-25T19:19:13Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="mime/multipart" name="TestReadForm" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWithNamelessFile" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWitFileNameMaxMemoryOverflow" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormMaxMemoryOverflow" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWithTextContentType" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_NoReadAfterEOF" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_NonFileMaxMemory" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_ManyFiles_Combined" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_ManyFiles_Distinct" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormLimits" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormEndlessHeaderLine" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestBoundaryLine" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestNameAccessors" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestMultipart" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestMultipartOnlyNewlines" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestMultipartSlowInput" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestVariousTextLineEndings" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestLineLimit" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestMultipartTruncated" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestMultipartStreamReadahead" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestLineContinuation" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestQuotedPrintableEncoding" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestRawPart" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestNested" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestParse" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestParseAllSizes" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestNoBoundary" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestWriterSetBoundary" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestWriterBoundaryGoroutines" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestSortedHeader" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

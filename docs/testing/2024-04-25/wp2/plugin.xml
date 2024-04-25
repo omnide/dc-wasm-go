@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="0.590063">
+	<testsuite tests="0" failures="0" time="0.000000" name="plugin" timestamp="2024-04-25T18:06:36Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;plugin&#x9;0.000s&#xA;# plugin&#xA;../../../usr/local/go/src/plugin/plugin_dlopen.go:10:6: not implemented: build constraints in #cgo line&#xA;../../../usr/local/go/src/plugin/plugin_dlopen.go:11:10: fatal: &#39;dlfcn.h&#39; file not found&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

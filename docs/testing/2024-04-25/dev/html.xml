@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3" failures="0" errors="0" time="19.574636">
+	<testsuite tests="3" failures="0" time="0.000000" name="html" timestamp="2024-04-25T19:18:39Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="html" name="TestEntityLength" time="0.000000"></testcase>
+		<testcase classname="html" name="TestUnescape" time="0.000000"></testcase>
+		<testcase classname="html" name="TestUnescapeEscape" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

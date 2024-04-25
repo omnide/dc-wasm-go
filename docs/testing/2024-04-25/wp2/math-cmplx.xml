@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="24" failures="0" errors="0" time="33.108199">
+	<testsuite tests="24" failures="0" time="0.000000" name="math/cmplx" timestamp="2024-04-25T16:12:51Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="math/cmplx" name="TestAbs" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAcos" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAcosh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAsin" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAsinh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAtan" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestAtanh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestConj" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestCos" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestCosh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestExp" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestIsNaN" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestLog" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestLog10" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestPolar" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestPow" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestRect" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestSin" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestSinh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestSqrt" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestTan" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestTanh" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestInfiniteLoopIntanSeries" time="0.000000"></testcase>
+		<testcase classname="math/cmplx" name="TestTanHuge" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="38" failures="0" errors="0" time="14.563660">
+	<testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-25T13:26:32Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/asn1" name="TestParseBool" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestParseInt64" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestParseInt32" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestParseBigInt" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestBitString" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestBitStringAt" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestBitStringRightAlign" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestObjectIdentifier" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUTCTime" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestGeneralizedTime" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestParseTagAndLength" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestParseFieldParameters" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUnmarshal" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUnmarshalWithNilOrNonPointer" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestCertificate" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestCertificateWithNUL" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestRawStructs" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestObjectIdentifierEqual" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestStringSlice" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestExplicitTaggedTime" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestImplicitTaggedTime" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestTruncatedExplicitTag" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUnmarshalInvalidUTF8" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestMarshalNilValue" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUnexportedStructField" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestNull" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestExplicitTagRawValueStruct" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestTaggedRawValue" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestBMPString" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestNonMinimalEncodedOID" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestMarshal" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestMarshalWithParams" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestMarshalError" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestInvalidUTF8" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestMarshalOID" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestIssue11130" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestSetEncoder" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestSetEncoderSETSliceSuffix" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

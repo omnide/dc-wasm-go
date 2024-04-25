@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="0" errors="0" time="31.096005">
+	<testsuite tests="5" failures="0" time="0.000000" name="mime/quotedprintable" timestamp="2024-04-25T13:29:15Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="mime/quotedprintable" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="mime/quotedprintable" name="TestExhaustive" time="0.000000"></testcase>
+		<testcase classname="mime/quotedprintable" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="mime/quotedprintable" name="TestWriterBinary" time="0.000000"></testcase>
+		<testcase classname="mime/quotedprintable" name="TestRoundTrip" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

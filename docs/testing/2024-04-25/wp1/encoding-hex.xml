@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="12" failures="0" errors="0" time="11.013434">
+	<testsuite tests="12" failures="0" time="0.000000" name="encoding/hex" timestamp="2024-04-25T13:26:46Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="encoding/hex" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestEncodeToString" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDecodeString" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDecodeErr" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDecodeStringErr" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestEncoderDecoder" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDecoderErr" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDumper" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDumper_doubleclose" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDumper_earlyclose" time="0.000000"></testcase>
+		<testcase classname="encoding/hex" name="TestDump" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" errors="0" time="11.399994">
+	<testsuite tests="2" failures="0" time="0.000000" name="hash/adler32" timestamp="2024-04-25T19:18:33Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="hash/adler32" name="TestGolden" time="0.000000"></testcase>
+		<testcase classname="hash/adler32" name="TestGoldenMarshal" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="0" errors="0" time="13.045512">
+	<testsuite tests="8" failures="0" time="0.000000" name="unicode/utf16" timestamp="2024-04-25T19:20:16Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="unicode/utf16" name="TestConstants" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestEncode" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestAppendRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestEncodeRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestAllocationsDecode" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestDecode" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestDecodeRune" time="0.000000"></testcase>
+		<testcase classname="unicode/utf16" name="TestIsSurrogate" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

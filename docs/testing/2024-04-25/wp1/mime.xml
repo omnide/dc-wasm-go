@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13" failures="1" errors="0" time="12.750104">
+	<testsuite tests="13" failures="1" time="0.000000" name="mime" timestamp="2024-04-25T13:29:03Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="mime" name="TestTypeByExtension" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypeByExtension&#xA;panic: bufio.Scanner: Read returned impossible count&#xA;Error: failed to run main module `/tmp/tinygo948339510/main`&#xA;&#xA;Caused by:&#xA;    0: failed to invoke command default&#xA;    1: error while executing at wasm backtrace:&#xA;           0: 0x4165 - runtime.abort&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime._panic&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:65:7&#xA;           1: 0x7270d - mime.loadMimeGlobsFile&#xA;                           at /usr/local/go/src/mime/type_unix.go:74:8              - mime.initMimeUnix&#xA;                           at /usr/local/go/src/mime/type_unix.go:107:30              - mime.initMime&#xA;                           at /usr/local/go/src/mime/type.go:88:13&#xA;           2: 0xeb9a - (*sync.Once).Do&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/sync/once.go:15:3&#xA;           3: 0x728f9 - mime.TypeByExtension&#xA;                           at /usr/local/go/src/mime/type.go:112:9&#xA;           4: 0x7d72d - mime.TestTypeByExtension&#xA;                           at /usr/local/go/src/mime/type_test.go:47:25&#xA;           5: 0x30cf4 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           6: 0x309e6 - (*testing.T).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:462:9              - testing.runTests$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:561:10&#xA;           7: 0x30cf4 - testing.tRunner&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:427:4&#xA;           8: 0x2bfde - testing.runTests&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:559:10              - (*testing.M).Run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/testing/testing.go:533:29              - main.main&#xA;                           at /home/vscode/.cache/go-build/09/099193785c39b02e3b11ad0bd26f57607faf46ef21bd807d79f3189fb39e2fe4-d:103:15              - runtime.run$1&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:25:11&#xA;           9: 0x2701a - &lt;goroutine wrapper&gt;&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:23:2&#xA;          10:  0x730 - tinygo_launch&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59&#xA;          11: 0x26ef0 - (*internal/task.Task).Resume&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start&#xA;                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5&#xA;    2: wasm trap: wasm `unreachable` instruction executed&#xA;</failure>
+		</testcase>
+		<testcase classname="mime" name="TestEncodeWord" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestEncodedWordLength" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestDecodeWord" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestDecodeHeader" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestCharsetDecoder" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestCharsetDecoderError" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeToken" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeValue" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestConsumeMediaParam" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestParseMediaType" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestParseMediaTypeBogus" time="0.000000"></testcase>
+		<testcase classname="mime" name="TestFormatMediaType" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

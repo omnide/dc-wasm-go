@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13" failures="1" errors="1" time="300.006088">
+	<testsuite tests="13" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-25T16:07:37Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="hash/maphash" name="TestSmhasherSmallKeys" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSmhasherSmallKeys&#xA;</failure>
+		</testcase>
+		<testcase classname="hash/maphash" name="TestUnseededHash" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeededHash" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashGrouping" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashBytesVsString" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestHashHighBytes" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestRepeat" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromSum64" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromSeed" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromFlush" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSeedFromReset" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherSanity" time="0.000000"></testcase>
+		<testcase classname="hash/maphash" name="TestSmhasherAppendedZeros" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

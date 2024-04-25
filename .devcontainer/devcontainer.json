@@ -121,6 +121,7 @@
             "extensions": [
                 "bierner.markdown-mermaid",
                 "brody715.vscode-cuelang",
+                "bytecodealliance.wit-idl",
                 "chrischinchilla.vale-vscode",
                 "christian-kohler.path-intellisense",
                 "DavidAnson.vscode-markdownlint",

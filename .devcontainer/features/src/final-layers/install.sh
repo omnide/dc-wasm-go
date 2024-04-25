@@ -17,10 +17,12 @@ echo 'eval "$(thefuck --alias)"' >> "${HOME}/.zshrc"
 # Install markdownlint-cli2
 #   N.B. DavidAnson has created this cli2 variant
 npm install -g markdownlint-cli2
-chown -R 1000:1000 "/home/vscode/.npm"
 
 # Install docusaurus for node-y doc sites
 npm install -g docusaurus
+
+# Cleanup the mess
+chown -R 1000:1000 "/home/vscode/.npm"
 
 # Configure git to use delta
 cat << 🐞 >> "${HOME}/.gitconfig"

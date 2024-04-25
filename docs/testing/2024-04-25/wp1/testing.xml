@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="23" failures="0" errors="0" time="22.749394">
+	<testsuite tests="23" failures="0" time="0.000000" name="testing" timestamp="2024-04-25T15:06:19Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="testing" name="TestIsSpace" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestSplitRegexp" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestMatcher" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestNaming" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestCleanup" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestRunCleanup" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestCleanupParallelSubtests" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestNestedCleanup" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestBenchmark" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestTempDirInCleanup" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestTempDirInBenchmark" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestTempDir" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestSetenv" time="0.000000"></testcase>
+		<testcase classname="testing" name="TestTesting" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

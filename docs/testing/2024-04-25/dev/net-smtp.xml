@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.938584">
+	<testsuite tests="0" failures="0" time="0.000000" name="net/smtp" timestamp="2024-04-25T19:19:23Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;net/smtp&#x9;0.000s&#xA;# net/smtp&#xA;/usr/local/go/src/net/smtp/smtp.go:72:24: undefined: tls.Conn&#xA;/usr/local/go/src/net/smtp/smtp.go:172:25: undefined: tls.Conn&#xA;/usr/local/go/src/net/smtp/smtp_test.go:591:19: undefined: tls.X509KeyPair&#xA;/usr/local/go/src/net/smtp/smtp_test.go:598:17: undefined: tls.Listen&#xA;/usr/local/go/src/net/smtp/smtp_test.go:600:17: undefined: tls.Listen&#xA;/usr/local/go/src/net/smtp/smtp_test.go:1009:9: cs.Version undefined (type tls.ConnectionState has no field or method Version)&#xA;/usr/local/go/src/net/smtp/smtp_test.go:1009:29: cs.HandshakeComplete undefined (type tls.ConnectionState has no field or method HandshakeComplete)&#xA;/usr/local/go/src/net/smtp/smtp_test.go:1049:24: undefined: tls.X509KeyPair&#xA;/usr/local/go/src/net/smtp/smtp_test.go:1054:12: undefined: tls.Server&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

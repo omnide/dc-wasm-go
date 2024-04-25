@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="3.263880">
+	<testsuite tests="0" failures="0" time="0.000000" name="math" timestamp="2024-04-25T16:12:51Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">Basic Block in function &#39;(*time.Time).Compare&#39; does not have terminator!&#xA;label %entry&#xA;FAIL&#x9;math&#x9;0.000s&#xA;error: verification error after compiling package os&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

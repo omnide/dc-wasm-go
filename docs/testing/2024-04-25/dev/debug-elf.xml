@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.771276">
+	<testsuite tests="0" failures="0" time="0.000000" name="debug/elf" timestamp="2024-04-25T19:17:30Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;debug/elf&#x9;0.000s&#xA;# debug/elf&#xA;/usr/local/go/src/debug/elf/file_test.go:1159:10: undefined: net.ResolveIPAddr&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

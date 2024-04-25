@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="23" failures="2" errors="0" time="300.095107">
+	<testsuite tests="23" failures="2" time="0.000000" name="compress/flate" timestamp="2024-04-25T15:07:20Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="compress/flate" name="TestDeflateInflateString" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDeflateInflateString&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/compress/testdata/e.txt    level: 0, size:100.00%, 100018 b&#xA;    --testSync 0, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 1, size:99.00%, 50146 b&#xA;    --testSync 1, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 2, size:92.80%, 47291 b&#xA;    --testSync 2, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 3, size:92.26%, 47193 b&#xA;    --testSync 3, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 4, size:92.63%, 47178 b&#xA;    --testSync 4, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 5, size:92.38%, 46919 b&#xA;    --testSync 5, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 6, size:92.38%, 46919 b&#xA;    --testSync 6, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 7, size:92.38%, 46919 b&#xA;    --testSync 7, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 8, size:92.38%, 46919 b&#xA;    --testSync 8, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: 9, size:92.38%, 46919 b&#xA;    --testSync 9, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;    level: -2, size:100.00%, 43683 b&#xA;    --testSync -2, 100003, 2.718281828...&#xA;    #0: write 0-50002&#xA;    #0: read 50002&#xA;    #1: write 50002-100003&#xA;    #1: read 50001&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/testdata/Isaac.Newton-Opticks.txt    open ../../testdata/Isaac.Newton-Opticks.txt: errno 63&#xA;    level: 0, size:0.00%, 5 b&#xA;    level: 1, size:0.00%, 5 b&#xA;    level: 2, size:0.00%, 5 b&#xA;    level: 3, size:0.00%, 5 b&#xA;    level: 4, size:0.00%, 5 b&#xA;    level: 5, size:0.00%, 5 b&#xA;    level: 6, size:0.00%, 5 b&#xA;    level: 7, size:0.00%, 5 b&#xA;    level: 8, size:0.00%, 5 b&#xA;    level: 9, size:0.00%, 5 b&#xA;    level: -2, size:0.00%, 5 b&#xA;--- FAIL: TestDeflateInflateString (24.88s)&#xA;</failure>
+		</testcase>
+		<testcase classname="compress/flate" name="TestBestSpeed" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestBestSpeed&#xA;</failure>
+		</testcase>
+		<testcase classname="compress/flate" name="TestBulkHash4" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflate" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterClose" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestVeryLongSparseChunk" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestDeflateInflate" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReverseBits" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestReaderDict" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterDict" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestRegression2508" time="0.000000"></testcase>
+		<testcase classname="compress/flate" name="TestWriterReset" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

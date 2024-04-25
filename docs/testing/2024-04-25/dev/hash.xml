@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="18" failures="0" errors="0" time="13.987650">
+	<testsuite tests="18" failures="0" time="0.000000" name="hash" timestamp="2024-04-25T19:18:27Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="hash" name="TestMarshalHash" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

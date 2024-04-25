@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="26" failures="0" errors="0" time="17.854179">
+	<testsuite tests="26" failures="0" time="0.000000" name="net/textproto" timestamp="2024-04-25T16:39:38Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="net/textproto" name="TestCanonicalMIMEHeaderKey" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestMIMEHeaderMultipleValues" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadLine" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadLineLongLine" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadContinuedLine" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadCodeLine" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadDotLines" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadDotBytes" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeader" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderSingle" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReaderUpcomingHeaderKeys" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderNoKey" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestLargeReadMIMEHeader" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderNonCompliant" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderMalformed" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderBytes" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderTrimContinued" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMIMEHeaderAllocations" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestRFC959Lines" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestReadMultiLineError" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestCommonHeaders" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestIssue46363" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestPrintfLine" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestDotWriter" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestDotWriterCloseEmptyWrite" time="0.000000"></testcase>
+		<testcase classname="net/textproto" name="TestDotWriterCloseNoWrite" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

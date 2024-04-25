@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="24" failures="2" errors="0" time="19.621202">
+	<testsuite tests="24" failures="2" time="0.000000" name="flag" timestamp="2024-04-25T19:17:58Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="flag" name="TestExitCode" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestExitCode&#xA;    unexpected exit code for test case {flag:-h flagHandle: expectExit:0} &#xA;        : got -1, expect 0&#xA;    unexpected exit code for test case {flag:-help flagHandle: expectExit:0} &#xA;        : got -1, expect 0&#xA;    unexpected exit code for test case {flag:-undefined flagHandle: expectExit:2} &#xA;        : got -1, expect 2&#xA;    unexpected exit code for test case {flag:-h flagHandle:h expectExit:123} &#xA;        : got -1, expect 123&#xA;    unexpected exit code for test case {flag:-help flagHandle:help expectExit:123} &#xA;        : got -1, expect 123&#xA;--- FAIL: TestExitCode (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="flag" name="TestDefineAfterSet" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestDefineAfterSet&#xA;    DefineAfterSet&#xA;        : expected panic(&#34;flag myFlag set at .*/flag_test.go:.* before being defined&#34;), but got panic(&#34;flag myFlag set at ?:0 before being defined&#34;)&#xA;--- FAIL: TestDefineAfterSet (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="flag" name="TestEverything" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestGet" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUsage" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestParse" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestFlagSetParse" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefined" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedFunc" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedForCommandLine" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedBool" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedBoolUsage" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestSetOutput" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestChangingArgs" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestHelp" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestPrintDefaults" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestIntFlagOverflow" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUsageOutput" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestGetters" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestParseError" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestRangeError" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestInvalidFlags" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestRedefinedFlags" time="0.000000"></testcase>
+		<testcase classname="flag" name="TestUserDefinedBoolFunc" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="7" failures="5" errors="0" time="34.741318">
+	<testsuite tests="7" failures="5" time="0.000000" name="debug/macho" timestamp="2024-04-25T15:09:36Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="debug/macho" name="TestOpen" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOpen&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/gcc-386-darwin-exec.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/gcc-amd64-darwin-exec.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/gcc-amd64-darwin-exec-debug.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/clang-386-darwin-exec-with-rpath.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/clang-amd64-darwin-exec-with-rpath.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/clang-386-darwin.obj.base64/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/clang-amd64-darwin.obj.base64--- PASS: TestOpen (0.04s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/macho" name="TestOpenFailure" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOpenFailure&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/file.go--- PASS: TestOpenFailure (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/macho" name="TestOpenFat" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOpenFat&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/fat-gcc-386-amd64-darwin-exec.base64--- PASS: TestOpenFat (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/macho" name="TestOpenFatFailure" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOpenFatFailure&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/file.go/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/gcc-386-darwin-exec.base64--- PASS: TestOpenFatFailure (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/macho" name="TestOpenBadDysymCmd" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOpenBadDysymCmd&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/macho/testdata/gcc-amd64-darwin-exec-with-bad-dysym.base64--- PASS: TestOpenBadDysymCmd (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/macho" name="TestRelocTypeString" time="0.000000"></testcase>
+		<testcase classname="debug/macho" name="TestTypeString" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

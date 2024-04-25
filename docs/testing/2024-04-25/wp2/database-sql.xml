@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.865833">
+	<testsuite tests="0" failures="0" time="0.000000" name="database/sql" timestamp="2024-04-25T15:09:30Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;database/sql&#x9;0.000s&#xA;# database/sql&#xA;/usr/local/go/src/database/sql/sql_test.go:4722:4: b.SetParallelism undefined (type *testing.B has no field or method SetParallelism)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

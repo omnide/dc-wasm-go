@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="28" failures="0" errors="0" time="12.698204">
+	<testsuite tests="28" failures="0" time="0.000000" name="io/ioutil" timestamp="2024-04-25T19:18:52Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="io/ioutil" name="TestReadFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestWriteFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestReadOnlyWriteFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestReadDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile_pattern" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempFile_BadPattern" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir_BadDir" time="0.000000"></testcase>
+		<testcase classname="io/ioutil" name="TestTempDir_BadPattern" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="17" failures="0" errors="0" time="10.603160">
+	<testsuite tests="17" failures="0" time="0.000000" name="compress/lzw" timestamp="2024-04-25T19:13:24Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="compress/lzw" name="TestReader" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestReaderReset" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestHiCodeDoesNotOverflow" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestNoLongerSavingPriorExpansions" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestWriterReset" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestWriterReturnValues" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestSmallLitWidth" time="0.000000"></testcase>
+		<testcase classname="compress/lzw" name="TestStartsWithClearCode" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

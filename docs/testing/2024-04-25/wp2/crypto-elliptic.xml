@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="82" failures="0" errors="0" time="81.410143">
+	<testsuite tests="82" failures="0" time="0.000000" name="crypto/elliptic" timestamp="2024-04-25T15:08:29Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/elliptic" name="TestOnCurve" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestOffCurve" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestInfinity" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestMarshal" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestUnmarshalToLargeCoordinates" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestInvalidCoordinates" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestMarshalCompressed" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestLargeIsOnCurve" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP224BaseMult" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP224GenericBaseMult" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP224Overflow" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP256BaseMult" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP256Mult" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestP256CombinedMult" time="0.000000"></testcase>
+		<testcase classname="crypto/elliptic" name="TestIssue52075" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

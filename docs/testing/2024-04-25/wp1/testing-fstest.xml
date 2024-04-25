@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="1" errors="0" time="15.857994">
+	<testsuite tests="5" failures="1" time="0.000000" name="testing/fstest" timestamp="2024-04-25T15:06:19Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="testing/fstest" name="TestSymlink" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestSymlink&#xA;    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/5422263/testfile.txt /tmp/5422263/testlink: errno 63&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    symlink /tmp/TestSymlink13508791/000/hello /tmp/TestSymlink13508791/000/hello.link: errno 63&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    TestFS found errors:&#xA;        expected but not found: hello.link&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestSymlink (0.04s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink13508791: errno 52&#xA;</failure>
+		</testcase>
+		<testcase classname="testing/fstest" name="TestMapFS" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestMapFSChmodDot" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestDash" time="0.000000"></testcase>
+		<testcase classname="testing/fstest" name="TestShuffledFS" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

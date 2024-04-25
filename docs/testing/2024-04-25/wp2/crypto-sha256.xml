@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" errors="0" time="26.391001">
+	<testsuite tests="11" failures="0" time="0.000000" name="crypto/sha256" timestamp="2024-04-25T15:09:03Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/sha256" name="TestGolden" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestGoldenMarshal" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestMarshalTypeMismatch" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestSize" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestBlockSize" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestBlockGeneric" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestLargeHashes" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestAllocations" time="0.000000"></testcase>
+		<testcase classname="crypto/sha256" name="TestCgo" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

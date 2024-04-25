@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3" failures="1" errors="0" time="25.347588">
+	<testsuite tests="3" failures="1" time="0.000000" name="fmt" timestamp="2024-04-25T19:17:59Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="fmt" name="TestSprintf" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSprintf&#xA;    Sprintf(&#34;%#v&#34;, 0x267654) = &#34;(func)(0x267654)&#34; want &#34;(func(*testing.T))(0xPTR)&#34;&#xA;panic: runtime error at 0x0000000000231cd0: nil pointer dereference&#xA;</failure>
+		</testcase>
+		<testcase classname="fmt" name="TestErrorf" time="0.000000"></testcase>
+		<testcase classname="fmt" name="TestFmtInterface" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

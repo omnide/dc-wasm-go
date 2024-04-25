@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="58" failures="6" errors="0" time="38.600814">
+	<testsuite tests="58" failures="6" time="0.000000" name="io" timestamp="2024-04-25T16:12:51Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="io" name="TestMultiWriter_WriteStringSingleAlloc" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestMultiWriter_WriteStringSingleAlloc&#xA;    num allocations = 0; want 1&#xA;--- FAIL: TestMultiWriter_WriteStringSingleAlloc (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestMultiWriterSingleChainFlatten" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestMultiWriterSingleChainFlatten&#xA;    multiWriter did not flatten chained multiWriters: expected writeDepth 12, got 4&#xA;--- FAIL: TestMultiWriterSingleChainFlatten (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestMultiReaderFlatten" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestMultiReaderFlatten&#xA;    multiReader did not flatten chained multiReaders: expected readDepth 3, got 1&#xA;--- FAIL: TestMultiReaderFlatten (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestMultiReaderFreesExhaustedReaders" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestMultiReaderFreesExhaustedReaders&#xA;    timeout waiting for collection of buf1&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMultiReaderFreesExhaustedReaders (5.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestOffsetWriter_WriteAt" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestOffsetWriter_WriteAt&#xA;/tmp/TestOffsetWriter_WriteAt186878750/tmp/TestOffsetWriter_WriteAt186878750/000/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_0_at_0107426516/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_0_at_1217665368/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_1_at_092828618/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_1_at_1205603010--- PASS: TestOffsetWriter_WriteAt (0.08s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestOffsetWriter_WriteAt186878750: errno 52&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestWriteAt_PositionPriorToBase" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestWriteAt_PositionPriorToBase&#xA;/tmp/TestWriteAt_PositionPriorToBase67249664/tmp/TestWriteAt_PositionPriorToBase67249664/000/tmp/TestWriteAt_PositionPriorToBase67249664/000/TestOffsetWriter_WriteAt18576620--- PASS: TestWriteAt_PositionPriorToBase (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestWriteAt_PositionPriorToBase67249664: errno 52&#xA;</failure>
+		</testcase>
+		<testcase classname="io" name="TestCopy" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyNegative" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyBuffer" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyBufferNil" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyReadFrom" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyWriteTo" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyPriority" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyReadErrWriteErr" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyN" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyNReadFrom" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyNWriteTo" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyNEOF" time="0.000000"></testcase>
+		<testcase classname="io" name="TestReadAtLeast" time="0.000000"></testcase>
+		<testcase classname="io" name="TestReadAtLeastWithDataAndEOF" time="0.000000"></testcase>
+		<testcase classname="io" name="TestReadAtLeastWithDataAndError" time="0.000000"></testcase>
+		<testcase classname="io" name="TestTeeReader" time="0.000000"></testcase>
+		<testcase classname="io" name="TestSectionReader_ReadAt" time="0.000000"></testcase>
+		<testcase classname="io" name="TestSectionReader_Seek" time="0.000000"></testcase>
+		<testcase classname="io" name="TestSectionReader_Size" time="0.000000"></testcase>
+		<testcase classname="io" name="TestSectionReader_Max" time="0.000000"></testcase>
+		<testcase classname="io" name="TestCopyLargeWriter" time="0.000000"></testcase>
+		<testcase classname="io" name="TestNopCloserWriterToForwarding" time="0.000000"></testcase>
+		<testcase classname="io" name="TestOffsetWriter_Seek" time="0.000000"></testcase>
+		<testcase classname="io" name="TestOffsetWriter_Write" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiReader" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiReaderAsWriterTo" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiWriter" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiWriter_String" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiWriter_StringCheckCall" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiWriterError" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiReaderCopy" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiWriterCopy" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiReaderSingleByteWithEOF" time="0.000000"></testcase>
+		<testcase classname="io" name="TestMultiReaderFinalEOF" time="0.000000"></testcase>
+		<testcase classname="io" name="TestInterleavedMultiReader" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipe1" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipe2" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipe3" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeReadClose" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeReadClose2" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeWriteClose" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeWriteClose2" time="0.000000"></testcase>
+		<testcase classname="io" name="TestWriteEmpty" time="0.000000"></testcase>
+		<testcase classname="io" name="TestWriteNil" time="0.000000"></testcase>
+		<testcase classname="io" name="TestWriteAfterWriterClose" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeCloseError" time="0.000000"></testcase>
+		<testcase classname="io" name="TestPipeConcurrent" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="1.801179">
+	<testsuite tests="0" failures="0" time="0.000000" name="go/types" timestamp="2024-04-25T19:18:25Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;go/types&#x9;0.000s&#xA;# go/types_test&#xA;/usr/local/go/src/go/types/self_test.go:103:4: b.ReportMetric undefined (type *testing.B has no field or method ReportMetric)&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

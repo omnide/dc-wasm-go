@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="6" failures="0" errors="0" time="11.153014">
+	<testsuite tests="6" failures="0" time="0.000000" name="compress/zlib" timestamp="2024-04-25T19:13:24Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="compress/zlib" name="TestDecompressor" time="0.000000"></testcase>
+		<testcase classname="compress/zlib" name="TestWriter" time="0.000000"></testcase>
+		<testcase classname="compress/zlib" name="TestWriterBig" time="0.000000"></testcase>
+		<testcase classname="compress/zlib" name="TestWriterDict" time="0.000000"></testcase>
+		<testcase classname="compress/zlib" name="TestWriterReset" time="0.000000"></testcase>
+		<testcase classname="compress/zlib" name="TestWriterDictIsUsed" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

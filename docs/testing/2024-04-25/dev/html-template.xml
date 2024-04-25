@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="1" errors="0" time="41.549507">
+	<testsuite tests="1" failures="1" time="0.000000" name="html/template" timestamp="2024-04-25T19:18:40Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="html/template" name="TestAddParseTreeHTML" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAddParseTreeHTML&#xA;panic: unimplemented: (reflect.Type).NumOut()&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

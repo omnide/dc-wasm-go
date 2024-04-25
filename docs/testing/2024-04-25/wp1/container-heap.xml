@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="7" failures="0" errors="0" time="12.296832">
+	<testsuite tests="7" failures="0" time="0.000000" name="container/heap" timestamp="2024-04-25T13:25:21Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="container/heap" name="TestInit0" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="TestInit1" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="Test" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="TestRemove0" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="TestRemove1" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="TestRemove2" time="0.000000"></testcase>
+		<testcase classname="container/heap" name="TestFix" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="0" failures="1" errors="0" time="2.106481">
+	<testsuite tests="0" failures="0" time="0.000000" name="debug/buildinfo" timestamp="2024-04-25T15:09:32Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="" name="TestMain" time="0.000000">
+			<failure message="Failed" type="">FAIL&#x9;debug/buildinfo&#x9;0.000s&#xA;# debug/buildinfo&#xA;/usr/local/go/src/debug/buildinfo/buildinfo.go:80:19: undefined: debug.ParseBuildInfo&#xA;</failure>
+		</testcase>
+	</testsuite>
+</testsuites>

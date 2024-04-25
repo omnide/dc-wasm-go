@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="0" errors="0" time="10.375334">
+	<testsuite tests="4" failures="0" time="0.000000" name="crypto/hmac" timestamp="2024-04-25T19:15:25Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="crypto/hmac" name="TestHMAC" time="0.000000"></testcase>
+		<testcase classname="crypto/hmac" name="TestNonUniqueHash" time="0.000000"></testcase>
+		<testcase classname="crypto/hmac" name="TestEqual" time="0.000000"></testcase>
+		<testcase classname="crypto/hmac" name="TestWriteAfterSum" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

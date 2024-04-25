@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="60" failures="19" errors="0" time="15.083262">
+	<testsuite tests="60" failures="19" time="0.000000" name="errors" timestamp="2024-04-25T19:17:56Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="errors" name="TestAs" time="0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs&#xA;--- FAIL: TestAs (0.00s)&#xA;=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)&#xA;    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930) (0.00s)&#xA;=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())&#xA;    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)&#xA;=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)&#xA;    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930) (0.00s)&#xA;=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)&#xA;    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930) (0.00s)&#xA;=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))&#xA;    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)&#xA;=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())&#xA;    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)&#xA;=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff57a91930)&#xA;    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff57a91930) (0.00s)&#xA;=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)&#xA;    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970) (0.00s)&#xA;=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff57a91950)&#xA;        match: got true; want false&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;        got &amp;errors.errorString{s:&#34;err&#34;}, want &lt;nil&gt;&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff57a91950) (0.00s)&#xA;=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)&#xA;    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950) (0.00s)&#xA;=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)&#xA;        got errors_test.wrapped{msg:&#34;path error&#34;, err:(*fs.PathError)(0xffff57a919b0)}, want &amp;fs.PathError{Op:&#34;open&#34;, Path:&#34;non-existing&#34;, Err:(*errors.errorString)(0x27b180)}&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950) (0.00s)&#xA;=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))&#xA;    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)&#xA;=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())&#xA;    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)&#xA;=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))&#xA;    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)&#xA;=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))&#xA;    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)&#xA;=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))&#xA;    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)&#xA;=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)&#xA;        got errors_test.multiErr{errors_test.wrapped{msg:&#34;path error&#34;, err:(*fs.PathError)(0xffff57a919b0)}}, want &amp;fs.PathError{Op:&#34;open&#34;, Path:&#34;non-existing&#34;, Err:(*errors.errorString)(0x27b180)}&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950) (0.00s)&#xA;=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))&#xA;    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/11:As(Errorf(...,_multiError),_errorT(poser))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))&#xA;    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/13:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))&#xA;    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/8:As(Errorf(...,_err),_0xffff57a91950)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff57a91950)&#xA;        match: got true; want false&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;        got &amp;errors.errorString{s:&#34;err&#34;}, want &lt;nil&gt;&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff57a91950) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/12:As(Errorf(...,_multiError),_errorT())" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())&#xA;    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)&#xA;    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/14:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))&#xA;    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/17:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))&#xA;    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)&#xA;    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)&#xA;    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)&#xA;    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())&#xA;    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)&#xA;        got errors_test.wrapped{msg:&#34;path error&#34;, err:(*fs.PathError)(0xffff57a919b0)}, want &amp;fs.PathError{Op:&#34;open&#34;, Path:&#34;non-existing&#34;, Err:(*errors.errorString)(0x27b180)}&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)&#xA;        got errors_test.multiErr{errors_test.wrapped{msg:&#34;path error&#34;, err:(*fs.PathError)(0xffff57a919b0)}}, want &amp;fs.PathError{Op:&#34;open&#34;, Path:&#34;non-existing&#34;, Err:(*errors.errorString)(0x27b180)}&#xA;        FailNow is incomplete, requires runtime.Goexit()&#xA;    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/4:As(Errorf(...,_wrapped),_errorT(T))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))&#xA;    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/5:As(Errorf(...,_error),_errorT())" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())&#xA;    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/6:As(Errorf(...,_path),_0xffff57a91930)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff57a91930)&#xA;    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff57a91930) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/15:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))&#xA;    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)&#xA;    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930) (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="errors" name="TestNewEqual" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestErrorMethod" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestJoinReturnsNil" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestJoin" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestJoinErrorMethod" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestIs" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestAsValidation" time="0.000000"></testcase>
+		<testcase classname="errors" name="TestUnwrap" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

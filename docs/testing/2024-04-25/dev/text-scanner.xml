@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="18" failures="0" errors="0" time="16.005414">
+	<testsuite tests="18" failures="0" time="0.000000" name="text/scanner" timestamp="2024-04-25T19:20:07Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="text/scanner" name="TestNext" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScan" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestInvalidExponent" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestPosition" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanZeroMode" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanSelectedMask" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanCustomIdent" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanNext" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanWhitespace" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestError" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestIOError" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestPos" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestNextEOFHandling" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestScanEOFHandling" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestIssue29723" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestNumbers" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestIssue30320" time="0.000000"></testcase>
+		<testcase classname="text/scanner" name="TestIssue50909" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

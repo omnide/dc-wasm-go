@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="4" errors="1" time="300.011806">
+	<testsuite tests="11" failures="4" time="0.000000" name="mime/multipart" timestamp="2024-04-25T13:29:07Z">
+		<properties>
+			<property name="go.version" value="go1.22.2 linux/arm64"></property>
+		</properties>
+		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.08s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.05s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/many_parts&#xA;</failure>
+		</testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/large_name" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.08s)&#xA;</failure>
+		</testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/large_MIME_header" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/many_parts" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/many_parts&#xA;</failure>
+		</testcase>
+		<testcase classname="mime/multipart" name="TestReadForm" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWithNamelessFile" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWitFileNameMaxMemoryOverflow" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormMaxMemoryOverflow" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadFormWithTextContentType" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_NoReadAfterEOF" time="0.000000"></testcase>
+		<testcase classname="mime/multipart" name="TestReadForm_NonFileMaxMemory" time="0.000000"></testcase>
+	</testsuite>
+</testsuites>

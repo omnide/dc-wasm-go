@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="43" failures="2" errors="0" time="20.998966">
-	<testsuite tests="43" failures="2" time="0.000000" name="go/parser" timestamp="2024-04-25T19:18:18Z">
+<testsuites tests="43" failures="2" errors="0" time="11.144515">
+	<testsuite tests="43" failures="2" time="0.000000" name="go/parser" timestamp="2024-04-26T04:43:23Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
-		<testcase classname="go/parser" name="TestParseDepthLimit/array/small" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestParseDepthLimit/array/small&#xA;</failure>
-		</testcase>
 		<testcase classname="go/parser" name="TestParseDepthLimit" time="-0.000000">
 			<failure message="Failed" type="">=== RUN   TestParseDepthLimit&#xA;=== RUN   TestParseDepthLimit/array/small&#xA;</failure>
+		</testcase>
+		<testcase classname="go/parser" name="TestParseDepthLimit/array/small" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestParseDepthLimit/array/small&#xA;</failure>
 		</testcase>
 		<testcase classname="go/parser" name="TestErrors" time="0.000000"></testcase>
 		<testcase classname="go/parser" name="TestParse" time="0.000000"></testcase>

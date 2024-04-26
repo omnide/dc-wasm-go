@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="11" failures="1" errors="0" time="12.214457">
-	<testsuite tests="11" failures="1" time="0.000000" name="net/mail" timestamp="2024-04-25T20:19:38Z">
+<testsuites tests="11" failures="0" errors="0" time="37.986025">
+	<testsuite tests="11" failures="0" time="0.000000" name="net/mail" timestamp="2024-04-26T04:35:00Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
-		<testcase classname="net/mail" name="TestDateParsing" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestDateParsing&#xA;/etc/localtime/usr/local/go/lib/time/zoneinfo.zip--- PASS: TestDateParsing (0.00s)&#xA;</failure>
-		</testcase>
 		<testcase classname="net/mail" name="TestParsing" time="0.000000"></testcase>
+		<testcase classname="net/mail" name="TestDateParsing" time="0.000000"></testcase>
 		<testcase classname="net/mail" name="TestDateParsingCFWS" time="0.000000"></testcase>
 		<testcase classname="net/mail" name="TestAddressParsingError" time="0.000000"></testcase>
 		<testcase classname="net/mail" name="TestAddressParsing" time="0.000000"></testcase>

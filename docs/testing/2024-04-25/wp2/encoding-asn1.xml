@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="38" failures="1" errors="0" time="15.039819">
-	<testsuite tests="38" failures="1" time="0.000000" name="encoding/asn1" timestamp="2024-04-25T20:16:38Z">
+<testsuites tests="38" failures="0" errors="0" time="45.626989">
+	<testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-26T04:17:39Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
-		<testcase classname="encoding/asn1" name="TestUTCTime" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestUTCTime&#xA;/etc/localtime/usr/local/go/lib/time/zoneinfo.zip--- PASS: TestUTCTime (0.00s)&#xA;</failure>
-		</testcase>
 		<testcase classname="encoding/asn1" name="TestParseBool" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestParseInt64" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestParseInt32" time="0.000000"></testcase>
@@ -15,6 +12,7 @@
 		<testcase classname="encoding/asn1" name="TestBitStringAt" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestBitStringRightAlign" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestObjectIdentifier" time="0.000000"></testcase>
+		<testcase classname="encoding/asn1" name="TestUTCTime" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestGeneralizedTime" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestParseTagAndLength" time="0.000000"></testcase>
 		<testcase classname="encoding/asn1" name="TestParseFieldParameters" time="0.000000"></testcase>

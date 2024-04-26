@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="3" failures="0" errors="0" time="122.829163">
-	<testsuite tests="3" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-25T20:15:11Z">
+<testsuites tests="4" failures="0" errors="0" time="169.146387">
+	<testsuite tests="4" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-26T04:14:55Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
+		<testcase classname="compress/bzip2" name="TestReader" time="0.000000"></testcase>
 		<testcase classname="compress/bzip2" name="TestBitReader" time="0.000000"></testcase>
 		<testcase classname="compress/bzip2" name="TestMTF" time="0.000000"></testcase>
 		<testcase classname="compress/bzip2" name="TestZeroRead" time="0.000000"></testcase>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="56" failures="17" errors="0" time="119.383629">
-	<testsuite tests="56" failures="17" time="0.000000" name="go/build" timestamp="2024-04-25T13:26:57Z">
+<testsuites tests="56" failures="17" errors="0" time="121.853993">
+	<testsuite tests="56" failures="17" time="0.000000" name="go/build" timestamp="2024-04-26T01:54:03Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="go/build" name="TestDotSlashImport" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestDotSlashImport&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;./file&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDotSlashImport (0.01s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestDotSlashImport&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;./file&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDotSlashImport (0.04s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestLocalDirectory" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestLocalDirectory&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    ImportPath=&#34;.&#34;, want &#34;go/build&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestLocalDirectory (0.05s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestLocalDirectory&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    ImportPath=&#34;.&#34;, want &#34;go/build&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestLocalDirectory (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestImportCmd" time="0.000000">
 			<failure message="Failed" type="">=== RUN   TestImportCmd&#xA;    go/build: go list cmd/internal/objfile: open /dev/null: file does not exist&#xA;        &#xA;        &#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    Import cmd/internal/objfile returned Dir=&#34;&#34;, want &#34;.../src/cmd/internal/objfile&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportCmd (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestImportDirNotExist" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestImportDirNotExist&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportDirNotExist (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportDirNotExist143670194: errno 52&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=off&#xA;    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestImportDirNotExist&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportDirNotExist (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportDirNotExist171764514: errno 52&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=off&#xA;    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)&#xA;=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestImportVendor" time="0.000000">
 			<failure message="Failed" type="">=== RUN   TestImportVendor&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    cannot find vendored c/d from testdata src/a/b directory: import &#34;c/d&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportVendor (0.00s)&#xA;</failure>
@@ -26,34 +26,34 @@
 			<failure message="Failed" type="">=== RUN   TestImportVendorParentFailure&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportVendorParentFailure (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestImportPackageOutsideModule" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestImportPackageOutsideModule&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    error when importing package when no go.mod is present: got &#34;go/build: go list example.com/p: open /dev/null: file does not exist\n\n&#34;; want &#34;go.mod file not found in current directory or any parent directory&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportPackageOutsideModule (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportPackageOutsideModule73937864: errno 52&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestImportPackageOutsideModule&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;    error when importing package when no go.mod is present: got &#34;go/build: go list example.com/p: open /dev/null: file does not exist\n\n&#34;; want &#34;go.mod file not found in current directory or any parent directory&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestImportPackageOutsideModule (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportPackageOutsideModule78928838: errno 52&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestIssue23594" time="0.000000">
 			<failure message="Failed" type="">=== RUN   TestIssue23594&#xA;    could not import testdata: import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestIssue23594 (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestMissingImportErrorRepetition" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestMissingImportErrorRepetition&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMissingImportErrorRepetition (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestMissingImportErrorRepetition205284844: errno 52&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestMissingImportErrorRepetition&#xA;    skipping test: &#39;go build&#39; unavailable: go tool -n compile: exec: &#34;go&#34;: executable file not found in $PATH&#xA;    SkipNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMissingImportErrorRepetition (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestMissingImportErrorRepetition69557344: errno 52&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestCgoImportsIgnored" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestCgoImportsIgnored&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestCgoImportsIgnored (0.01s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestCgoImportsIgnored&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestCgoImportsIgnored (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestAllTags" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestAllTags&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestAllTags (0.02s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestAllTags&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestAllTags (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestAllTagsNonSourceFile" time="0.000000">
 			<failure message="Failed" type="">=== RUN   TestAllTagsNonSourceFile&#xA;    import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestAllTagsNonSourceFile (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestDirectives" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestDirectives&#xA;    could not import testdata: import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDirectives (0.05s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestDirectives&#xA;    could not import testdata: import &#34;.&#34;: unknown compiler &#34;tinygo&#34;&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestDirectives (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestFindImports" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestFindImports&#xA;    open /usr/local/go/src/go/build: file does not exist&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    go/build imports []&#xA;    expected to find &#34;bytes&#34; in import list&#xA;    expected to find &#34;os&#34; in import list&#xA;    expected to find &#34;path/filepath&#34; in import list&#xA;    expected to find &#34;strings&#34; in import list&#xA;--- FAIL: TestFindImports (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=on" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestFindImports&#xA;    open /usr/local/go/src/go/build: file does not exist&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    go/build imports []&#xA;    expected to find &#34;bytes&#34; in import list&#xA;    expected to find &#34;os&#34; in import list&#xA;    expected to find &#34;path/filepath&#34; in import list&#xA;    expected to find &#34;strings&#34; in import list&#xA;--- FAIL: TestFindImports (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=off" time="-0.000000">
 			<failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=off&#xA;    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=on" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=on&#xA;        Import(full, 0) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;        Import(full, FindOnly) got error: &#34;go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n&#34;, want &#34;cannot find package&#34; or &#34;is not in std&#34; error&#xA;    --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/build" name="TestMatch" time="0.000000"></testcase>
 		<testcase classname="go/build" name="TestEmptyImport" time="0.000000"></testcase>

@@ -1,5 +1,5 @@
-<testsuites tests="12839" failures="106" time="0">
-  <testsuite tests="0" failures="0" time="0.000000" name="archive/tar" timestamp="2024-04-25T19:05:36Z">
+<testsuites tests="12860" failures="111" time="0">
+  <testsuite tests="0" failures="0" time="0.000000" name="archive/tar" timestamp="2024-04-26T04:41:39Z">
     <properties classname="archive/tar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -11,7 +11,7 @@
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="99" failures="0" time="0.000000" name="archive/zip" timestamp="2024-04-25T19:05:36Z">
+  <testsuite tests="99" failures="0" time="0.000000" name="archive/zip" timestamp="2024-04-26T04:41:39Z">
     <properties classname="archive/zip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -67,7 +67,7 @@
     <testcase classname="archive/zip" name="TestZeroLengthHeader" time="0.000000" />
     <testcase classname="archive/zip" name="TestSuffixSaver" time="0.000000" />
   </testsuite>
-  <testsuite tests="81" failures="1" time="0.000000" name="bufio" timestamp="2024-04-25T19:05:36Z">
+  <testsuite tests="81" failures="1" time="0.000000" name="bufio" timestamp="2024-04-26T04:41:39Z">
     <properties classname="bufio">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -156,7 +156,7 @@
     <testcase classname="bufio" name="TestNegativeEOFReader" time="0.000000" />
     <testcase classname="bufio" name="TestLargeReader" time="0.000000" />
   </testsuite>
-  <testsuite tests="91" failures="0" time="0.000000" name="bytes" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="91" failures="0" time="0.000000" name="bytes" timestamp="2024-04-26T04:41:40Z">
     <properties classname="bytes">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -252,7 +252,7 @@
     <testcase classname="bytes" name="TestReaderReset" time="0.000000" />
     <testcase classname="bytes" name="TestReaderZero" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="cmp" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="cmp" timestamp="2024-04-26T04:41:40Z">
     <properties classname="cmp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -261,7 +261,7 @@
     <testcase classname="cmp" name="TestSort" time="0.000000" />
     <testcase classname="cmp" name="TestOr" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-26T04:41:50Z">
     <properties classname="compress/bzip2">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -270,7 +270,7 @@
     <testcase classname="compress/bzip2" name="TestMTF" time="0.000000" />
     <testcase classname="compress/bzip2" name="TestZeroRead" time="0.000000" />
   </testsuite>
-  <testsuite tests="64" failures="0" time="0.000000" name="compress/flate" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="64" failures="0" time="0.000000" name="compress/flate" timestamp="2024-04-26T04:41:52Z">
     <properties classname="compress/flate">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -314,12 +314,12 @@
     <testcase classname="compress/flate" name="TestDeterministic" time="0.000000" />
     <testcase classname="compress/flate" name="TestDeflateFast_Reset" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="compress/gzip" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="compress/gzip" timestamp="2024-04-26T04:42:07Z">
     <properties classname="compress/gzip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="17" failures="0" time="0.000000" name="compress/lzw" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="17" failures="0" time="0.000000" name="compress/lzw" timestamp="2024-04-26T04:42:10Z">
     <properties classname="compress/lzw">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -333,7 +333,7 @@
     <testcase classname="compress/lzw" name="TestSmallLitWidth" time="0.000000" />
     <testcase classname="compress/lzw" name="TestStartsWithClearCode" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="0" time="0.000000" name="compress/zlib" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="6" failures="0" time="0.000000" name="compress/zlib" timestamp="2024-04-26T04:42:12Z">
     <properties classname="compress/zlib">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -344,7 +344,7 @@
     <testcase classname="compress/zlib" name="TestWriterReset" time="0.000000" />
     <testcase classname="compress/zlib" name="TestWriterDictIsUsed" time="0.000000" />
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="container/heap" timestamp="2024-04-25T19:13:24Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="container/heap" timestamp="2024-04-26T04:42:12Z">
     <properties classname="container/heap">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -356,7 +356,7 @@
     <testcase classname="container/heap" name="TestRemove2" time="0.000000" />
     <testcase classname="container/heap" name="TestFix" time="0.000000" />
   </testsuite>
-  <testsuite tests="10" failures="0" time="0.000000" name="container/list" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="10" failures="0" time="0.000000" name="container/list" timestamp="2024-04-26T04:42:13Z">
     <properties classname="container/list">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -371,7 +371,7 @@
     <testcase classname="container/list" name="TestInsertAfterUnknownMark" time="0.000000" />
     <testcase classname="container/list" name="TestMoveUnknownMark" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="container/ring" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="container/ring" timestamp="2024-04-26T04:42:16Z">
     <properties classname="container/ring">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -384,7 +384,7 @@
     <testcase classname="container/ring" name="TestLinkUnlink" time="0.000000" />
     <testcase classname="container/ring" name="TestMoveEmptyRing" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="context" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="context" timestamp="2024-04-26T04:42:17Z">
     <properties classname="context">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -399,27 +399,27 @@
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto" timestamp="2024-04-26T04:42:19Z">
     <properties classname="crypto">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3576799793/main /tmp/tinygo3576799793/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3308389968/main /tmp/tinygo3308389968/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 &gt;&gt;&gt; referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-DF7B1E694F38017C37BF13447BDBB61BE010030F:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto	0.000s
-error: failed to link /tmp/tinygo3576799793/main: exit status 1
+error: failed to link /tmp/tinygo3308389968/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/aes" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/aes" timestamp="2024-04-26T04:42:19Z">
     <properties classname="crypto/aes">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/aes" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3110869284/main /tmp/tinygo3110869284/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo518708260/main /tmp/tinygo518708260/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.decryptBlockAsm
 &gt;&gt;&gt; referenced by cipher_asm.go:95 (/usr/local/go/src/crypto/aes/cipher_asm.go:95)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-8D35EAAFAECF0CB6D4C9C8D0DE17A7DA33F48ADB:((*crypto/aes.aesCipherAsm).Decrypt)
@@ -429,16 +429,16 @@ ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-8D35EAAFAECF0CB6D4C9C8D0DE17A7DA33F48ADB:((*crypto/aes.aesCipherAsm).Encrypt)
 failed to run tool: ld.lld
 FAIL	crypto/aes	0.000s
-error: failed to link /tmp/tinygo3110869284/main: exit status 1
+error: failed to link /tmp/tinygo518708260/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/cipher" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/cipher" timestamp="2024-04-26T04:42:20Z">
     <properties classname="crypto/cipher">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/cipher" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo705651435/main /tmp/tinygo705651435/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3039831582/main /tmp/tinygo3039831582/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.gcmAesInit
 &gt;&gt;&gt; referenced by aes_gcm.go:49 (/usr/local/go/src/crypto/aes/aes_gcm.go:49)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-B2C24388ED20E82D4A1FDF2B51982A53F2729CC5:(crypto/cipher.newGCMWithNonceAndTagSize)
@@ -482,11 +482,11 @@ ld.lld: error: undefined symbol: crypto/aes.gcmAesDec
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-B2C24388ED20E82D4A1FDF2B51982A53F2729CC5:(interface:{NonceSize:func:{}{basic:int},Open:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8,named:error},Overhead:func:{}{basic:int},Seal:func:{slice:basic:uint8,slice:basic:uint8,slice:basic:uint8,slice:basic:uint8}{slice:basic:uint8}}.Open$invoke)
 failed to run tool: ld.lld
 FAIL	crypto/cipher	0.000s
-error: failed to link /tmp/tinygo705651435/main: exit status 1
+error: failed to link /tmp/tinygo3039831582/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="crypto/des" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="crypto/des" timestamp="2024-04-26T04:42:23Z">
     <properties classname="crypto/des">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -509,7 +509,7 @@ error: failed to link /tmp/tinygo705651435/main: exit status 1
     <testcase classname="crypto/des" name="TestSubstitutionTableKnownAnswerEncrypt" time="0.000000" />
     <testcase classname="crypto/des" name="TestSubstitutionTableKnownAnswerDecrypt" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="crypto/dsa" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="crypto/dsa" timestamp="2024-04-26T04:42:23Z">
     <properties classname="crypto/dsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -518,12 +518,12 @@ error: failed to link /tmp/tinygo705651435/main: exit status 1
     <testcase classname="crypto/dsa" name="TestSignAndVerifyWithBadPublicKey" time="0.000000" />
     <testcase classname="crypto/dsa" name="TestSigningWithDegenerateKeys" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/ecdh" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/ecdh" timestamp="2024-04-26T04:42:25Z">
     <properties classname="crypto/ecdh">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/ecdh" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1481571722/main /tmp/tinygo1481571722/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1481571722/embed-a3a5d08c40939adb7c0e9e4f5b689721-2985690401.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2293093185/main /tmp/tinygo2293093185/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2293093185/embed-a3a5d08c40939adb7c0e9e4f5b689721-823525410.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256Sqr
 &gt;&gt;&gt; referenced by p256_asm.go:584 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:584)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-5A74BC6C5DE36B0781C2ADFD7B7047B1357A9BAB:(crypto/internal/nistec.p256Inverse)
@@ -624,16 +624,16 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdBigToLittle
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-5A74BC6C5DE36B0781C2ADFD7B7047B1357A9BAB:(OUTLINED_FUNCTION_784)
 failed to run tool: ld.lld
 FAIL	crypto/ecdh	0.000s
-error: failed to link /tmp/tinygo1481571722/main: exit status 1
+error: failed to link /tmp/tinygo2293093185/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-25T19:14:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-26T04:42:25Z">
     <properties classname="crypto/ecdsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/ecdsa" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2437460144/main /tmp/tinygo2437460144/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2437460144/embed-a3a5d08c40939adb7c0e9e4f5b689721-517235.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3597089057/main /tmp/tinygo3597089057/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo3597089057/embed-a3a5d08c40939adb7c0e9e4f5b689721-2247943259.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 &gt;&gt;&gt; referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-C89B393798C9A5509BF6492389FB2156FA046854:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -763,11 +763,11 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256OrdLittleToBig
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-C89B393798C9A5509BF6492389FB2156FA046854:(crypto/internal/nistec.P256OrdInverse)
 failed to run tool: ld.lld
 FAIL	crypto/ecdsa	0.000s
-error: failed to link /tmp/tinygo2437460144/main: exit status 1
+error: failed to link /tmp/tinygo3597089057/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="crypto/ed25519" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="crypto/ed25519" timestamp="2024-04-26T04:42:26Z">
     <properties classname="crypto/ed25519">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -785,7 +785,7 @@ error: failed to link /tmp/tinygo2437460144/main: exit status 1
     FailNow is incomplete, requires runtime.Goexit()
     unexpected end of JSON input
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestEd25519Vectors (0.00s)
+--- FAIL: TestEd25519Vectors (0.01s)
 </failure>
     </testcase>
     <testcase classname="crypto/ed25519" name="TestSignVerify" time="0.000000" />
@@ -797,12 +797,12 @@ error: failed to link /tmp/tinygo2437460144/main: exit status 1
     <testcase classname="crypto/ed25519" name="TestMalleability" time="0.000000" />
     <testcase classname="crypto/ed25519" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/elliptic" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/elliptic" timestamp="2024-04-26T04:42:30Z">
     <properties classname="crypto/elliptic">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/elliptic" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1663278659/main /tmp/tinygo1663278659/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1663278659/embed-a3a5d08c40939adb7c0e9e4f5b689721-583511610.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2367157109/main /tmp/tinygo2367157109/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo2367157109/embed-a3a5d08c40939adb7c0e9e4f5b689721-286954641.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/internal/nistec.p256PointAddAsm
 &gt;&gt;&gt; referenced by p256_asm.go:387 (/usr/local/go/src/crypto/internal/nistec/p256_asm.go:387)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-8FA5BE76747A57968C9E4E31DF22FA93459ACB02:((*crypto/internal/nistec.P256Point).Add)
@@ -902,11 +902,11 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-8FA5BE76747A57968C9E4E31DF22FA93459ACB02:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/elliptic	0.000s
-error: failed to link /tmp/tinygo1663278659/main: exit status 1
+error: failed to link /tmp/tinygo2367157109/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="crypto/hmac" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="crypto/hmac" timestamp="2024-04-26T04:42:30Z">
     <properties classname="crypto/hmac">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -915,7 +915,7 @@ error: failed to link /tmp/tinygo1663278659/main: exit status 1
     <testcase classname="crypto/hmac" name="TestEqual" time="0.000000" />
     <testcase classname="crypto/hmac" name="TestWriteAfterSum" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="0" time="0.000000" name="crypto/md5" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="6" failures="0" time="0.000000" name="crypto/md5" timestamp="2024-04-26T04:42:33Z">
     <properties classname="crypto/md5">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -926,24 +926,24 @@ error: failed to link /tmp/tinygo1663278659/main: exit status 1
     <testcase classname="crypto/md5" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/md5" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rand" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rand" timestamp="2024-04-26T04:42:34Z">
     <properties classname="crypto/rand">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="crypto/rc4" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="crypto/rc4" timestamp="2024-04-26T04:42:35Z">
     <properties classname="crypto/rc4">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/rc4" name="TestGolden" time="0.000000" />
     <testcase classname="crypto/rc4" name="TestBlock" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rsa" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rsa" timestamp="2024-04-26T04:42:42Z">
     <properties classname="crypto/rsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/rsa" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo41569430/main /tmp/tinygo41569430/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo41569430/embed-a3a5d08c40939adb7c0e9e4f5b689721-2166781742.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1744163691/main /tmp/tinygo1744163691/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1744163691/embed-a3a5d08c40939adb7c0e9e4f5b689721-382641251.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: crypto/aes.encryptBlockAsm
 &gt;&gt;&gt; referenced by cipher_asm.go:81 (/usr/local/go/src/crypto/aes/cipher_asm.go:81)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-3CAACE6A17DC4091A96BFDC99FCCCEC348AFF369:((*crypto/aes.aesCipherAsm).Encrypt)
@@ -1047,11 +1047,11 @@ ld.lld: error: undefined symbol: crypto/internal/nistec.p256LittleToBig
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-3CAACE6A17DC4091A96BFDC99FCCCEC348AFF369:((*crypto/elliptic.nistCurve[*crypto/internal/nistec.P256Point]).pointToAffine[*crypto/internal/nistec.P256Point])
 failed to run tool: ld.lld
 FAIL	crypto/rsa	0.000s
-error: failed to link /tmp/tinygo41569430/main: exit status 1
+error: failed to link /tmp/tinygo1744163691/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="crypto/sha1" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="crypto/sha1" timestamp="2024-04-26T04:42:42Z">
     <properties classname="crypto/sha1">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1063,7 +1063,7 @@ error: failed to link /tmp/tinygo41569430/main: exit status 1
     <testcase classname="crypto/sha1" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/sha1" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="crypto/sha256" timestamp="2024-04-25T19:15:25Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="crypto/sha256" timestamp="2024-04-26T04:42:43Z">
     <properties classname="crypto/sha256">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1077,7 +1077,7 @@ error: failed to link /tmp/tinygo41569430/main: exit status 1
     <testcase classname="crypto/sha256" name="TestAllocations" time="0.000000" />
     <testcase classname="crypto/sha256" name="TestCgo" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="crypto/sha512" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="crypto/sha512" timestamp="2024-04-26T04:42:44Z">
     <properties classname="crypto/sha512">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1090,7 +1090,7 @@ error: failed to link /tmp/tinygo41569430/main: exit status 1
     <testcase classname="crypto/sha512" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/sha512" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="crypto/subtle" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="crypto/subtle" timestamp="2024-04-26T04:42:45Z">
     <properties classname="crypto/subtle">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1101,12 +1101,12 @@ panic: unimplemented: (reflect.Type).NumIn()
     </testcase>
     <testcase classname="crypto/subtle" name="TestConstantTimeCompare" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-26T04:42:45Z">
     <properties classname="crypto/tls">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509" timestamp="2024-04-26T04:42:45Z">
     <properties classname="crypto/x509">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1117,12 +1117,12 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509/pkix" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509/pkix" timestamp="2024-04-26T04:42:46Z">
     <properties classname="crypto/x509/pkix">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="database/sql" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="database/sql" timestamp="2024-04-26T04:42:47Z">
     <properties classname="database/sql">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1133,13 +1133,13 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="1" failures="0" time="0.000000" name="database/sql/driver" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="1" failures="0" time="0.000000" name="database/sql/driver" timestamp="2024-04-26T04:42:47Z">
     <properties classname="database/sql/driver">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="database/sql/driver" name="TestValueConverters" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="debug/buildinfo" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="debug/buildinfo" timestamp="2024-04-26T04:42:49Z">
     <properties classname="debug/buildinfo">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1150,7 +1150,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="40" failures="0" time="0.000000" name="debug/dwarf" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="40" failures="0" time="0.000000" name="debug/dwarf" timestamp="2024-04-26T04:42:50Z">
     <properties classname="debug/dwarf">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1184,7 +1184,7 @@ panic: unimplemented: (reflect.Type).NumIn()
     <testcase classname="debug/dwarf" name="TestBitOffsetsELFDwarf5" time="0.000000" />
     <testcase classname="debug/dwarf" name="TestBitFieldZeroArrayIssue50685" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="debug/elf" timestamp="2024-04-25T19:17:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="debug/elf" timestamp="2024-04-26T04:42:52Z">
     <properties classname="debug/elf">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1195,7 +1195,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="debug/gosym" timestamp="2024-04-25T19:17:31Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="debug/gosym" timestamp="2024-04-26T04:42:52Z">
     <properties classname="debug/gosym">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1207,7 +1207,7 @@ panic: runtime error at 0x000000000025e144: nil pointer dereference
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="debug/macho" timestamp="2024-04-25T19:17:31Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="debug/macho" timestamp="2024-04-26T04:42:53Z">
     <properties classname="debug/macho">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1219,7 +1219,7 @@ panic: runtime error at 0x000000000025e144: nil pointer dereference
     <testcase classname="debug/macho" name="TestTypeString" time="0.000000" />
     <testcase classname="debug/macho" name="TestOpenBadDysymCmd" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="debug/pe" timestamp="2024-04-25T19:17:31Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="debug/pe" timestamp="2024-04-26T04:42:53Z">
     <properties classname="debug/pe">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1235,7 +1235,7 @@ panic: runtime error at 0x000000000025e144: nil pointer dereference
     FailNow is incomplete, requires runtime.Goexit()
     building test executable for linktype 1 failed: exec: no command 
     FailNow is incomplete, requires runtime.Goexit()
-    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF75078143/000/a.exe: operation not implemented 
+    running test executable failed: fork/exec /tmp/TestDefaultLinkerDWARF71883266/000/a.exe: operation not implemented 
     FailNow is incomplete, requires runtime.Goexit()
     Testprog output:
     unexpected program output: 
@@ -1244,24 +1244,24 @@ panic: runtime error at 0x00000000002740a4: index out of range
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="debug/plan9obj" timestamp="2024-04-25T19:17:32Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="debug/plan9obj" timestamp="2024-04-26T04:42:53Z">
     <properties classname="debug/plan9obj">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="debug/plan9obj" name="TestOpen" time="0.000000" />
     <testcase classname="debug/plan9obj" name="TestOpenFailure" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="embed" timestamp="2024-04-25T19:17:32Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="embed" timestamp="2024-04-26T04:42:56Z">
     <properties classname="embed">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding" timestamp="2024-04-25T19:17:32Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding" timestamp="2024-04-26T04:42:56Z">
     <properties classname="encoding">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="0" time="0.000000" name="encoding/ascii85" timestamp="2024-04-25T19:17:32Z">
+  <testsuite tests="9" failures="0" time="0.000000" name="encoding/ascii85" timestamp="2024-04-26T04:42:57Z">
     <properties classname="encoding/ascii85">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1275,7 +1275,7 @@ panic: runtime error at 0x00000000002740a4: index out of range
     <testcase classname="encoding/ascii85" name="TestBig" time="0.000000" />
     <testcase classname="encoding/ascii85" name="TestDecoderInternalWhitespace" time="0.000000" />
   </testsuite>
-  <testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-25T19:17:32Z">
+  <testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-26T04:43:00Z">
     <properties classname="encoding/asn1">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1318,7 +1318,7 @@ panic: runtime error at 0x00000000002740a4: index out of range
     <testcase classname="encoding/asn1" name="TestSetEncoder" time="0.000000" />
     <testcase classname="encoding/asn1" name="TestSetEncoderSETSliceSuffix" time="0.000000" />
   </testsuite>
-  <testsuite tests="24" failures="0" time="0.000000" name="encoding/base32" timestamp="2024-04-25T19:17:33Z">
+  <testsuite tests="24" failures="0" time="0.000000" name="encoding/base32" timestamp="2024-04-26T04:43:03Z">
     <properties classname="encoding/base32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1347,7 +1347,7 @@ panic: runtime error at 0x00000000002740a4: index out of range
     <testcase classname="encoding/base32" name="TestDecodeReadAll" time="0.000000" />
     <testcase classname="encoding/base32" name="TestDecodeSmallBuffer" time="0.000000" />
   </testsuite>
-  <testsuite tests="17" failures="0" time="0.000000" name="encoding/base64" timestamp="2024-04-25T19:17:47Z">
+  <testsuite tests="17" failures="0" time="0.000000" name="encoding/base64" timestamp="2024-04-26T04:43:04Z">
     <properties classname="encoding/base64">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1369,7 +1369,7 @@ panic: runtime error at 0x00000000002740a4: index out of range
     <testcase classname="encoding/base64" name="TestDecoderIssue15656" time="0.000000" />
     <testcase classname="encoding/base64" name="TestDecoderRaw" time="0.000000" />
   </testsuite>
-  <testsuite tests="20" failures="1" time="0.000000" name="encoding/binary" timestamp="2024-04-25T19:17:48Z">
+  <testsuite tests="20" failures="1" time="0.000000" name="encoding/binary" timestamp="2024-04-26T04:43:05Z">
     <properties classname="encoding/binary">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1398,7 +1398,7 @@ panic: runtime error at 0x000000000024e558: index out of range
     <testcase classname="encoding/binary" name="TestReadTruncated" time="0.000000" />
     <testcase classname="encoding/binary" name="TestByteOrder" time="0.000000" />
   </testsuite>
-  <testsuite tests="71" failures="0" time="0.000000" name="encoding/csv" timestamp="2024-04-25T19:17:48Z">
+  <testsuite tests="71" failures="0" time="0.000000" name="encoding/csv" timestamp="2024-04-26T04:43:05Z">
     <properties classname="encoding/csv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1406,21 +1406,21 @@ panic: runtime error at 0x000000000024e558: index out of range
     <testcase classname="encoding/csv" name="TestWrite" time="0.000000" />
     <testcase classname="encoding/csv" name="TestError" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding/gob" timestamp="2024-04-25T19:17:49Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding/gob" timestamp="2024-04-26T04:43:06Z">
     <properties classname="encoding/gob">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="encoding/gob" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2386290610/main /tmp/tinygo2386290610/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo2386290610/main /tmp/tinygo2386290610/main -test.v
-/tmp/tinygo2386290610/main /tmp/tinygo2386290610/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo109486335/main /tmp/tinygo109486335/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo109486335/main /tmp/tinygo109486335/main -test.v
+/tmp/tinygo109486335/main /tmp/tinygo109486335/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;
-FAIL	encoding/gob	0.013s
+FAIL	encoding/gob	0.014s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="encoding/hex" timestamp="2024-04-25T19:17:49Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="encoding/hex" timestamp="2024-04-26T04:43:07Z">
     <properties classname="encoding/hex">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1437,12 +1437,12 @@ FAIL	encoding/gob	0.013s
     <testcase classname="encoding/hex" name="TestDumper_earlyclose" time="0.000000" />
     <testcase classname="encoding/hex" name="TestDump" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding/json" timestamp="2024-04-25T19:17:54Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding/json" timestamp="2024-04-26T04:43:08Z">
     <properties classname="encoding/json">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="7" failures="1" time="0.000000" name="encoding/pem" timestamp="2024-04-25T19:17:54Z">
+  <testsuite tests="7" failures="1" time="0.000000" name="encoding/pem" timestamp="2024-04-26T04:43:09Z">
     <properties classname="encoding/pem">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1458,7 +1458,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="encoding/pem" name="TestEncode" time="0.000000" />
     <testcase classname="encoding/pem" name="TestLineBreaker" time="0.000000" />
   </testsuite>
-  <testsuite tests="336" failures="1" time="0.000000" name="encoding/xml" timestamp="2024-04-25T19:17:55Z">
+  <testsuite tests="336" failures="1" time="0.000000" name="encoding/xml" timestamp="2024-04-26T04:43:11Z">
     <properties classname="encoding/xml">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1502,41 +1502,41 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="encoding/xml" name="TestUnmarshalWhitespaceAttrs" time="0.000000" />
     <testcase classname="encoding/xml" name="TestUnmarshalIntoNil" time="0.000000" />
   </testsuite>
-  <testsuite tests="60" failures="19" time="0.000000" name="errors" timestamp="2024-04-25T19:17:56Z">
+  <testsuite tests="60" failures="19" time="0.000000" name="errors" timestamp="2024-04-26T04:43:13Z">
     <properties classname="errors">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="errors" name="TestAs" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestAs
 --- FAIL: TestAs (0.00s)
-=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)
-    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930) (0.00s)
+=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff757df930)
+    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff757df930) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
     --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930) (0.00s)
-=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930) (0.00s)
+=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df930) (0.00s)
+=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff757df930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff757df930) (0.00s)
 === RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
     --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
 === RUN   TestAs/5:As(Errorf(...,_error),_errorT())
     --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff57a91930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff57a91930) (0.00s)
-=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970) (0.00s)
-=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff57a91950)
+=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff757df930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff757df930) (0.00s)
+=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff757df970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff757df970) (0.00s)
+=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff757df950)
         match: got true; want false
         FailNow is incomplete, requires runtime.Goexit()
         got &amp;errors.errorString{s:"err"}, want &lt;nil&gt;
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff57a91950) (0.00s)
-=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950) (0.00s)
-=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff57a919b0)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff757df950) (0.00s)
+=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df950) (0.00s)
+=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff757df950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff757df9b0)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950) (0.00s)
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff757df950) (0.00s)
 === RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
     --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
 === RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
@@ -1547,12 +1547,24 @@ panic: unimplemented: (reflect.Type).NumOut()
     --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 === RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff57a919b0)}}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff757df950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff757df9b0)}}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
         FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950) (0.00s)
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff757df950) (0.00s)
 === RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/6:As(Errorf(...,_path),_0xffff757df930)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff757df930)
+    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff757df930) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/16:As(Errorf(...,_multiError),_0xffff757df950)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff757df950)
+        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff757df9b0)}}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff757df950) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/11:As(Errorf(...,_multiError),_errorT(poser))" time="-0.000000">
@@ -1560,33 +1572,9 @@ panic: unimplemented: (reflect.Type).NumOut()
     --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/13:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/8:As(Errorf(...,_err),_0xffff57a91950)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff57a91950)
-        match: got true; want false
-        FailNow is incomplete, requires runtime.Goexit()
-        got &amp;errors.errorString{s:"err"}, want &lt;nil&gt;
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff57a91950) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/12:As(Errorf(...,_multiError),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
-    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91930) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/14:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+    <testcase classname="errors" name="TestAs/4:As(Errorf(...,_wrapped),_errorT(T))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/17:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
@@ -1594,53 +1582,9 @@ panic: unimplemented: (reflect.Type).NumOut()
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930)
-    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff57a91930) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff57a91970) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950)
-    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff57a91950) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
-    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff57a919b0)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff57a91950) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950)
-        got errors_test.multiErr{errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff57a919b0)}}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/16:As(Errorf(...,_multiError),_0xffff57a91950) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/4:As(Errorf(...,_wrapped),_errorT(T))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
-    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/5:As(Errorf(...,_error),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
-    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/6:As(Errorf(...,_path),_0xffff57a91930)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/6:As(Errorf(...,_path),_0xffff57a91930)
-    --- PASS: TestAs/6:As(Errorf(...,_path),_0xffff57a91930) (0.00s)
+    <testcase classname="errors" name="TestAs/13:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/15:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
@@ -1648,9 +1592,65 @@ panic: unimplemented: (reflect.Type).NumOut()
     --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff57a91930) (0.00s)
+    <testcase classname="errors" name="TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff757df930)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff757df930)
+    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0xffff757df930) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/5:As(Errorf(...,_error),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df930)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df930)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df930) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df950)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df950)
+    --- PASS: TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0xffff757df950) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/12:As(Errorf(...,_multiError),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/14:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/14:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/3:As(Errorf(...,_errorT()),_0xffff757df930)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0xffff757df930)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0xffff757df930) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/7:As(Errorf(...,_oh_no),_0xffff757df970)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0xffff757df970)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0xffff757df970) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/8:As(Errorf(...,_err),_0xffff757df950)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/8:As(Errorf(...,_err),_0xffff757df950)
+        match: got true; want false
+        FailNow is incomplete, requires runtime.Goexit()
+        got &amp;errors.errorString{s:"err"}, want &lt;nil&gt;
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/8:As(Errorf(...,_err),_0xffff757df950) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/10:As(Errorf(...,_path_error),_0xffff757df950)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/10:As(Errorf(...,_path_error),_0xffff757df950)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0xffff757df9b0)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x27b180)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0xffff757df950) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestNewEqual" time="0.000000" />
@@ -1662,12 +1662,12 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="errors" name="TestAsValidation" time="0.000000" />
     <testcase classname="errors" name="TestUnwrap" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="expvar" timestamp="2024-04-25T19:17:57Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="expvar" timestamp="2024-04-26T04:43:14Z">
     <properties classname="expvar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="24" failures="2" time="0.000000" name="flag" timestamp="2024-04-25T19:17:58Z">
+  <testsuite tests="24" failures="2" time="0.000000" name="flag" timestamp="2024-04-26T04:43:14Z">
     <properties classname="flag">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1716,7 +1716,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="flag" name="TestRedefinedFlags" time="0.000000" />
     <testcase classname="flag" name="TestUserDefinedBoolFunc" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="fmt" timestamp="2024-04-25T19:17:59Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="fmt" timestamp="2024-04-26T04:43:14Z">
     <properties classname="fmt">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1729,7 +1729,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     <testcase classname="fmt" name="TestErrorf" time="0.000000" />
     <testcase classname="fmt" name="TestFmtInterface" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="go/ast" timestamp="2024-04-25T19:18:00Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="go/ast" timestamp="2024-04-26T04:43:14Z">
     <properties classname="go/ast">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1742,7 +1742,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     <testcase classname="go/ast" name="TestIssue33649" time="0.000000" />
     <testcase classname="go/ast" name="TestIssue28089" time="0.000000" />
   </testsuite>
-  <testsuite tests="56" failures="16" time="0.000000" name="go/build" timestamp="2024-04-25T19:18:01Z">
+  <testsuite tests="56" failures="16" time="0.000000" name="go/build" timestamp="2024-04-26T04:43:14Z">
     <properties classname="go/build">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1752,7 +1752,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     FailNow is incomplete, requires runtime.Goexit()
     import "./file": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestDotSlashImport (0.00s)
+--- FAIL: TestDotSlashImport (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestLocalDirectory" time="0.000000">
@@ -1766,7 +1766,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
       <failure message="Failed" type="">=== RUN   TestImportCmd
     import "cmd/internal/objfile": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestImportCmd (0.01s)
+--- FAIL: TestImportCmd (0.04s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestImportDirNotExist" time="0.000000">
@@ -1788,7 +1788,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     SkipNow is incomplete, requires runtime.Goexit()
     cannot find vendored c/d from testdata src/a/b directory: import "c/d": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestImportVendor (0.00s)
+--- FAIL: TestImportVendor (0.02s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestImportVendorFailure" time="0.000000">
@@ -1818,7 +1818,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
       <failure message="Failed" type="">=== RUN   TestIssue23594
     could not import testdata: import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestIssue23594 (0.00s)
+--- FAIL: TestIssue23594 (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestMissingImportErrorRepetition" time="0.000000">
@@ -1848,14 +1848,14 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
       <failure message="Failed" type="">=== RUN   TestAllTagsNonSourceFile
     import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestAllTagsNonSourceFile (0.00s)
+--- FAIL: TestAllTagsNonSourceFile (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestDirectives" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestDirectives
     could not import testdata: import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestDirectives (0.00s)
+--- FAIL: TestDirectives (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=off" time="-0.000000">
@@ -1889,7 +1889,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     <testcase classname="go/build" name="TestReadEmbed" time="0.000000" />
     <testcase classname="go/build" name="TestGoodOSArch" time="0.000000" />
   </testsuite>
-  <testsuite tests="81" failures="0" time="0.000000" name="go/build/constraint" timestamp="2024-04-25T19:18:03Z">
+  <testsuite tests="81" failures="0" time="0.000000" name="go/build/constraint" timestamp="2024-04-26T04:43:14Z">
     <properties classname="go/build/constraint">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1903,7 +1903,7 @@ panic: runtime error at 0x0000000000231cd0: nil pointer dereference
     <testcase classname="go/build/constraint" name="TestPlusBuildLines" time="0.000000" />
     <testcase classname="go/build/constraint" name="TestGoVersion" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="go/constant" timestamp="2024-04-25T19:18:04Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="go/constant" timestamp="2024-04-26T04:43:15Z">
     <properties classname="go/constant">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1914,20 +1914,20 @@ panic: runtime error at 0x0000000000257f90: divide by zero
     </testcase>
     <testcase classname="go/constant" name="TestNumbers" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/doc" timestamp="2024-04-25T19:18:05Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/doc" timestamp="2024-04-26T04:43:17Z">
     <properties classname="go/doc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/doc" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3813131730/main /tmp/tinygo3813131730/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo3813131730/main /tmp/tinygo3813131730/main -test.v
-/tmp/tinygo3813131730/main /tmp/tinygo3813131730/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4240599404/main /tmp/tinygo4240599404/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo4240599404/main /tmp/tinygo4240599404/main -test.v
+/tmp/tinygo4240599404/main /tmp/tinygo4240599404/main -test.v
 panic: unimplemented: (reflect.Type).NumOut()
-FAIL	go/doc	0.050s
+FAIL	go/doc	0.008s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="10059" failures="1" time="0.000000" name="go/doc/comment" timestamp="2024-04-25T19:18:05Z">
+  <testsuite tests="10059" failures="1" time="0.000000" name="go/doc/comment" timestamp="2024-04-26T04:43:21Z">
     <properties classname="go/doc/comment">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1990,7 +1990,7 @@ FAIL	go/doc	0.050s
     <testcase classname="go/doc/comment" name="TestTestdata" time="0.000000" />
     <testcase classname="go/doc/comment" name="TestWrap" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="go/format" timestamp="2024-04-25T19:18:11Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="go/format" timestamp="2024-04-26T04:43:21Z">
     <properties classname="go/format">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1999,7 +1999,7 @@ FAIL	go/doc	0.050s
     <testcase classname="go/format" name="TestSource" time="0.000000" />
     <testcase classname="go/format" name="TestPartial" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="2" time="0.000000" name="go/importer" timestamp="2024-04-25T19:18:18Z">
+  <testsuite tests="2" failures="2" time="0.000000" name="go/importer" timestamp="2024-04-26T04:43:21Z">
     <properties classname="go/importer">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2023,17 +2023,17 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="43" failures="2" time="0.000000" name="go/parser" timestamp="2024-04-25T19:18:18Z">
+  <testsuite tests="43" failures="2" time="0.000000" name="go/parser" timestamp="2024-04-26T04:43:23Z">
     <properties classname="go/parser">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
-    <testcase classname="go/parser" name="TestParseDepthLimit/array/small" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestParseDepthLimit/array/small
-</failure>
-    </testcase>
     <testcase classname="go/parser" name="TestParseDepthLimit" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestParseDepthLimit
 === RUN   TestParseDepthLimit/array/small
+</failure>
+    </testcase>
+    <testcase classname="go/parser" name="TestParseDepthLimit/array/small" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestParseDepthLimit/array/small
 </failure>
     </testcase>
     <testcase classname="go/parser" name="TestErrors" time="0.000000" />
@@ -2054,13 +2054,23 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
     <testcase classname="go/parser" name="TestIncompleteSelection" time="0.000000" />
     <testcase classname="go/parser" name="TestLastLineComment" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-04-25T19:18:18Z">
+  <testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-04-26T04:43:23Z">
     <properties classname="go/printer">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
+    <testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.04s)
+</failure>
+    </testcase>
     <testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.07s)
+    --- PASS: TestFiles/expressions.input#01 (0.05s)
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.03s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles" time="-0.000000">
@@ -2072,19 +2082,19 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
 === RUN   TestFiles/comments.input#01
     --- PASS: TestFiles/comments.input#01 (0.01s)
 === RUN   TestFiles/comments2.input
-    --- PASS: TestFiles/comments2.input (0.01s)
+    --- PASS: TestFiles/comments2.input (0.00s)
 === RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.01s)
+    --- PASS: TestFiles/alignment.input (0.00s)
 === RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.02s)
+    --- PASS: TestFiles/linebreaks.input (0.01s)
 === RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.09s)
+    --- PASS: TestFiles/expressions.input (0.04s)
 === RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.07s)
+    --- PASS: TestFiles/expressions.input#01 (0.05s)
 === RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.16s)
+    --- PASS: TestFiles/declarations.input (0.03s)
 === RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.01s)
+    --- PASS: TestFiles/statements.input (0.04s)
 === RUN   TestFiles/slow.input
 </failure>
     </testcase>
@@ -2093,23 +2103,24 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
     --- PASS: TestFiles/comments.input (0.02s)
 </failure>
     </testcase>
-    <testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/comments2.input
-    --- PASS: TestFiles/comments2.input (0.01s)
+    <testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.01s)
+    --- PASS: TestFiles/alignment.input (0.00s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/linebreaks.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.02s)
+    --- PASS: TestFiles/linebreaks.input (0.01s)
 </failure>
     </testcase>
-    <testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/slow.input
+    <testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.04s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/empty.input" time="-0.000000">
@@ -2117,28 +2128,17 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
     --- PASS: TestFiles/empty.input (0.00s)
 </failure>
     </testcase>
-    <testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.01s)
+    <testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.00s)
 </failure>
     </testcase>
-    <testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.09s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.16s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.01s)
+    <testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/slow.input
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="go/scanner" timestamp="2024-04-25T19:18:23Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="go/scanner" timestamp="2024-04-26T04:43:25Z">
     <properties classname="go/scanner">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2154,21 +2154,21 @@ panic: runtime error at 0x00000000002f3834: nil pointer dereference
     <testcase classname="go/scanner" name="TestIssue28112" time="0.000000" />
     <testcase classname="go/scanner" name="TestNumbers" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/token" timestamp="2024-04-25T19:18:24Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/token" timestamp="2024-04-26T04:43:26Z">
     <properties classname="go/token">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/token" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo499658470/main /tmp/tinygo499658470/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo499658470/main /tmp/tinygo499658470/main -test.v
-/tmp/tinygo499658470/main /tmp/tinygo499658470/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3411463503/main /tmp/tinygo3411463503/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo3411463503/main /tmp/tinygo3411463503/main -test.v
+/tmp/tinygo3411463503/main /tmp/tinygo3411463503/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;
-FAIL	go/token	0.037s
+FAIL	go/token	0.017s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/types" timestamp="2024-04-25T19:18:25Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/types" timestamp="2024-04-26T04:43:26Z">
     <properties classname="go/types">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2179,7 +2179,7 @@ FAIL	go/token	0.037s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="3" failures="0" time="0.000000" name="go/version" timestamp="2024-04-25T19:18:27Z">
+  <testsuite tests="3" failures="0" time="0.000000" name="go/version" timestamp="2024-04-26T04:43:27Z">
     <properties classname="go/version">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2187,20 +2187,20 @@ FAIL	go/token	0.037s
     <testcase classname="go/version" name="TestLang" time="0.000000" />
     <testcase classname="go/version" name="TestIsValid" time="0.000000" />
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="hash" timestamp="2024-04-25T19:18:27Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="hash" timestamp="2024-04-26T04:43:28Z">
     <properties classname="hash">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="hash" name="TestMarshalHash" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="hash/adler32" timestamp="2024-04-25T19:18:33Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="hash/adler32" timestamp="2024-04-26T04:43:33Z">
     <properties classname="hash/adler32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="hash/adler32" name="TestGolden" time="0.000000" />
     <testcase classname="hash/adler32" name="TestGoldenMarshal" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="1" time="0.000000" name="hash/crc32" timestamp="2024-04-25T19:18:34Z">
+  <testsuite tests="8" failures="1" time="0.000000" name="hash/crc32" timestamp="2024-04-26T04:43:34Z">
     <properties classname="hash/crc32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2217,7 +2217,7 @@ panic: arch-specific crc32 instruction for IEEE not available
     <testcase classname="hash/crc32" name="TestMarshalTableMismatch" time="0.000000" />
     <testcase classname="hash/crc32" name="TestSlicing" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="0" time="0.000000" name="hash/crc64" timestamp="2024-04-25T19:18:34Z">
+  <testsuite tests="5" failures="0" time="0.000000" name="hash/crc64" timestamp="2024-04-26T04:43:34Z">
     <properties classname="hash/crc64">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2225,7 +2225,7 @@ panic: arch-specific crc32 instruction for IEEE not available
     <testcase classname="hash/crc64" name="TestGoldenMarshal" time="0.000000" />
     <testcase classname="hash/crc64" name="TestMarshalTableMismatch" time="0.000000" />
   </testsuite>
-  <testsuite tests="19" failures="0" time="0.000000" name="hash/fnv" timestamp="2024-04-25T19:18:37Z">
+  <testsuite tests="19" failures="0" time="0.000000" name="hash/fnv" timestamp="2024-04-26T04:43:35Z">
     <properties classname="hash/fnv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2243,7 +2243,7 @@ panic: arch-specific crc32 instruction for IEEE not available
     <testcase classname="hash/fnv" name="TestIntegrity128" time="0.000000" />
     <testcase classname="hash/fnv" name="TestIntegrity128a" time="0.000000" />
   </testsuite>
-  <testsuite tests="15" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-25T19:18:39Z">
+  <testsuite tests="15" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-26T04:43:35Z">
     <properties classname="hash/maphash">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2267,7 +2267,7 @@ panic: runtime error at 0x000000000022ecf8: out of memory
     <testcase classname="hash/maphash" name="TestSmhasherSmallKeys" time="0.000000" />
     <testcase classname="hash/maphash" name="TestSmhasherZeros" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="0" time="0.000000" name="html" timestamp="2024-04-25T19:18:39Z">
+  <testsuite tests="3" failures="0" time="0.000000" name="html" timestamp="2024-04-26T04:43:36Z">
     <properties classname="html">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2275,7 +2275,7 @@ panic: runtime error at 0x000000000022ecf8: out of memory
     <testcase classname="html" name="TestUnescape" time="0.000000" />
     <testcase classname="html" name="TestUnescapeEscape" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="html/template" timestamp="2024-04-25T19:18:40Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="html/template" timestamp="2024-04-26T04:43:36Z">
     <properties classname="html/template">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2285,7 +2285,7 @@ panic: unimplemented: (reflect.Type).NumOut()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="image" timestamp="2024-04-25T19:18:41Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="image" timestamp="2024-04-26T04:43:38Z">
     <properties classname="image">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2298,7 +2298,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="image" name="TestYCbCrSlicesDontOverlap" time="0.000000" />
     <testcase classname="image" name="TestDecode" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="image/color" timestamp="2024-04-25T19:18:42Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="image/color" timestamp="2024-04-26T04:43:39Z">
     <properties classname="image/color">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2308,12 +2308,12 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/color/palette" timestamp="2024-04-25T19:18:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/color/palette" timestamp="2024-04-26T04:43:42Z">
     <properties classname="image/color/palette">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-04-25T19:18:43Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-04-26T04:43:42Z">
     <properties classname="image/draw">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2331,7 +2331,7 @@ panic: unimplemented: (reflect.Type).NumIn()
     <testcase classname="image/draw" name="TestFloydSteinbergCheckerboard" time="0.000000" />
     <testcase classname="image/draw" name="TestPaletted" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/gif" timestamp="2024-04-25T19:18:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/gif" timestamp="2024-04-26T04:43:42Z">
     <properties classname="image/gif">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2343,7 +2343,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/jpeg" timestamp="2024-04-25T19:18:46Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/jpeg" timestamp="2024-04-26T04:43:42Z">
     <properties classname="image/jpeg">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2354,7 +2354,7 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="13" failures="1" time="0.000000" name="image/png" timestamp="2024-04-25T19:18:47Z">
+  <testsuite tests="13" failures="1" time="0.000000" name="image/png" timestamp="2024-04-26T04:43:42Z">
     <properties classname="image/png">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2376,7 +2376,7 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="image/png" name="TestPaletted8OutOfRangePixel" time="0.000000" />
     <testcase classname="image/png" name="TestGray8Transparent" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="index/suffixarray" timestamp="2024-04-25T19:18:47Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="index/suffixarray" timestamp="2024-04-26T04:43:43Z">
     <properties classname="index/suffixarray">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2385,7 +2385,7 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="index/suffixarray" name="TestNew32" time="0.000000" />
     <testcase classname="index/suffixarray" name="TestNew64" time="0.000000" />
   </testsuite>
-  <testsuite tests="60" failures="4" time="0.000000" name="io" timestamp="2024-04-25T19:18:47Z">
+  <testsuite tests="60" failures="4" time="0.000000" name="io" timestamp="2024-04-26T04:43:43Z">
     <properties classname="io">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2464,7 +2464,7 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="io" name="TestPipeCloseError" time="0.000000" />
     <testcase classname="io" name="TestPipeConcurrent" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="1" time="0.000000" name="io/fs" timestamp="2024-04-25T19:18:49Z">
+  <testsuite tests="6" failures="1" time="0.000000" name="io/fs" timestamp="2024-04-26T04:43:43Z">
     <properties classname="io/fs">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2478,7 +2478,7 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="io/fs" name="TestGlob" time="0.000000" />
     <testcase classname="io/fs" name="TestGlobError" time="0.000000" />
   </testsuite>
-  <testsuite tests="28" failures="0" time="0.000000" name="io/ioutil" timestamp="2024-04-25T19:18:52Z">
+  <testsuite tests="28" failures="0" time="0.000000" name="io/ioutil" timestamp="2024-04-26T04:43:46Z">
     <properties classname="io/ioutil">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2493,7 +2493,7 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="io/ioutil" name="TestTempDir_BadDir" time="0.000000" />
     <testcase classname="io/ioutil" name="TestTempDir_BadPattern" time="0.000000" />
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="log" timestamp="2024-04-25T19:18:54Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="log" timestamp="2024-04-26T04:43:47Z">
     <properties classname="log">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2505,15 +2505,15 @@ panic: runtime error at 0x000000000025ca64: out of memory
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 19:19:05.820637 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 19:19:05.820665 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 19:19:05.821226 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 19:19:05.821247 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 19:19:05.821269 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 19:19:05.821734 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 19:19:05.822113 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 19:19:05.822138 ???:0: XXXhello 23 world"
---- FAIL: TestAll (0.00s)
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 04:43:56.244392 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 04:43:56.244418 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 04:43:56.244658 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 04:43:56.244676 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 04:43:56.244699 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 04:43:56.253043 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 04:43:56.253068 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 04:43:56.253087 ???:0: XXXhello 23 world"
+--- FAIL: TestAll (0.02s)
 </failure>
     </testcase>
     <testcase classname="log" name="TestDefault" time="0.000000" />
@@ -2525,20 +2525,20 @@ panic: runtime error at 0x000000000025ca64: out of memory
     <testcase classname="log" name="TestEmptyPrintCreatesLine" time="0.000000" />
     <testcase classname="log" name="TestDiscard" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="log/slog" timestamp="2024-04-25T19:18:59Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="log/slog" timestamp="2024-04-26T04:43:51Z">
     <properties classname="log/slog">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="log/slog" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1632294990/main /tmp/tinygo1632294990/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo1632294990/embed-a3a5d08c40939adb7c0e9e4f5b689721-2969330575.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo1632294990/main /tmp/tinygo1632294990/main -test.v
-/tmp/tinygo1632294990/main /tmp/tinygo1632294990/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3636628880/main /tmp/tinygo3636628880/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a /tmp/tinygo3636628880/embed-a3a5d08c40939adb7c0e9e4f5b689721-2056532010.o -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo3636628880/main /tmp/tinygo3636628880/main -test.v
+/tmp/tinygo3636628880/main /tmp/tinygo3636628880/main -test.v
 panic: runtime.Caller failed
 FAIL	log/slog	0.019s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="log/syslog" timestamp="2024-04-25T19:19:00Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="log/syslog" timestamp="2024-04-26T04:43:51Z">
     <properties classname="log/syslog">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2550,12 +2550,12 @@ FAIL	log/slog	0.019s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="maps" timestamp="2024-04-25T19:19:01Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="maps" timestamp="2024-04-26T04:43:52Z">
     <properties classname="maps">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="maps" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1427267676/main /tmp/tinygo1427267676/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3683976468/main /tmp/tinygo3683976468/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: maps.clone
 &gt;&gt;&gt; referenced by maps.go:46 (/usr/local/go/src/maps/maps.go:46)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-E741FD614938CB8F938506574028B662B05CE9D0:(maps.Clone[map[int]int int int])
@@ -2563,11 +2563,11 @@ ld.lld: error: undefined symbol: maps.clone
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-E741FD614938CB8F938506574028B662B05CE9D0:(maps.TestCloneLarge)
 failed to run tool: ld.lld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo1427267676/main: exit status 1
+error: failed to link /tmp/tinygo3683976468/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="76" failures="0" time="0.000000" name="math" timestamp="2024-04-25T19:19:02Z">
+  <testsuite tests="76" failures="0" time="0.000000" name="math" timestamp="2024-04-26T04:43:53Z">
     <properties classname="math">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2648,14 +2648,14 @@ error: failed to link /tmp/tinygo1427267676/main: exit status 1
     <testcase classname="math" name="TestHugeSinCos" time="0.000000" />
     <testcase classname="math" name="TestHugeTan" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-25T19:19:03Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-26T04:43:53Z">
     <properties classname="math/big">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="math/big" name="TestMain" time="0.000000">
       <failure message="Failed" type="">FAIL	math/big	0.000s
 # math/big
-/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 30012955)
+/usr/local/go/src/math/bits/bits.go:472:10: interp: running for more than 3m0s, timing out (executed calls: 35438156)
   %0 = and i64 %x, 4294967295, !dbg !30820
 
 traceback:
@@ -2676,16 +2676,61 @@ traceback:
 /usr/local/go/src/math/big/nat_test.go:92:31:
   %8 = call { { ptr, i64, i64 }, i64, i64, %runtime._interface } @"(math/big.nat).scan"(ptr null, i64 0, i64 0, ptr %6, ptr %7, i64 0, i1 false, ptr undef), !dbg !30812
 /usr/local/go/src/math/big:
-  %19 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %17, i64 %18, ptr undef), !dbg !30819
+  %32 = call { ptr, i64, i64 } @"math/big.natFromString"(ptr %30, i64 %31, ptr undef), !dbg !30819
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="math/bits" timestamp="2024-04-25T19:19:04Z">
+  <testsuite tests="21" failures="5" time="0.000000" name="math/bits" timestamp="2024-04-26T04:43:54Z">
     <properties classname="math/bits">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
+    <testcase classname="math/bits" name="TestDivPanicOverflow" time="0.000000">
+      <failure message="Failed" type="">=== RUN   TestDivPanicOverflow
+    Div should have panicked when y&lt;=hi
+--- FAIL: TestDivPanicOverflow (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/bits" name="TestDiv32PanicOverflow" time="0.000000">
+      <failure message="Failed" type="">=== RUN   TestDiv32PanicOverflow
+    Div32 should have panicked when y&lt;=hi
+--- FAIL: TestDiv32PanicOverflow (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/bits" name="TestDiv64PanicOverflow" time="0.000000">
+      <failure message="Failed" type="">=== RUN   TestDiv64PanicOverflow
+    Div64 should have panicked when y&lt;=hi
+--- FAIL: TestDiv64PanicOverflow (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/bits" name="TestDivPanicZero" time="0.000000">
+      <failure message="Failed" type="">=== RUN   TestDivPanicZero
+    Div should have panicked when y==0
+--- FAIL: TestDivPanicZero (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/bits" name="TestDiv32PanicZero" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDiv32PanicZero
+panic: runtime error at 0x0000000000229298: divide by zero
+</failure>
+    </testcase>
+    <testcase classname="math/bits" name="TestUintSize" time="0.000000" />
+    <testcase classname="math/bits" name="TestLeadingZeros" time="0.000000" />
+    <testcase classname="math/bits" name="TestTrailingZeros" time="0.000000" />
+    <testcase classname="math/bits" name="TestOnesCount" time="0.000000" />
+    <testcase classname="math/bits" name="TestRotateLeft" time="0.000000" />
+    <testcase classname="math/bits" name="TestReverse" time="0.000000" />
+    <testcase classname="math/bits" name="TestReverseBytes" time="0.000000" />
+    <testcase classname="math/bits" name="TestLen" time="0.000000" />
+    <testcase classname="math/bits" name="TestAddSubUint" time="0.000000" />
+    <testcase classname="math/bits" name="TestAddSubUint32" time="0.000000" />
+    <testcase classname="math/bits" name="TestAddSubUint64" time="0.000000" />
+    <testcase classname="math/bits" name="TestAdd64OverflowPanic" time="0.000000" />
+    <testcase classname="math/bits" name="TestSub64OverflowPanic" time="0.000000" />
+    <testcase classname="math/bits" name="TestMulDiv" time="0.000000" />
+    <testcase classname="math/bits" name="TestMulDiv32" time="0.000000" />
+    <testcase classname="math/bits" name="TestMulDiv64" time="0.000000" />
   </testsuite>
-  <testsuite tests="24" failures="0" time="0.000000" name="math/cmplx" timestamp="2024-04-25T19:19:06Z">
+  <testsuite tests="24" failures="0" time="0.000000" name="math/cmplx" timestamp="2024-04-26T04:43:55Z">
     <properties classname="math/cmplx">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2714,7 +2759,7 @@ traceback:
     <testcase classname="math/cmplx" name="TestInfiniteLoopIntanSeries" time="0.000000" />
     <testcase classname="math/cmplx" name="TestTanHuge" time="0.000000" />
   </testsuite>
-  <testsuite tests="43" failures="8" time="0.000000" name="math/rand" timestamp="2024-04-25T19:19:06Z">
+  <testsuite tests="43" failures="8" time="0.000000" name="math/rand" timestamp="2024-04-26T04:43:56Z">
     <properties classname="math/rand">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2722,41 +2767,23 @@ traceback:
       <failure message="Failed" type="">=== RUN   TestDefaultRace
 --- FAIL: TestDefaultRace (0.00s)
 === RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/0 (0.00s)
 === RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/1 (0.00s)
 === RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/2 (0.00s)
 === RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/3 (0.00s)
 === RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/4 (0.00s)
 === RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/5 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/3" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/3
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
-    --- FAIL: TestDefaultRace/3 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/4" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/4
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
-    --- FAIL: TestDefaultRace/4 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/2
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
-    --- FAIL: TestDefaultRace/2 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestRegress" time="-0.000000">
@@ -2764,22 +2791,40 @@ traceback:
 panic: unimplemented: (reflect.Type).Method()
 </failure>
     </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/0
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
-    --- FAIL: TestDefaultRace/0 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/1
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
-    --- FAIL: TestDefaultRace/1 (0.00s)
+    <testcase classname="math/rand" name="TestDefaultRace/3" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/3
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
+    --- FAIL: TestDefaultRace/3 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestDefaultRace/5" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestDefaultRace/5
-        fork/exec /tmp/tinygo2469119237/main: operation not implemented
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
     --- FAIL: TestDefaultRace/5 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/0
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
+    --- FAIL: TestDefaultRace/0 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/rand" name="TestDefaultRace/4" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/4
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
+    --- FAIL: TestDefaultRace/4 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/2
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
+    --- FAIL: TestDefaultRace/2 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/1
+        fork/exec /tmp/tinygo1692772297/main: operation not implemented
+    --- FAIL: TestDefaultRace/1 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestAuto" time="0.000000" />
@@ -2798,12 +2843,12 @@ panic: unimplemented: (reflect.Type).Method()
     <testcase classname="math/rand" name="TestShuffleSmall" time="0.000000" />
     <testcase classname="math/rand" name="TestUniformFactorial" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="math/rand/v2" timestamp="2024-04-25T19:19:07Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="math/rand/v2" timestamp="2024-04-26T04:43:56Z">
     <properties classname="math/rand/v2">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="math/rand/v2" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1589010499/main /tmp/tinygo1589010499/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2564061515/main /tmp/tinygo2564061515/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
 ld.lld: error: undefined symbol: internal/chacha8rand.block
 &gt;&gt;&gt; referenced by chacha8.go:63 (/usr/local/go/src/internal/chacha8rand/chacha8.go:63)
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-41AB6AA57CA8BDAFB9032CE81E8509AB3BA1662B:((*internal/chacha8rand.State).Init)
@@ -2813,11 +2858,11 @@ ld.lld: error: undefined symbol: internal/chacha8rand.block
 &gt;&gt;&gt;               /home/vscode/.cache/tinygo/thinlto/llvmcache-41AB6AA57CA8BDAFB9032CE81E8509AB3BA1662B:(math/rand/v2_test.TestChaCha8Marshal)
 failed to run tool: ld.lld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo1589010499/main: exit status 1
+error: failed to link /tmp/tinygo2564061515/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="14" failures="1" time="0.000000" name="mime" timestamp="2024-04-25T19:19:08Z">
+  <testsuite tests="14" failures="1" time="0.000000" name="mime" timestamp="2024-04-26T04:43:56Z">
     <properties classname="mime">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2840,7 +2885,7 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="mime" name="TestFormatMediaType" time="0.000000" />
     <testcase classname="mime" name="TestTypeByExtension" time="0.000000" />
   </testsuite>
-  <testsuite tests="52" failures="0" time="0.000000" name="mime/multipart" timestamp="2024-04-25T19:19:13Z">
+  <testsuite tests="52" failures="0" time="0.000000" name="mime/multipart" timestamp="2024-04-26T04:43:58Z">
     <properties classname="mime/multipart">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2877,7 +2922,7 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="mime/multipart" name="TestWriterBoundaryGoroutines" time="0.000000" />
     <testcase classname="mime/multipart" name="TestSortedHeader" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="0" time="0.000000" name="mime/quotedprintable" timestamp="2024-04-25T19:19:14Z">
+  <testsuite tests="5" failures="0" time="0.000000" name="mime/quotedprintable" timestamp="2024-04-26T04:44:01Z">
     <properties classname="mime/quotedprintable">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2887,53 +2932,53 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="mime/quotedprintable" name="TestWriterBinary" time="0.000000" />
     <testcase classname="mime/quotedprintable" name="TestRoundTrip" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="0" time="0.000000" name="net" timestamp="2024-04-25T19:19:18Z">
+  <testsuite tests="1" failures="0" time="0.000000" name="net" timestamp="2024-04-26T04:44:03Z">
     <properties classname="net">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="net" name="TestParseMAC" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http" timestamp="2024-04-25T19:19:18Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http" timestamp="2024-04-26T04:44:03Z">
     <properties classname="net/http">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cgi" timestamp="2024-04-25T19:19:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cgi" timestamp="2024-04-26T04:44:04Z">
     <properties classname="net/http/cgi">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cookiejar" timestamp="2024-04-25T19:19:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cookiejar" timestamp="2024-04-26T04:44:04Z">
     <properties classname="net/http/cookiejar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/fcgi" timestamp="2024-04-25T19:19:20Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/fcgi" timestamp="2024-04-26T04:44:05Z">
     <properties classname="net/http/fcgi">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptest" timestamp="2024-04-25T19:19:20Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptest" timestamp="2024-04-26T04:44:05Z">
     <properties classname="net/http/httptest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptrace" timestamp="2024-04-25T19:19:20Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptrace" timestamp="2024-04-26T04:44:05Z">
     <properties classname="net/http/httptrace">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httputil" timestamp="2024-04-25T19:19:20Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httputil" timestamp="2024-04-26T04:44:05Z">
     <properties classname="net/http/httputil">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/pprof" timestamp="2024-04-25T19:19:20Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/pprof" timestamp="2024-04-26T04:44:05Z">
     <properties classname="net/http/pprof">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="net/mail" timestamp="2024-04-25T19:19:21Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="net/mail" timestamp="2024-04-26T04:44:06Z">
     <properties classname="net/mail">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2948,7 +2993,7 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="net/mail" name="TestAddressFormattingAndParsing" time="0.000000" />
     <testcase classname="net/mail" name="TestEmptyAddress" time="0.000000" />
   </testsuite>
-  <testsuite tests="256" failures="8" time="0.000000" name="net/netip" timestamp="2024-04-25T19:19:21Z">
+  <testsuite tests="256" failures="8" time="0.000000" name="net/netip" timestamp="2024-04-26T04:44:08Z">
     <properties classname="net/netip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3022,28 +3067,16 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)
 === RUN   TestAddrStringAllocs/ipv6
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
+    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)
 === RUN   TestAddrStringAllocs/ipv6+zone
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)
+    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.02s)
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
 === RUN   TestAddrStringAllocs/ipv4-in-ipv6+zone
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6+zone (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv4-in-ipv6" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4-in-ipv6
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv6+zone" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6+zone
-        allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.01s)
 </failure>
     </testcase>
     <testcase classname="net/netip" name="TestAddrStringAllocs/ipv4-in-ipv6+zone" time="-0.000000">
@@ -3057,16 +3090,28 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     --- PASS: TestAddrStringAllocs/zero (0.00s)
 </failure>
     </testcase>
+    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv6" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv6 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv4-in-ipv6" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4-in-ipv6
+        allocs=0, want 1
+    --- FAIL: TestAddrStringAllocs/ipv4-in-ipv6 (0.00s)
+</failure>
+    </testcase>
     <testcase classname="net/netip" name="TestAddrStringAllocs/ipv4" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv4
         allocs=0, want 1
     --- FAIL: TestAddrStringAllocs/ipv4 (0.00s)
 </failure>
     </testcase>
-    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv6" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6
+    <testcase classname="net/netip" name="TestAddrStringAllocs/ipv6+zone" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAddrStringAllocs/ipv6+zone
         allocs=0, want 1
-    --- FAIL: TestAddrStringAllocs/ipv6 (0.01s)
+    --- FAIL: TestAddrStringAllocs/ipv6+zone (0.02s)
 </failure>
     </testcase>
     <testcase classname="net/netip" name="TestPrefixValid" time="0.000000" />
@@ -3114,12 +3159,12 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="net/netip" name="TestInvalidAddrPortString" time="0.000000" />
     <testcase classname="net/netip" name="TestAsSlice" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc" timestamp="2024-04-25T19:19:22Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc" timestamp="2024-04-26T04:44:08Z">
     <properties classname="net/rpc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc/jsonrpc" timestamp="2024-04-25T19:19:23Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc/jsonrpc" timestamp="2024-04-26T04:44:08Z">
     <properties classname="net/rpc/jsonrpc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3130,7 +3175,7 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/smtp" timestamp="2024-04-25T19:19:23Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/smtp" timestamp="2024-04-26T04:44:09Z">
     <properties classname="net/smtp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3149,7 +3194,7 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="26" failures="0" time="0.000000" name="net/textproto" timestamp="2024-04-25T19:19:25Z">
+  <testsuite tests="26" failures="0" time="0.000000" name="net/textproto" timestamp="2024-04-26T04:44:10Z">
     <properties classname="net/textproto">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3180,21 +3225,21 @@ panic: runtime error at 0x0000000000237f38: deadlocked: no event source
     <testcase classname="net/textproto" name="TestDotWriterCloseEmptyWrite" time="0.000000" />
     <testcase classname="net/textproto" name="TestDotWriterCloseNoWrite" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/url" timestamp="2024-04-25T19:19:25Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/url" timestamp="2024-04-26T04:44:10Z">
     <properties classname="net/url">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="net/url" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3139644964/main /tmp/tinygo3139644964/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo3139644964/main /tmp/tinygo3139644964/main -test.v
-/tmp/tinygo3139644964/main /tmp/tinygo3139644964/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2311633911/main /tmp/tinygo2311633911/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo2311633911/main /tmp/tinygo2311633911/main -test.v
+/tmp/tinygo2311633911/main /tmp/tinygo2311633911/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;
-FAIL	net/url	0.014s
+FAIL	net/url	0.026s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="81" failures="0" time="0.000000" name="os" timestamp="2024-04-25T19:19:26Z">
+  <testsuite tests="81" failures="0" time="0.000000" name="os" timestamp="2024-04-26T04:44:11Z">
     <properties classname="os">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3262,12 +3307,12 @@ FAIL	net/url	0.014s
     <testcase classname="os" name="TestMkdirTempBadDir" time="0.000000" />
     <testcase classname="os" name="TestMkdirTempBadPattern" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/exec" timestamp="2024-04-25T19:19:32Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/exec" timestamp="2024-04-26T04:44:11Z">
     <properties classname="os/exec">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/signal" timestamp="2024-04-25T19:19:33Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/signal" timestamp="2024-04-26T04:44:11Z">
     <properties classname="os/signal">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3282,12 +3327,12 @@ FAIL	net/url	0.014s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/user" timestamp="2024-04-25T19:19:34Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/user" timestamp="2024-04-26T04:44:13Z">
     <properties classname="os/user">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="0" time="0.000000" name="path" timestamp="2024-04-25T19:19:34Z">
+  <testsuite tests="9" failures="0" time="0.000000" name="path" timestamp="2024-04-26T04:44:13Z">
     <properties classname="path">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3301,7 +3346,7 @@ FAIL	net/url	0.014s
     <testcase classname="path" name="TestDir" time="0.000000" />
     <testcase classname="path" name="TestIsAbs" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="path/filepath" timestamp="2024-04-25T19:19:35Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="path/filepath" timestamp="2024-04-26T04:44:13Z">
     <properties classname="path/filepath">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3312,7 +3357,7 @@ FAIL	net/url	0.014s
     <testcase classname="path/filepath" name="TestMatch" time="0.000000" />
     <testcase classname="path/filepath" name="TestGlob" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="plugin" timestamp="2024-04-25T19:19:35Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="plugin" timestamp="2024-04-26T04:44:17Z">
     <properties classname="plugin">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3325,7 +3370,7 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="96" failures="0" time="0.000000" name="reflect" timestamp="2024-04-25T19:19:36Z">
+  <testsuite tests="96" failures="0" time="0.000000" name="reflect" timestamp="2024-04-26T04:44:17Z">
     <properties classname="reflect">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3406,7 +3451,7 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
     <testcase classname="reflect" name="TestFields" time="0.000000" />
     <testcase classname="reflect" name="TestFieldByIndexErr" time="0.000000" />
   </testsuite>
-  <testsuite tests="14" failures="1" time="0.000000" name="regexp" timestamp="2024-04-25T19:19:38Z">
+  <testsuite tests="14" failures="1" time="0.000000" name="regexp" timestamp="2024-04-26T04:44:19Z">
     <properties classname="regexp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3428,7 +3473,7 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
     <testcase classname="regexp" name="TestSplit" time="0.000000" />
     <testcase classname="regexp" name="TestParseAndCompile" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="regexp/syntax" timestamp="2024-04-25T19:19:40Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="regexp/syntax" timestamp="2024-04-26T04:44:20Z">
     <properties classname="regexp/syntax">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3445,47 +3490,47 @@ lib/musl/include/limits.h:40:10: fatal: 'bits/limits.h' file not found
     <testcase classname="regexp/syntax" name="TestCompile" time="0.000000" />
     <testcase classname="regexp/syntax" name="TestSimplify" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime" timestamp="2024-04-25T19:19:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime" timestamp="2024-04-26T04:44:22Z">
     <properties classname="runtime">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/cgo" timestamp="2024-04-25T19:19:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/cgo" timestamp="2024-04-26T04:44:22Z">
     <properties classname="runtime/cgo">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/coverage" timestamp="2024-04-25T19:19:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/coverage" timestamp="2024-04-26T04:44:22Z">
     <properties classname="runtime/coverage">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/debug" timestamp="2024-04-25T19:19:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/debug" timestamp="2024-04-26T04:44:22Z">
     <properties classname="runtime/debug">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/metrics" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/metrics" timestamp="2024-04-26T04:44:22Z">
     <properties classname="runtime/metrics">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/pprof" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/pprof" timestamp="2024-04-26T04:44:23Z">
     <properties classname="runtime/pprof">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/race" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/race" timestamp="2024-04-26T04:44:23Z">
     <properties classname="runtime/race">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/trace" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/trace" timestamp="2024-04-26T04:44:23Z">
     <properties classname="runtime/trace">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="11" failures="1" time="0.000000" name="slices" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="11" failures="1" time="0.000000" name="slices" timestamp="2024-04-26T04:44:23Z">
     <properties classname="slices">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3505,7 +3550,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="slices" name="TestInsert" time="0.000000" />
     <testcase classname="slices" name="TestInsertOverlap" time="0.000000" />
   </testsuite>
-  <testsuite tests="63" failures="0" time="0.000000" name="sort" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="63" failures="0" time="0.000000" name="sort" timestamp="2024-04-26T04:44:23Z">
     <properties classname="sort">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3539,7 +3584,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="sort" name="TestCountStableOps" time="0.000000" />
     <testcase classname="sort" name="TestCountSortOps" time="0.000000" />
   </testsuite>
-  <testsuite tests="66" failures="0" time="0.000000" name="strconv" timestamp="2024-04-25T19:19:44Z">
+  <testsuite tests="66" failures="0" time="0.000000" name="strconv" timestamp="2024-04-26T04:44:23Z">
     <properties classname="strconv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3600,7 +3645,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="strconv" name="TestAllocationsFromBytes" time="0.000000" />
     <testcase classname="strconv" name="TestErrorPrefixes" time="0.000000" />
   </testsuite>
-  <testsuite tests="71" failures="2" time="0.000000" name="strings" timestamp="2024-04-25T19:19:47Z">
+  <testsuite tests="71" failures="2" time="0.000000" name="strings" timestamp="2024-04-26T04:44:23Z">
     <properties classname="strings">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3610,13 +3655,13 @@ panic: runtime error at 0x0000000000285364: slice out of range
     growLen=1000: got 0 allocs during Write; want 1
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
---- FAIL: TestBuilderGrow (0.16s)
+--- FAIL: TestBuilderGrow (0.13s)
 </failure>
     </testcase>
     <testcase classname="strings" name="TestBuilderAllocs" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestBuilderAllocs
     Builder allocs = 0; want 1
---- FAIL: TestBuilderAllocs (0.00s)
+--- FAIL: TestBuilderAllocs (0.01s)
 </failure>
     </testcase>
     <testcase classname="strings" name="TestBuilder" time="0.000000" />
@@ -3685,7 +3730,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="strings" name="TestCutPrefix" time="0.000000" />
     <testcase classname="strings" name="TestCutSuffix" time="0.000000" />
   </testsuite>
-  <testsuite tests="19" failures="0" time="0.000000" name="sync" timestamp="2024-04-25T19:19:49Z">
+  <testsuite tests="19" failures="0" time="0.000000" name="sync" timestamp="2024-04-26T04:44:25Z">
     <properties classname="sync">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3709,7 +3754,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="sync" name="TestWaitGroupUncontended" time="0.000000" />
     <testcase classname="sync" name="TestWaitGroup" time="0.000000" />
   </testsuite>
-  <testsuite tests="68" failures="6" time="0.000000" name="sync/atomic" timestamp="2024-04-25T19:19:50Z">
+  <testsuite tests="68" failures="6" time="0.000000" name="sync/atomic" timestamp="2024-04-26T04:44:28Z">
     <properties classname="sync/atomic">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3823,7 +3868,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="sync/atomic" name="TestHammerStoreLoad" time="0.000000" />
     <testcase classname="sync/atomic" name="TestAutoAligned64" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="syscall" timestamp="2024-04-25T19:19:54Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="syscall" timestamp="2024-04-26T04:44:31Z">
     <properties classname="syscall">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3842,7 +3887,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="33" failures="0" time="0.000000" name="testing" timestamp="2024-04-25T19:19:56Z">
+  <testsuite tests="33" failures="0" time="0.000000" name="testing" timestamp="2024-04-26T04:44:33Z">
     <properties classname="testing">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3861,7 +3906,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="testing" name="TestSetenv" time="0.000000" />
     <testcase classname="testing" name="TestTesting" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="0" time="0.000000" name="testing/fstest" timestamp="2024-04-25T19:19:57Z">
+  <testsuite tests="5" failures="0" time="0.000000" name="testing/fstest" timestamp="2024-04-26T04:44:33Z">
     <properties classname="testing/fstest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3871,7 +3916,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="testing/fstest" name="TestDash" time="0.000000" />
     <testcase classname="testing/fstest" name="TestShuffledFS" time="0.000000" />
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="testing/iotest" timestamp="2024-04-25T19:20:01Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="testing/iotest" timestamp="2024-04-26T04:44:34Z">
     <properties classname="testing/iotest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3891,7 +3936,7 @@ panic: runtime error at 0x0000000000285364: slice out of range
     <testcase classname="testing/iotest" name="TestStringsReader" time="0.000000" />
     <testcase classname="testing/iotest" name="TestTruncateWriter" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="testing/quick" timestamp="2024-04-25T19:20:02Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="testing/quick" timestamp="2024-04-26T04:44:35Z">
     <properties classname="testing/quick">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3901,20 +3946,20 @@ panic: unimplemented: (reflect.Type).NumIn()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="testing/slogtest" timestamp="2024-04-25T19:20:04Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="testing/slogtest" timestamp="2024-04-26T04:44:39Z">
     <properties classname="testing/slogtest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="testing/slogtest" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2217622982/main /tmp/tinygo2217622982/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/tmp/tinygo2217622982/main /tmp/tinygo2217622982/main -test.v
-/tmp/tinygo2217622982/main /tmp/tinygo2217622982/main -test.v
+      <failure message="Failed" type="">ld.lld --gc-sections -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo486517766/main /tmp/tinygo486517766/main.o /home/vscode/.cache/tinygo/compiler-rt-aarch64-unknown-linux-generic/lib.a /home/vscode/.cache/tinygo/obj-3fd9192bbb8c0507447753a8b8972390a979bbb71b28b3ea50e39abe.bc /home/vscode/.cache/tinygo/obj-f79712e5b2f218317551c5961bf12c37f30f9733eb9ffe02c10c0c3a.bc /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/crt1.o /home/vscode/.cache/tinygo/musl-aarch64-unknown-linux-generic/lib.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/tmp/tinygo486517766/main /tmp/tinygo486517766/main -test.v
+/tmp/tinygo486517766/main /tmp/tinygo486517766/main -test.v
 panic: runtime.Caller failed
-FAIL	testing/slogtest	0.014s
+FAIL	testing/slogtest	0.019s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="text/scanner" timestamp="2024-04-25T19:20:07Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="text/scanner" timestamp="2024-04-26T04:44:40Z">
     <properties classname="text/scanner">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3937,7 +3982,7 @@ FAIL	testing/slogtest	0.014s
     <testcase classname="text/scanner" name="TestIssue30320" time="0.000000" />
     <testcase classname="text/scanner" name="TestIssue50909" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="0" time="0.000000" name="text/tabwriter" timestamp="2024-04-25T19:20:13Z">
+  <testsuite tests="3" failures="0" time="0.000000" name="text/tabwriter" timestamp="2024-04-26T04:44:44Z">
     <properties classname="text/tabwriter">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3945,7 +3990,7 @@ FAIL	testing/slogtest	0.014s
     <testcase classname="text/tabwriter" name="TestPanicDuringFlush" time="0.000000" />
     <testcase classname="text/tabwriter" name="TestPanicDuringWrite" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="text/template" timestamp="2024-04-25T19:20:14Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="text/template" timestamp="2024-04-26T04:44:44Z">
     <properties classname="text/template">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3955,7 +4000,7 @@ panic: unimplemented: (reflect.Type).NumOut()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="52" failures="0" time="0.000000" name="text/template/parse" timestamp="2024-04-25T19:20:14Z">
+  <testsuite tests="52" failures="0" time="0.000000" name="text/template/parse" timestamp="2024-04-26T04:44:44Z">
     <properties classname="text/template/parse">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3976,7 +4021,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="text/template/parse" name="TestBlock" time="0.000000" />
     <testcase classname="text/template/parse" name="TestLineNum" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="time" timestamp="2024-04-25T19:20:15Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="time" timestamp="2024-04-26T04:44:45Z">
     <properties classname="time">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3992,12 +4037,12 @@ panic: unimplemented: (reflect.Type).NumOut()
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="time/tzdata" timestamp="2024-04-25T19:20:15Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="time/tzdata" timestamp="2024-04-26T04:44:46Z">
     <properties classname="time/tzdata">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="28" failures="0" time="0.000000" name="unicode" timestamp="2024-04-25T19:20:16Z">
+  <testsuite tests="28" failures="0" time="0.000000" name="unicode" timestamp="2024-04-26T04:44:47Z">
     <properties classname="unicode">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -4030,7 +4075,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="unicode" name="TestCategories" time="0.000000" />
     <testcase classname="unicode" name="TestProperties" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="unicode/utf16" timestamp="2024-04-25T19:20:16Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="unicode/utf16" timestamp="2024-04-26T04:44:47Z">
     <properties classname="unicode/utf16">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -4043,7 +4088,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="unicode/utf16" name="TestDecodeRune" time="0.000000" />
     <testcase classname="unicode/utf16" name="TestIsSurrogate" time="0.000000" />
   </testsuite>
-  <testsuite tests="14" failures="0" time="0.000000" name="unicode/utf8" timestamp="2024-04-25T19:20:17Z">
+  <testsuite tests="14" failures="0" time="0.000000" name="unicode/utf8" timestamp="2024-04-26T04:44:47Z">
     <properties classname="unicode/utf8">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -4062,7 +4107,7 @@ panic: unimplemented: (reflect.Type).NumOut()
     <testcase classname="unicode/utf8" name="TestValid" time="0.000000" />
     <testcase classname="unicode/utf8" name="TestValidRune" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="unsafe" timestamp="2024-04-25T19:20:23Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="unsafe" timestamp="2024-04-26T04:44:50Z">
     <properties classname="unsafe">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>

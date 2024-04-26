@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="71" failures="2" errors="0" time="35.702342">
-	<testsuite tests="71" failures="2" time="0.000000" name="strings" timestamp="2024-04-25T19:19:47Z">
+<testsuites tests="71" failures="2" errors="0" time="28.692941">
+	<testsuite tests="71" failures="2" time="0.000000" name="strings" timestamp="2024-04-26T04:44:23Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="strings" name="TestBuilderGrow" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestBuilderGrow&#xA;    growLen=100: got 0 allocs during Write; want 1&#xA;    growLen=1000: got 0 allocs during Write; want 1&#xA;    growLen=10000: got 0 allocs during Write; want 1&#xA;    growLen=100000: got 0 allocs during Write; want 1&#xA;--- FAIL: TestBuilderGrow (0.16s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestBuilderGrow&#xA;    growLen=100: got 0 allocs during Write; want 1&#xA;    growLen=1000: got 0 allocs during Write; want 1&#xA;    growLen=10000: got 0 allocs during Write; want 1&#xA;    growLen=100000: got 0 allocs during Write; want 1&#xA;--- FAIL: TestBuilderGrow (0.13s)&#xA;</failure>
 		</testcase>
 		<testcase classname="strings" name="TestBuilderAllocs" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestBuilderAllocs&#xA;    Builder allocs = 0; want 1&#xA;--- FAIL: TestBuilderAllocs (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestBuilderAllocs&#xA;    Builder allocs = 0; want 1&#xA;--- FAIL: TestBuilderAllocs (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="strings" name="TestBuilder" time="0.000000"></testcase>
 		<testcase classname="strings" name="TestBuilderString" time="0.000000"></testcase>

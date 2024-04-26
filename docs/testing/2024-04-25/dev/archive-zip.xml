@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="99" failures="0" errors="0" time="53.828372">
-	<testsuite tests="99" failures="0" time="0.000000" name="archive/zip" timestamp="2024-04-25T19:05:36Z">
+<testsuites tests="99" failures="0" errors="0" time="95.017886">
+	<testsuite tests="99" failures="0" time="0.000000" name="archive/zip" timestamp="2024-04-26T04:41:39Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>

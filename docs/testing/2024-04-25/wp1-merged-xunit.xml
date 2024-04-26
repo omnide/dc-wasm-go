@@ -1,20 +1,20 @@
 <testsuites tests="12525" failures="133" time="0">
-  <testsuite tests="58" failures="1" time="0.000000" name="archive/tar" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="58" failures="1" time="0.000000" name="archive/tar" timestamp="2024-04-26T01:52:24Z">
     <properties classname="archive/tar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="archive/tar" name="TestFileInfoHeaderSymlink" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFileInfoHeaderSymlink
-    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/176284487/testfile.txt /tmp/176284487/testlink: errno 63
+    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/43574061/testfile.txt /tmp/43574061/testlink: errno 63
     SkipNow is incomplete, requires runtime.Goexit()
-    symlink /tmp/TestFileInfoHeaderSymlink24537895/000 /tmp/TestFileInfoHeaderSymlink24537895/000/link: errno 63
+    symlink /tmp/TestFileInfoHeaderSymlink171739991/000 /tmp/TestFileInfoHeaderSymlink171739991/000/link: errno 63
     FailNow is incomplete, requires runtime.Goexit()
-    lstat /tmp/TestFileInfoHeaderSymlink24537895/000/link: file does not exist
+    lstat /tmp/TestFileInfoHeaderSymlink171739991/000/link: file does not exist
     FailNow is incomplete, requires runtime.Goexit()
     archive/tar: FileInfo is nil
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo205996663/main`
+Error: failed to run main module `/tmp/tinygo1276520795/main`
 
 Caused by:
     0: failed to invoke command default
@@ -73,7 +73,7 @@ Caused by:
     <testcase classname="archive/tar" name="TestFileInfoHeader" time="0.000000" />
     <testcase classname="archive/tar" name="TestFileInfoHeaderDir" time="0.000000" />
   </testsuite>
-  <testsuite tests="84" failures="1" time="0.000000" name="archive/zip" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="84" failures="1" time="0.000000" name="archive/zip" timestamp="2024-04-26T01:52:24Z">
     <properties classname="archive/zip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -123,7 +123,7 @@ Caused by:
     <testcase classname="archive/zip" name="TestRLEBuffer" time="0.000000" />
     <testcase classname="archive/zip" name="TestZip64" time="0.000000" />
   </testsuite>
-  <testsuite tests="42" failures="2" time="0.000000" name="bufio" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="42" failures="2" time="0.000000" name="bufio" timestamp="2024-04-26T01:52:24Z">
     <properties classname="bufio">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -136,7 +136,7 @@ Caused by:
     <testcase classname="bufio" name="TestNegativeRead" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNegativeRead
 panic: bufio: reader returned negative count from Read
-Error: failed to run main module `/tmp/tinygo2065115373/main`
+Error: failed to run main module `/tmp/tinygo1833981473/main`
 
 Caused by:
     0: failed to invoke command default
@@ -212,14 +212,14 @@ Caused by:
     <testcase classname="bufio" name="TestWriterReadFromErrors" time="0.000000" />
     <testcase classname="bufio" name="TestWriterReadFromCounts" time="0.000000" />
   </testsuite>
-  <testsuite tests="13" failures="1" time="0.000000" name="bytes" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="13" failures="1" time="0.000000" name="bytes" timestamp="2024-04-26T01:52:24Z">
     <properties classname="bytes">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="bytes" name="TestReadFromPanicReader" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestReadFromPanicReader
 panic: oops
-Error: failed to run main module `/tmp/tinygo2103243732/main`
+Error: failed to run main module `/tmp/tinygo886740231/main`
 
 Caused by:
     0: failed to invoke command default
@@ -273,7 +273,7 @@ Caused by:
     <testcase classname="bytes" name="TestNil" time="0.000000" />
     <testcase classname="bytes" name="TestReadFrom" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="cmp" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="cmp" timestamp="2024-04-26T01:52:24Z">
     <properties classname="cmp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -282,7 +282,7 @@ Caused by:
     <testcase classname="cmp" name="TestSort" time="0.000000" />
     <testcase classname="cmp" name="TestOr" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="compress/bzip2" timestamp="2024-04-26T01:52:24Z">
     <properties classname="compress/bzip2">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -291,7 +291,7 @@ Caused by:
     <testcase classname="compress/bzip2" name="TestMTF" time="0.000000" />
     <testcase classname="compress/bzip2" name="TestZeroRead" time="0.000000" />
   </testsuite>
-  <testsuite tests="23" failures="1" time="0.000000" name="compress/flate" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="23" failures="1" time="0.000000" name="compress/flate" timestamp="2024-04-26T01:52:24Z">
     <properties classname="compress/flate">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -311,12 +311,12 @@ Caused by:
     <testcase classname="compress/flate" name="TestRegression2508" time="0.000000" />
     <testcase classname="compress/flate" name="TestWriterReset" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="compress/gzip" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="compress/gzip" timestamp="2024-04-26T01:52:24Z">
     <properties classname="compress/gzip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="17" failures="0" time="0.000000" name="compress/lzw" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="17" failures="0" time="0.000000" name="compress/lzw" timestamp="2024-04-26T01:52:24Z">
     <properties classname="compress/lzw">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -330,7 +330,7 @@ Caused by:
     <testcase classname="compress/lzw" name="TestSmallLitWidth" time="0.000000" />
     <testcase classname="compress/lzw" name="TestStartsWithClearCode" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="0" time="0.000000" name="compress/zlib" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="6" failures="0" time="0.000000" name="compress/zlib" timestamp="2024-04-26T01:52:24Z">
     <properties classname="compress/zlib">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -341,7 +341,7 @@ Caused by:
     <testcase classname="compress/zlib" name="TestWriterReset" time="0.000000" />
     <testcase classname="compress/zlib" name="TestWriterDictIsUsed" time="0.000000" />
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="container/heap" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="container/heap" timestamp="2024-04-26T01:52:24Z">
     <properties classname="container/heap">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -353,7 +353,7 @@ Caused by:
     <testcase classname="container/heap" name="TestRemove2" time="0.000000" />
     <testcase classname="container/heap" name="TestFix" time="0.000000" />
   </testsuite>
-  <testsuite tests="10" failures="0" time="0.000000" name="container/list" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="10" failures="0" time="0.000000" name="container/list" timestamp="2024-04-26T01:52:24Z">
     <properties classname="container/list">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -368,7 +368,7 @@ Caused by:
     <testcase classname="container/list" name="TestInsertAfterUnknownMark" time="0.000000" />
     <testcase classname="container/list" name="TestMoveUnknownMark" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="container/ring" timestamp="2024-04-25T13:25:21Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="container/ring" timestamp="2024-04-26T01:52:24Z">
     <properties classname="container/ring">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -381,7 +381,7 @@ Caused by:
     <testcase classname="container/ring" name="TestLinkUnlink" time="0.000000" />
     <testcase classname="container/ring" name="TestMoveEmptyRing" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="context" timestamp="2024-04-25T13:25:33Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="context" timestamp="2024-04-26T01:52:37Z">
     <properties classname="context">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -396,14 +396,14 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="crypto" timestamp="2024-04-25T13:25:33Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="crypto" timestamp="2024-04-26T01:52:37Z">
     <properties classname="crypto">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto" name="TestRC4OutOfBoundsWrite" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestRC4OutOfBoundsWrite
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo941968970/main`
+Error: failed to run main module `/tmp/tinygo1879696261/main`
 
 Caused by:
     0: failed to invoke command default
@@ -443,14 +443,14 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="crypto/aes" timestamp="2024-04-25T13:25:33Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="crypto/aes" timestamp="2024-04-26T01:52:38Z">
     <properties classname="crypto/aes">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/aes" name="TestShortBlocks" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestShortBlocks
 panic: crypto/aes: input not full block
-Error: failed to run main module `/tmp/tinygo1750896320/main`
+Error: failed to run main module `/tmp/tinygo3290581261/main`
 
 Caused by:
     0: failed to invoke command default
@@ -500,14 +500,14 @@ Caused by:
     <testcase classname="crypto/aes" name="TestCipherEncrypt" time="0.000000" />
     <testcase classname="crypto/aes" name="TestCipherDecrypt" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="1" time="0.000000" name="crypto/cipher" timestamp="2024-04-25T13:25:33Z">
+  <testsuite tests="5" failures="1" time="0.000000" name="crypto/cipher" timestamp="2024-04-26T01:52:39Z">
     <properties classname="crypto/cipher">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/cipher" name="TestCryptBlocks" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestCryptBlocks
 panic: crypto/cipher: input not full blocks
-Error: failed to run main module `/tmp/tinygo1795815006/main`
+Error: failed to run main module `/tmp/tinygo383067053/main`
 
 Caused by:
     0: failed to invoke command default
@@ -553,7 +553,7 @@ Caused by:
     <testcase classname="crypto/cipher" name="TestCFBVectors" time="0.000000" />
     <testcase classname="crypto/cipher" name="TestCFBInverse" time="0.000000" />
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="crypto/des" timestamp="2024-04-25T13:25:35Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="crypto/des" timestamp="2024-04-26T01:52:39Z">
     <properties classname="crypto/des">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -576,7 +576,7 @@ Caused by:
     <testcase classname="crypto/des" name="TestSubstitutionTableKnownAnswerEncrypt" time="0.000000" />
     <testcase classname="crypto/des" name="TestSubstitutionTableKnownAnswerDecrypt" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="crypto/dsa" timestamp="2024-04-25T13:25:35Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="crypto/dsa" timestamp="2024-04-26T01:52:40Z">
     <properties classname="crypto/dsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -585,7 +585,7 @@ Caused by:
     <testcase classname="crypto/dsa" name="TestSignAndVerifyWithBadPublicKey" time="0.000000" />
     <testcase classname="crypto/dsa" name="TestSigningWithDegenerateKeys" time="0.000000" />
   </testsuite>
-  <testsuite tests="47" failures="1" time="0.000000" name="crypto/ecdh" timestamp="2024-04-25T13:25:36Z">
+  <testsuite tests="47" failures="1" time="0.000000" name="crypto/ecdh" timestamp="2024-04-26T01:52:41Z">
     <properties classname="crypto/ecdh">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -606,7 +606,7 @@ Caused by:
     FailNow is incomplete, requires runtime.Goexit()
     no P384 symbols found in program using ecdh.P384, test is broken
 --- FAIL: TestLinker (0.01s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestLinker44516973: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestLinker185029093: errno 52
 </failure>
     </testcase>
     <testcase classname="crypto/ecdh" name="TestECDH" time="0.000000" />
@@ -618,7 +618,7 @@ Caused by:
     <testcase classname="crypto/ecdh" name="TestNewPublicKey" time="0.000000" />
     <testcase classname="crypto/ecdh" name="TestMismatchedCurves" time="0.000000" />
   </testsuite>
-  <testsuite tests="82" failures="0" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-25T13:25:41Z">
+  <testsuite tests="82" failures="0" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-26T01:52:46Z">
     <properties classname="crypto/ecdsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -638,7 +638,7 @@ Caused by:
     <testcase classname="crypto/ecdsa" name="TestRMinusNSignature" time="0.000000" />
     <testcase classname="crypto/ecdsa" name="TestEqual" time="0.000000" />
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="crypto/ed25519" timestamp="2024-04-25T13:25:42Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="crypto/ed25519" timestamp="2024-04-26T01:52:48Z">
     <properties classname="crypto/ed25519">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -659,7 +659,7 @@ Caused by:
     unexpected end of JSON input
     FailNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestEd25519Vectors (0.00s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestEd25519Vectors47870363: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestEd25519Vectors76903400: errno 52
 </failure>
     </testcase>
     <testcase classname="crypto/ed25519" name="TestSignVerify" time="0.000000" />
@@ -671,7 +671,7 @@ Caused by:
     <testcase classname="crypto/ed25519" name="TestMalleability" time="0.000000" />
     <testcase classname="crypto/ed25519" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="82" failures="0" time="0.000000" name="crypto/elliptic" timestamp="2024-04-25T13:25:46Z">
+  <testsuite tests="82" failures="0" time="0.000000" name="crypto/elliptic" timestamp="2024-04-26T01:52:52Z">
     <properties classname="crypto/elliptic">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -691,14 +691,14 @@ Caused by:
     <testcase classname="crypto/elliptic" name="TestP256CombinedMult" time="0.000000" />
     <testcase classname="crypto/elliptic" name="TestIssue52075" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="crypto/hmac" timestamp="2024-04-25T13:25:47Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="crypto/hmac" timestamp="2024-04-26T01:52:52Z">
     <properties classname="crypto/hmac">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/hmac" name="TestNonUniqueHash" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNonUniqueHash
 panic: crypto/hmac: hash generation function does not produce unique values
-Error: failed to run main module `/tmp/tinygo3948225957/main`
+Error: failed to run main module `/tmp/tinygo3629558124/main`
 
 Caused by:
     0: failed to invoke command default
@@ -735,7 +735,7 @@ Caused by:
     </testcase>
     <testcase classname="crypto/hmac" name="TestHMAC" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="0" time="0.000000" name="crypto/md5" timestamp="2024-04-25T13:25:47Z">
+  <testsuite tests="6" failures="0" time="0.000000" name="crypto/md5" timestamp="2024-04-26T01:52:53Z">
     <properties classname="crypto/md5">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -746,26 +746,26 @@ Caused by:
     <testcase classname="crypto/md5" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/md5" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rand" timestamp="2024-04-25T13:25:47Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/rand" timestamp="2024-04-26T01:52:54Z">
     <properties classname="crypto/rand">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="crypto/rc4" timestamp="2024-04-25T13:25:48Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="crypto/rc4" timestamp="2024-04-26T01:52:54Z">
     <properties classname="crypto/rc4">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/rc4" name="TestGolden" time="0.000000" />
     <testcase classname="crypto/rc4" name="TestBlock" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="crypto/rsa" timestamp="2024-04-25T13:25:58Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="crypto/rsa" timestamp="2024-04-26T01:53:03Z">
     <properties classname="crypto/rsa">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/rsa" name="TestEncryptPKCS1v15" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestEncryptPKCS1v15
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo3594800830/main`
+Error: failed to run main module `/tmp/tinygo515227823/main`
 
 Caused by:
     0: failed to invoke command default
@@ -802,7 +802,7 @@ Caused by:
     <testcase classname="crypto/rsa" name="TestEqual" time="0.000000" />
     <testcase classname="crypto/rsa" name="TestDecryptPKCS1v15" time="0.000000" />
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="crypto/sha1" timestamp="2024-04-25T13:25:58Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="crypto/sha1" timestamp="2024-04-26T01:53:03Z">
     <properties classname="crypto/sha1">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -814,7 +814,7 @@ Caused by:
     <testcase classname="crypto/sha1" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/sha1" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="crypto/sha256" timestamp="2024-04-25T13:25:58Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="crypto/sha256" timestamp="2024-04-26T01:53:05Z">
     <properties classname="crypto/sha256">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -828,7 +828,7 @@ Caused by:
     <testcase classname="crypto/sha256" name="TestAllocations" time="0.000000" />
     <testcase classname="crypto/sha256" name="TestCgo" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="crypto/sha512" timestamp="2024-04-25T13:26:04Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="crypto/sha512" timestamp="2024-04-26T01:53:10Z">
     <properties classname="crypto/sha512">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -841,14 +841,14 @@ Caused by:
     <testcase classname="crypto/sha512" name="TestLargeHashes" time="0.000000" />
     <testcase classname="crypto/sha512" name="TestAllocations" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="crypto/subtle" timestamp="2024-04-25T13:26:08Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="crypto/subtle" timestamp="2024-04-26T01:53:13Z">
     <properties classname="crypto/subtle">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="crypto/subtle" name="TestConstantTimeByteEq" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestConstantTimeByteEq
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo124097812/main`
+Error: failed to run main module `/tmp/tinygo3875841125/main`
 
 Caused by:
     0: failed to invoke command default
@@ -889,12 +889,12 @@ Caused by:
     </testcase>
     <testcase classname="crypto/subtle" name="TestConstantTimeCompare" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-25T13:26:09Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-26T01:53:14Z">
     <properties classname="crypto/tls">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509" timestamp="2024-04-25T13:26:09Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509" timestamp="2024-04-26T01:53:14Z">
     <properties classname="crypto/x509">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -905,12 +905,12 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509/pkix" timestamp="2024-04-25T13:26:09Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="crypto/x509/pkix" timestamp="2024-04-26T01:53:16Z">
     <properties classname="crypto/x509/pkix">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="database/sql" timestamp="2024-04-25T13:26:10Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="database/sql" timestamp="2024-04-26T01:53:17Z">
     <properties classname="database/sql">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -921,13 +921,13 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="1" failures="0" time="0.000000" name="database/sql/driver" timestamp="2024-04-25T13:26:10Z">
+  <testsuite tests="1" failures="0" time="0.000000" name="database/sql/driver" timestamp="2024-04-26T01:53:17Z">
     <properties classname="database/sql/driver">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="database/sql/driver" name="TestValueConverters" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="debug/buildinfo" timestamp="2024-04-25T13:26:11Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="debug/buildinfo" timestamp="2024-04-26T01:53:18Z">
     <properties classname="debug/buildinfo">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -938,7 +938,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="40" failures="0" time="0.000000" name="debug/dwarf" timestamp="2024-04-25T13:26:12Z">
+  <testsuite tests="40" failures="0" time="0.000000" name="debug/dwarf" timestamp="2024-04-26T01:53:19Z">
     <properties classname="debug/dwarf">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -972,7 +972,7 @@ Caused by:
     <testcase classname="debug/dwarf" name="TestBitOffsetsELFDwarf5" time="0.000000" />
     <testcase classname="debug/dwarf" name="TestBitFieldZeroArrayIssue50685" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="debug/elf" timestamp="2024-04-25T13:26:16Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="debug/elf" timestamp="2024-04-26T01:53:19Z">
     <properties classname="debug/elf">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -983,7 +983,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="debug/gosym" timestamp="2024-04-25T13:26:17Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="debug/gosym" timestamp="2024-04-26T01:53:20Z">
     <properties classname="debug/gosym">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -994,7 +994,7 @@ Caused by:
     open main: file does not exist
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo88710859/main`
+Error: failed to run main module `/tmp/tinygo3358795229/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1032,7 +1032,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="7" failures="0" time="0.000000" name="debug/macho" timestamp="2024-04-25T13:26:17Z">
+  <testsuite tests="7" failures="0" time="0.000000" name="debug/macho" timestamp="2024-04-26T01:53:22Z">
     <properties classname="debug/macho">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1044,7 +1044,7 @@ Caused by:
     <testcase classname="debug/macho" name="TestTypeString" time="0.000000" />
     <testcase classname="debug/macho" name="TestOpenBadDysymCmd" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="debug/pe" timestamp="2024-04-25T13:26:20Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="debug/pe" timestamp="2024-04-26T01:53:25Z">
     <properties classname="debug/pe">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1068,7 +1068,7 @@ Caused by:
     unexpected program output: 
     FailNow is incomplete, requires runtime.Goexit()
 panic: runtime error: index out of range
-Error: failed to run main module `/tmp/tinygo848688663/main`
+Error: failed to run main module `/tmp/tinygo3091899796/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1108,24 +1108,24 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="debug/plan9obj" timestamp="2024-04-25T13:26:20Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="debug/plan9obj" timestamp="2024-04-26T01:53:28Z">
     <properties classname="debug/plan9obj">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="debug/plan9obj" name="TestOpen" time="0.000000" />
     <testcase classname="debug/plan9obj" name="TestOpenFailure" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="embed" timestamp="2024-04-25T13:26:27Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="embed" timestamp="2024-04-26T01:53:32Z">
     <properties classname="embed">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding" timestamp="2024-04-25T13:26:31Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding" timestamp="2024-04-26T01:53:36Z">
     <properties classname="encoding">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="0" time="0.000000" name="encoding/ascii85" timestamp="2024-04-25T13:26:32Z">
+  <testsuite tests="9" failures="0" time="0.000000" name="encoding/ascii85" timestamp="2024-04-26T01:53:36Z">
     <properties classname="encoding/ascii85">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1139,7 +1139,7 @@ Caused by:
     <testcase classname="encoding/ascii85" name="TestBig" time="0.000000" />
     <testcase classname="encoding/ascii85" name="TestDecoderInternalWhitespace" time="0.000000" />
   </testsuite>
-  <testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-25T13:26:32Z">
+  <testsuite tests="38" failures="0" time="0.000000" name="encoding/asn1" timestamp="2024-04-26T01:53:37Z">
     <properties classname="encoding/asn1">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1182,7 +1182,7 @@ Caused by:
     <testcase classname="encoding/asn1" name="TestSetEncoder" time="0.000000" />
     <testcase classname="encoding/asn1" name="TestSetEncoderSETSliceSuffix" time="0.000000" />
   </testsuite>
-  <testsuite tests="24" failures="0" time="0.000000" name="encoding/base32" timestamp="2024-04-25T13:26:32Z">
+  <testsuite tests="24" failures="0" time="0.000000" name="encoding/base32" timestamp="2024-04-26T01:53:39Z">
     <properties classname="encoding/base32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1211,7 +1211,7 @@ Caused by:
     <testcase classname="encoding/base32" name="TestDecodeReadAll" time="0.000000" />
     <testcase classname="encoding/base32" name="TestDecodeSmallBuffer" time="0.000000" />
   </testsuite>
-  <testsuite tests="17" failures="0" time="0.000000" name="encoding/base64" timestamp="2024-04-25T13:26:34Z">
+  <testsuite tests="17" failures="0" time="0.000000" name="encoding/base64" timestamp="2024-04-26T01:53:40Z">
     <properties classname="encoding/base64">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1233,14 +1233,14 @@ Caused by:
     <testcase classname="encoding/base64" name="TestDecoderIssue15656" time="0.000000" />
     <testcase classname="encoding/base64" name="TestDecoderRaw" time="0.000000" />
   </testsuite>
-  <testsuite tests="16" failures="1" time="0.000000" name="encoding/binary" timestamp="2024-04-25T13:26:39Z">
+  <testsuite tests="16" failures="1" time="0.000000" name="encoding/binary" timestamp="2024-04-26T01:53:44Z">
     <properties classname="encoding/binary">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="encoding/binary" name="TestUnexportedRead" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestUnexportedRead
 panic: reflect: value is not settable
-Error: failed to run main module `/tmp/tinygo299162497/main`
+Error: failed to run main module `/tmp/tinygo2641283190/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1300,7 +1300,7 @@ Caused by:
     <testcase classname="encoding/binary" name="TestSizeStructCache" time="0.000000" />
     <testcase classname="encoding/binary" name="TestSizeInvalid" time="0.000000" />
   </testsuite>
-  <testsuite tests="71" failures="0" time="0.000000" name="encoding/csv" timestamp="2024-04-25T13:26:42Z">
+  <testsuite tests="71" failures="0" time="0.000000" name="encoding/csv" timestamp="2024-04-26T01:53:47Z">
     <properties classname="encoding/csv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1308,19 +1308,19 @@ Caused by:
     <testcase classname="encoding/csv" name="TestWrite" time="0.000000" />
     <testcase classname="encoding/csv" name="TestError" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding/gob" timestamp="2024-04-25T13:26:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding/gob" timestamp="2024-04-26T01:53:49Z">
     <properties classname="encoding/gob">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="encoding/gob" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo987979828/main /tmp/tinygo987979828/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo987979828/main --output /tmp/tinygo987979828/main
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3009671312/main /tmp/tinygo3009671312/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3009671312/main --output /tmp/tinygo3009671312/main
 FAIL	encoding/gob	0.000s
 error: wasm-opt failed: signal: killed
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="12" failures="0" time="0.000000" name="encoding/hex" timestamp="2024-04-25T13:26:46Z">
+  <testsuite tests="12" failures="0" time="0.000000" name="encoding/hex" timestamp="2024-04-26T01:53:52Z">
     <properties classname="encoding/hex">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1337,12 +1337,12 @@ error: wasm-opt failed: signal: killed
     <testcase classname="encoding/hex" name="TestDumper_earlyclose" time="0.000000" />
     <testcase classname="encoding/hex" name="TestDump" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="encoding/json" timestamp="2024-04-25T13:26:46Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="encoding/json" timestamp="2024-04-26T01:53:52Z">
     <properties classname="encoding/json">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="4" failures="1" time="0.000000" name="encoding/pem" timestamp="2024-04-25T13:26:46Z">
+  <testsuite tests="4" failures="1" time="0.000000" name="encoding/pem" timestamp="2024-04-26T01:53:53Z">
     <properties classname="encoding/pem">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1354,13 +1354,13 @@ error: wasm-opt failed: signal: killed
     <testcase classname="encoding/pem" name="TestDecode" time="0.000000" />
     <testcase classname="encoding/pem" name="TestBadDecode" time="0.000000" />
   </testsuite>
-  <testsuite tests="336" failures="1" time="0.000000" name="encoding/xml" timestamp="2024-04-25T13:26:47Z">
+  <testsuite tests="336" failures="1" time="0.000000" name="encoding/xml" timestamp="2024-04-26T01:53:53Z">
     <properties classname="encoding/xml">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="encoding/xml" name="TestCVE202228131" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestCVE202228131
-Error: failed to run main module `/tmp/tinygo3806335668/main`
+Error: failed to run main module `/tmp/tinygo3849687664/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1488,13 +1488,13 @@ Caused by:
     <testcase classname="encoding/xml" name="TestUnmarshalWhitespaceAttrs" time="0.000000" />
     <testcase classname="encoding/xml" name="TestUnmarshalIntoNil" time="0.000000" />
   </testsuite>
-  <testsuite tests="56" failures="21" time="0.000000" name="errors" timestamp="2024-04-25T13:26:47Z">
+  <testsuite tests="56" failures="21" time="0.000000" name="errors" timestamp="2024-04-26T01:53:53Z">
     <properties classname="errors">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="errors" name="TestAs" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestAs
---- FAIL: TestAs (0.02s)
+--- FAIL: TestAs (0.00s)
 === RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30)
     --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30) (0.00s)
 === RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
@@ -1541,21 +1541,26 @@ Caused by:
     --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
-    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
+    <testcase classname="errors" name="TestAs/3:As(Errorf(...,_errorT()),_0x44e30)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44e30)
+    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44e30) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/4:As(Errorf(...,_wrapped),_errorT(T))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
-    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
+    <testcase classname="errors" name="TestAs/13:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
+    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/5:As(Errorf(...,_error),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
+    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAsValidation" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAsValidation
 === RUN   TestAsValidation/&lt;nil&gt;(&lt;nil&gt;)
 panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo4037084912/main`
+Error: failed to run main module `/tmp/tinygo1521966229/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1597,9 +1602,46 @@ Caused by:
     2: wasm trap: wasm `unreachable` instruction executed
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/3:As(Errorf(...,_errorT()),_0x44e30)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/3:As(Errorf(...,_errorT()),_0x44e30)
-    --- PASS: TestAs/3:As(Errorf(...,_errorT()),_0x44e30) (0.00s)
+    <testcase classname="errors" name="TestAs/10:As(Errorf(...,_path_error),_0x44e40)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44e40)
+        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44e70)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x26cdc)}
+        FailNow is incomplete, requires runtime.Goexit()
+    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44e40) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/15:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/17:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
+    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30)
+    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/11:As(Errorf(...,_multiError),_errorT(poser))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
+    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/12:As(Errorf(...,_multiError),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
+    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30)
+    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30) (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="errors" name="TestAs/4:As(Errorf(...,_wrapped),_errorT(T))" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/4:As(Errorf(...,_wrapped),_errorT(T))
+    --- PASS: TestAs/4:As(Errorf(...,_wrapped),_errorT(T)) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/6:As(Errorf(...,_path),_0x44e30)" time="-0.000000">
@@ -1607,14 +1649,9 @@ Caused by:
     --- PASS: TestAs/6:As(Errorf(...,_path),_0x44e30) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/13:As(Errorf(...,_multiError),_errorT(T))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/13:As(Errorf(...,_multiError),_errorT(T))
-    --- PASS: TestAs/13:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/15:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/15:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/15:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
+    <testcase classname="errors" name="TestAs/7:As(Errorf(...,_oh_no),_0x44e50)" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44e50)
+    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44e50) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/16:As(Errorf(...,_multiError),_0x44e40)" time="-0.000000">
@@ -1627,7 +1664,7 @@ Caused by:
     <testcase classname="errors" name="TestAsValidation/&lt;nil&gt;(&lt;nil&gt;)" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAsValidation/&lt;nil&gt;(&lt;nil&gt;)
 panic: errors: target cannot be nil
-Error: failed to run main module `/tmp/tinygo4037084912/main`
+Error: failed to run main module `/tmp/tinygo1521966229/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1669,24 +1706,9 @@ Caused by:
     2: wasm trap: wasm `unreachable` instruction executed
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/12:As(Errorf(...,_multiError),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/12:As(Errorf(...,_multiError),_errorT())
-    --- PASS: TestAs/12:As(Errorf(...,_multiError),_errorT()) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30)
-    --- PASS: TestAs/2:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e30) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/5:As(Errorf(...,_error),_errorT())" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/5:As(Errorf(...,_error),_errorT())
-    --- PASS: TestAs/5:As(Errorf(...,_error),_errorT()) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/7:As(Errorf(...,_oh_no),_0x44e50)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/7:As(Errorf(...,_oh_no),_0x44e50)
-    --- PASS: TestAs/7:As(Errorf(...,_oh_no),_0x44e50) (0.00s)
+    <testcase classname="errors" name="TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT())
+    --- PASS: TestAs/1:As(Errorf(...,_pitied_the_fool),_errorT()) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/8:As(Errorf(...,_err),_0x44e40)" time="-0.000000">
@@ -1696,13 +1718,6 @@ Caused by:
         got &amp;errors.errorString{s:"err"}, want &lt;nil&gt;
         FailNow is incomplete, requires runtime.Goexit()
     --- FAIL: TestAs/8:As(Errorf(...,_err),_0x44e40) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/10:As(Errorf(...,_path_error),_0x44e40)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/10:As(Errorf(...,_path_error),_0x44e40)
-        got errors_test.wrapped{msg:"path error", err:(*fs.PathError)(0x44e70)}, want &amp;fs.PathError{Op:"open", Path:"non-existing", Err:(*errors.errorString)(0x26cdc)}
-        FailNow is incomplete, requires runtime.Goexit()
-    --- FAIL: TestAs/10:As(Errorf(...,_path_error),_0x44e40) (0.00s)
 </failure>
     </testcase>
     <testcase classname="errors" name="TestAs/9:As(Errorf(...,_open_non-existing:_file_does_not_exist),_0x44e40)" time="-0.000000">
@@ -1715,21 +1730,6 @@ Caused by:
     --- PASS: TestAs/14:As(Errorf(...,_multiError),_errorT(T)) (0.00s)
 </failure>
     </testcase>
-    <testcase classname="errors" name="TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30)" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30)
-    --- PASS: TestAs/0:As(Errorf(...,_&lt;nil&gt;),_0x44e30) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/11:As(Errorf(...,_multiError),_errorT(poser))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/11:As(Errorf(...,_multiError),_errorT(poser))
-    --- PASS: TestAs/11:As(Errorf(...,_multiError),_errorT(poser)) (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="errors" name="TestAs/17:As(Errorf(...,_multiError),_errorT(a))" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestAs/17:As(Errorf(...,_multiError),_errorT(a))
-    --- PASS: TestAs/17:As(Errorf(...,_multiError),_errorT(a)) (0.00s)
-</failure>
-    </testcase>
     <testcase classname="errors" name="TestNewEqual" time="0.000000" />
     <testcase classname="errors" name="TestErrorMethod" time="0.000000" />
     <testcase classname="errors" name="TestJoinReturnsNil" time="0.000000" />
@@ -1737,19 +1737,19 @@ Caused by:
     <testcase classname="errors" name="TestJoinErrorMethod" time="0.000000" />
     <testcase classname="errors" name="TestIs" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="expvar" timestamp="2024-04-25T13:26:52Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="expvar" timestamp="2024-04-26T01:53:56Z">
     <properties classname="expvar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="14" failures="1" time="0.000000" name="flag" timestamp="2024-04-25T13:26:53Z">
+  <testsuite tests="14" failures="1" time="0.000000" name="flag" timestamp="2024-04-26T01:53:57Z">
     <properties classname="flag">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="flag" name="TestPrintDefaults" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestPrintDefaults
 panic: panic!
-Error: failed to run main module `/tmp/tinygo2294966064/main`
+Error: failed to run main module `/tmp/tinygo2489300486/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1805,7 +1805,7 @@ Caused by:
     <testcase classname="flag" name="TestChangingArgs" time="0.000000" />
     <testcase classname="flag" name="TestHelp" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="fmt" timestamp="2024-04-25T13:26:54Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="fmt" timestamp="2024-04-26T01:54:00Z">
     <properties classname="fmt">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1813,7 +1813,7 @@ Caused by:
       <failure message="Failed" type="">=== RUN   TestSprintf
     Sprintf("%#v", 0x2f) = "(func)(0x2f)" want "(func(*testing.T))(0xPTR)"
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo244666447/main`
+Error: failed to run main module `/tmp/tinygo791305175/main`
 
 Caused by:
     0: failed to invoke command default
@@ -1864,7 +1864,7 @@ Caused by:
     <testcase classname="fmt" name="TestErrorf" time="0.000000" />
     <testcase classname="fmt" name="TestFmtInterface" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="go/ast" timestamp="2024-04-25T13:26:57Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="go/ast" timestamp="2024-04-26T01:54:03Z">
     <properties classname="go/ast">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1877,7 +1877,7 @@ Caused by:
     <testcase classname="go/ast" name="TestIssue33649" time="0.000000" />
     <testcase classname="go/ast" name="TestIssue28089" time="0.000000" />
   </testsuite>
-  <testsuite tests="56" failures="17" time="0.000000" name="go/build" timestamp="2024-04-25T13:26:57Z">
+  <testsuite tests="56" failures="17" time="0.000000" name="go/build" timestamp="2024-04-26T01:54:03Z">
     <properties classname="go/build">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -1887,7 +1887,7 @@ Caused by:
     FailNow is incomplete, requires runtime.Goexit()
     import "./file": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestDotSlashImport (0.01s)
+--- FAIL: TestDotSlashImport (0.04s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestLocalDirectory" time="0.000000">
@@ -1896,7 +1896,7 @@ Caused by:
     FailNow is incomplete, requires runtime.Goexit()
     ImportPath=".", want "go/build"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestLocalDirectory (0.05s)
+--- FAIL: TestLocalDirectory (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestImportCmd" time="0.000000">
@@ -1915,7 +1915,7 @@ Caused by:
     skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
     SkipNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestImportDirNotExist (0.00s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportDirNotExist143670194: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportDirNotExist171764514: errno 52
 === RUN   TestImportDirNotExist/GO111MODULE=off
     --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
 === RUN   TestImportDirNotExist/GO111MODULE=on
@@ -1954,7 +1954,7 @@ Caused by:
     error when importing package when no go.mod is present: got "go/build: go list example.com/p: open /dev/null: file does not exist\n\n"; want "go.mod file not found in current directory or any parent directory"
     FailNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestImportPackageOutsideModule (0.00s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportPackageOutsideModule73937864: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestImportPackageOutsideModule78928838: errno 52
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestIssue23594" time="0.000000">
@@ -1969,14 +1969,14 @@ Caused by:
     skipping test: 'go build' unavailable: go tool -n compile: exec: "go": executable file not found in $PATH
     SkipNow is incomplete, requires runtime.Goexit()
 --- FAIL: TestMissingImportErrorRepetition (0.00s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestMissingImportErrorRepetition205284844: errno 52
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestMissingImportErrorRepetition69557344: errno 52
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestCgoImportsIgnored" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestCgoImportsIgnored
     import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestCgoImportsIgnored (0.01s)
+--- FAIL: TestCgoImportsIgnored (0.00s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestAllTags" time="0.000000">
@@ -1985,7 +1985,7 @@ Caused by:
     FailNow is incomplete, requires runtime.Goexit()
     import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestAllTags (0.02s)
+--- FAIL: TestAllTags (0.00s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestAllTagsNonSourceFile" time="0.000000">
@@ -1999,7 +1999,7 @@ Caused by:
       <failure message="Failed" type="">=== RUN   TestDirectives
     could not import testdata: import ".": unknown compiler "tinygo"
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestDirectives (0.05s)
+--- FAIL: TestDirectives (0.01s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestFindImports" time="0.000000">
@@ -2011,7 +2011,12 @@ Caused by:
     expected to find "os" in import list
     expected to find "path/filepath" in import list
     expected to find "strings" in import list
---- FAIL: TestFindImports (0.00s)
+--- FAIL: TestFindImports (0.01s)
+</failure>
+    </testcase>
+    <testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=off" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=off
+    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=on" time="-0.000000">
@@ -2019,11 +2024,6 @@ Caused by:
         Import(full, 0) got error: "go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n", want "cannot find package" or "is not in std" error
         Import(full, FindOnly) got error: "go/build: go list go/build/doesnotexist: open /dev/null: file does not exist\n\n", want "cannot find package" or "is not in std" error
     --- FAIL: TestImportDirNotExist/GO111MODULE=on (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="go/build" name="TestImportDirNotExist/GO111MODULE=off" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestImportDirNotExist/GO111MODULE=off
-    --- PASS: TestImportDirNotExist/GO111MODULE=off (0.00s)
 </failure>
     </testcase>
     <testcase classname="go/build" name="TestMatch" time="0.000000" />
@@ -2044,7 +2044,7 @@ Caused by:
     <testcase classname="go/build" name="TestReadEmbed" time="0.000000" />
     <testcase classname="go/build" name="TestGoodOSArch" time="0.000000" />
   </testsuite>
-  <testsuite tests="13" failures="7" time="0.000000" name="go/build/constraint" timestamp="2024-04-25T13:27:03Z">
+  <testsuite tests="13" failures="7" time="0.000000" name="go/build/constraint" timestamp="2024-04-26T01:54:11Z">
     <properties classname="go/build/constraint">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2062,7 +2062,7 @@ Caused by:
     --- PASS: TestLex/4 (0.00s)
 === RUN   TestLex/5
 panic: invalid syntax at &#178;
-Error: failed to run main module `/tmp/tinygo2468154774/main`
+Error: failed to run main module `/tmp/tinygo2243597014/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2124,15 +2124,10 @@ Caused by:
     --- PASS: TestLex/4 (0.00s)
 </failure>
     </testcase>
-    <testcase classname="go/build/constraint" name="TestLex/0" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestLex/0
-    --- PASS: TestLex/0 (0.00s)
-</failure>
-    </testcase>
     <testcase classname="go/build/constraint" name="TestLex/5" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestLex/5
 panic: invalid syntax at &#178;
-Error: failed to run main module `/tmp/tinygo2468154774/main`
+Error: failed to run main module `/tmp/tinygo2243597014/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2174,16 +2169,21 @@ Caused by:
     2: wasm trap: wasm `unreachable` instruction executed
 </failure>
     </testcase>
+    <testcase classname="go/build/constraint" name="TestLex/0" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestLex/0
+    --- PASS: TestLex/0 (0.00s)
+</failure>
+    </testcase>
     <testcase classname="go/build/constraint" name="TestExprString" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="go/constant" timestamp="2024-04-25T13:27:07Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="go/constant" timestamp="2024-04-26T01:54:12Z">
     <properties classname="go/constant">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/constant" name="TestOps" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestOps
 panic: division by zero
-Error: failed to run main module `/tmp/tinygo1861709763/main`
+Error: failed to run main module `/tmp/tinygo205863894/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2225,17 +2225,17 @@ Caused by:
     </testcase>
     <testcase classname="go/constant" name="TestNumbers" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/doc" timestamp="2024-04-25T13:27:07Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/doc" timestamp="2024-04-26T01:54:20Z">
     <properties classname="go/doc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/doc" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3344669691/main /tmp/tinygo3344669691/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo3344669691/main --output /tmp/tinygo3344669691/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo3344669691/main -test.v
-/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/doc --dir=. --dir=/tmp::/tmp /tmp/tinygo3344669691/main -test.v
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo4270948109/main /tmp/tinygo4270948109/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo4270948109/main --output /tmp/tinygo4270948109/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo4270948109/main -test.v
+/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/doc --dir=. --dir=/tmp::/tmp /tmp/tinygo4270948109/main -test.v
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo3344669691/main`
+Error: failed to run main module `/tmp/tinygo4270948109/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2261,11 +2261,11 @@ Caused by:
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	go/doc	0.759s
+FAIL	go/doc	1.079s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="10059" failures="1" time="0.000000" name="go/doc/comment" timestamp="2024-04-25T13:27:12Z">
+  <testsuite tests="10059" failures="1" time="0.000000" name="go/doc/comment" timestamp="2024-04-26T01:54:21Z">
     <properties classname="go/doc/comment">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2330,7 +2330,7 @@ FAIL	go/doc	0.759s
     <testcase classname="go/doc/comment" name="TestTestdata" time="0.000000" />
     <testcase classname="go/doc/comment" name="TestWrap" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="0" time="0.000000" name="go/format" timestamp="2024-04-25T13:27:13Z">
+  <testsuite tests="4" failures="0" time="0.000000" name="go/format" timestamp="2024-04-26T01:54:22Z">
     <properties classname="go/format">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2339,7 +2339,7 @@ FAIL	go/doc	0.759s
     <testcase classname="go/format" name="TestSource" time="0.000000" />
     <testcase classname="go/format" name="TestPartial" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="2" time="0.000000" name="go/importer" timestamp="2024-04-25T13:27:16Z">
+  <testsuite tests="2" failures="2" time="0.000000" name="go/importer" timestamp="2024-04-26T01:54:22Z">
     <properties classname="go/importer">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2357,7 +2357,7 @@ FAIL	go/doc	0.759s
     FailNow is incomplete, requires runtime.Goexit()
 === RUN   TestForCompiler/LookupDefault
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo2490137773/main`
+Error: failed to run main module `/tmp/tinygo1891330721/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2398,7 +2398,7 @@ Caused by:
     <testcase classname="go/importer" name="TestForCompiler/LookupDefault" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestForCompiler/LookupDefault
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo2490137773/main`
+Error: failed to run main module `/tmp/tinygo1891330721/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2437,14 +2437,14 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="27" failures="1" time="0.000000" name="go/parser" timestamp="2024-04-25T13:27:21Z">
+  <testsuite tests="27" failures="1" time="0.000000" name="go/parser" timestamp="2024-04-26T01:54:28Z">
     <properties classname="go/parser">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/parser" name="TestParseFile" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestParseFile
 panic: (124656:0x00020328)
-Error: failed to run main module `/tmp/tinygo3201170289/main`
+Error: failed to run main module `/tmp/tinygo2965347192/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2504,24 +2504,94 @@ Caused by:
     <testcase classname="go/parser" name="TestErrors" time="0.000000" />
     <testcase classname="go/parser" name="TestParse" time="0.000000" />
   </testsuite>
-  <testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-04-25T13:27:32Z">
+  <testsuite tests="12" failures="12" time="0.000000" name="go/printer" timestamp="2024-04-26T01:54:41Z">
     <properties classname="go/printer">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
-    <testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.28s)
+    <testcase classname="go/printer" name="TestFiles" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles
+=== RUN   TestFiles/empty.input
+    --- PASS: TestFiles/empty.input (0.06s)
+=== RUN   TestFiles/comments.input
+    --- PASS: TestFiles/comments.input (0.13s)
+=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.07s)
+=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.13s)
+=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.07s)
+=== RUN   TestFiles/linebreaks.input
+    --- PASS: TestFiles/linebreaks.input (0.16s)
+=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.40s)
+=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.29s)
+=== RUN   TestFiles/declarations.input
+    --- PASS: TestFiles/declarations.input (0.11s)
+=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.05s)
+=== RUN   TestFiles/slow.input
+panic: runtime error: slice out of range
+Error: failed to run main module `/tmp/tinygo1578987619/main`
+
+Caused by:
+    0: failed to invoke command default
+    1: error while executing at wasm backtrace:
+           0: 0x16af8 - runtime.abort
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:87:7
+           1: 0x3bd4 - runtime.slicePanic
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:165:16
+           2: 0x3a17f - os.ReadFile
+           3: 0xc88f7 - go/printer.runcheck
+                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
+                           at /usr/local/go/src/go/printer/printer_test.go:152:11
+           4: 0xc8dc1 - &lt;goroutine wrapper&gt;
+                           at /usr/local/go/src/go/printer/printer_test.go:151:2
+           5:  0x91e - tinygo_launch
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
+           6: 0x18831 - (*internal/task.Task).Resume
+                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
+                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
+    2: wasm trap: wasm `unreachable` instruction executed
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/comments.input#01
+    --- PASS: TestFiles/comments.input#01 (0.07s)
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/comments2.input
+    --- PASS: TestFiles/comments2.input (0.13s)
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/alignment.input
+    --- PASS: TestFiles/alignment.input (0.07s)
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01
+    --- PASS: TestFiles/expressions.input#01 (0.29s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/declarations.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.10s)
+    --- PASS: TestFiles/declarations.input (0.11s)
+</failure>
+    </testcase>
+    <testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/statements.input
+    --- PASS: TestFiles/statements.input (0.05s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/slow.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/slow.input
 panic: runtime error: slice out of range
-Error: failed to run main module `/tmp/tinygo3909123806/main`
+Error: failed to run main module `/tmp/tinygo1578987619/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2545,100 +2615,30 @@ Caused by:
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/comments2.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/comments2.input
-    --- PASS: TestFiles/comments2.input (0.02s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/empty.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/empty.input
-    --- PASS: TestFiles/empty.input (0.00s)
+    --- PASS: TestFiles/empty.input (0.06s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/comments.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.05s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/comments.input#01" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.03s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/alignment.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.03s)
+    --- PASS: TestFiles/comments.input (0.13s)
 </failure>
     </testcase>
     <testcase classname="go/printer" name="TestFiles/linebreaks.input" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.12s)
+    --- PASS: TestFiles/linebreaks.input (0.16s)
 </failure>
     </testcase>
-    <testcase classname="go/printer" name="TestFiles/expressions.input#01" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.21s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles/statements.input" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.06s)
-</failure>
-    </testcase>
-    <testcase classname="go/printer" name="TestFiles" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestFiles
-=== RUN   TestFiles/empty.input
-    --- PASS: TestFiles/empty.input (0.00s)
-=== RUN   TestFiles/comments.input
-    --- PASS: TestFiles/comments.input (0.05s)
-=== RUN   TestFiles/comments.input#01
-    --- PASS: TestFiles/comments.input#01 (0.03s)
-=== RUN   TestFiles/comments2.input
-    --- PASS: TestFiles/comments2.input (0.02s)
-=== RUN   TestFiles/alignment.input
-    --- PASS: TestFiles/alignment.input (0.03s)
-=== RUN   TestFiles/linebreaks.input
-    --- PASS: TestFiles/linebreaks.input (0.12s)
-=== RUN   TestFiles/expressions.input
-    --- PASS: TestFiles/expressions.input (0.28s)
-=== RUN   TestFiles/expressions.input#01
-    --- PASS: TestFiles/expressions.input#01 (0.21s)
-=== RUN   TestFiles/declarations.input
-    --- PASS: TestFiles/declarations.input (0.10s)
-=== RUN   TestFiles/statements.input
-    --- PASS: TestFiles/statements.input (0.06s)
-=== RUN   TestFiles/slow.input
-panic: runtime error: slice out of range
-Error: failed to run main module `/tmp/tinygo3909123806/main`
-
-Caused by:
-    0: failed to invoke command default
-    1: error while executing at wasm backtrace:
-           0: 0x16af8 - runtime.abort
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_tinygowasm.go:70:6              - runtime.runtimePanicAt
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:87:7
-           1: 0x3bd4 - runtime.slicePanic
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/panic.go:165:16
-           2: 0x3a17f - os.ReadFile
-           3: 0xc88f7 - go/printer.runcheck
-                           at /usr/local/go/src/go/printer/printer_test.go:121:25              - go/printer.check$1
-                           at /usr/local/go/src/go/printer/printer_test.go:152:11
-           4: 0xc8dc1 - &lt;goroutine wrapper&gt;
-                           at /usr/local/go/src/go/printer/printer_test.go:151:2
-           5:  0x91e - tinygo_launch
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify_wasm.S:59
-           6: 0x18831 - (*internal/task.Task).Resume
-                           at /workspaces/dc-wasm-go/tinygo/src/internal/task/task_asyncify.go:109:17              - runtime.scheduler
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler.go:236:11              - runtime.run
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
-                           at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
-    2: wasm trap: wasm `unreachable` instruction executed
+    <testcase classname="go/printer" name="TestFiles/expressions.input" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestFiles/expressions.input
+    --- PASS: TestFiles/expressions.input (0.40s)
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="go/scanner" timestamp="2024-04-25T13:27:32Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="go/scanner" timestamp="2024-04-26T01:54:44Z">
     <properties classname="go/scanner">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2654,18 +2654,18 @@ Caused by:
     <testcase classname="go/scanner" name="TestIssue28112" time="0.000000" />
     <testcase classname="go/scanner" name="TestNumbers" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/token" timestamp="2024-04-25T13:27:34Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/token" timestamp="2024-04-26T01:54:45Z">
     <properties classname="go/token">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="go/token" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2475071640/main /tmp/tinygo2475071640/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2475071640/main --output /tmp/tinygo2475071640/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo2475071640/main -test.v
-/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/token --dir=. --dir=/tmp::/tmp /tmp/tinygo2475071640/main -test.v
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo189848225/main /tmp/tinygo189848225/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo189848225/main --output /tmp/tinygo189848225/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo189848225/main -test.v
+/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/token --dir=. --dir=/tmp::/tmp /tmp/tinygo189848225/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;
-Error: failed to run main module `/tmp/tinygo2475071640/main`
+Error: failed to run main module `/tmp/tinygo189848225/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2686,11 +2686,11 @@ Caused by:
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	go/token	0.640s
+FAIL	go/token	0.700s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="go/types" timestamp="2024-04-25T13:27:37Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="go/types" timestamp="2024-04-26T01:54:47Z">
     <properties classname="go/types">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2701,7 +2701,7 @@ FAIL	go/token	0.640s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="3" failures="0" time="0.000000" name="go/version" timestamp="2024-04-25T13:27:39Z">
+  <testsuite tests="3" failures="0" time="0.000000" name="go/version" timestamp="2024-04-26T01:54:50Z">
     <properties classname="go/version">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2709,20 +2709,20 @@ FAIL	go/token	0.640s
     <testcase classname="go/version" name="TestLang" time="0.000000" />
     <testcase classname="go/version" name="TestIsValid" time="0.000000" />
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="hash" timestamp="2024-04-25T13:27:43Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="hash" timestamp="2024-04-26T01:54:51Z">
     <properties classname="hash">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="hash" name="TestMarshalHash" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="0" time="0.000000" name="hash/adler32" timestamp="2024-04-25T13:27:44Z">
+  <testsuite tests="2" failures="0" time="0.000000" name="hash/adler32" timestamp="2024-04-26T01:54:57Z">
     <properties classname="hash/adler32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="hash/adler32" name="TestGolden" time="0.000000" />
     <testcase classname="hash/adler32" name="TestGoldenMarshal" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="1" time="0.000000" name="hash/crc32" timestamp="2024-04-25T13:27:52Z">
+  <testsuite tests="8" failures="1" time="0.000000" name="hash/crc32" timestamp="2024-04-26T01:55:01Z">
     <properties classname="hash/crc32">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2731,7 +2731,7 @@ FAIL	go/token	0.640s
     Arch-specific IEEE not available.
     SkipNow is incomplete, requires runtime.Goexit()
 panic: not available
-Error: failed to run main module `/tmp/tinygo384046586/main`
+Error: failed to run main module `/tmp/tinygo1425907244/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2773,7 +2773,7 @@ Caused by:
     <testcase classname="hash/crc32" name="TestMarshalTableMismatch" time="0.000000" />
     <testcase classname="hash/crc32" name="TestSlicing" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="0" time="0.000000" name="hash/crc64" timestamp="2024-04-25T13:27:52Z">
+  <testsuite tests="5" failures="0" time="0.000000" name="hash/crc64" timestamp="2024-04-26T01:55:04Z">
     <properties classname="hash/crc64">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2781,7 +2781,7 @@ Caused by:
     <testcase classname="hash/crc64" name="TestGoldenMarshal" time="0.000000" />
     <testcase classname="hash/crc64" name="TestMarshalTableMismatch" time="0.000000" />
   </testsuite>
-  <testsuite tests="19" failures="0" time="0.000000" name="hash/fnv" timestamp="2024-04-25T13:27:53Z">
+  <testsuite tests="19" failures="0" time="0.000000" name="hash/fnv" timestamp="2024-04-26T01:55:06Z">
     <properties classname="hash/fnv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2799,7 +2799,7 @@ Caused by:
     <testcase classname="hash/fnv" name="TestIntegrity128" time="0.000000" />
     <testcase classname="hash/fnv" name="TestIntegrity128a" time="0.000000" />
   </testsuite>
-  <testsuite tests="13" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-25T13:27:59Z">
+  <testsuite tests="13" failures="1" time="0.000000" name="hash/maphash" timestamp="2024-04-26T01:55:06Z">
     <properties classname="hash/maphash">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2820,7 +2820,7 @@ Caused by:
     <testcase classname="hash/maphash" name="TestSmhasherSanity" time="0.000000" />
     <testcase classname="hash/maphash" name="TestSmhasherAppendedZeros" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="0" time="0.000000" name="html" timestamp="2024-04-25T13:27:59Z">
+  <testsuite tests="3" failures="0" time="0.000000" name="html" timestamp="2024-04-26T01:55:10Z">
     <properties classname="html">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -2828,14 +2828,14 @@ Caused by:
     <testcase classname="html" name="TestUnescape" time="0.000000" />
     <testcase classname="html" name="TestUnescapeEscape" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="html/template" timestamp="2024-04-25T13:28:01Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="html/template" timestamp="2024-04-26T01:55:12Z">
     <properties classname="html/template">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="html/template" name="TestAddParseTreeHTML" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAddParseTreeHTML
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo2220403285/main`
+Error: failed to run main module `/tmp/tinygo290970313/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2880,14 +2880,14 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="image" timestamp="2024-04-25T13:28:04Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="image" timestamp="2024-04-26T01:55:13Z">
     <properties classname="image">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="image" name="TestNewXxxBadRectangle" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNewXxxBadRectangle
 panic: image: NewRGBA Rectangle has huge or negative dimensions
-Error: failed to run main module `/tmp/tinygo2264896461/main`
+Error: failed to run main module `/tmp/tinygo3756225778/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2933,14 +2933,14 @@ Caused by:
     <testcase classname="image" name="TestRectangle" time="0.000000" />
     <testcase classname="image" name="TestImage" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="image/color" timestamp="2024-04-25T13:28:05Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="image/color" timestamp="2024-04-26T01:55:15Z">
     <properties classname="image/color">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="image/color" name="TestSqDiff" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo1503808192/main`
+Error: failed to run main module `/tmp/tinygo1245779073/main`
 
 Caused by:
     0: failed to invoke command default
@@ -2979,19 +2979,19 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/color/palette" timestamp="2024-04-25T13:28:05Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/color/palette" timestamp="2024-04-26T01:55:17Z">
     <properties classname="image/color/palette">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-04-25T13:28:06Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="image/draw" timestamp="2024-04-26T01:55:17Z">
     <properties classname="image/draw">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="image/draw" name="TestSqDiff" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestSqDiff
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo2008385991/main`
+Error: failed to run main module `/tmp/tinygo2119699440/main`
 
 Caused by:
     0: failed to invoke command default
@@ -3038,7 +3038,7 @@ Caused by:
     <testcase classname="image/draw" name="TestFloydSteinbergCheckerboard" time="0.000000" />
     <testcase classname="image/draw" name="TestPaletted" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/gif" timestamp="2024-04-25T13:28:15Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/gif" timestamp="2024-04-26T01:55:25Z">
     <properties classname="image/gif">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3050,7 +3050,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="image/jpeg" timestamp="2024-04-25T13:28:16Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="image/jpeg" timestamp="2024-04-26T01:55:26Z">
     <properties classname="image/jpeg">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3061,7 +3061,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="13" failures="1" time="0.000000" name="image/png" timestamp="2024-04-25T13:28:18Z">
+  <testsuite tests="13" failures="1" time="0.000000" name="image/png" timestamp="2024-04-26T01:55:28Z">
     <properties classname="image/png">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3082,7 +3082,7 @@ Caused by:
     <testcase classname="image/png" name="TestPaletted8OutOfRangePixel" time="0.000000" />
     <testcase classname="image/png" name="TestGray8Transparent" time="0.000000" />
   </testsuite>
-  <testsuite tests="11" failures="4" time="0.000000" name="index/suffixarray" timestamp="2024-04-25T13:28:18Z">
+  <testsuite tests="11" failures="4" time="0.000000" name="index/suffixarray" timestamp="2024-04-26T01:55:29Z">
     <properties classname="index/suffixarray">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3093,7 +3093,7 @@ Caused by:
     </testcase>
     <testcase classname="index/suffixarray" name="TestNew64/forcealloc" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNew64/forcealloc
-    --- PASS: TestNew64/forcealloc (1.24s)
+    --- PASS: TestNew64/forcealloc (1.22s)
 </failure>
     </testcase>
     <testcase classname="index/suffixarray" name="TestNew64/exhaustive2" time="-0.000000">
@@ -3105,7 +3105,7 @@ Caused by:
 === RUN   TestNew64/ababab...
     --- PASS: TestNew64/ababab... (9.73s)
 === RUN   TestNew64/forcealloc
-    --- PASS: TestNew64/forcealloc (1.24s)
+    --- PASS: TestNew64/forcealloc (1.22s)
 === RUN   TestNew64/exhaustive2
 </failure>
     </testcase>
@@ -3113,7 +3113,7 @@ Caused by:
     <testcase classname="index/suffixarray" name="TestIndex64" time="0.000000" />
     <testcase classname="index/suffixarray" name="TestNew32" time="0.000000" />
   </testsuite>
-  <testsuite tests="60" failures="4" time="0.000000" name="io" timestamp="2024-04-25T13:28:20Z">
+  <testsuite tests="60" failures="4" time="0.000000" name="io" timestamp="2024-04-26T01:55:29Z">
     <properties classname="io">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -3192,13 +3192,13 @@ Caused by:
     <testcase classname="io" name="TestPipeCloseError" time="0.000000" />
     <testcase classname="io" name="TestPipeConcurrent" time="0.000000" />
   </testsuite>
-  <testsuite tests="6" failures="1" time="0.000000" name="io/fs" timestamp="2024-04-25T13:28:20Z">
+  <testsuite tests="6" failures="1" time="0.000000" name="io/fs" timestamp="2024-04-26T01:55:32Z">
     <properties classname="io/fs">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="io/fs" name="TestCVE202230630" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestCVE202230630
-Error: failed to run main module `/tmp/tinygo4187190271/main`
+Error: failed to run main module `/tmp/tinygo273119738/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5204,7 +5204,7 @@ Caused by:
     <testcase classname="io/fs" name="TestGlob" time="0.000000" />
     <testcase classname="io/fs" name="TestGlobError" time="0.000000" />
   </testsuite>
-  <testsuite tests="28" failures="1" time="0.000000" name="io/ioutil" timestamp="2024-04-25T13:28:34Z">
+  <testsuite tests="28" failures="1" time="0.000000" name="io/ioutil" timestamp="2024-04-26T01:55:45Z">
     <properties classname="io/ioutil">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5212,7 +5212,7 @@ Caused by:
       <failure message="Failed" type="">=== RUN   TestReadOnlyWriteFile
     file permissions are not supported by wasip1
     SkipNow is incomplete, requires runtime.Goexit()
-    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile52856003/blurp.txt
+    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile186908131/blurp.txt
     FailNow is incomplete, requires runtime.Goexit()
     want shmorp, got florp
     FailNow is incomplete, requires runtime.Goexit()
@@ -5229,7 +5229,7 @@ Caused by:
     <testcase classname="io/ioutil" name="TestTempDir_BadDir" time="0.000000" />
     <testcase classname="io/ioutil" name="TestTempDir_BadPattern" time="0.000000" />
   </testsuite>
-  <testsuite tests="9" failures="1" time="0.000000" name="log" timestamp="2024-04-25T13:28:35Z">
+  <testsuite tests="9" failures="1" time="0.000000" name="log" timestamp="2024-04-26T01:55:48Z">
     <properties classname="log">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5241,14 +5241,14 @@ Caused by:
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
     log output should match "^[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 13:28:43.605080 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 13:28:43.605286 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 13:28:43.606645 ???:0: hello 23 world"
-    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/25 13:28:43.606867 ???:0: hello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 13:28:43.607090 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 13:28:43.607293 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 13:28:43.607498 ???:0: XXXhello 23 world"
-    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/25 13:28:43.607720 ???:0: XXXhello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 01:55:57.349765 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 01:55:57.349965 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 01:55:57.351294 ???:0: hello 23 world"
+    log output should match "^XXX[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): hello 23 world$" is "XXX2024/04/26 01:55:57.351513 ???:0: hello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 01:55:57.351733 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] .*/[A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 01:55:57.351938 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 01:55:57.352135 ???:0: XXXhello 23 world"
+    log output should match "^[0-9][0-9][0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]\\.[0-9][0-9][0-9][0-9][0-9][0-9] [A-Za-z0-9_\\-]+\\.go:(63|65): XXXhello 23 world$" is "2024/04/26 01:55:57.352350 ???:0: XXXhello 23 world"
 --- FAIL: TestAll (0.00s)
 </failure>
     </testcase>
@@ -5261,17 +5261,17 @@ Caused by:
     <testcase classname="log" name="TestEmptyPrintCreatesLine" time="0.000000" />
     <testcase classname="log" name="TestDiscard" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="log/slog" timestamp="2024-04-25T13:28:38Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="log/slog" timestamp="2024-04-26T01:55:54Z">
     <properties classname="log/slog">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="log/slog" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1619365178/main /tmp/tinygo1619365178/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1619365178/main --output /tmp/tinygo1619365178/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1619365178/main -test.v
-/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/log/slog --dir=. --dir=/tmp::/tmp /tmp/tinygo1619365178/main -test.v
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1947451834/main /tmp/tinygo1947451834/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1947451834/main --output /tmp/tinygo1947451834/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1947451834/main -test.v
+/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/log/slog --dir=. --dir=/tmp::/tmp /tmp/tinygo1947451834/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo1619365178/main`
+Error: failed to run main module `/tmp/tinygo1947451834/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5296,30 +5296,30 @@ Caused by:
            8: 0x157d3 - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	log/slog	0.619s
+FAIL	log/slog	0.614s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="log/syslog" timestamp="2024-04-25T13:28:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="log/syslog" timestamp="2024-04-26T01:55:57Z">
     <properties classname="log/syslog">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="maps" timestamp="2024-04-25T13:28:44Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="maps" timestamp="2024-04-26T01:56:04Z">
     <properties classname="maps">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="maps" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo66534415/main /tmp/tinygo66534415/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo66534415/main.o: undefined symbol: maps.clone
-wasm-ld: error: /tmp/tinygo66534415/main.o: undefined symbol: maps.clone
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo387810914/main /tmp/tinygo387810914/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo387810914/main.o: undefined symbol: maps.clone
+wasm-ld: error: /tmp/tinygo387810914/main.o: undefined symbol: maps.clone
 failed to run tool: wasm-ld
 FAIL	maps	0.000s
-error: failed to link /tmp/tinygo66534415/main: exit status 1
+error: failed to link /tmp/tinygo387810914/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="76" failures="0" time="0.000000" name="math" timestamp="2024-04-25T13:28:50Z">
+  <testsuite tests="76" failures="0" time="0.000000" name="math" timestamp="2024-04-26T01:56:05Z">
     <properties classname="math">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5400,19 +5400,19 @@ error: failed to link /tmp/tinygo66534415/main: exit status 1
     <testcase classname="math" name="TestHugeSinCos" time="0.000000" />
     <testcase classname="math" name="TestHugeTan" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-25T13:28:51Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-26T01:56:06Z">
     <properties classname="math/big">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="12" failures="1" time="0.000000" name="math/bits" timestamp="2024-04-25T13:28:52Z">
+  <testsuite tests="12" failures="1" time="0.000000" name="math/bits" timestamp="2024-04-26T01:56:11Z">
     <properties classname="math/bits">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="math/bits" name="TestAdd64OverflowPanic" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAdd64OverflowPanic
 panic: overflow
-Error: failed to run main module `/tmp/tinygo3721914957/main`
+Error: failed to run main module `/tmp/tinygo1221209225/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5464,7 +5464,7 @@ Caused by:
     <testcase classname="math/bits" name="TestAddSubUint32" time="0.000000" />
     <testcase classname="math/bits" name="TestAddSubUint64" time="0.000000" />
   </testsuite>
-  <testsuite tests="24" failures="0" time="0.000000" name="math/cmplx" timestamp="2024-04-25T13:28:56Z">
+  <testsuite tests="24" failures="0" time="0.000000" name="math/cmplx" timestamp="2024-04-26T01:56:12Z">
     <properties classname="math/cmplx">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5493,7 +5493,7 @@ Caused by:
     <testcase classname="math/cmplx" name="TestInfiniteLoopIntanSeries" time="0.000000" />
     <testcase classname="math/cmplx" name="TestTanHuge" time="0.000000" />
   </testsuite>
-  <testsuite tests="43" failures="8" time="0.000000" name="math/rand" timestamp="2024-04-25T13:28:56Z">
+  <testsuite tests="43" failures="8" time="0.000000" name="math/rand" timestamp="2024-04-26T01:56:19Z">
     <properties classname="math/rand">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5540,20 +5540,12 @@ Caused by:
     --- FAIL: TestDefaultRace/5 (0.00s)
 </failure>
     </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/0
+    <testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/1
         skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
         SkipNow is incomplete, requires runtime.Goexit()
         exec: "main": executable file not found in $PATH
-    --- FAIL: TestDefaultRace/0 (0.00s)
-</failure>
-    </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/2
-        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
-        SkipNow is incomplete, requires runtime.Goexit()
-        exec: "main": executable file not found in $PATH
-    --- FAIL: TestDefaultRace/2 (0.00s)
+    --- FAIL: TestDefaultRace/1 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestDefaultRace/3" time="-0.000000">
@@ -5567,7 +5559,7 @@ Caused by:
     <testcase classname="math/rand" name="TestRegress" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestRegress
 panic: unimplemented: (reflect.Type).Method()
-Error: failed to run main module `/tmp/tinygo3102300286/main`
+Error: failed to run main module `/tmp/tinygo3894368342/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5603,12 +5595,12 @@ Caused by:
     2: wasm trap: wasm `unreachable` instruction executed
 </failure>
     </testcase>
-    <testcase classname="math/rand" name="TestDefaultRace/1" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestDefaultRace/1
+    <testcase classname="math/rand" name="TestDefaultRace/0" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/0
         skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
         SkipNow is incomplete, requires runtime.Goexit()
         exec: "main": executable file not found in $PATH
-    --- FAIL: TestDefaultRace/1 (0.00s)
+    --- FAIL: TestDefaultRace/0 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestDefaultRace/4" time="-0.000000">
@@ -5617,6 +5609,14 @@ Caused by:
         SkipNow is incomplete, requires runtime.Goexit()
         exec: "main": executable file not found in $PATH
     --- FAIL: TestDefaultRace/4 (0.00s)
+</failure>
+    </testcase>
+    <testcase classname="math/rand" name="TestDefaultRace/2" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestDefaultRace/2
+        skipping test: cannot exec subprocess on wasip1/wasm: can't probe for exec support: Executable not implemented
+        SkipNow is incomplete, requires runtime.Goexit()
+        exec: "main": executable file not found in $PATH
+    --- FAIL: TestDefaultRace/2 (0.00s)
 </failure>
     </testcase>
     <testcase classname="math/rand" name="TestAuto" time="0.000000" />
@@ -5635,29 +5635,29 @@ Caused by:
     <testcase classname="math/rand" name="TestShuffleSmall" time="0.000000" />
     <testcase classname="math/rand" name="TestUniformFactorial" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="math/rand/v2" timestamp="2024-04-25T13:29:03Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="math/rand/v2" timestamp="2024-04-26T01:56:23Z">
     <properties classname="math/rand/v2">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="math/rand/v2" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo3335794202/main /tmp/tinygo3335794202/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-wasm-ld: error: /tmp/tinygo3335794202/main.o: undefined symbol: internal/chacha8rand.block
-wasm-ld: error: /tmp/tinygo3335794202/main.o: undefined symbol: internal/chacha8rand.block
-wasm-ld: error: /tmp/tinygo3335794202/main.o: undefined symbol: internal/chacha8rand.block
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2296799917/main /tmp/tinygo2296799917/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+wasm-ld: error: /tmp/tinygo2296799917/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2296799917/main.o: undefined symbol: internal/chacha8rand.block
+wasm-ld: error: /tmp/tinygo2296799917/main.o: undefined symbol: internal/chacha8rand.block
 failed to run tool: wasm-ld
 FAIL	math/rand/v2	0.000s
-error: failed to link /tmp/tinygo3335794202/main: exit status 1
+error: failed to link /tmp/tinygo2296799917/main: exit status 1
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="13" failures="1" time="0.000000" name="mime" timestamp="2024-04-25T13:29:03Z">
+  <testsuite tests="13" failures="1" time="0.000000" name="mime" timestamp="2024-04-26T01:56:24Z">
     <properties classname="mime">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="mime" name="TestTypeByExtension" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestTypeByExtension
 panic: bufio.Scanner: Read returned impossible count
-Error: failed to run main module `/tmp/tinygo948339510/main`
+Error: failed to run main module `/tmp/tinygo2242944616/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5712,10 +5712,14 @@ Caused by:
     <testcase classname="mime" name="TestParseMediaTypeBogus" time="0.000000" />
     <testcase classname="mime" name="TestFormatMediaType" time="0.000000" />
   </testsuite>
-  <testsuite tests="11" failures="4" time="0.000000" name="mime/multipart" timestamp="2024-04-25T13:29:07Z">
+  <testsuite tests="11" failures="4" time="0.000000" name="mime/multipart" timestamp="2024-04-26T01:56:34Z">
     <properties classname="mime/multipart">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
+    <testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/many_parts" time="-0.000000">
+      <failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/many_parts
+</failure>
+    </testcase>
     <testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge
 === RUN   TestReadForm_MetadataTooLarge/large_name
@@ -5735,10 +5739,6 @@ Caused by:
     --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.05s)
 </failure>
     </testcase>
-    <testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/many_parts" time="-0.000000">
-      <failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/many_parts
-</failure>
-    </testcase>
     <testcase classname="mime/multipart" name="TestReadForm" time="0.000000" />
     <testcase classname="mime/multipart" name="TestReadFormWithNamelessFile" time="0.000000" />
     <testcase classname="mime/multipart" name="TestReadFormWitFileNameMaxMemoryOverflow" time="0.000000" />
@@ -5747,7 +5747,7 @@ Caused by:
     <testcase classname="mime/multipart" name="TestReadForm_NoReadAfterEOF" time="0.000000" />
     <testcase classname="mime/multipart" name="TestReadForm_NonFileMaxMemory" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="0" time="0.000000" name="mime/quotedprintable" timestamp="2024-04-25T13:29:15Z">
+  <testsuite tests="5" failures="0" time="0.000000" name="mime/quotedprintable" timestamp="2024-04-26T01:56:36Z">
     <properties classname="mime/quotedprintable">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5757,53 +5757,53 @@ Caused by:
     <testcase classname="mime/quotedprintable" name="TestWriterBinary" time="0.000000" />
     <testcase classname="mime/quotedprintable" name="TestRoundTrip" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="0" time="0.000000" name="net" timestamp="2024-04-25T13:29:17Z">
+  <testsuite tests="1" failures="0" time="0.000000" name="net" timestamp="2024-04-26T01:56:37Z">
     <properties classname="net">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="net" name="TestParseMAC" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http" timestamp="2024-04-25T13:29:29Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http" timestamp="2024-04-26T01:56:47Z">
     <properties classname="net/http">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cgi" timestamp="2024-04-25T13:29:29Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cgi" timestamp="2024-04-26T01:56:48Z">
     <properties classname="net/http/cgi">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cookiejar" timestamp="2024-04-25T13:29:29Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/cookiejar" timestamp="2024-04-26T01:56:48Z">
     <properties classname="net/http/cookiejar">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/fcgi" timestamp="2024-04-25T13:29:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/fcgi" timestamp="2024-04-26T01:56:48Z">
     <properties classname="net/http/fcgi">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptest" timestamp="2024-04-25T13:29:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptest" timestamp="2024-04-26T01:56:48Z">
     <properties classname="net/http/httptest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptrace" timestamp="2024-04-25T13:29:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httptrace" timestamp="2024-04-26T01:56:49Z">
     <properties classname="net/http/httptrace">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httputil" timestamp="2024-04-25T13:29:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/httputil" timestamp="2024-04-26T01:56:49Z">
     <properties classname="net/http/httputil">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/http/pprof" timestamp="2024-04-25T13:29:30Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/http/pprof" timestamp="2024-04-26T01:56:49Z">
     <properties classname="net/http/pprof">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="11" failures="0" time="0.000000" name="net/mail" timestamp="2024-04-25T13:29:31Z">
+  <testsuite tests="11" failures="0" time="0.000000" name="net/mail" timestamp="2024-04-26T01:56:49Z">
     <properties classname="net/mail">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5818,7 +5818,7 @@ Caused by:
     <testcase classname="net/mail" name="TestAddressFormattingAndParsing" time="0.000000" />
     <testcase classname="net/mail" name="TestEmptyAddress" time="0.000000" />
   </testsuite>
-  <testsuite tests="196" failures="2" time="0.000000" name="net/netip" timestamp="2024-04-25T13:29:42Z">
+  <testsuite tests="196" failures="2" time="0.000000" name="net/netip" timestamp="2024-04-26T01:56:58Z">
     <properties classname="net/netip">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5883,7 +5883,7 @@ Caused by:
     <testcase classname="net/netip" name="TestAs4" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestAs4
 panic: As4 called on IP zero value
-Error: failed to run main module `/tmp/tinygo3552326224/main`
+Error: failed to run main module `/tmp/tinygo3136034679/main`
 
 Caused by:
     0: failed to invoke command default
@@ -5957,12 +5957,12 @@ Caused by:
     <testcase classname="net/netip" name="TestParsePrefixError" time="0.000000" />
     <testcase classname="net/netip" name="TestPrefixIsSingleIP" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc" timestamp="2024-04-25T13:29:47Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc" timestamp="2024-04-26T01:57:03Z">
     <properties classname="net/rpc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc/jsonrpc" timestamp="2024-04-25T13:29:47Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/rpc/jsonrpc" timestamp="2024-04-26T01:57:03Z">
     <properties classname="net/rpc/jsonrpc">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5973,7 +5973,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/smtp" timestamp="2024-04-25T13:29:49Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/smtp" timestamp="2024-04-26T01:57:05Z">
     <properties classname="net/smtp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -5992,7 +5992,7 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="26" failures="0" time="0.000000" name="net/textproto" timestamp="2024-04-25T13:29:51Z">
+  <testsuite tests="26" failures="0" time="0.000000" name="net/textproto" timestamp="2024-04-26T01:57:06Z">
     <properties classname="net/textproto">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6023,18 +6023,18 @@ Caused by:
     <testcase classname="net/textproto" name="TestDotWriterCloseEmptyWrite" time="0.000000" />
     <testcase classname="net/textproto" name="TestDotWriterCloseNoWrite" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="net/url" timestamp="2024-04-25T13:29:59Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="net/url" timestamp="2024-04-26T01:57:10Z">
     <properties classname="net/url">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="net/url" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1443389379/main /tmp/tinygo1443389379/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1443389379/main --output /tmp/tinygo1443389379/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1443389379/main -test.v
-/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/net/url --dir=. --dir=/tmp::/tmp /tmp/tinygo1443389379/main -test.v
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1688456956/main /tmp/tinygo1688456956/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1688456956/main --output /tmp/tinygo1688456956/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1688456956/main -test.v
+/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/net/url --dir=. --dir=/tmp::/tmp /tmp/tinygo1688456956/main -test.v
 checkId: 22 should be 23
 panic: bootstrap type wrong id: mapType mapType not &lt;nil&gt;
-Error: failed to run main module `/tmp/tinygo1443389379/main`
+Error: failed to run main module `/tmp/tinygo1688456956/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6058,11 +6058,11 @@ Caused by:
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/scheduler_any.go:28:11              - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	net/url	0.576s
+FAIL	net/url	0.691s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="37" failures="0" time="0.000000" name="os" timestamp="2024-04-25T13:30:02Z">
+  <testsuite tests="37" failures="0" time="0.000000" name="os" timestamp="2024-04-26T01:57:17Z">
     <properties classname="os">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6104,22 +6104,22 @@ FAIL	net/url	0.576s
     <testcase classname="os" name="TestDirAndSymlinkStats" time="0.000000" />
     <testcase classname="os" name="TestFileAndSymlinkStats" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/exec" timestamp="2024-04-25T13:30:03Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/exec" timestamp="2024-04-26T01:57:17Z">
     <properties classname="os/exec">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/signal" timestamp="2024-04-25T13:30:03Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/signal" timestamp="2024-04-26T01:57:18Z">
     <properties classname="os/signal">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="os/user" timestamp="2024-04-25T13:30:12Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="os/user" timestamp="2024-04-26T04:14:10Z">
     <properties classname="os/user">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="9" failures="0" time="0.000000" name="path" timestamp="2024-04-25T13:30:12Z">
+  <testsuite tests="9" failures="0" time="0.000000" name="path" timestamp="2024-04-26T04:14:10Z">
     <properties classname="path">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6133,13 +6133,13 @@ FAIL	net/url	0.576s
     <testcase classname="path" name="TestDir" time="0.000000" />
     <testcase classname="path" name="TestIsAbs" time="0.000000" />
   </testsuite>
-  <testsuite tests="3" failures="1" time="0.000000" name="path/filepath" timestamp="2024-04-25T13:30:15Z">
+  <testsuite tests="3" failures="1" time="0.000000" name="path/filepath" timestamp="2024-04-26T04:14:10Z">
     <properties classname="path/filepath">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="path/filepath" name="TestCVE202230632" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestCVE202230632
-Error: failed to run main module `/tmp/tinygo776314268/main`
+Error: failed to run main module `/tmp/tinygo2292563402/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6181,13 +6181,13 @@ Caused by:
     <testcase classname="path/filepath" name="TestMatch" time="0.000000" />
     <testcase classname="path/filepath" name="TestGlob" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="0" time="0.000000" name="plugin" timestamp="2024-04-25T13:30:18Z">
+  <testsuite tests="1" failures="0" time="0.000000" name="plugin" timestamp="2024-04-26T04:14:10Z">
     <properties classname="plugin">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="plugin" name="TestPlugin" time="0.000000" />
   </testsuite>
-  <testsuite tests="96" failures="0" time="0.000000" name="reflect" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="96" failures="0" time="0.000000" name="reflect" timestamp="2024-04-26T04:14:10Z">
     <properties classname="reflect">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6268,14 +6268,14 @@ Caused by:
     <testcase classname="reflect" name="TestFields" time="0.000000" />
     <testcase classname="reflect" name="TestFieldByIndexErr" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="regexp" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="regexp" timestamp="2024-04-26T04:14:10Z">
     <properties classname="regexp">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="regexp" name="TestBadCompile" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestBadCompile
 panic: expression too large
-Error: failed to run main module `/tmp/tinygo2654458120/main`
+Error: failed to run main module `/tmp/tinygo1617399543/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6323,14 +6323,14 @@ Caused by:
     </testcase>
     <testcase classname="regexp" name="TestGoodCompile" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="1" time="0.000000" name="regexp/syntax" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="8" failures="1" time="0.000000" name="regexp/syntax" timestamp="2024-04-26T04:14:10Z">
     <properties classname="regexp/syntax">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="regexp/syntax" name="TestParseInvalidRegexps" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestParseInvalidRegexps
 panic: expression nests too deeply
-Error: failed to run main module `/tmp/tinygo1398461676/main`
+Error: failed to run main module `/tmp/tinygo3305126102/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6380,59 +6380,59 @@ Caused by:
     <testcase classname="regexp/syntax" name="TestFoldConstants" time="0.000000" />
     <testcase classname="regexp/syntax" name="TestAppendRangeCollapse" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/cgo" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/cgo" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/cgo">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/coverage" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/coverage" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/coverage">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/debug" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/debug" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/debug">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/metrics" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/metrics" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/metrics">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/pprof" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/pprof" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/pprof">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/race" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/race" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/race">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="runtime/trace" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="runtime/trace" timestamp="2024-04-26T04:14:10Z">
     <properties classname="runtime/trace">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="slices" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="slices" timestamp="2024-04-26T04:14:10Z">
     <properties classname="slices">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="slices" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1041741410/main /tmp/tinygo1041741410/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1041741410/main --output /tmp/tinygo1041741410/main
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo413305320/main /tmp/tinygo413305320/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo413305320/main --output /tmp/tinygo413305320/main
 FAIL	slices	0.000s
 error: wasm-opt failed: signal: killed
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="63" failures="0" time="0.000000" name="sort" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="63" failures="0" time="0.000000" name="sort" timestamp="2024-04-26T04:14:10Z">
     <properties classname="sort">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6466,14 +6466,14 @@ error: wasm-opt failed: signal: killed
     <testcase classname="sort" name="TestCountStableOps" time="0.000000" />
     <testcase classname="sort" name="TestCountSortOps" time="0.000000" />
   </testsuite>
-  <testsuite tests="29" failures="1" time="0.000000" name="strconv" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="29" failures="1" time="0.000000" name="strconv" timestamp="2024-04-26T04:14:10Z">
     <properties classname="strconv">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="strconv" name="TestFormatComplexInvalidBitSize" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestFormatComplexInvalidBitSize
 panic: invalid bitSize
-Error: failed to run main module `/tmp/tinygo2394015322/main`
+Error: failed to run main module `/tmp/tinygo307269402/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6538,7 +6538,7 @@ Caused by:
     <testcase classname="strconv" name="TestNumErrorUnwrap" time="0.000000" />
     <testcase classname="strconv" name="TestFormatComplex" time="0.000000" />
   </testsuite>
-  <testsuite tests="4" failures="1" time="0.000000" name="strings" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="4" failures="1" time="0.000000" name="strings" timestamp="2024-04-26T04:14:10Z">
     <properties classname="strings">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6549,7 +6549,7 @@ Caused by:
     growLen=10000: got 0 allocs during Write; want 1
     growLen=100000: got 0 allocs during Write; want 1
 panic: strings.Builder.Grow: negative count
-Error: failed to run main module `/tmp/tinygo3200841634/main`
+Error: failed to run main module `/tmp/tinygo1203819720/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6589,7 +6589,7 @@ Caused by:
     <testcase classname="strings" name="TestBuilderString" time="0.000000" />
     <testcase classname="strings" name="TestBuilderReset" time="0.000000" />
   </testsuite>
-  <testsuite tests="19" failures="0" time="0.000000" name="sync" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="19" failures="0" time="0.000000" name="sync" timestamp="2024-04-26T04:14:10Z">
     <properties classname="sync">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6613,7 +6613,7 @@ Caused by:
     <testcase classname="sync" name="TestWaitGroupUncontended" time="0.000000" />
     <testcase classname="sync" name="TestWaitGroup" time="0.000000" />
   </testsuite>
-  <testsuite tests="68" failures="6" time="0.000000" name="sync/atomic" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="68" failures="6" time="0.000000" name="sync/atomic" timestamp="2024-04-26T04:14:10Z">
     <properties classname="sync/atomic">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6642,7 +6642,7 @@ Caused by:
       <failure message="Failed" type="">=== RUN   TestStoreLoadRelAcq64
     Skipping test on 1 processor machine
     SkipNow is incomplete, requires runtime.Goexit()
---- FAIL: TestStoreLoadRelAcq64 (0.01s)
+--- FAIL: TestStoreLoadRelAcq64 (0.00s)
 </failure>
     </testcase>
     <testcase classname="sync/atomic" name="TestUnaligned64" time="0.000000">
@@ -6655,13 +6655,13 @@ Caused by:
     CompareAndSwapUint64Method did not panic
     AddUint64 did not panic
     AddUint64Method did not panic
---- FAIL: TestUnaligned64 (0.85s)
+--- FAIL: TestUnaligned64 (0.59s)
 </failure>
     </testcase>
     <testcase classname="sync/atomic" name="TestNilDeref" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNilDeref
 panic: runtime error: nil pointer dereference
-Error: failed to run main module `/tmp/tinygo3749151888/main`
+Error: failed to run main module `/tmp/tinygo2930668448/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6764,12 +6764,12 @@ Caused by:
     <testcase classname="sync/atomic" name="TestHammerStoreLoad" time="0.000000" />
     <testcase classname="sync/atomic" name="TestAutoAligned64" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="syscall" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="syscall" timestamp="2024-04-26T04:14:22Z">
     <properties classname="syscall">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="23" failures="0" time="0.000000" name="testing" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="23" failures="0" time="0.000000" name="testing" timestamp="2024-04-26T04:14:22Z">
     <properties classname="testing">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6788,21 +6788,21 @@ Caused by:
     <testcase classname="testing" name="TestSetenv" time="0.000000" />
     <testcase classname="testing" name="TestTesting" time="0.000000" />
   </testsuite>
-  <testsuite tests="5" failures="1" time="0.000000" name="testing/fstest" timestamp="2024-04-25T15:06:19Z">
+  <testsuite tests="5" failures="1" time="0.000000" name="testing/fstest" timestamp="2024-04-26T04:14:22Z">
     <properties classname="testing/fstest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="testing/fstest" name="TestSymlink" time="0.000000">
       <failure message="Failed" type="">=== RUN   TestSymlink
-    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/5422263/testfile.txt /tmp/5422263/testlink: errno 63
+    skipping test: cannot make symlinks on wasip1/wasm: symlinks unsupported: symlink /tmp/4862919/testfile.txt /tmp/4862919/testlink: errno 63
     SkipNow is incomplete, requires runtime.Goexit()
-    symlink /tmp/TestSymlink13508791/000/hello /tmp/TestSymlink13508791/000/hello.link: errno 63
+    symlink /tmp/TestSymlink125395623/000/hello /tmp/TestSymlink125395623/000/hello.link: errno 63
     FailNow is incomplete, requires runtime.Goexit()
     TestFS found errors:
         expected but not found: hello.link
     FailNow is incomplete, requires runtime.Goexit()
---- FAIL: TestSymlink (0.04s)
-    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink13508791: errno 52
+--- FAIL: TestSymlink (0.03s)
+    TempDir RemoveAll cleanup: RemoveAll /tmp/TestSymlink125395623: errno 52
 </failure>
     </testcase>
     <testcase classname="testing/fstest" name="TestMapFS" time="0.000000" />
@@ -6810,7 +6810,7 @@ Caused by:
     <testcase classname="testing/fstest" name="TestDash" time="0.000000" />
     <testcase classname="testing/fstest" name="TestShuffledFS" time="0.000000" />
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="testing/iotest" timestamp="2024-04-25T15:06:20Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="testing/iotest" timestamp="2024-04-26T04:14:23Z">
     <properties classname="testing/iotest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6830,14 +6830,14 @@ Caused by:
     <testcase classname="testing/iotest" name="TestStringsReader" time="0.000000" />
     <testcase classname="testing/iotest" name="TestTruncateWriter" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="testing/quick" timestamp="2024-04-25T15:06:33Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="testing/quick" timestamp="2024-04-26T04:14:24Z">
     <properties classname="testing/quick">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="testing/quick" name="TestCheckEqual" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestCheckEqual
 panic: unimplemented: (reflect.Type).NumIn()
-Error: failed to run main module `/tmp/tinygo4054141156/main`
+Error: failed to run main module `/tmp/tinygo4166362298/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6877,17 +6877,17 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="testing/slogtest" timestamp="2024-04-25T15:06:33Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="testing/slogtest" timestamp="2024-04-26T04:14:28Z">
     <properties classname="testing/slogtest">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="testing/slogtest" name="TestMain" time="0.000000">
-      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo2440387906/main /tmp/tinygo2440387906/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
-/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo2440387906/main --output /tmp/tinygo2440387906/main
-/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo2440387906/main -test.v
-/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/testing/slogtest --dir=. --dir=/tmp::/tmp /tmp/tinygo2440387906/main -test.v
+      <failure message="Failed" type="">wasm-ld --stack-first --no-demangle -L /workspaces/dc-wasm-go/tinygo -o /tmp/tinygo1208544470/main /tmp/tinygo1208544470/main.o /home/vscode/.cache/tinygo/compiler-rt-wasm32-unknown-wasi-generic/lib.a /home/vscode/.cache/tinygo/obj-f6dfdc5c0eba303761141c0df2fcd4c0ea07b3a91bae983ad3a0cdf0.bc /home/vscode/.cache/tinygo/obj-03cb3027306e14931a559af5783370ba29db850f5a080b48d52405d8.bc /workspaces/dc-wasm-go/tinygo/lib/wasi-libc/sysroot/lib/wasm32-wasi/libc.a -mllvm -mcpu=generic --lto-O2 --thinlto-cache-dir=/home/vscode/.cache/tinygo/thinlto -mllvm --rotation-max-header-size=0
+/workspaces/dc-wasm-go/tinygo/build/wasm-opt --asyncify -Oz -g /tmp/tinygo1208544470/main --output /tmp/tinygo1208544470/main
+/workspaces/dc-wasm-go/bin/wasmtime wasmtime --dir=. --dir=/tmp::/tmp /tmp/tinygo1208544470/main -test.v
+/workspaces/dc-wasm-go/bin/wasmtime run --dir=.. --dir=../.. --dir=../../.. --dir=. --env=PWD=/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/testing/slogtest --dir=. --dir=/tmp::/tmp /tmp/tinygo1208544470/main -test.v
 panic: runtime.Caller failed
-Error: failed to run main module `/tmp/tinygo2440387906/main`
+Error: failed to run main module `/tmp/tinygo1208544470/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6912,11 +6912,11 @@ Caused by:
            8: 0xc081 - _start
                            at /workspaces/dc-wasm-go/tinygo/src/runtime/runtime_wasip1.go:21:5
     2: wasm trap: wasm `unreachable` instruction executed
-FAIL	testing/slogtest	4.261s
+FAIL	testing/slogtest	0.540s
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="18" failures="0" time="0.000000" name="text/scanner" timestamp="2024-04-25T15:06:35Z">
+  <testsuite tests="18" failures="0" time="0.000000" name="text/scanner" timestamp="2024-04-26T04:14:31Z">
     <properties classname="text/scanner">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -6939,14 +6939,14 @@ FAIL	testing/slogtest	4.261s
     <testcase classname="text/scanner" name="TestIssue30320" time="0.000000" />
     <testcase classname="text/scanner" name="TestIssue50909" time="0.000000" />
   </testsuite>
-  <testsuite tests="2" failures="1" time="0.000000" name="text/tabwriter" timestamp="2024-04-25T15:06:38Z">
+  <testsuite tests="2" failures="1" time="0.000000" name="text/tabwriter" timestamp="2024-04-26T04:14:31Z">
     <properties classname="text/tabwriter">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="text/tabwriter" name="TestPanicDuringFlush" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestPanicDuringFlush
 panic: cannot write
-Error: failed to run main module `/tmp/tinygo666994590/main`
+Error: failed to run main module `/tmp/tinygo2044633962/main`
 
 Caused by:
     0: failed to invoke command default
@@ -6996,14 +6996,14 @@ Caused by:
     </testcase>
     <testcase classname="text/tabwriter" name="Test" time="0.000000" />
   </testsuite>
-  <testsuite tests="1" failures="1" time="0.000000" name="text/template" timestamp="2024-04-25T15:06:40Z">
+  <testsuite tests="1" failures="1" time="0.000000" name="text/template" timestamp="2024-04-26T04:14:37Z">
     <properties classname="text/template">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="text/template" name="TestExecute" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestExecute
 panic: unimplemented: (reflect.Type).NumOut()
-Error: failed to run main module `/tmp/tinygo2979811753/main`
+Error: failed to run main module `/tmp/tinygo1822073441/main`
 
 Caused by:
     0: failed to invoke command default
@@ -7044,14 +7044,14 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="6" failures="1" time="0.000000" name="text/template/parse" timestamp="2024-04-25T15:06:41Z">
+  <testsuite tests="6" failures="1" time="0.000000" name="text/template/parse" timestamp="2024-04-26T04:14:38Z">
     <properties classname="text/template/parse">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
     <testcase classname="text/template/parse" name="TestNumberParse" time="-0.000000">
       <failure message="Failed" type="">=== RUN   TestNumberParse
 panic: (97092:0x00048940)
-Error: failed to run main module `/tmp/tinygo2929305876/main`
+Error: failed to run main module `/tmp/tinygo4236101342/main`
 
 Caused by:
     0: failed to invoke command default
@@ -7098,7 +7098,7 @@ Caused by:
     <testcase classname="text/template/parse" name="TestDelimsAndMarkers" time="0.000000" />
     <testcase classname="text/template/parse" name="TestPos" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="time" timestamp="2024-04-25T15:06:42Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="time" timestamp="2024-04-26T04:14:38Z">
     <properties classname="time">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -7114,12 +7114,12 @@ Caused by:
 </failure>
     </testcase>
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="time/tzdata" timestamp="2024-04-25T15:06:43Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="time/tzdata" timestamp="2024-04-26T04:14:40Z">
     <properties classname="time/tzdata">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="28" failures="0" time="0.000000" name="unicode" timestamp="2024-04-25T15:06:44Z">
+  <testsuite tests="28" failures="0" time="0.000000" name="unicode" timestamp="2024-04-26T04:14:40Z">
     <properties classname="unicode">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -7152,7 +7152,7 @@ Caused by:
     <testcase classname="unicode" name="TestCategories" time="0.000000" />
     <testcase classname="unicode" name="TestProperties" time="0.000000" />
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="unicode/utf16" timestamp="2024-04-25T15:06:53Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="unicode/utf16" timestamp="2024-04-26T04:14:40Z">
     <properties classname="unicode/utf16">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -7165,7 +7165,7 @@ Caused by:
     <testcase classname="unicode/utf16" name="TestDecodeRune" time="0.000000" />
     <testcase classname="unicode/utf16" name="TestIsSurrogate" time="0.000000" />
   </testsuite>
-  <testsuite tests="14" failures="0" time="0.000000" name="unicode/utf8" timestamp="2024-04-25T15:06:54Z">
+  <testsuite tests="14" failures="0" time="0.000000" name="unicode/utf8" timestamp="2024-04-26T04:14:44Z">
     <properties classname="unicode/utf8">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
@@ -7184,12 +7184,12 @@ Caused by:
     <testcase classname="unicode/utf8" name="TestValid" time="0.000000" />
     <testcase classname="unicode/utf8" name="TestValidRune" time="0.000000" />
   </testsuite>
-  <testsuite tests="0" failures="0" time="0.000000" name="unsafe" timestamp="2024-04-25T15:07:01Z">
+  <testsuite tests="0" failures="0" time="0.000000" name="unsafe" timestamp="2024-04-26T04:14:44Z">
     <properties classname="unsafe">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>
   </testsuite>
-  <testsuite tests="8" failures="0" time="0.000000" name="./tests/runtime_wasi" timestamp="2024-04-25T15:07:02Z">
+  <testsuite tests="8" failures="0" time="0.000000" name="./tests/runtime_wasi" timestamp="2024-04-26T04:14:44Z">
     <properties classname="./tests/runtime_wasi">
       <property name="go.version" value="go1.22.2 linux/arm64" />
     </properties>

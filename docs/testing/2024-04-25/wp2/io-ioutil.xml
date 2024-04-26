@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="25" failures="7" errors="0" time="30.747322">
-	<testsuite tests="25" failures="7" time="0.000000" name="io/ioutil" timestamp="2024-04-25T16:12:51Z">
+<testsuites tests="25" failures="7" errors="0" time="12.140410">
+	<testsuite tests="25" failures="7" time="0.000000" name="io/ioutil" timestamp="2024-04-25T20:18:25Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="io/ioutil" name="TestReadOnlyWriteFile" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadOnlyWriteFile&#xA;/tmp/TestReadOnlyWriteFile165110282/tmp/TestReadOnlyWriteFile165110282/blurp.txt/tmp/TestReadOnlyWriteFile165110282/blurp.txt    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile165110282/blurp.txt&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;/tmp/TestReadOnlyWriteFile165110282/blurp.txt    want shmorp, got florp&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestReadOnlyWriteFile (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadOnlyWriteFile&#xA;/tmp/TestReadOnlyWriteFile243427133/tmp/TestReadOnlyWriteFile243427133/blurp.txt/tmp/TestReadOnlyWriteFile243427133/blurp.txt    Expected an error when writing to read-only file /tmp/TestReadOnlyWriteFile243427133/blurp.txt&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;/tmp/TestReadOnlyWriteFile243427133/blurp.txt    want shmorp, got florp&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestReadOnlyWriteFile (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="io/ioutil" name="TestReadDir" time="0.000000">
 			<failure message="Failed" type="">=== RUN   TestReadDir&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/rumpelstilzchen/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io    ReadDir ..: open ..: errno 63&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    ReadDir ..: io_test.go file not found&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;    ReadDir ..: ioutil directory not found&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestReadDir (0.00s)&#xA;</failure>
 		</testcase>
-		<testcase classname="io/ioutil" name="TestTempFile" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTempFile&#xA;/tmp/TestTempFile_BadDir189779036/tmp/TestTempFile_BadDir189779036/_not_exists_/foo195478316--- PASS: TestTempFile (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="io/ioutil" name="TestTempFile_pattern" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTempFile_pattern&#xA;/tmp/ioutil_test159123034/tmp/ioutil_test15839246/tmp/ioutil_test72110232xyz/tmp/ioutil_test72110232xyz/tmp/ioutil_test15839246/tmp/ioutil_test159123034--- PASS: TestTempFile_pattern (0.00s)&#xA;</failure>
-		</testcase>
 		<testcase classname="io/ioutil" name="TestReadFile" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadFile&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/rumpelstilzchen/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/ioutil_test.go/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/ioutil_test.go--- PASS: TestReadFile (0.06s)&#xA;</failure>
-		</testcase>
-		<testcase classname="io/ioutil" name="TestWriteFile" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestWriteFile&#xA;/tmp/ioutil-test253012638/tmp/ioutil-test253012638/tmp/ioutil-test253012638/tmp/ioutil-test253012638--- PASS: TestWriteFile (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadFile&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/rumpelstilzchen/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/ioutil_test.go/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/io/ioutil/ioutil_test.go--- PASS: TestReadFile (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="io/ioutil" name="TestTempDir_BadDir" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTempDir_BadDir&#xA;/tmp/TestTempDir_BadDir76355768/tmp/TestTempDir_BadDir76355768/not-exist/foo150511502/tmp/TestTempDir_BadDir76355768/not-exist--- PASS: TestTempDir_BadDir (0.02s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestTempDir_BadDir&#xA;/tmp/TestTempDir_BadDir17688507/tmp/TestTempDir_BadDir17688507/not-exist/foo217192435/tmp/TestTempDir_BadDir17688507/not-exist--- PASS: TestTempDir_BadDir (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io/ioutil" name="TestWriteFile" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestWriteFile&#xA;/tmp/ioutil-test59146371/tmp/ioutil-test59146371/tmp/ioutil-test59146371/tmp/ioutil-test59146371--- PASS: TestWriteFile (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io/ioutil" name="TestTempFile" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTempFile&#xA;/tmp/TestTempFile_BadDir245942673/tmp/TestTempFile_BadDir245942673/_not_exists_/foo72318479--- PASS: TestTempFile (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="io/ioutil" name="TestTempFile_pattern" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTempFile_pattern&#xA;/tmp/ioutil_test150651103/tmp/ioutil_test162917025/tmp/ioutil_test82615917xyz/tmp/ioutil_test82615917xyz/tmp/ioutil_test162917025/tmp/ioutil_test150651103--- PASS: TestTempFile_pattern (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="io/ioutil" name="TestTempFile_BadPattern" time="0.000000"></testcase>
 		<testcase classname="io/ioutil" name="TestTempDir" time="0.000000"></testcase>

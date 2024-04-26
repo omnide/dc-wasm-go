@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="11" failures="4" errors="1" time="300.005165">
-	<testsuite tests="11" failures="4" time="0.000000" name="index/suffixarray" timestamp="2024-04-25T16:07:37Z">
+<testsuites tests="11" failures="4" errors="1" time="300.010546">
+	<testsuite tests="11" failures="4" time="0.000000" name="index/suffixarray" timestamp="2024-04-25T20:18:19Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
@@ -11,10 +11,10 @@
 			<failure message="Failed" type="">=== RUN   TestNew64/exhaustive2&#xA;</failure>
 		</testcase>
 		<testcase classname="index/suffixarray" name="TestNew64" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestNew64&#xA;=== RUN   TestNew64/ababab...&#xA;    --- PASS: TestNew64/ababab... (9.73s)&#xA;=== RUN   TestNew64/forcealloc&#xA;    --- PASS: TestNew64/forcealloc (1.21s)&#xA;=== RUN   TestNew64/exhaustive2&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestNew64&#xA;=== RUN   TestNew64/ababab...&#xA;    --- PASS: TestNew64/ababab... (9.72s)&#xA;=== RUN   TestNew64/forcealloc&#xA;    --- PASS: TestNew64/forcealloc (1.21s)&#xA;=== RUN   TestNew64/exhaustive2&#xA;</failure>
 		</testcase>
 		<testcase classname="index/suffixarray" name="TestNew64/ababab..." time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestNew64/ababab...&#xA;    --- PASS: TestNew64/ababab... (9.73s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestNew64/ababab...&#xA;    --- PASS: TestNew64/ababab... (9.72s)&#xA;</failure>
 		</testcase>
 		<testcase classname="index/suffixarray" name="TestIndex32" time="0.000000"></testcase>
 		<testcase classname="index/suffixarray" name="TestIndex64" time="0.000000"></testcase>

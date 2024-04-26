@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="4" failures="2" errors="0" time="42.780221">
-	<testsuite tests="4" failures="2" time="0.000000" name="go/format" timestamp="2024-04-25T15:11:53Z">
+<testsuites tests="4" failures="2" errors="0" time="21.209747">
+	<testsuite tests="4" failures="2" time="0.000000" name="go/format" timestamp="2024-04-25T20:17:15Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="go/format" name="TestNode" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestNode&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/format/format_test.go--- PASS: TestNode (0.02s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestNode&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/format/format_test.go--- PASS: TestNode (0.10s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/format" name="TestSource" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestSource&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/format/format_test.go--- PASS: TestSource (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestSource&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/go/format/format_test.go--- PASS: TestSource (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="go/format" name="TestNodeNoModify" time="0.000000"></testcase>
 		<testcase classname="go/format" name="TestPartial" time="0.000000"></testcase>

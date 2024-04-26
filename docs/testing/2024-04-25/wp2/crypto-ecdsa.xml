@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="82" failures="1" errors="0" time="298.564733">
-	<testsuite tests="82" failures="1" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-25T15:08:22Z">
+<testsuites tests="82" failures="1" errors="0" time="267.774406">
+	<testsuite tests="82" failures="1" time="0.000000" name="crypto/ecdsa" timestamp="2024-04-25T20:15:34Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="crypto/ecdsa" name="TestVectors" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestVectors&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/crypto/ecdsa/testdata/SigVer.rsp.bz2--- PASS: TestVectors (189.47s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestVectors&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/crypto/ecdsa/testdata/SigVer.rsp.bz2--- PASS: TestVectors (184.87s)&#xA;</failure>
 		</testcase>
 		<testcase classname="crypto/ecdsa" name="TestKeyGeneration" time="0.000000"></testcase>
 		<testcase classname="crypto/ecdsa" name="TestSignAndVerify" time="0.000000"></testcase>

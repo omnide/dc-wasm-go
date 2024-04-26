@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="2" errors="0" time="33.827327">
-	<testsuite tests="2" failures="2" time="0.000000" name="debug/plan9obj" timestamp="2024-04-25T15:09:51Z">
+<testsuites tests="2" failures="2" errors="0" time="14.765816">
+	<testsuite tests="2" failures="2" time="0.000000" name="debug/plan9obj" timestamp="2024-04-25T20:16:29Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="debug/plan9obj" name="TestOpen" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestOpen&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/testdata/386-plan9-exec/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/testdata/amd64-plan9-exec--- PASS: TestOpen (0.02s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestOpen&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/testdata/386-plan9-exec/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/testdata/amd64-plan9-exec--- PASS: TestOpen (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="debug/plan9obj" name="TestOpenFailure" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestOpenFailure&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/file.go--- PASS: TestOpenFailure (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestOpenFailure&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/plan9obj/file.go--- PASS: TestOpenFailure (0.01s)&#xA;</failure>
 		</testcase>
 	</testsuite>
 </testsuites>

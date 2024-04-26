@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="58" failures="6" errors="0" time="38.600814">
-	<testsuite tests="58" failures="6" time="0.000000" name="io" timestamp="2024-04-25T16:12:51Z">
+<testsuites tests="58" failures="6" errors="0" time="20.220615">
+	<testsuite tests="58" failures="6" time="0.000000" name="io" timestamp="2024-04-25T20:18:20Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
@@ -14,13 +14,13 @@
 			<failure message="Failed" type="">=== RUN   TestMultiReaderFlatten&#xA;    multiReader did not flatten chained multiReaders: expected readDepth 3, got 1&#xA;--- FAIL: TestMultiReaderFlatten (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="io" name="TestMultiReaderFreesExhaustedReaders" time="0.000000">
-			<failure message="Failed" type="">=== RUN   TestMultiReaderFreesExhaustedReaders&#xA;    timeout waiting for collection of buf1&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMultiReaderFreesExhaustedReaders (5.03s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestMultiReaderFreesExhaustedReaders&#xA;    timeout waiting for collection of buf1&#xA;    FailNow is incomplete, requires runtime.Goexit()&#xA;--- FAIL: TestMultiReaderFreesExhaustedReaders (5.06s)&#xA;</failure>
 		</testcase>
 		<testcase classname="io" name="TestOffsetWriter_WriteAt" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestOffsetWriter_WriteAt&#xA;/tmp/TestOffsetWriter_WriteAt186878750/tmp/TestOffsetWriter_WriteAt186878750/000/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_0_at_0107426516/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_0_at_1217665368/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_1_at_092828618/tmp/TestOffsetWriter_WriteAt186878750/000/TestOffsetWriter_WriteAt50657454/off_1_at_1205603010--- PASS: TestOffsetWriter_WriteAt (0.08s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestOffsetWriter_WriteAt186878750: errno 52&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestOffsetWriter_WriteAt&#xA;/tmp/TestOffsetWriter_WriteAt248183137/tmp/TestOffsetWriter_WriteAt248183137/000/tmp/TestOffsetWriter_WriteAt248183137/000/TestOffsetWriter_WriteAt42249353/tmp/TestOffsetWriter_WriteAt248183137/000/TestOffsetWriter_WriteAt42249353/off_0_at_0114398651/tmp/TestOffsetWriter_WriteAt248183137/000/TestOffsetWriter_WriteAt42249353/off_0_at_1151526095/tmp/TestOffsetWriter_WriteAt248183137/000/TestOffsetWriter_WriteAt42249353/off_1_at_0255301333/tmp/TestOffsetWriter_WriteAt248183137/000/TestOffsetWriter_WriteAt42249353/off_1_at_147304789--- PASS: TestOffsetWriter_WriteAt (0.09s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestOffsetWriter_WriteAt248183137: errno 52&#xA;</failure>
 		</testcase>
 		<testcase classname="io" name="TestWriteAt_PositionPriorToBase" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestWriteAt_PositionPriorToBase&#xA;/tmp/TestWriteAt_PositionPriorToBase67249664/tmp/TestWriteAt_PositionPriorToBase67249664/000/tmp/TestWriteAt_PositionPriorToBase67249664/000/TestOffsetWriter_WriteAt18576620--- PASS: TestWriteAt_PositionPriorToBase (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestWriteAt_PositionPriorToBase67249664: errno 52&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestWriteAt_PositionPriorToBase&#xA;/tmp/TestWriteAt_PositionPriorToBase137520303/tmp/TestWriteAt_PositionPriorToBase137520303/000/tmp/TestWriteAt_PositionPriorToBase137520303/000/TestOffsetWriter_WriteAt102163739--- PASS: TestWriteAt_PositionPriorToBase (0.00s)&#xA;    TempDir RemoveAll cleanup: RemoveAll /tmp/TestWriteAt_PositionPriorToBase137520303: errno 52&#xA;</failure>
 		</testcase>
 		<testcase classname="io" name="TestCopy" time="0.000000"></testcase>
 		<testcase classname="io" name="TestCopyNegative" time="0.000000"></testcase>

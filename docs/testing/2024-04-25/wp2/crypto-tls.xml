@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="0" failures="0" errors="0" time="0.902117">
-	<testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-25T15:09:28Z">
+<testsuites tests="0" failures="0" errors="0" time="0.798073">
+	<testsuite tests="0" failures="0" time="0.000000" name="crypto/tls" timestamp="2024-04-25T20:16:15Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="11" failures="5" errors="1" time="300.022990">
-	<testsuite tests="11" failures="5" time="0.000000" name="mime/multipart" timestamp="2024-04-25T16:28:38Z">
+<testsuites tests="11" failures="5" errors="1" time="300.013384">
+	<testsuite tests="11" failures="5" time="0.000000" name="mime/multipart" timestamp="2024-04-25T20:19:12Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
 		<testcase classname="mime/multipart" name="TestReadForm" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadForm&#xA;/tmp/multipart-89955340/tmp/multipart-89955340/tmp/multipart-89955340--- PASS: TestReadForm (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadForm&#xA;/tmp/multipart-118546080/tmp/multipart-118546080/tmp/multipart-118546080--- PASS: TestReadForm (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.12s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.13s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/many_parts&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.07s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.04s)&#xA;=== RUN   TestReadForm_MetadataTooLarge/many_parts&#xA;</failure>
 		</testcase>
 		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/large_name" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.12s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_name&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_name (0.07s)&#xA;</failure>
 		</testcase>
 		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/large_MIME_header" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.13s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/large_MIME_header&#xA;    --- PASS: TestReadForm_MetadataTooLarge/large_MIME_header (0.04s)&#xA;</failure>
 		</testcase>
 		<testcase classname="mime/multipart" name="TestReadForm_MetadataTooLarge/many_parts" time="-0.000000">
 			<failure message="Failed" type="">=== RUN   TestReadForm_MetadataTooLarge/many_parts&#xA;</failure>

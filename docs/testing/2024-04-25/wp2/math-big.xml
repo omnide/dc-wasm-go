@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="0" failures="1" errors="0" time="190.058691">
-	<testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-25T16:12:51Z">
+<testsuites tests="0" failures="0" errors="1" time="120.993575">
+	<testsuite tests="0" failures="0" time="0.000000" name="math/big" timestamp="2024-04-25T20:18:51Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
-		<testcase classname="" name="TestMain" time="0.000000">
-			<failure message="Failed" type="">FAIL&#x9;math/big&#x9;0.000s&#xA;# math/big&#xA;/usr/local/go/src/math/bits/bits.go:459:6: interp: running for more than 3m0s, timing out (executed calls: 36655510)&#xA;  %stackalloc = alloca i8, align 1, !dbg !30350&#xA;&#xA;traceback:&#xA;/usr/local/go/src/math/bits/bits.go:459:6:&#xA;  %stackalloc = alloca i8, align 1, !dbg !30350&#xA;/usr/local/go/src/math/bits/bits.go:447:16:&#xA;  %0 = call { i32, i32 } @&#34;math/bits.Mul32&#34;(i32 %x, i32 %y, ptr undef), !dbg !30355&#xA;/usr/local/go/src/math/big/arith.go:51:20:&#xA;  %0 = call { i32, i32 } @&#34;math/bits.Mul&#34;(i32 %x, i32 %y, ptr undef), !dbg !30354&#xA;/usr/local/go/src/math/big/arith.go:192:24:&#xA;  %13 = call { i32, i32 } @&#34;math/big.mulAddWWW_g&#34;(i32 %12, i32 %y, i32 %6, ptr undef), !dbg !30372&#xA;/usr/local/go/src/math/big/arith_decl_pure.go:44:20:&#xA;  %12 = call i32 @&#34;math/big.mulAddVWW_g&#34;(ptr %6, i32 %7, i32 %8, ptr %9, i32 %10, i32 %11, i32 %y, i32 %r, ptr undef), !dbg !30355&#xA;/usr/local/go/src/math/big/nat.go:191:18:&#xA;  %38 = call i32 @&#34;math/big.mulAddVWW&#34;(ptr %32, i32 %33, i32 %34, ptr %35, i32 %36, i32 %37, i32 %y, i32 %r, ptr undef), !dbg !30376&#xA;/usr/local/go/src/math/big/natconv.go:213:19:&#xA;  %126 = call { ptr, i32, i32 } @&#34;(math/big.nat).mulAddWW&#34;(ptr %120, i32 %121, i32 %122, ptr %123, i32 %124, i32 %125, i32 %61, i32 %117, ptr undef), !dbg !30496&#xA;/usr/local/go/src/math/big/nat_test.go:92:31:&#xA;  %10 = call { { ptr, i32, i32 }, i32, i32, %runtime._interface } @&#34;(math/big.nat).scan&#34;(ptr null, i32 0, i32 0, ptr %8, ptr %9, i32 0, i1 false, ptr undef), !dbg !30351&#xA;/usr/local/go/src/math/big:&#xA;  %38 = call { ptr, i32, i32 } @&#34;math/big.natFromString&#34;(ptr %36, i32 %37, ptr undef), !dbg !30358&#xA;</failure>
-		</testcase>
 	</testsuite>
 </testsuites>

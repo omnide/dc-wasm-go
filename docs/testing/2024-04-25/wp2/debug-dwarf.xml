@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="29" failures="23" errors="0" time="51.691397">
-	<testsuite tests="29" failures="23" time="0.000000" name="debug/dwarf" timestamp="2024-04-25T15:09:32Z">
+<testsuites tests="29" failures="23" errors="0" time="22.611576">
+	<testsuite tests="29" failures="23" time="0.000000" name="debug/dwarf" timestamp="2024-04-25T20:16:17Z">
 		<properties>
 			<property name="go.version" value="go1.22.2 linux/arm64"></property>
 		</properties>
-		<testcase classname="debug/dwarf" name="TestReaderSeek" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReaderSeek&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestReaderSeek (0.03s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestTypedefCycle" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTypedefCycle&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf--- PASS: TestTypedefCycle (0.02s)&#xA;</failure>
-		</testcase>
 		<testcase classname="debug/dwarf" name="TestBitFieldZeroArrayIssue50685" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestBitFieldZeroArrayIssue50685&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/bitfields.elf4--- PASS: TestBitFieldZeroArrayIssue50685 (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestRangesRnglistx" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestRangesRnglistx&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/rnglistx.elf--- PASS: TestRangesRnglistx (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestLineELFClang" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineELFClang&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang.elf--- PASS: TestLineELFClang (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestTypedefsELFDwarf4" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTypedefsELFDwarf4&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf4--- PASS: TestTypedefsELFDwarf4 (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestUnsupportedTypes" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestUnsupportedTypes&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cppunsuptypes.elf--- PASS: TestUnsupportedTypes (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestRangesSection" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestRangesSection&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/ranges.elf--- PASS: TestRangesSection (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestReaderRanges" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestReaderRanges&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestReaderRanges (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestUnitIteration" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestUnitIteration&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata--- PASS: TestUnitIteration (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestLineELFGCC" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineELFGCC&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf--- PASS: TestLineELFGCC (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestLineELFGCCZstd" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineELFGCCZstd&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestLineELFGCCZstd (0.01s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestBitFieldZeroArrayIssue50685&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/bitfields.elf4--- PASS: TestBitFieldZeroArrayIssue50685 (0.01s)&#xA;</failure>
 		</testcase>
 		<testcase classname="debug/dwarf" name="TestLineGCCWindows" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineGCCWindows&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-win.bin--- PASS: TestLineGCCWindows (0.15s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestLineRnglists" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineRnglists&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/rnglistx.elf--- PASS: TestLineRnglists (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestLineSeek" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestLineSeek&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf--- PASS: TestLineSeek (0.04s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestTypedefsELF" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTypedefsELF&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf--- PASS: TestTypedefsELF (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestBitOffsetsMachO" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestBitOffsetsMachO&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.macho--- PASS: TestBitOffsetsMachO (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestBitOffsetsELFDwarf4" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestBitOffsetsELFDwarf4&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf4--- PASS: TestBitOffsetsELFDwarf4 (0.01s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestSplit" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestSplit&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/split.elf--- PASS: TestSplit (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestTypedefsMachO" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestTypedefsMachO&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.macho--- PASS: TestTypedefsMachO (0.00s)&#xA;</failure>
-		</testcase>
-		<testcase classname="debug/dwarf" name="TestBitOffsetsELF" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestBitOffsetsELF&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf--- PASS: TestBitOffsetsELF (0.00s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestLineGCCWindows&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-win.bin--- PASS: TestLineGCCWindows (0.19s)&#xA;</failure>
 		</testcase>
 		<testcase classname="debug/dwarf" name="TestBitOffsetsMachO4" time="-0.000000">
 			<failure message="Failed" type="">=== RUN   TestBitOffsetsMachO4&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.macho4--- PASS: TestBitOffsetsMachO4 (0.00s)&#xA;</failure>
 		</testcase>
+		<testcase classname="debug/dwarf" name="TestBitOffsetsELFDwarf4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestBitOffsetsELFDwarf4&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf4--- PASS: TestBitOffsetsELFDwarf4 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestLineELFClang" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineELFClang&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang.elf--- PASS: TestLineELFClang (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestBitOffsetsMachO" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestBitOffsetsMachO&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.macho--- PASS: TestBitOffsetsMachO (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestReaderSeek" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReaderSeek&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestReaderSeek (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestRangesSection" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestRangesSection&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/ranges.elf--- PASS: TestRangesSection (0.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestLineELFGCC" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineELFGCC&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf--- PASS: TestLineELFGCC (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestLineSeek" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineSeek&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf--- PASS: TestLineSeek (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestTypedefsELFDwarf4" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypedefsELFDwarf4&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf4--- PASS: TestTypedefsELFDwarf4 (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestTypedefCycle" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypedefCycle&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cycle.elf--- PASS: TestTypedefCycle (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestBitOffsetsELF" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestBitOffsetsELF&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf--- PASS: TestBitOffsetsELF (0.00s)&#xA;</failure>
+		</testcase>
 		<testcase classname="debug/dwarf" name="TestBitOffsetsELFDwarf5" time="-0.000000">
-			<failure message="Failed" type="">=== RUN   TestBitOffsetsELFDwarf5&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf5--- PASS: TestBitOffsetsELFDwarf5 (0.04s)&#xA;</failure>
+			<failure message="Failed" type="">=== RUN   TestBitOffsetsELFDwarf5&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf5--- PASS: TestBitOffsetsELFDwarf5 (0.05s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestSplit" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestSplit&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/split.elf--- PASS: TestSplit (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestRangesRnglistx" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestRangesRnglistx&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/rnglistx.elf--- PASS: TestRangesRnglistx (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestLineELFGCCZstd" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineELFGCCZstd&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestLineELFGCCZstd (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestTypedefsELF" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypedefsELF&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.elf--- PASS: TestTypedefsELF (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestTypedefsMachO" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestTypedefsMachO&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/typedef.macho--- PASS: TestTypedefsMachO (0.00s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestUnsupportedTypes" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUnsupportedTypes&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/cppunsuptypes.elf--- PASS: TestUnsupportedTypes (0.03s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestReaderRanges" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestReaderRanges&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-clang-dwarf5.elf/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/line-gcc-zstd.elf--- PASS: TestReaderRanges (0.02s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestUnitIteration" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestUnitIteration&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata--- PASS: TestUnitIteration (0.01s)&#xA;</failure>
+		</testcase>
+		<testcase classname="debug/dwarf" name="TestLineRnglists" time="-0.000000">
+			<failure message="Failed" type="">=== RUN   TestLineRnglists&#xA;/home/vscode/.cache/tinygo/goroot-c2837f81ee81c8ecea884819967eafb31ba911b22ee551ef42f43b1105f0124e/src/debug/dwarf/testdata/rnglistx.elf--- PASS: TestLineRnglists (0.00s)&#xA;</failure>
 		</testcase>
 		<testcase classname="debug/dwarf" name="TestDwarf5Ranges" time="0.000000"></testcase>
 		<testcase classname="debug/dwarf" name="Test64Bit" time="0.000000"></testcase>
